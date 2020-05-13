@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, subprocess, yaml, pathlib
+import argparse, subprocess, yaml, pathlib, sys
 from utilities import kinds, implementations, library_prologue, std_options, nonpedantic_option, TestsuiteGenerator
 
 parser = argparse.ArgumentParser()
@@ -27,6 +27,7 @@ a = yaml.safe_load(open('data.yaml'))
 assert list(a.keys()) == kinds
 
 def run_test(args, testfilename):
+    args = [arg for arg in args if arg is not None]
     compiler, diag_opt = cc, []
     if cc == None:
         if impl == 'clang':
@@ -50,12 +51,16 @@ def run_test(args, testfilename):
             if s in stdout:
                 line = stdout.index(s)
                 print(stdout[line:stdout.index('\n', line)])
+        return res.returncode
+    return 0
 
 testbasedir = pathlib.Path('test/individuals')
 if dry_run:
     print('Would touch', testbasedir)
 else:
     testbasedir.mkdir(parents=True, exist_ok=True)
+
+exitcode = 0
 
 for macro in a[kind]:
     if 'removed' in macro['rows'][-1]:
@@ -81,5 +86,8 @@ for macro in a[kind]:
         for args in generator.make_options(macro):
             pedantic = generator.pedantic_options(macro) or [None]
             for ped_opt in pedantic:
-                run_test(filter(bool, [std_opt, ped_opt, *args]), str(outfilepath))
+                returncode = run_test([std_opt, ped_opt, *args], str(outfilepath))
+                exitcode = exitcode or returncode
+
+sys.exit(exitcode)
 
