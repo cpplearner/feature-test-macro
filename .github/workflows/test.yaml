@@ -1,0 +1,59 @@
+name: Test
+
+on:
+    push:
+        branches: [ master ]
+    schedule:
+        - cron: '0 0 */10 * *'
+
+env:
+    LLVM_VERSION: 11
+
+jobs:
+    clang:
+        runs-on: ubuntu-18.04
+        steps:
+            - uses: actions/checkout@v2
+            - name: Prepare
+              run: |
+                  REPO_NAME='deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
+                  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+                  sudo add-apt-repository "$REPO_NAME"
+                  sudo apt-get update
+                  sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev
+
+            - name: Test attributes
+              run: |
+                  python3.8 tools/do_test.py clang attributes --verbose
+
+            - name: Test language
+              run: |
+                  python3.8 tools/do_test.py clang language --verbose
+
+            - name: Test library
+              run: |
+                  python3.8 tools/do_test.py clang library --verbose \
+                    --extra-args -stdlib=libc++
+
+    gcc:
+        runs-on: ubuntu-18.04
+        steps:
+            - uses: actions/checkout@v2
+            - name: Prepare
+              run: |
+                  wget http://kayari.org/gcc-latest/gcc-latest.deb
+                  sudo dpkg -i gcc-latest.deb
+                  echo "::set-env name=PATH::/opt/gcc-latest/bin:$PATH"
+
+            - name: Test attributes
+              run: |
+                  python3.8 tools/do_test.py gcc attributes --verbose
+
+            - name: Test language
+              run: |
+                  python3.8 tools/do_test.py gcc language --verbose
+
+            - name: Test library
+              run: |
+                  python3.8 tools/do_test.py gcc library --verbose
+
