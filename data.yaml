@@ -1,0 +1,3040 @@
+attributes:
+- name: carries_dependency
+  rows:
+  - value: 200809
+    papers: N2782
+  support:
+    clang:
+    - since: C++11
+      value: 200809
+    gcc: null
+    msvc:
+    - value: 200809
+- name: deprecated
+  rows:
+  - value: 201309
+    papers: N3760
+  support:
+    clang:
+    - since: C++11
+      value: 201309
+    gcc:
+    - value: 201309
+    msvc:
+    - value: 201309
+- name: fallthrough
+  rows:
+  - value: 201603
+    papers: P0188R1
+  support:
+    clang:
+    - since: C++11
+      value: 201603
+    gcc:
+    - value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: likely
+  rows:
+  - value: 201803
+    papers: P0479R5
+  support:
+    clang: null
+    gcc:
+    - value: 201803
+    msvc:
+    - since: C++20
+      value: 201803
+- name: maybe_unused
+  rows:
+  - value: 201603
+    papers: P0212R1
+  support:
+    clang:
+    - since: C++11
+      value: 201603
+    gcc:
+    - value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: no_unique_address
+  rows:
+  - value: 201803
+    papers: P0840R2
+  support:
+    clang:
+    - since: C++11
+      value: 201803
+    gcc:
+    - value: 201803
+    msvc:
+    - since: C++20
+      value: 201803
+- name: nodiscard
+  rows:
+  - value: 201603
+    papers: P0189R1
+  - value: 201907
+    papers: P1301R4 P1771R1
+  support:
+    clang:
+    - since: C++11
+      value: 201907
+    gcc:
+    - value: 201907
+    msvc:
+    - value: 201907
+- name: noreturn
+  rows:
+  - value: 200809
+    papers: N2761
+  support:
+    clang:
+    - since: C++11
+      value: 200809
+    gcc:
+    - value: 200809
+    msvc:
+    - value: 200809
+- name: unlikely
+  rows:
+  - value: 201803
+    papers: P0479R5
+  support:
+    clang: null
+    gcc:
+    - value: 201803
+    msvc:
+    - since: C++20
+      value: 201803
+language:
+- name: __cpp_aggregate_bases
+  rows:
+  - value: 201603
+    papers: P0017R1
+    cppreference-description: '[[cpp/language/aggregate_initialization|Aggregate classes]] with base classes'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_aggregate_nsdmi
+  rows:
+  - value: 201304
+    papers: N3653
+    cppreference-description: '[[cpp/language/aggregate_initialization|Aggregate classes]] with [[cpp/language/data_members#Member initialization|default member initializers]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_aggregate_paren_init
+  rows:
+  - value: 201902
+    papers: P0960R3
+    cppreference-description: '[[cpp/language/aggregate initialization|Aggregate initialization]]
+      in the form of [[cpp/language/direct initialization|direct initialization]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201902
+    msvc: null
+- name: __cpp_alias_templates
+  rows:
+  - value: 200704
+    papers: N2258
+    cppreference-description: '[[cpp/language/type_alias|Alias templates]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200704
+    gcc:
+    - since: C++11
+      value: 200704
+    msvc:
+    - value: 200704
+- name: __cpp_aligned_new
+  rows:
+  - value: 201606
+    papers: P0035R4
+    cppreference-description: '[[cpp/memory/new/align_val_t|Dynamic memory allocation
+      for over-aligned data]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    - option: -faligned-allocation -faligned-new
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    - option: -faligned-new
+      value: 201606
+    msvc:
+    - since: C++17
+      invoption: /Zc:alignedNew-
+      value: 201606
+- name: __cpp_attributes
+  rows:
+  - value: 200809
+    papers: N2761
+    cppreference-description: '[[cpp/language/attributes|Attributes]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200809
+    gcc:
+    - since: C++11
+      value: 200809
+    msvc:
+    - value: 200809
+- name: __cpp_binary_literals
+  rows:
+  - value: 201304
+    papers: N3472
+    cppreference-description: '[[cpp/language/integer literal|Binary literals]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    - pedantic: false
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_capture_star_this
+  rows:
+  - value: 201603
+    papers: P0018R3
+    cppreference-description: '[[cpp/language/lambda#Lambda_capture|Lambda capture
+      of *this by value as [=,*this] ]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_char8_t
+  rows:
+  - value: 201811
+    papers: P0482R6
+    cppreference-description: '{{ltt|cpp/keyword/char8_t}}'
+  support:
+    clang:
+    - since: C++20
+      value: 201811
+    - option: -fchar8_t
+      value: 201811
+    gcc:
+    - since: C++20
+      value: 201811
+    - option: -fchar8_t
+      value: 201811
+    msvc:
+    - since: C++20
+      value: 201811
+    - option: /Zc:char8_t
+      value: 201811
+- name: __cpp_concepts
+  rows:
+  - value: 201707
+    papers: P0734R0
+  - value: 201811
+    papers: P1084R2
+  - value: 201907
+    papers: P1452R2
+    cppreference-description: '[[cpp/language/constraints|Concepts]]'
+  support:
+    clang:
+    - since: C++20
+      value: 201907
+    gcc:
+    - option: -fconcepts
+      value: 201507
+    - since: C++20
+      value: 201907
+    msvc:
+    - since: C++20
+      value: 201811
+- name: __cpp_conditional_explicit
+  rows:
+  - value: 201806
+    papers: P0892R2
+    cppreference-description: '[[cpp/language/explicit|{{tt|explicit(bool)}}]]'
+  support:
+    clang:
+    - since: C++20
+      value: 201806
+    gcc:
+    - since: C++20
+      value: 201806
+    msvc:
+    - since: C++20
+      value: 201806
+- name: __cpp_consteval
+  rows:
+  - value: 201811
+    papers: P1073R3
+    cppreference-description: '[[cpp/language/consteval|Immediate functions]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_constexpr
+  rows:
+  - value: 200704
+    papers: N2235
+    cppreference-description: '{{ltt|cpp/language/constexpr}}'
+  - value: 201304
+    papers: N3652
+    cppreference-description: '[[cpp/language/constexpr#relaxed-constexpr|Relaxed {{tt|constexpr}}]], [[cpp/language/constexpr#constexpr-method-is-const|non-{{tt|const}} {{tt|constexpr}} methods]]'
+  - value: 201603
+    papers: P0170R1
+    cppreference-description: '[[cpp/language/lambda|Constexpr lambda]]'
+  - value: 201806
+    papers: P1064R0
+  - value: 201811
+    papers: P1002R1 P1327R1 P1330R0
+  - value: 201907
+    papers: P1331R2 P1668R1
+    cppreference-description: Trivial [[cpp/language/default initialization|default
+      initialization]] and [[cpp/language/asm|asm-declaration]] in constexpr functions
+  support:
+    clang:
+    - since: C++11
+      value: 200704
+    - since: C++14
+      value: 201304
+    - since: C++17
+      value: 201603
+    - since: C++20
+      value: 201907
+    gcc:
+    - since: C++11
+      value: 200704
+    - since: C++14
+      value: 201304
+    - since: C++17
+      value: 201603
+    - since: C++20
+      value: 201907
+    msvc:
+    - value: 201304
+    - since: C++17
+      value: 201603
+- name: __cpp_constexpr_dynamic_alloc
+  rows:
+  - value: 201907
+    papers: P0784R7
+    cppreference-description: Operations for dynamic storage duration in constexpr functions
+  support:
+    clang:
+    - since: C++20
+      value: 201907
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc: null
+- name: __cpp_constexpr_in_decltype
+  rows:
+  - value: 201711
+    papers: P0859R0
+    cppreference-description: 'Less eager instantiation of constexpr functions'
+  support:
+    clang:
+    - since: C++11
+      value: 201711
+    gcc:
+    - since: C++20
+      value: 201711
+    msvc: null
+- name: __cpp_constinit
+  rows:
+  - value: 201907
+    papers: P1143R2
+    cppreference-description: '{{ltt|cpp/language/constinit|constinit}}'
+  support:
+    clang:
+    - since: C++20
+      value: 201907
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc: null
+- name: __cpp_decltype
+  rows:
+  - value: 200707
+    papers: N2343
+    cppreference-description: '{{ltt|cpp/language/decltype}}'
+  support:
+    clang:
+    - since: C++11
+      value: 200707
+    gcc:
+    - since: C++11
+      value: 200707
+    msvc:
+    - value: 200707
+- name: __cpp_decltype_auto
+  rows:
+  - value: 201304
+    papers: N3638
+    cppreference-description: '[[cpp/language/auto|Return type deduction for normal
+      functions]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_deduction_guides
+  rows:
+  - value: 201606
+    papers: P0091R3
+  - value: 201611
+    papers: P0512R0
+  - value: 201703
+    papers: P0620R0
+    cppreference-description: '[[cpp/language/class_template_argument_deduction|Template
+      argument deduction for class templates]]'
+  - value: 201907
+    papers: P1814R0 P1816R0
+    cppreference-description: '[[cpp/language/class_template_argument_deduction|<abbr title="Class template argument deduction">CTAD</abbr>]] for aggregates and aliases'
+  support:
+    clang:
+    - since: C++17
+      value: 201703
+    gcc:
+    - since: C++17
+      value: 201703
+    - since: C++20
+      value: 201907
+    msvc:
+    - since: C++17
+      value: 201703
+- name: __cpp_delegating_constructors
+  rows:
+  - value: 200604
+    papers: N1986
+    cppreference-description: '[[cpp/language/initializer_list#Delegating_constructor|Delegating
+      constructors]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200604
+    gcc:
+    - since: C++11
+      value: 200604
+    msvc:
+    - value: 200604
+- name: __cpp_designated_initializers
+  rows:
+  - value: 201707
+    papers: P0329R4
+    cppreference-description: '[[cpp/language/aggregate_initialization#Designated_initializers|Designated
+      initializer]]'
+  support:
+    clang:
+    - since: C++20
+      value: 201707
+    gcc:
+    - since: C++20
+      value: 201707
+    msvc: null
+- name: __cpp_enumerator_attributes
+  rows:
+  - value: 201411
+    papers: N4266
+    cppreference-description: Attributes for [[cpp/language/enum|enumerators]]
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 201411
+- name: __cpp_exceptions
+  rows:
+  - value: 199711
+    feature: Exception handling
+  support:
+    clang:
+    - invoption: -fno-exceptions -fno-cxx-exceptions
+      value: 199711
+    gcc:
+    - invoption: -fno-exceptions
+      value: 199711
+    msvc:
+    - option: /EHs
+      value: 199711
+- name: __cpp_fold_expressions
+  rows:
+  - value: 201411
+    papers: N4295
+  - value: 201603
+    papers: P0036R0
+    cppreference-description: '[[cpp/language/fold|Fold expressions]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_generic_lambdas
+  rows:
+  - value: 201304
+    papers: N3649
+    cppreference-description: '[[cpp/language/lambda|Generic lambda expressions]]'
+  - value: 201707
+    papers: P0428R2
+    cppreference-description: Familiar template syntax for [[cpp/language/lambda|generic
+      lambdas]]
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    - since: C++20
+      value: 201707
+    gcc:
+    - since: C++14
+      value: 201304
+    - since: C++20
+      value: 201707
+    msvc:
+    - value: 201304
+- name: __cpp_guaranteed_copy_elision
+  rows:
+  - value: 201606
+    papers: P0135R1
+    cppreference-description: Guaranteed copy elision through simplified [[cpp/language/value
+      category|value categories]]
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_hex_float
+  rows:
+  - value: 201603
+    papers: P0245R1
+    cppreference-description: '[[cpp/language/floating_literal|Hexadecimal floating
+      literals]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    - pedantic: false
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_if_constexpr
+  rows:
+  - value: 201606
+    papers: P0292R2
+    cppreference-description: '[[cpp/language/if|{{tt|constexpr if}}]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_impl_coroutine
+  rows:
+  - value: 201902
+    papers: P0912R5 LWG3393
+    cppreference-description: '[[cpp/language/coroutines|Coroutines]] (for the use
+      of standard library implementors)'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_impl_destroying_delete
+  rows:
+  - value: 201806
+    papers: P0722R3
+    cppreference-description: '[[cpp/memory/new/operator_delete|Destroying operator
+      delete]] (compiler support) '
+  support:
+    clang:
+    - value: 201806
+    gcc:
+    - since: C++20
+      value: 201806
+    msvc: null
+- name: __cpp_impl_three_way_comparison
+  rows:
+  - value: 201711
+    papers: P0515R3 P0768R1
+  - value: 201902
+    papers: P1185R2
+  - value: 201907
+    papers: P1630R1
+    cppreference-description: '[[cpp/language/operator_comparison#Three-way_comparison|Three-way
+      comparison]] (for the use of standard library implementors)'
+  support:
+    clang:
+    - since: C++20
+      value: 201907
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc:
+    - since: C++20
+      value: 201907
+- name: __cpp_inheriting_constructors
+  rows:
+  - value: 200802
+    papers: N2540
+    cppreference-description: '[[cpp/language/using_declaration#Inheriting_constructors|Inheriting
+      constructors]]'
+  - value: 201511
+    papers: P0136R1
+    cppreference-description: Rewording inheriting constructors
+  support:
+    clang:
+    - since: C++11
+      value: 201511
+    gcc:
+    - since: C++11
+      value: 201511
+    msvc:
+    - value: 200802
+    - since: C++17
+      value: 201511
+- name: __cpp_init_captures
+  rows:
+  - value: 201304
+    papers: N3648
+    cppreference-description: '[[cpp/language/lambda|Lambda init-capture]]'
+  - value: 201803
+    papers: P0780R2
+    cppreference-description: Allow pack expansion in [[cpp/language/lambda|lambda]]
+      init-capture
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    - since: C++20
+      value: 201803
+    gcc:
+    - since: C++14
+      value: 201304
+    - since: C++20
+      value: 201803
+    msvc:
+    - value: 201304
+- name: __cpp_initializer_lists
+  rows:
+  - value: 200806
+    papers: N2672
+    cppreference-description: '[[cpp/language/list_initialization|List-initialization]] and {{lc|std::initializer_list}}'
+  support:
+    clang:
+    - since: C++11
+      value: 200806
+    gcc:
+    - since: C++11
+      value: 200806
+    msvc:
+    - value: 200806
+- name: __cpp_inline_variables
+  rows:
+  - value: 201606
+    papers: P0386R2
+    cppreference-description: '[[cpp/language/inline|Inline variables]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lambdas
+  rows:
+  - value: 200907
+    papers: N2927
+    cppreference-description: '[[cpp/language/lambda|Lambda expressions]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200907
+    gcc:
+    - since: C++11
+      value: 200907
+    msvc:
+    - value: 200907
+- name: __cpp_modules
+  rows:
+  - value: 201907
+    papers: P1103R3 P1811R0
+    cppreference-description: '[[cpp/language/modules|Modules]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_namespace_attributes
+  rows:
+  - value: 201411
+    papers: N4266
+    cppreference-description: Attributes for [[cpp/language/namespace|namespaces]]
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 201411
+- name: __cpp_noexcept_function_type
+  rows:
+  - value: 201510
+    papers: P0012R1
+    cppreference-description: Make [[cpp/language/noexcept_spec|exception specifications]]
+      be part of the type system
+  support:
+    clang:
+    - since: C++17
+      value: 201510
+    gcc:
+    - since: C++17
+      value: 201510
+    msvc:
+    - since: C++17
+      invoption: /Zc:noexceptTypes-
+      value: 201510
+- name: __cpp_nontype_template_args
+  rows:
+  - value: 201411
+    papers: N4268
+    cppreference-description: Allow constant evaluation for all [[cpp/language/template_parameters#Template_non-type_arguments|non-type
+      template arguments]]
+  - value: 201911
+    papers: P1907R1
+    cppreference-description: Class types and floating-point types in [[cpp/language/template_parameters#Non-type_template_parameter|non-type
+      template parameters]]
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++17
+      value: 201411
+    msvc:
+    - since: C++17
+      value: 201411
+    - since: C++20
+      value: 201911
+- name: __cpp_nontype_template_parameter_auto
+  rows:
+  - value: 201606
+    papers: P0127R2
+    cppreference-description: Declaring [[cpp/language/template_parameters#Non-type_template_parameter|non-type
+      template parameters]] with {{tt|auto}}
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_nontype_template_parameter_class
+  rows:
+  - value: 201806
+    papers: P0732R2
+  - value: 201911
+    papers: P1907R1
+    removed: true
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_nsdmi
+  rows:
+  - value: 200809
+    papers: N2756
+    cppreference-description: '[[cpp/language/data_members#Member_initialization|Non-static
+      data member initializers]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200809
+    gcc:
+    - since: C++11
+      value: 200809
+    msvc:
+    - value: 200809
+- name: __cpp_range_based_for
+  rows:
+  - value: 200907
+    papers: N2930
+    cppreference-description: '[[cpp/language/range-for|Range-based {{tt|for}} loop]]'
+  - value: 201603
+    papers: P0184R0
+    cppreference-description: 'Range-based {{tt|for}} loop with different {{tt|begin}}/{{tt|end}} types'
+  support:
+    clang:
+    - since: C++11
+      value: 200907
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++11
+      value: 200907
+    - since: C++17
+      value: 201603
+    msvc:
+    - value: 201603
+- name: __cpp_raw_strings
+  rows:
+  - value: 200710
+    papers: N2442
+    cppreference-description: '[[cpp/language/string_literal|Raw string literals]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200710
+    gcc:
+    - since: C++11
+      value: 200710
+    msvc:
+    - value: 200710
+- name: __cpp_ref_qualifiers
+  rows:
+  - value: 200710
+    papers: N2439
+    cppreference-description: '[[cpp/language/member_functions|ref-qualifiers]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200710
+    gcc:
+    - since: C++11
+      value: 200710
+    msvc:
+    - value: 200710
+- name: __cpp_return_type_deduction
+  rows:
+  - value: 201304
+    papers: N3638
+    cppreference-description: '[[cpp/language/auto|Return type deduction for normal
+      functions]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_rtti
+  rows:
+  - value: 199711
+    feature: Run-time type identification
+  support:
+    clang:
+    - invoption: -fno-rtti
+      value: 199711
+    gcc:
+    - invoption: -fno-rtti
+      value: 199711
+    msvc:
+    - invoption: /GR-
+      value: 199711
+- name: __cpp_rvalue_references
+  rows:
+  - value: 200610
+    papers: N2118
+    cppreference-description: '[[cpp/language/reference|Rvalue reference]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200610
+    gcc:
+    - since: C++11
+      value: 200610
+    msvc:
+    - value: 200610
+- name: __cpp_sized_deallocation
+  rows:
+  - value: 201309
+    papers: N3778
+    cppreference-description: '[[cpp/memory/new/operator_delete|Sized deallocation]]'
+  support:
+    clang:
+    - option: -fsized-deallocation
+      value: 201309
+    gcc:
+    - since: C++14
+      value: 201309
+    - option: -fsized-deallocation
+      value: 201309
+    msvc:
+    - invoption: /Zc:sizedDealloc-
+      value: 201309
+- name: __cpp_static_assert
+  rows:
+  - value: 200410
+    papers: N1720
+    cppreference-description: '{{ltt|cpp/language/static_assert}}'
+  - value: 201411
+    papers: N3928
+    cppreference-description: '[[cpp/language/static_assert|Single-argument {{tt|static_assert}}]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200410
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++11
+      value: 200410
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 200410
+    - since: C++17
+      value: 201411
+- name: __cpp_structured_bindings
+  rows:
+  - value: 201606
+    papers: P0217R3
+    cppreference-description: '[[cpp/language/structured_binding|Structured bindings]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_template_template_args
+  rows:
+  - value: 201611
+    papers: P0522R0
+    cppreference-description: Matching of [[cpp/language/template_parameters#Template_template_arguments|template
+      template-arguments]]
+  support:
+    clang:
+    - option: -frelaxed-template-template-args
+      value: 201611
+    gcc:
+    - since: C++17
+      value: 201611
+    msvc:
+    - since: C++17
+      value: 201611
+- name: __cpp_threadsafe_static_init
+  rows:
+  - value: 200806
+    papers: N2660
+    cppreference-description: '[[cpp/language/storage_duration#Static_local_variables|Dynamic
+      initialization and destruction with concurrency]]'
+  support:
+    clang:
+    - invoption: -fno-threadsafe-statics
+      value: 200806
+    gcc:
+    - invoption: -fno-threadsafe-statics
+      value: 200806
+    msvc:
+    - invoption: /Zc:threadSafeInit-
+      value: 200806
+- name: __cpp_unicode_characters
+  rows:
+  - value: 200704
+    papers: N2249
+    cppreference-description: '[[cpp/language/types|New character types]] ({{c|char16_t}}
+      and {{c|char32_t}})'
+  support:
+    clang:
+    - since: C++11
+      value: 200704
+    gcc:
+    - since: C++11
+      value: 200704
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 200704
+- name: __cpp_unicode_literals
+  rows:
+  - value: 200710
+    papers: N2442
+    cppreference-description: '[[cpp/language/string_literal|Unicode string literals]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200710
+    gcc:
+    - since: C++11
+      value: 200710
+    msvc:
+    - value: 200710
+- name: __cpp_user_defined_literals
+  rows:
+  - value: 200809
+    papers: N2765
+    cppreference-description: '[[cpp/language/user_literal|User-defined literals]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200809
+    gcc:
+    - since: C++11
+      value: 200809
+    msvc:
+    - value: 200809
+- name: __cpp_using_enum
+  rows:
+  - value: 201907
+    papers: P1099R5
+    cppreference-description: Using enum
+  support:
+    clang: null
+    gcc: null
+    msvc:
+    - since: C++20
+      value: 201907
+- name: __cpp_variable_templates
+  rows:
+  - value: 201304
+    papers: N3651
+    cppreference-description: '[[cpp/language/variable_template|Variable templates]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_variadic_templates
+  rows:
+  - value: 200704
+    papers: N2242
+    cppreference-description: '[[cpp/language/parameter_pack|Variadic templates]]'
+  support:
+    clang:
+    - since: C++11
+      value: 200704
+    gcc:
+    - since: C++11
+      value: 200704
+    msvc:
+    - value: 200704
+- name: __cpp_variadic_using
+  rows:
+  - value: 201611
+    papers: P0195R2
+    cppreference-description: Pack expansions in [[cpp/language/using_declaration|{{tt|using}}-declarations]]
+  support:
+    clang:
+    - since: C++17
+      value: 201611
+    gcc:
+    - since: C++17
+      value: 201611
+    msvc:
+    - since: C++17
+      value: 201611
+library:
+- name: __cpp_lib_addressof_constexpr
+  header_list: memory
+  rows:
+  - value: 201603
+    papers: LWG2296
+    cppreference-description: 'Constexpr {{lc|std::addressof}}'
+  support:
+    clang:
+    - since: C++17
+      depends: __has_builtin(__builtin_addressof) || _GNUC_VER >= 700
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - value: 201603
+- name: __cpp_lib_allocator_traits_is_always_equal
+  header_list: memory scoped_allocator string deque forward_list list vector map set
+    unordered_map unordered_set
+  rows:
+  - value: 201411
+    papers: N4258
+    cppreference-description: '{{ltt|cpp/memory/allocator_traits|std::allocator_traits::is_always_equal}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++11
+      value: 201411
+    msvc:
+    - value: 201411
+- name: __cpp_lib_any
+  header_list: any
+  rows:
+  - value: 201603
+    papers: P0220R1
+  - value: 201606
+    papers: P0032R3
+    cppreference-description: '{{lc|std::any}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_apply
+  header_list: tuple
+  rows:
+  - value: 201603
+    papers: P0220R1
+    cppreference-description: '{{lc|std::apply}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_array_constexpr
+  header_list: iterator array
+  rows:
+  - value: 201603
+    papers: P0031R0
+    cppreference-description: 'Constexpr for {{lc|std::reverse_iterator}}, {{lc|std::move_iterator}}, {{lc|std::array}} and [[cpp/iterator#Range_access|range access]]'
+  - value: 201803
+    papers: P0858R0 LWG3257
+  - value: 201806
+    papers: P1023R0
+  - value: 201811
+    papers: P1032R1
+    cppreference-description: '{{named req|ConstexprIterator}}; constexpr comparison for {{lc|std::array}}; misc constexpr bits ({{lc|std::array::fill}} et al.)'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201803
+    - since: C++20
+      value: 201811
+    msvc:
+    - since: C++17
+      value: 201803
+    - since: C++20
+      value: 201806
+- name: __cpp_lib_as_const
+  header_list: utility
+  rows:
+  - value: 201510
+    papers: P0007R1
+    cppreference-description: '{{lc|std::as_const}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201510
+    gcc:
+    - since: C++17
+      value: 201510
+    msvc:
+    - value: 201510
+- name: __cpp_lib_assume_aligned
+  header_list: memory
+  rows:
+  - value: 201811
+    papers: P1007R3
+    cppreference-description: '{{lc|std::assume_aligned}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201811
+    msvc: null
+- name: __cpp_lib_atomic_flag_test
+  header_list: atomic
+  rows:
+  - value: 201907
+    papers: P1135R6
+    cppreference-description: '{{lc|std::atomic_flag::test}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_atomic_float
+  header_list: atomic
+  rows:
+  - value: 201711
+    papers: P0020R6
+    cppreference-description: '[[cpp/atomic/atomic|Floating point atomic]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201711
+    msvc:
+    - since: C++20
+      value: 201711
+- name: __cpp_lib_atomic_is_always_lock_free
+  header_list: atomic
+  rows:
+  - value: 201603
+    papers: P0152R1
+    cppreference-description: '{{ltt|cpp/atomic/atomic/is_always_lock_free|constexpr
+      atomic<T>::is_always_lock_free}}'
+  support:
+    clang:
+    - since: C++17
+      invconfig: _LIBCPP_HAS_NO_THREADS
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_atomic_lock_free_type_aliases
+  header_list: atomic
+  rows:
+  - value: 201907
+    papers: P1135R6
+    cppreference-description: atomic lockfree integral types ({{lc|std::atomic_signed_lock_free}},
+      {{lc|std::atomic_unsigned_lock_free}})
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_atomic_ref
+  header_list: atomic
+  rows:
+  - value: 201806
+    papers: P0019R8
+    cppreference-description: '{{ltt|cpp/atomic/atomic_ref|std::atomic_ref}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201806
+    msvc: null
+- name: __cpp_lib_atomic_shared_ptr
+  header_list: memory
+  rows:
+  - value: 201711
+    papers: P0718R2
+    cppreference-description: '{{ltt|cpp/memory/shared_ptr/atomic2|std::atomic<std::shared_ptr>}}'
+  support:
+    clang: null
+    gcc: null
+    msvc:
+    - since: C++20
+      value: 201711
+- name: __cpp_lib_atomic_value_initialization
+  header_list: atomic memory
+  rows:
+  - value: 201911
+    papers: P0883R2
+    cppreference-description: Fixing atomic initialization (value-initialize {{lc|std::atomic}}
+      by default)
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201911
+    msvc:
+    - value: 201911
+- name: __cpp_lib_atomic_wait
+  header_list: atomic
+  rows:
+  - value: 201907
+    papers: P1135R6
+    cppreference-description: Efficient {{lc|std::atomic}} waiting
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_barrier
+  header_list: barrier
+  rows:
+  - value: 201907
+    papers: P1135R6
+    cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_bind_front
+  header_list: functional
+  rows:
+  - value: 201811
+    papers: P0356R5
+  - value: 201907
+    papers: P1651R0
+    cppreference-description: '{{ltt|cpp/utility/functional/bind_front|std::bind_front}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc:
+    - since: C++20
+      value: 201907
+- name: __cpp_lib_bit_cast
+  header_list: bit
+  rows:
+  - value: 201806
+    papers: P0476R2
+    cppreference-description: '{{ltt|cpp/numeric/bit_cast|std::bit_cast}}'
+  support:
+    clang: null
+    gcc: null
+    msvc:
+    - since: C++20
+      depends: '!defined(__EDG__)'
+      value: 201806
+- name: __cpp_lib_bitops
+  header_list: bit
+  rows:
+  - value: 201907
+    papers: P0553R4
+    cppreference-description: '[[cpp/numeric#Bit_manipulation_(since_C++20)|Bit operations]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc:
+    - since: C++20
+      depends: defined(__clang__)
+      value: 201907
+- name: __cpp_lib_bool_constant
+  header_list: type_traits
+  rows:
+  - value: 201505
+    papers: N4389
+    cppreference-description: '{{lc|std::bool_constant}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201505
+    gcc:
+    - since: C++17
+      value: 201505
+    msvc:
+    - value: 201505
+- name: __cpp_lib_bounded_array_traits
+  header_list: type_traits
+  rows:
+  - value: 201902
+    papers: P1357R1
+    cppreference-description: '{{ltt|cpp/types/is_bounded_array|std::is_bounded_array}},
+      {{ltt|cpp/types/is_unbounded_array|std::is_unbounded_array}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201902
+    msvc:
+    - since: C++20
+      value: 201902
+- name: __cpp_lib_boyer_moore_searcher
+  header_list: functional
+  rows:
+  - value: 201603
+    papers: P0220R1
+    cppreference-description: '{{lc|std::boyer_moore_searcher|Searchers}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_byte
+  header_list: cstddef
+  rows:
+  - value: 201603
+    papers: P0298R3
+    cppreference-description: '{{ltt|cpp/types/byte|std::byte}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      config: _HAS_STD_BYTE
+      value: 201603
+- name: __cpp_lib_char8_t
+  header_list: atomic filesystem istream limits locale ostream string string_view
+  rows:
+  - value: 201811
+    papers: P0482R6
+  - value: 201907
+    papers: P1423R3
+    cppreference-description: 'Library support for {{c|char8_t}}'
+  support:
+    clang:
+    - since: C++20
+      depends: defined(__cpp_char8_t)
+      value: 201811
+    gcc:
+    - depends: defined(__cpp_char8_t)
+      value: 201907
+    - depends: defined(_GLIBCXX_USE_CHAR8_T)
+      value: 201907
+    msvc:
+    - since: C++20
+      depends: defined(__cpp_char8_t)
+      value: 201907
+- name: __cpp_lib_chrono
+  header_list: chrono
+  rows:
+  - value: 201510
+    papers: P0092R1
+    cppreference-description: Rounding functions for {{lc|std::chrono::duration}}
+      and {{lc|std::chrono::time_point}}
+  - value: 201611
+    papers: P0505R0
+    cppreference-description: 'Constexpr for all the member functions of {{lc|std::chrono::duration}} and {{lc|std::chrono::time_point}}'
+  - value: 201803
+    papers: P0355R7
+  - value: 201907
+    papers: P1466R3
+    cppreference-description: '[[cpp/chrono#Calendar|Calendars]] and [[cpp/chrono#Time zone|Time Zones]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201611
+    gcc:
+    - since: C++17
+      value: 201611
+    msvc:
+    - value: 201510
+    - since: C++17
+      value: 201611
+- name: __cpp_lib_chrono_udls
+  header_list: chrono
+  rows:
+  - value: 201304
+    papers: N3642
+    cppreference-description: '[[cpp/chrono/duration#Literals|User-defined literals
+      for time types]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_clamp
+  header_list: algorithm
+  rows:
+  - value: 201603
+    papers: P0025R0
+    cppreference-description: '{{lc|std::clamp}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_complex_udls
+  header_list: complex
+  rows:
+  - value: 201309
+    papers: N3779
+    cppreference-description: '[[cpp/numeric/complex/operator""i|User-defined Literals for {{tt|std::complex}}]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201309
+    gcc:
+    - since: C++14
+      value: 201309
+    msvc:
+    - value: 201309
+- name: __cpp_lib_concepts
+  header_list: concepts
+  rows:
+  - value: 201806
+    papers: P0898R3
+  - value: 201907
+    papers: P1754R1
+  - value: 202002
+    papers: P1964R2
+    cppreference-description: '[[cpp/concepts|Standard library concepts]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      depends: __cpp_concepts
+      value: 202002
+    msvc:
+    - since: C++20
+      depends: defined(__cpp_concepts) && __cpp_concepts > 201507
+      value: 201907
+- name: __cpp_lib_constexpr_algorithms
+  header_list: algorithm
+  rows:
+  - value: 201703
+    papers: P0202R3
+  - value: 201806
+    papers: P0879R0 LWG3256
+    cppreference-description: Constexpr for [[cpp/algorithm|algorithms]]
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201806
+    msvc:
+    - since: C++20
+      value: 201806
+- name: __cpp_lib_constexpr_complex
+  header_list: complex
+  rows:
+  - value: 201711
+    papers: P0415R1
+    cppreference-description: Constexpr for {{lc|std::complex}}
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201711
+    msvc: null
+- name: __cpp_lib_constexpr_dynamic_alloc
+  header_list: memory
+  rows:
+  - value: 201907
+    papers: P0784R7
+    cppreference-description: 'Constexpr for {{lc|std::allocator}} and related utilities'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc: null
+- name: __cpp_lib_constexpr_functional
+  header_list: functional
+  rows:
+  - value: 201811
+    papers: P1032R1
+  - value: 201907
+    papers: P1065R2
+    cppreference-description: Misc constexpr bits ({{lc|std::default_searcher}});
+      constexpr INVOKE
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc: null
+- name: __cpp_lib_constexpr_iterator
+  header_list: iterator
+  rows:
+  - value: 201811
+    papers: P1032R1
+    cppreference-description: Misc constexpr bits ({{lc|std::insert_iterator}} et
+      al.)
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201811
+    msvc: null
+- name: __cpp_lib_constexpr_memory
+  header_list: memory
+  rows:
+  - value: 201811
+    papers: P1006R1
+    cppreference-description: Constexpr in {{lc|std::pointer_traits}}
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201811
+    msvc:
+    - since: C++20
+      value: 201811
+- name: __cpp_lib_constexpr_numeric
+  header_list: numeric
+  rows:
+  - value: 201911
+    papers: P1645R1
+    cppreference-description: Constexpr for [[cpp/algorithm#Numeric_operations|<numeric>
+      algorithms]]
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201911
+    msvc:
+    - since: C++20
+      value: 201911
+- name: __cpp_lib_constexpr_string
+  header_list: string
+  rows:
+  - value: 201907
+    papers: P0980R1
+    cppreference-description: 'Constexpr for {{lc|std::string}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_constexpr_string_view
+  header_list: string_view
+  rows:
+  - value: 201811
+    papers: P1032R1
+    cppreference-description: Misc constexpr bits ({{lc|std::string_view::copy}})
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201811
+    msvc: null
+- name: __cpp_lib_constexpr_tuple
+  header_list: tuple
+  rows:
+  - value: 201811
+    papers: P1032R1
+    cppreference-description: Misc constexpr bits ({{lc|1=std::tuple::operator=}}
+      et al.)
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201811
+    msvc: null
+- name: __cpp_lib_constexpr_utility
+  header_list: utility
+  rows:
+  - value: 201811
+    papers: P1032R1
+    cppreference-description: Misc constexpr bits ({{lc|1=std::pair::operator=}} et
+      al.)
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201811
+    msvc: null
+- name: __cpp_lib_constexpr_vector
+  header_list: vector
+  rows:
+  - value: 201907
+    papers: P1004R2
+    cppreference-description: 'Constexpr for {{lc|std::vector}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_coroutine
+  header_list: coroutine
+  rows:
+  - value: 201902
+    papers: P0912R5 LWG3393
+    cppreference-description: '[[cpp/language/coroutines|Coroutines]] (library support)'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_destroying_delete
+  header_list: new
+  rows:
+  - value: 201806
+    papers: P0722R3
+    cppreference-description: '[[cpp/memory/new/operator_delete|Destroying {{tt|operator delete}}]] (library support)'
+  support:
+    clang:
+    - since: C++20
+      depends: defined(__cpp_impl_destroying_delete) && __cpp_impl_destroying_delete
+        >= 201806
+      value: 201806
+    gcc:
+    - since: C++20
+      depends: __cpp_impl_destroying_delete
+      value: 201806
+    msvc: null
+- name: __cpp_lib_enable_shared_from_this
+  header_list: memory
+  rows:
+  - value: 201603
+    papers: P0033R1
+    cppreference-description: '[[cpp/memory/enable_shared_from_this|Re-enabling shared_from_this]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - value: 201603
+- name: __cpp_lib_endian
+  header_list: bit
+  rows:
+  - value: 201907
+    papers: P0463R1 P1612R1
+    cppreference-description: '{{lc|std::endian}}'
+  support:
+    clang:
+    - since: C++20
+      value: 201907
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc:
+    - since: C++20
+      value: 201907
+- name: __cpp_lib_erase_if
+  header_list: string deque forward_list list vector map set unordered_map unordered_set
+  rows:
+  - value: 201811
+    papers: P1209R0
+  - value: 202002
+    papers: P1115R3
+    cppreference-description: Uniform container erasure
+  support:
+    clang:
+    - since: C++20
+      value: 202002
+    gcc:
+    - since: C++20
+      value: 202002
+    msvc:
+    - since: C++20
+      value: 202002
+- name: __cpp_lib_exchange_function
+  header_list: utility
+  rows:
+  - value: 201304
+    papers: N3668
+    cppreference-description: '{{lc|std::exchange}}'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_execution
+  header_list: execution
+  rows:
+  - value: 201603
+    papers: P0024R2
+    cppreference-description: '[[cpp/algorithm#Execution_policies|Execution policies]]'
+  - value: 201902
+    papers: P1001R2
+    cppreference-description: '{{ltt|cpp/algorithm/execution_policy_tag_t|std::execution::unsequenced_policy}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++17
+      value: 201902
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_filesystem
+  header_list: filesystem
+  rows:
+  - value: 201603
+    papers: P0218R1
+  - value: 201606
+    papers: P0219R1 P0392R0
+  - value: 201703
+    papers: P0317R1
+    cppreference-description: '[[cpp/filesystem|Filesystem library]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201703
+    gcc:
+    - since: C++17
+      value: 201703
+    msvc:
+    - since: C++17
+      value: 201703
+- name: __cpp_lib_format
+  header_list: format
+  rows:
+  - value: 201907
+    papers: P0645R10 P1361R2 P1652R1
+    cppreference-description: '[[cpp/utility/format|Text formatting]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_gcd_lcm
+  header_list: numeric
+  rows:
+  - value: 201606
+    papers: P0295R0
+    cppreference-description: '{{lc|std::gcd}}, {{lc|std::lcm}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_generic_associative_lookup
+  header_list: map set
+  rows:
+  - value: 201304
+    papers: N3657
+    cppreference-description: 'Heterogeneous comparison lookup in associative containers'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_generic_unordered_hash_lookup
+  header_info: '[`<unordered_map>` `<unordered_set>`]{.rm}'
+  rows:
+  - value: 201902
+    papers: P0920R2
+  - value: 201907
+    papers: P1661R1
+    removed: true
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_generic_unordered_lookup
+  header_list: unordered_map unordered_set
+  rows:
+  - value: 201811
+    papers: P0919R3
+    cppreference-description: 'Heterogeneous comparison lookup in unordered associative containers'
+  support:
+    clang: null
+    gcc: null
+    msvc:
+    - since: C++20
+      value: 201811
+- name: __cpp_lib_hardware_interference_size
+  header_list: new
+  rows:
+  - value: 201703
+    papers: P0154R1
+    cppreference-description: '[[cpp/thread/hardware_destructive_interference_size|constexpr
+      std::hardware_{constructive, destructive}_interference_size]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201703
+    gcc: null
+    msvc:
+    - since: C++17
+      value: 201703
+- name: __cpp_lib_has_unique_object_representations
+  header_list: type_traits
+  rows:
+  - value: 201606
+    papers: P0258R2
+    cppreference-description: '{{lc|std::has_unique_object_representations}}'
+  support:
+    clang:
+    - since: C++17
+      depends: '!__is_identifier(__has_unique_object_representations)'
+      value: 201606
+    gcc:
+    - since: C++17
+      depends: __GNUC__ >= 7 || !__is_identifier(__has_unique_object_representations)
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_hypot
+  header_list: cmath
+  rows:
+  - value: 201603
+    papers: P0030R1
+    cppreference-description: 3-argument overload of {{lc|std::hypot}}
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_incomplete_container_elements
+  header_list: forward_list list vector
+  rows:
+  - value: 201505
+    papers: N4510
+    cppreference-description: Minimal incomplete type support for standard containers
+  support:
+    clang:
+    - since: C++17
+      value: 201505
+    gcc:
+    - value: 201505
+    msvc:
+    - value: 201505
+- name: __cpp_lib_int_pow2
+  header_list: bit
+  rows:
+  - value: 201806
+    papers: P0556R3
+  - value: 202002
+    papers: P1956R1
+    cppreference-description: '[[cpp/numeric#Bit_manipulation_(since_C++20)|Integral
+      power-of-2 operations]] ({{lc|std::has_single_bit}}, {{lc|std::bit_ceil}}, {{lc|std::bit_floor}},
+      {{lc|std::bit_length}})'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 202002
+    msvc:
+    - since: C++20
+      depends: defined(__clang__)
+      value: 202002
+- name: __cpp_lib_integer_comparison_functions
+  header_list: utility
+  rows:
+  - value: 202002
+    papers: P0586R2
+    cppreference-description: '[[cpp/utility#Integer_comparison_functions|Integer
+      comparison functions]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 202002
+    msvc: null
+- name: __cpp_lib_integer_sequence
+  header_list: utility
+  rows:
+  - value: 201304
+    papers: N3658
+    cppreference-description: '[[cpp/utility/integer_sequence|Compile-time integer
+      sequences]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_integral_constant_callable
+  header_list: type_traits
+  rows:
+  - value: 201304
+    papers: N3545
+    cppreference-description: '{{lc|std::integral_constant|std::integral_constant::operator()}}'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_interpolate
+  header_list: cmath numeric
+  rows:
+  - value: 201902
+    papers: P0811R3
+    cppreference-description: '{{ltt|cpp/numeric/lerp|std::lerp}}, {{ltt|cpp/numeric/midpoint|std::midpoint}}'
+  support:
+    clang:
+    - since: C++20
+      value: 201902
+    gcc:
+    - since: C++20
+      value: 201902
+    msvc: null
+- name: __cpp_lib_invoke
+  header_list: functional
+  rows:
+  - value: 201411
+    papers: N4169
+    cppreference-description: '{{lc|std::invoke}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 201411
+- name: __cpp_lib_is_aggregate
+  header_list: type_traits
+  rows:
+  - value: 201703
+    papers: LWG2911
+    cppreference-description: '{{ltt|cpp/types/is_aggregate|std::is_aggregate}}'
+  support:
+    clang:
+    - since: C++17
+      depends: __has_keyword(__is_aggregate) || _GNUC_VER_NEW >= 7001
+      value: 201703
+    gcc:
+    - since: C++17
+      depends: __GNUC__ >= 7 || !__is_identifier(__is_aggregate)
+      value: 201703
+    msvc:
+    - since: C++17
+      value: 201703
+- name: __cpp_lib_is_constant_evaluated
+  header_list: type_traits
+  rows:
+  - value: 201811
+    papers: P0595R2
+    cppreference-description: '{{ltt|cpp/types/is_constant_evaluated|std::is_constant_evaluated}}'
+  support:
+    clang:
+    - since: C++20
+      depends: __has_builtin(__builtin_is_constant_evaluated) || _GNUC_VER >= 900
+      value: 201811
+    gcc:
+    - since: C++20
+      depends: __GNUC__ >= 9 || __has_builtin(__builtin_is_constant_evaluated)
+      value: 201811
+    msvc:
+    - since: C++20
+      value: 201811
+- name: __cpp_lib_is_final
+  header_list: type_traits
+  rows:
+  - value: 201402
+    papers: LWG2112
+    cppreference-description: '{{lc|std::is_final}}'
+  support:
+    clang:
+    - since: C++14
+      value: 201402
+    gcc:
+    - since: C++14
+      value: 201402
+    msvc:
+    - value: 201402
+- name: __cpp_lib_is_invocable
+  header_list: type_traits
+  rows:
+  - value: 201703
+    papers: P0604R0
+    cppreference-description: '{{lc|std::is_invocable}}, {{lc|std::invoke_result}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201703
+    gcc:
+    - since: C++17
+      value: 201703
+    msvc:
+    - since: C++17
+      value: 201703
+- name: __cpp_lib_is_layout_compatible
+  header_list: type_traits
+  rows:
+  - value: 201907
+    papers: P0466R5
+    cppreference-description: '{{ltt|cpp/types/is_layout_compatible|std::is_layout_compatible}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_is_nothrow_convertible
+  header_list: type_traits
+  rows:
+  - value: 201806
+    papers: P0758R1 LWG3356
+    cppreference-description: '{{ltt|cpp/types/is_convertible|std::is_nothrow_convertible}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201806
+    msvc:
+    - since: C++20
+      value: 201806
+- name: __cpp_lib_is_null_pointer
+  header_list: type_traits
+  rows:
+  - value: 201309
+    papers: LWG2247
+    cppreference-description: '{{lc|std::is_null_pointer}}'
+  support:
+    clang:
+    - since: C++14
+      value: 201309
+    gcc:
+    - since: C++11
+      value: 201309
+    msvc:
+    - value: 201309
+- name: __cpp_lib_is_pointer_interconvertible
+  header_list: type_traits
+  rows:
+  - value: 201907
+    papers: P0466R5
+    cppreference-description: Pointer-interconvertibility traits
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_is_swappable
+  header_list: type_traits
+  rows:
+  - value: 201603
+    papers: P0185R1
+    cppreference-description: '[[cpp/types/is_swappable|[nothrow-]swappable traits]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_jthread
+  header_list: stop_token thread
+  rows:
+  - value: 201907
+    papers: P0660R10
+  - value: 201911
+    papers: P1869R1
+    cppreference-description: '[[cpp/thread/stop_token|Stop token]] and [[cpp/thread/jthread|joining
+      thread]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      config: _GLIBCXX_HAS_GTHREADS
+      value: 201911
+    msvc: null
+- name: __cpp_lib_latch
+  header_list: latch
+  rows:
+  - value: 201907
+    papers: P1135R6
+    cppreference-description: '{{ltt|cpp/thread/latch|std::latch}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_launder
+  header_list: new
+  rows:
+  - value: 201606
+    papers: P0137R1
+    cppreference-description: 'Core Issue 1776: Replacement of class objects containing
+      reference members ({{lc|std::launder}})'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      depends: __GNUC__ >= 7 || __has_builtin(__builtin_launder)
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_list_remove_return_type
+  header_list: forward_list list
+  rows:
+  - value: 201806
+    papers: P0646R1
+    cppreference-description: Change the return type of the {{lc|std::list::remove|remove()}},
+      {{lc|std::list::remove_if|remove_if()}} and {{lc|std::list::unique|unique()}}
+      members of {{lc|std::forward_list}} and {{lc|std::list}}
+  support:
+    clang:
+    - since: C++20
+      value: 201806
+    gcc:
+    - since: C++20
+      value: 201806
+    msvc:
+    - since: C++20
+      value: 201806
+- name: __cpp_lib_logical_traits
+  header_list: type_traits
+  rows:
+  - value: 201510
+    papers: P0013R1
+    cppreference-description: '[[cpp/types#Operations_on_traits|Logical operator type
+      traits]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201510
+    gcc:
+    - since: C++17
+      value: 201510
+    msvc:
+    - value: 201510
+- name: __cpp_lib_make_from_tuple
+  header_list: tuple
+  rows:
+  - value: 201606
+    papers: P0209R2
+    cppreference-description: '{{lc|std::make_from_tuple()}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_make_reverse_iterator
+  header_list: iterator
+  rows:
+  - value: 201402
+    papers: LWG2285
+    cppreference-description: '{{ltt|cpp/iterator/make_reverse_iterator|std::make_reverse_iterator}}'
+  support:
+    clang:
+    - since: C++14
+      value: 201402
+    gcc:
+    - since: C++14
+      value: 201402
+    msvc:
+    - value: 201402
+- name: __cpp_lib_make_unique
+  header_list: memory
+  rows:
+  - value: 201304
+    papers: N3656
+    cppreference-description: '{{lc|std::make_unique}}'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_map_try_emplace
+  header_list: map
+  rows:
+  - value: 201411
+    papers: N4279
+    cppreference-description: '{{lc|std::map::try_emplace}}, {{lc|std::map::insert_or_assign}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 201411
+- name: __cpp_lib_math_constants
+  header_list: numbers
+  rows:
+  - value: 201907
+    papers: P0631R8
+    cppreference-description: '[[cpp/header/numbers|Mathematical constants]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc:
+    - since: C++20
+      value: 201907
+- name: __cpp_lib_math_special_functions
+  header_list: cmath
+  rows:
+  - value: 201603
+    papers: P0226R1
+    cppreference-description: '[[cpp/numeric/special_functions|Mathematical special
+      functions for C++17]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_memory_resource
+  header_list: memory_resource
+  rows:
+  - value: 201603
+    papers: P0220R1
+    cppreference-description: '{{lc|std::pmr::memory_resource}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++17
+      config: _GLIBCXX_HAS_GTHREADS
+      value: 201603
+    - since: C++17
+      invconfig: _GLIBCXX_HAS_GTHREADS
+      value: 1
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_node_extract
+  header_list: map set unordered_map unordered_set
+  rows:
+  - value: 201606
+    papers: P0083R3
+    cppreference-description: Splicing maps and sets ({{lc|std::map::extract}}, {{lc|std::map::merge}},
+      {{ltt|cpp/container/map/insert|std::map::insert(node_type)}}, etc)
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_nonmember_container_access
+  header_list: iterator array deque forward_list list map regex set string unordered_map
+    unordered_set vector
+  rows:
+  - value: 201411
+    papers: N4280
+    cppreference-description: '{{lc|std::size()}}, {{lc|std::data()}} and {{lc|std::empty()}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 201411
+- name: __cpp_lib_not_fn
+  header_list: functional
+  rows:
+  - value: 201603
+    papers: P0005R4
+    cppreference-description: '{{lc|std::not_fn()}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_null_iterators
+  header_list: iterator
+  rows:
+  - value: 201304
+    papers: N3644
+    cppreference-description: Null {{named req|ForwardIterator}}s
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_optional
+  header_list: optional
+  rows:
+  - value: 201603
+    papers: P0220R1
+  - value: 201606
+    papers: P0032R3 P0307R2
+    cppreference-description: '{{lc|std::optional}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_parallel_algorithm
+  header_list: algorithm numeric
+  rows:
+  - value: 201603
+    papers: P0024R2
+    cppreference-description: '[[cpp/algorithm#Execution policies|Parallel algorithms]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_polymorphic_allocator
+  header_list: memory
+  rows:
+  - value: 201902
+    papers: P0339R6
+    cppreference-description: '{{lc|std::polymorphic_allocator|std::polymorphic_allocator<>}}
+      as a vocabulary type'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201902
+    msvc: null
+- name: __cpp_lib_quoted_string_io
+  header_list: iomanip
+  rows:
+  - value: 201304
+    papers: N3654
+    cppreference-description: '{{lc|std::quoted}}'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_ranges
+  header_list: algorithm functional iterator memory ranges
+  rows:
+  - value: 201811
+    papers: P0896R4
+  - value: 201907
+    papers: P1035R7
+  - value: 201911
+    papers: P1716R3
+    cppreference-description: '[[cpp/ranges|Ranges library]] and [[cpp/algorithm/ranges|constrained
+      algorithms]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201911
+    msvc: null
+- name: __cpp_lib_raw_memory_algorithms
+  header_list: memory
+  rows:
+  - value: 201606
+    papers: P0040R3
+    cppreference-description: '[[cpp/memory#Uninitialized_storage|Extending memory
+      management tools]]'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_remove_cvref
+  header_list: type_traits
+  rows:
+  - value: 201711
+    papers: P0550R2
+    cppreference-description: '{{ltt|cpp/types/remove_cvref|std::remove_cvref}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201711
+    msvc:
+    - since: C++20
+      value: 201711
+- name: __cpp_lib_result_of_sfinae
+  header_list: type_traits functional
+  rows:
+  - value: 201210
+    papers: N3462
+    cppreference-description: '{{lc|std::result_of}} and SFINAE'
+  support:
+    clang:
+    - since: C++14
+      value: 201210
+    gcc:
+    - since: C++11
+      value: 201210
+    msvc:
+    - value: 201210
+- name: __cpp_lib_robust_nonmodifying_seq_ops
+  header_list: algorithm
+  rows:
+  - value: 201304
+    papers: N3671
+    cppreference-description: Making non-modifying sequence operations more robust
+      (two-range overloads for {{lc|std::mismatch}}, {{lc|std::equal}} and {{lc|std::is_permutation}})
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_sample
+  header_list: algorithm
+  rows:
+  - value: 201603
+    papers: P0220R1
+    cppreference-description: '{{lc|std::sample}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201603
+    gcc:
+    - since: C++17
+      value: 201603
+    msvc:
+    - since: C++17
+      value: 201603
+- name: __cpp_lib_scoped_lock
+  header_list: mutex
+  rows:
+  - value: 201703
+    papers: P0156R2
+    cppreference-description: '{{ltt|cpp/thread/scoped_lock|std::scoped_lock}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201703
+    gcc:
+    - since: C++17
+      config: _GLIBCXX_HAS_GTHREADS
+      value: 201703
+    msvc:
+    - since: C++17
+      value: 201703
+- name: __cpp_lib_semaphore
+  header_list: semaphore
+  rows:
+  - value: 201907
+    papers: P1135R6
+    cppreference-description: '[[cpp/thread/counting_semaphore|{{tt|std::counting_semaphore}}, {{tt|std::binary_semaphore}}]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_shared_mutex
+  header_list: shared_mutex
+  rows:
+  - value: 201505
+    papers: N4508
+    cppreference-description: '{{lc|std::shared_mutex}} (untimed)'
+  support:
+    clang:
+    - since: C++17
+      invconfig: _LIBCPP_HAS_NO_THREADS
+      value: 201505
+    gcc:
+    - since: C++17
+      config: _GLIBCXX_HAS_GTHREADS
+      value: 201505
+    msvc:
+    - value: 201505
+- name: __cpp_lib_shared_ptr_arrays
+  header_list: memory
+  rows:
+  - value: 201611
+    papers: P0497R0
+    cppreference-description: '{{lc|std::shared_ptr|std::shared_ptr<T[]>}}'
+  - value: 201707
+    papers: P0674R1
+    cppreference-description: 'Array support of {{lc|std::make_shared}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++11
+      value: 201611
+    msvc:
+    - value: 201611
+    - since: C++20
+      value: 201707
+- name: __cpp_lib_shared_ptr_weak_type
+  header_list: memory
+  rows:
+  - value: 201606
+    papers: P0163R0
+    cppreference-description: '{{ltt|cpp/memory/shared_ptr|shared_ptr::weak_type}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_shared_timed_mutex
+  header_list: shared_mutex
+  rows:
+  - value: 201402
+    papers: N3891
+    cppreference-description: '{{lc|std::shared_timed_mutex}}'
+  support:
+    clang:
+    - since: C++14
+      invconfig: _LIBCPP_HAS_NO_THREADS
+      value: 201402
+    gcc:
+    - since: C++14
+      config: _GLIBCXX_HAS_GTHREADS
+      value: 201402
+    msvc:
+    - value: 201402
+- name: __cpp_lib_shift
+  header_list: algorithm
+  rows:
+  - value: 201806
+    papers: P0769R2
+    cppreference-description: '{{ltt|cpp/algorithm/shift|std::shift_left}} and {{ltt|cpp/algorithm/shift|std::shift_right}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201806
+    msvc:
+    - since: C++20
+      value: 201806
+- name: __cpp_lib_smart_ptr_for_overwrite
+  header_list: memory
+  rows:
+  - value: 201811
+    papers: P1020R1 P1973R1
+    cppreference-description: Smart pointer creation with default initialization ({{lc|std::allocate_shared_for_overwrite}},
+      {{lc|std::make_shared_for_overwrite}}, {{lc|std::make_unique_for_overwrite}})
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_source_location
+  header_list: source_location
+  rows:
+  - value: 201907
+    papers: P1208R6
+    cppreference-description: Source-code information capture ({{lc|std::source_location}})
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_span
+  header_list: span
+  rows:
+  - value: 201803
+    papers: P0122R7 LWG3274
+  - value: 201902
+    papers: P1024R3
+  - value: 202002
+    papers: P1976R2
+    cppreference-description: '{{ltt|cpp/container/span|std::span}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 202002
+    msvc:
+    - since: C++20
+      value: 202002
+- name: __cpp_lib_ssize
+  header_list: iterator
+  rows:
+  - value: 201902
+    papers: P1227R2
+    cppreference-description: '{{ltt|cpp/iterator/size|std::ssize}} and unsigned {{ltt|cpp/container/span/size|std::span::size}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201902
+    msvc:
+    - since: C++20
+      value: 201902
+- name: __cpp_lib_starts_ends_with
+  header_list: string string_view
+  rows:
+  - value: 201711
+    papers: P0457R2
+    cppreference-description: String prefix and suffix checking ({{lc|std::string_view::starts_with|starts_with()}}
+      and {{lc|std::string_view::ends_with|ends_with()}} for {{lc|std::string}} and
+      {{lc|std::string_view}})
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201711
+    msvc:
+    - since: C++20
+      value: 201711
+- name: __cpp_lib_string_udls
+  header_list: string
+  rows:
+  - value: 201304
+    papers: N3642
+    cppreference-description: '[[cpp/string/basic_string/operator""s|User-defined
+      literals for string types]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_string_view
+  header_list: string string_view
+  rows:
+  - value: 201603
+    papers: P0220R1
+  - value: 201606
+    papers: P0254R2
+    cppreference-description: '{{lc|std::string_view}}'
+  - value: 201803
+    papers: P0858R0 LWG3257
+    cppreference-description: '{{named req|ConstexprIterator}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201803
+    msvc:
+    - since: C++17
+      value: 201803
+- name: __cpp_lib_syncbuf
+  header_list: syncstream
+  rows:
+  - value: 201711
+    papers: P0053R7
+  - value: 201803
+    papers: P0753R2
+    cppreference-description: Synchronized buffered ostream ({{lc|std::syncbuf}},
+      {{lc|std::osyncstream}}) and manipulators
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_three_way_comparison
+  header_list: compare
+  rows:
+  - value: 201711
+    papers: P0768R1
+  - value: 201907
+    papers: P1614R2
+    cppreference-description: '[[cpp/language/operator_comparison#Three-way comparison|Three-way
+      comparison]] (library support); adding three-way comparison to the library'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      depends: __cpp_impl_three_way_comparison >= 201907 && __cpp_lib_concepts
+      value: 201907
+    msvc: null
+- name: __cpp_lib_to_address
+  header_list: memory
+  rows:
+  - value: 201711
+    papers: P0653R2
+    cppreference-description: Utility to convert a pointer to a raw pointer ({{lc|std::to_address}})
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201711
+    msvc:
+    - since: C++20
+      value: 201711
+- name: __cpp_lib_to_array
+  header_list: array
+  rows:
+  - value: 201907
+    papers: P0325R4
+    cppreference-description: '{{ltt|cpp/container/array/to_array|std::to_array}}'
+  support:
+    clang:
+    - since: C++20
+      value: 201907
+    gcc:
+    - since: C++20
+      value: 201907
+    msvc:
+    - since: C++20
+      value: 201907
+- name: __cpp_lib_to_chars
+  header_list: charconv
+  rows:
+  - value: 201611
+    papers: P0067R5 P0682R1 LWG3137
+    cppreference-description: Elementary string conversions ({{lc|std::to_chars}},
+      {{lc|std::from_chars}})
+  support:
+    clang: null
+    gcc: null
+    msvc:
+    - since: C++17
+      value: 201611
+- name: __cpp_lib_transformation_trait_aliases
+  header_list: type_traits
+  rows:
+  - value: 201304
+    papers: N3655
+    cppreference-description: Alias templates for TransformationTraits
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_transparent_operators
+  header_list: memory functional
+  rows:
+  - value: 201210
+    papers: N3421
+    cppreference-description: Transparent operator functors ({{lc|std::less<>}} et
+      al)
+  - value: 201510
+    papers: P0074R0
+    cppreference-description: 'Transparent {{lc|std::owner_less}} ({{ltt|cpp/memory/owner_less_void|std::owner_less<void>}})'
+  support:
+    clang:
+    - since: C++14
+      value: 201210
+    - since: C++17
+      value: 201510
+    gcc:
+    - since: C++14
+      value: 201510
+    msvc:
+    - value: 201510
+- name: __cpp_lib_tuple_element_t
+  header_list: tuple
+  rows:
+  - value: 201402
+    papers: N3887
+    cppreference-description: '{{ltt|cpp/utility/tuple/tuple_element|std::tuple_element_t}}'
+  support:
+    clang:
+    - since: C++14
+      value: 201402
+    gcc:
+    - since: C++14
+      value: 201402
+    msvc:
+    - value: 201402
+- name: __cpp_lib_tuples_by_type
+  header_list: tuple utility
+  rows:
+  - value: 201304
+    papers: N3670
+    cppreference-description: '[[cpp/utility/tuple/get|Addressing tuples by type]]'
+  support:
+    clang:
+    - since: C++14
+      value: 201304
+    gcc:
+    - since: C++14
+      value: 201304
+    msvc:
+    - value: 201304
+- name: __cpp_lib_type_identity
+  header_list: type_traits
+  rows:
+  - value: 201806
+    papers: P0887R1
+    cppreference-description: '{{lc|std::type_identity}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201806
+    msvc:
+    - since: C++20
+      value: 201806
+- name: __cpp_lib_type_trait_variable_templates
+  header_list: type_traits
+  rows:
+  - value: 201510
+    papers: P0006R0
+    cppreference-description: Type traits variable templates ({{lc|std::is_void_v}},
+      etc)
+  support:
+    clang:
+    - since: C++17
+      value: 201510
+    gcc:
+    - since: C++17
+      value: 201510
+    msvc:
+    - value: 201510
+- name: __cpp_lib_uncaught_exceptions
+  header_list: exception
+  rows:
+  - value: 201411
+    papers: N4259
+    cppreference-description: '{{ltt|cpp/error/uncaught_exception|std::uncaught_exceptions}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 201411
+- name: __cpp_lib_unordered_map_try_emplace
+  header_list: unordered_map
+  rows:
+  - value: 201411
+    papers: N4279
+    cppreference-description: '{{lc|std::unordered_map::try_emplace}}, {{lc|std::unordered_map::insert_or_assign}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 201411
+- name: __cpp_lib_unwrap_ref
+  header_list: functional
+  rows:
+  - value: 201811
+    papers: P0318R1 LWG3348
+    cppreference-description: '{{lc|std::unwrap_ref_decay}} and {{lc|std::unwrap_reference}}'
+  support:
+    clang: null
+    gcc:
+    - since: C++20
+      value: 201811
+    msvc:
+    - since: C++20
+      value: 201811
+- name: __cpp_lib_variant
+  header_list: variant
+  rows:
+  - value: 201606
+    papers: P0088R3 P0393R3 P0032R3
+    cppreference-description: '{{lc|std::variant}}: a type-safe union for C++17'
+  support:
+    clang:
+    - since: C++17
+      value: 201606
+    gcc:
+    - since: C++17
+      value: 201606
+    msvc:
+    - since: C++17
+      value: 201606
+- name: __cpp_lib_void_t
+  header_list: type_traits
+  rows:
+  - value: 201411
+    papers: N3911
+    cppreference-description: '{{lc|std::void_t}}'
+  support:
+    clang:
+    - since: C++17
+      value: 201411
+    gcc:
+    - since: C++17
+      value: 201411
+    msvc:
+    - value: 201411
