@@ -14,13 +14,21 @@ jobs:
         runs-on: ubuntu-18.04
         steps:
             - uses: actions/checkout@v2
-            - name: Prepare
+            - uses: actions/setup-python@v2
+              with:
+                  python-version: 3.8
+            - name: Install pyyaml
+              run: pip install pyyaml
+            - name: Install Clang
               run: |
                   REPO_NAME='deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
                   wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
                   sudo add-apt-repository "$REPO_NAME"
                   sudo apt-get update
-                  sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev
+                  sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev --no-install-recommends
+                  echo "::set-env name=PATH::$PWD/bin:$PATH"
+                  mkdir bin
+                  cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
 
             - name: Test attributes
               run: |
@@ -39,7 +47,12 @@ jobs:
         runs-on: ubuntu-18.04
         steps:
             - uses: actions/checkout@v2
-            - name: Prepare
+            - uses: actions/setup-python@v2
+              with:
+                  python-version: 3.8
+            - name: Install pyyaml
+              run: pip install pyyaml
+            - name: Install GCC
               run: |
                   wget http://kayari.org/gcc-latest/gcc-latest.deb
                   sudo dpkg -i gcc-latest.deb
