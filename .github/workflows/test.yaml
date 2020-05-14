@@ -8,6 +8,7 @@ on:
 
 env:
     LLVM_VERSION: 11
+    GCC_VERSION: 11
 
 jobs:
     clang:
@@ -61,11 +62,36 @@ jobs:
                   python-version: 3.8
             - name: Install pyyaml
               run: pip install pyyaml
+            - uses: actions/cache@v1
+              id: cache-gcc
+              with:
+                  path: gcc-latest
+                  key: gcc-cache-${{ github.sha }}
+                  restore-keys: gcc-cache-
             - name: Install GCC
               run: |
-                  wget http://kayari.org/gcc-latest/gcc-latest.deb
-                  sudo dpkg -i gcc-latest.deb
-                  echo "::set-env name=PATH::/opt/gcc-latest/bin:$PATH"
+                  LOC="$PWD"
+                  mkdir gcc && cd gcc
+                  URL="https://gcc.gnu.org/pub/gcc/snapshots/LATEST-$GCC_VERSION"
+                  wget "$URL/index.html"
+                  TARFILE=$(grep -Eo "gcc-$GCC_VERSION-[0-9]{8}.tar.xz" index.html | uniq)
+                  PKGDATE=$(echo $TARFILE | grep -Eo "[0-9]{8}")
+                  BASENAME=gcc-$GCC_VERSION-$PKGDATE
+                  if "$LOC/gcc-latest/bin/gcc" --version | grep $PKGDATE; then
+                      :
+                  else
+                      sudo apt-get install -y flex
+                      wget "$URL/$TARFILE"
+                      tar -xf "$TARFILE"
+                      cd $BASENAME
+                      ./contrib/download_prerequisites
+                      mkdir objdir && cd objdir
+                      ../configure --prefix="$LOC/gcc-latest" \
+                        --enable-languages=c,c++ --disable-bootstrap --disable-multilib \
+                        --without-isl
+                      make -j2 && make install
+                  fi
+                  echo "::set-env name=PATH::$LOC/gcc-latest/bin:$PATH"
 
             - name: Test attributes
               run: |
