@@ -10,6 +10,8 @@ This repo only attempts to track the latest master versions of [Clang](https://g
 
 All data are located in the [`data.yaml`](./data.yaml) file.
 
+## Tools
+
 This repo also contains Python scripts for various purposes, located in the [`tools/`](./tools) directory. These include
 
 - [`generate_testfiles.py`](./tools/generate_testfiles.py), for generating files that can be used to check feature-test macro support for each implementation. Macros are grouped by their kinds. This is mostly useful for manual testing.
