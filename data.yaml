@@ -2721,7 +2721,9 @@ library:
     papers: P1976R2
     cppreference-description: '{{ltt|cpp/container/span|std::span}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 202002
     gcc:
     - since: C++20
       value: 202002
