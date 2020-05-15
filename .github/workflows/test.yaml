@@ -28,21 +28,17 @@ jobs:
                   sudo apt-get update
                   sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
                     --no-install-recommends
-                  mkdir bin
-                  cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
+                  mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
                   echo "::set-env name=PATH::$PWD/bin:$PATH"
 
             - name: Test attributes
-              run: |
-                  python3.8 tools/do_test.py clang attributes --verbose
+              run: python tools/do_test.py clang attributes --verbose
 
             - name: Test language
-              run: |
-                  python3.8 tools/do_test.py clang language --verbose
+              run: python tools/do_test.py clang language --verbose
 
             - name: Test library
-              run: |
-                  python3.8 tools/do_test.py clang library --verbose \
+              run: python tools/do_test.py clang library --verbose
                     --extra-args -stdlib=libc++
 
     gcc:
@@ -88,16 +84,13 @@ jobs:
                   echo "::set-env name=PATH::$LOC/gcc-latest/bin:$PATH"
 
             - name: Test attributes
-              run: |
-                  python3.8 tools/do_test.py gcc attributes --verbose
+              run: python tools/do_test.py gcc attributes --verbose
 
             - name: Test language
-              run: |
-                  python3.8 tools/do_test.py gcc language --verbose
+              run: python tools/do_test.py gcc language --verbose
 
             - name: Test library
-              run: |
-                  python3.8 tools/do_test.py gcc library --verbose
+              run: python tools/do_test.py gcc library --verbose
 
             - name: Install Clang
               run: |
@@ -106,12 +99,45 @@ jobs:
                   sudo add-apt-repository "$REPO_NAME"
                   sudo apt-get update
                   sudo apt-get install -y clang-$LLVM_VERSION --no-install-recommends
-                  mkdir bin
-                  cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
+                  mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
                   echo "::set-env name=PATH::$PWD/bin:$PATH"
 
             - name: Test library with Clang
+              run: python tools/do_test.py gcc library --verbose
+                    --cc clang --extra-args -fno-caret-diagnostics
+                     -stdlib=libstdc++ --gcc-toolchain="$PWD/gcc-latest"
+    msvc:
+        runs-on: windows-2019
+        steps:
+            - uses: actions/checkout@v2
+            - uses: actions/setup-python@v2
+              with:
+                  python-version: 3.8
+            - name: Install PyYAML
+              run: pip install pyyaml
+            - name: Install MSVC
               run: |
-                  python3.8 tools/do_test.py gcc library --verbose \
-                    --cc clang --extra-args -fno-caret-diagnostics \
-                      -stdlib=libstdc++ --gcc-toolchain="$PWD/gcc-latest"
+                  $LOC="$PWD"
+                  mkdir msvc && cd msvc
+                  git clone --depth=1 https://github.com/microsoft/STL/
+                  [string]$bootstrapperExe = '.\vs_buildtools.exe'
+                  curl.exe -L -o $bootstrapperExe https://aka.ms/vs/16/pre/vs_buildtools.exe &&
+                  cmd /c $bootstrapperExe --quiet --norestart --wait --nocache `
+                    --installPath "$LOC/msvc-preview" `
+                    --add Microsoft.VisualStudio.Component.VC.CoreIde `
+                    --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64
+            - name: Set Path
+              shell: cmd
+              run: |
+                  call "msvc-preview/Common7/Tools/VsDevCmd.bat"
+                  echo ::set-env name=PATH::%PATH%
+                  echo ::set-env name=INCLUDE::msvc/STL/stl/inc;%INCLUDE%
+
+            - name: Test attributes
+              run: python tools/do_test.py msvc attributes --verbose
+
+            - name: Test language
+              run: python tools/do_test.py msvc language --verbose
+
+            - name: Test library
+              run: python tools/do_test.py msvc library --verbose
