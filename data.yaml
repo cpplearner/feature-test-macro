@@ -1228,7 +1228,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201907
 - name: __cpp_lib_atomic_float
   header_list: atomic
   rows:
@@ -1271,7 +1273,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201907
 - name: __cpp_lib_atomic_ref
   header_list: atomic
   rows:
@@ -1580,7 +1584,9 @@ library:
     gcc:
     - since: C++20
       value: 201711
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201711
 - name: __cpp_lib_constexpr_dynamic_alloc
   header_list: memory
   rows:
@@ -1997,7 +2003,9 @@ library:
     gcc:
     - since: C++20
       value: 202002
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 202002
 - name: __cpp_lib_integer_sequence
   header_list: utility
   rows:
