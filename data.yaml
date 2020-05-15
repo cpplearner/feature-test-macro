@@ -114,7 +114,8 @@ language:
   rows:
   - value: 201603
     papers: P0017R1
-    cppreference-description: '[[cpp/language/aggregate_initialization|Aggregate classes]] with base classes'
+    cppreference-description: '[[cpp/language/aggregate_initialization|Aggregate classes]]
+      with base classes'
   support:
     clang:
     - since: C++17
@@ -129,7 +130,8 @@ language:
   rows:
   - value: 201304
     papers: N3653
-    cppreference-description: '[[cpp/language/aggregate_initialization|Aggregate classes]] with [[cpp/language/data_members#Member initialization|default member initializers]]'
+    cppreference-description: '[[cpp/language/aggregate_initialization|Aggregate classes]]
+      with [[cpp/language/data_members#Member initialization|default member initializers]]'
   support:
     clang:
     - since: C++14
@@ -305,7 +307,9 @@ language:
     cppreference-description: '{{ltt|cpp/language/constexpr}}'
   - value: 201304
     papers: N3652
-    cppreference-description: '[[cpp/language/constexpr#relaxed-constexpr|Relaxed {{tt|constexpr}}]], [[cpp/language/constexpr#constexpr-method-is-const|non-{{tt|const}} {{tt|constexpr}} methods]]'
+    cppreference-description: '[[cpp/language/constexpr#relaxed-constexpr|Relaxed
+      {{tt|constexpr}}]], [[cpp/language/constexpr#constexpr-method-is-const|non-{{tt|const}}
+      {{tt|constexpr}} methods]]'
   - value: 201603
     papers: P0170R1
     cppreference-description: '[[cpp/language/lambda|Constexpr lambda]]'
@@ -344,7 +348,8 @@ language:
   rows:
   - value: 201907
     papers: P0784R7
-    cppreference-description: Operations for dynamic storage duration in constexpr functions
+    cppreference-description: Operations for dynamic storage duration in constexpr
+      functions
   support:
     clang:
     - since: C++20
@@ -357,7 +362,7 @@ language:
   rows:
   - value: 201711
     papers: P0859R0
-    cppreference-description: 'Less eager instantiation of constexpr functions'
+    cppreference-description: Less eager instantiation of constexpr functions
   support:
     clang:
     - since: C++11
@@ -420,7 +425,8 @@ language:
       argument deduction for class templates]]'
   - value: 201907
     papers: P1814R0 P1816R0
-    cppreference-description: '[[cpp/language/class_template_argument_deduction|<abbr title="Class template argument deduction">CTAD</abbr>]] for aggregates and aliases'
+    cppreference-description: '[[cpp/language/class_template_argument_deduction|<abbr
+      title="Class template argument deduction">CTAD</abbr>]] for aggregates and aliases'
   support:
     clang:
     - since: C++17
@@ -667,7 +673,8 @@ language:
   rows:
   - value: 200806
     papers: N2672
-    cppreference-description: '[[cpp/language/list_initialization|List-initialization]] and {{lc|std::initializer_list}}'
+    cppreference-description: '[[cpp/language/list_initialization|List-initialization]]
+      and {{lc|std::initializer_list}}'
   support:
     clang:
     - since: C++11
@@ -817,7 +824,8 @@ language:
     cppreference-description: '[[cpp/language/range-for|Range-based {{tt|for}} loop]]'
   - value: 201603
     papers: P0184R0
-    cppreference-description: 'Range-based {{tt|for}} loop with different {{tt|begin}}/{{tt|end}} types'
+    cppreference-description: Range-based {{tt|for}} loop with different {{tt|begin}}/{{tt|end}}
+      types
   support:
     clang:
     - since: C++11
@@ -1094,7 +1102,7 @@ library:
   rows:
   - value: 201603
     papers: LWG2296
-    cppreference-description: 'Constexpr {{lc|std::addressof}}'
+    cppreference-description: Constexpr {{lc|std::addressof}}
   support:
     clang:
     - since: C++17
@@ -1160,14 +1168,16 @@ library:
   rows:
   - value: 201603
     papers: P0031R0
-    cppreference-description: 'Constexpr for {{lc|std::reverse_iterator}}, {{lc|std::move_iterator}}, {{lc|std::array}} and [[cpp/iterator#Range_access|range access]]'
+    cppreference-description: Constexpr for {{lc|std::reverse_iterator}}, {{lc|std::move_iterator}},
+      {{lc|std::array}} and [[cpp/iterator#Range_access|range access]]
   - value: 201803
     papers: P0858R0 LWG3257
   - value: 201806
     papers: P1023R0
   - value: 201811
     papers: P1032R1
-    cppreference-description: '{{named req|ConstexprIterator}}; constexpr comparison for {{lc|std::array}}; misc constexpr bits ({{lc|std::array::fill}} et al.)'
+    cppreference-description: '{{named req|ConstexprIterator}}; constexpr comparison
+      for {{lc|std::array}}; misc constexpr bits ({{lc|std::array::fill}} et al.)'
   support:
     clang:
     - since: C++17
@@ -1432,7 +1442,7 @@ library:
     papers: P0482R6
   - value: 201907
     papers: P1423R3
-    cppreference-description: 'Library support for {{c|char8_t}}'
+    cppreference-description: Library support for {{c|char8_t}}
   support:
     clang:
     - since: C++20
@@ -1456,12 +1466,14 @@ library:
       and {{lc|std::chrono::time_point}}
   - value: 201611
     papers: P0505R0
-    cppreference-description: 'Constexpr for all the member functions of {{lc|std::chrono::duration}} and {{lc|std::chrono::time_point}}'
+    cppreference-description: Constexpr for all the member functions of {{lc|std::chrono::duration}}
+      and {{lc|std::chrono::time_point}}
   - value: 201803
     papers: P0355R7
   - value: 201907
     papers: P1466R3
-    cppreference-description: '[[cpp/chrono#Calendar|Calendars]] and [[cpp/chrono#Time zone|Time Zones]]'
+    cppreference-description: '[[cpp/chrono#Calendar|Calendars]] and [[cpp/chrono#Time
+      zone|Time Zones]]'
   support:
     clang:
     - since: C++17
@@ -1510,7 +1522,8 @@ library:
   rows:
   - value: 201309
     papers: N3779
-    cppreference-description: '[[cpp/numeric/complex/operator""i|User-defined Literals for {{tt|std::complex}}]]'
+    cppreference-description: '[[cpp/numeric/complex/operator""i|User-defined Literals
+      for {{tt|std::complex}}]]'
   support:
     clang:
     - since: C++14
@@ -1573,7 +1586,7 @@ library:
   rows:
   - value: 201907
     papers: P0784R7
-    cppreference-description: 'Constexpr for {{lc|std::allocator}} and related utilities'
+    cppreference-description: Constexpr for {{lc|std::allocator}} and related utilities
   support:
     clang: null
     gcc:
@@ -1642,7 +1655,7 @@ library:
   rows:
   - value: 201907
     papers: P0980R1
-    cppreference-description: 'Constexpr for {{lc|std::string}}'
+    cppreference-description: Constexpr for {{lc|std::string}}
   support:
     clang: null
     gcc: null
@@ -1690,7 +1703,7 @@ library:
   rows:
   - value: 201907
     papers: P1004R2
-    cppreference-description: 'Constexpr for {{lc|std::vector}}'
+    cppreference-description: Constexpr for {{lc|std::vector}}
   support:
     clang: null
     gcc: null
@@ -1710,7 +1723,8 @@ library:
   rows:
   - value: 201806
     papers: P0722R3
-    cppreference-description: '[[cpp/memory/new/operator_delete|Destroying {{tt|operator delete}}]] (library support)'
+    cppreference-description: '[[cpp/memory/new/operator_delete|Destroying {{tt|operator
+      delete}}]] (library support)'
   support:
     clang:
     - since: C++20
@@ -1854,7 +1868,7 @@ library:
   rows:
   - value: 201304
     papers: N3657
-    cppreference-description: 'Heterogeneous comparison lookup in associative containers'
+    cppreference-description: Heterogeneous comparison lookup in associative containers
   support:
     clang:
     - since: C++14
@@ -1881,7 +1895,8 @@ library:
   rows:
   - value: 201811
     papers: P0919R3
-    cppreference-description: 'Heterogeneous comparison lookup in unordered associative containers'
+    cppreference-description: Heterogeneous comparison lookup in unordered associative
+      containers
   support:
     clang: null
     gcc: null
@@ -2602,7 +2617,8 @@ library:
   rows:
   - value: 201907
     papers: P1135R6
-    cppreference-description: '[[cpp/thread/counting_semaphore|{{tt|std::counting_semaphore}}, {{tt|std::binary_semaphore}}]]'
+    cppreference-description: '[[cpp/thread/counting_semaphore|{{tt|std::counting_semaphore}},
+      {{tt|std::binary_semaphore}}]]'
   support:
     clang: null
     gcc: null
@@ -2632,7 +2648,7 @@ library:
     cppreference-description: '{{lc|std::shared_ptr|std::shared_ptr<T[]>}}'
   - value: 201707
     papers: P0674R1
-    cppreference-description: 'Array support of {{lc|std::make_shared}}'
+    cppreference-description: Array support of {{lc|std::make_shared}}
   support:
     clang: null
     gcc:
@@ -2692,7 +2708,7 @@ library:
 - name: __cpp_lib_smart_ptr_for_overwrite
   header_list: memory
   rows:
-  - value: 201811
+  - value: 202002
     papers: P1020R1 P1973R1
     cppreference-description: Smart pointer creation with default initialization ({{lc|std::allocate_shared_for_overwrite}},
       {{lc|std::make_shared_for_overwrite}}, {{lc|std::make_unique_for_overwrite}})
@@ -2893,7 +2909,7 @@ library:
       al)
   - value: 201510
     papers: P0074R0
-    cppreference-description: 'Transparent {{lc|std::owner_less}} ({{ltt|cpp/memory/owner_less_void|std::owner_less<void>}})'
+    cppreference-description: Transparent {{lc|std::owner_less}} ({{ltt|cpp/memory/owner_less_void|std::owner_less<void>}})
   support:
     clang:
     - since: C++14
