@@ -18,24 +18,16 @@ jobs:
             - uses: actions/setup-python@v2
               with:
                   python-version: 3.8
-            - name: Install pyyaml
+            - name: Install PyYAML
               run: pip install pyyaml
-            - uses: actions/cache@v1
-              id: cache-clang
-              with:
-                  path: /var/cache/apt/archives
-                  key: clang-cache-${{ github.sha }}
-            - name: Download Clang
-              if: steps.cache-clang.outputs.cache-hit != 'true'
+            - name: Install Clang
               run: |
                   REPO_NAME='deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
                   wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
                   sudo add-apt-repository "$REPO_NAME"
                   sudo apt-get update
-                  sudo apt-get install --download-only -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev
-            - name: Install Clang
-              run: |
-                  sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev
+                  sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
+                    --no-install-recommends
                   mkdir bin
                   cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
                   echo "::set-env name=PATH::$PWD/bin:$PATH"
@@ -60,7 +52,7 @@ jobs:
             - uses: actions/setup-python@v2
               with:
                   python-version: 3.8
-            - name: Install pyyaml
+            - name: Install PyYAML
               run: pip install pyyaml
             - uses: actions/cache@v1
               id: cache-gcc
@@ -87,8 +79,10 @@ jobs:
                       ./contrib/download_prerequisites
                       mkdir objdir && cd objdir
                       ../configure --prefix="$LOC/gcc-latest" \
-                        --enable-languages=c,c++ --disable-bootstrap --disable-multilib \
-                        --without-isl
+                        --enable-languages=c,c++ --without-isl --disable-bootstrap \
+                        --disable-gcov --disable-multilib --disable-libsanitizer \
+                        --disable-libssp --disable-libqualmath --disable-libgomp \
+                        --disable-libvtv --disable-lto
                       make -j2 && make install
                   fi
                   echo "::set-env name=PATH::$LOC/gcc-latest/bin:$PATH"
@@ -105,22 +99,13 @@ jobs:
               run: |
                   python3.8 tools/do_test.py gcc library --verbose
 
-            - uses: actions/cache@v1
-              id: cache-clang
-              with:
-                  path: /var/cache/apt/archives
-                  key: clang-cache-${{ github.sha }}
-            - name: Download Clang
-              if: steps.cache-clang.outputs.cache-hit != 'true'
+            - name: Install Clang
               run: |
                   REPO_NAME='deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
                   wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
                   sudo add-apt-repository "$REPO_NAME"
                   sudo apt-get update
-                  sudo apt-get install --download-only -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev
-            - name: Install Clang
-              run: |
-                  sudo apt-get install -y clang-$LLVM_VERSION
+                  sudo apt-get install -y clang-$LLVM_VERSION --no-install-recommends
                   mkdir bin
                   cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
                   echo "::set-env name=PATH::$PWD/bin:$PATH"
