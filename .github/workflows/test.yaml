@@ -128,5 +128,5 @@ jobs:
             - name: Test library with Clang
               run: |
                   python3.8 tools/do_test.py gcc library --verbose \
-                    --cc clang \
-                    --extra-args -fno-caret-diagnostics -stdlib=libstdc++
+                    --cc clang --extra-args -fno-caret-diagnostics \
+                      -stdlib=libstdc++ --gcc-toolchain="$PWD/gcc-latest"
