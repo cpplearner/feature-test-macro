@@ -45,7 +45,8 @@ for item in a[args.kind]:
                 out.write(f'| rowspan="{len(rows)}" | ')
             else:
                 out.write('| ')
-            if len(item["name"]) > 30:
+            length_threshold = 31 if args.kind == 'language' else 30
+            if len(item["name"]) > length_threshold:
                 break_opportunity = item["name"].find('_', 15) + 1
                 if break_opportunity == 0 or break_opportunity > 25:
                     print(item["name"], file=sys.stderr)

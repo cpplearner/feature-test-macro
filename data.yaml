@@ -588,8 +588,7 @@ language:
   rows:
   - value: 201902
     papers: P0912R5 LWG3393
-    cppreference-description: '[[cpp/language/coroutines|Coroutines]] (for the use
-      of standard library implementors)'
+    cppreference-description: '[[cpp/language/coroutines|Coroutines]] (compiler support)'
   support:
     clang: null
     gcc: null
@@ -599,7 +598,7 @@ language:
   - value: 201806
     papers: P0722R3
     cppreference-description: '[[cpp/memory/new/operator_delete|Destroying operator
-      delete]] (compiler support) '
+      delete]] (compiler support)'
   support:
     clang:
     - value: 201806
@@ -616,7 +615,7 @@ language:
   - value: 201907
     papers: P1630R1
     cppreference-description: '[[cpp/language/operator_comparison#Three-way_comparison|Three-way
-      comparison]] (for the use of standard library implementors)'
+      comparison]] (compiler support)'
   support:
     clang:
     - since: C++20
@@ -1747,7 +1746,7 @@ library:
   rows:
   - value: 201603
     papers: P0033R1
-    cppreference-description: '[[cpp/memory/enable_shared_from_this|Re-enabling shared_from_this]]'
+    cppreference-description: More precise specification of {{lc|std::enable_shared_from_this}}
   support:
     clang:
     - since: C++17
