@@ -29,7 +29,7 @@ jobs:
                   sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
                     --no-install-recommends
                   mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
-                  echo "::set-env name=PATH::$PWD/bin:$PATH"
+                  echo "::add-path::$PWD/bin"
 
             - name: Test attributes
               run: python tools/do_test.py clang attributes --verbose
@@ -69,19 +69,21 @@ jobs:
                       :
                   else
                       sudo apt-get install -y flex
-                      wget "$URL/$TARFILE"
+                      wget --progress=dot:giga "$URL/$TARFILE"
+                      echo "::group::Installing GCC"
                       tar -xf "$TARFILE"
                       cd $BASENAME
                       ./contrib/download_prerequisites
                       mkdir objdir && cd objdir
                       ../configure --prefix="$LOC/gcc-latest" \
                         --enable-languages=c,c++ --without-isl --disable-bootstrap \
-                        --disable-gcov --disable-multilib --disable-libsanitizer \
-                        --disable-libssp --disable-libqualmath --disable-libgomp \
-                        --disable-libvtv --disable-lto
+                        --disable-shared --disable-gcov --disable-multilib \
+                        --disable-libsanitizer --disable-libssp --disable-libquadmath \
+                        --disable-libgomp --disable-libvtv --disable-lto
                       make -j2 && make install
+                      echo "::endgroup::"
                   fi
-                  echo "::set-env name=PATH::$LOC/gcc-latest/bin:$PATH"
+                  echo "::add-path::$LOC/gcc-latest/bin"
 
             - name: Test attributes
               run: python tools/do_test.py gcc attributes --verbose
@@ -100,7 +102,7 @@ jobs:
                   sudo apt-get update
                   sudo apt-get install -y clang-$LLVM_VERSION --no-install-recommends
                   mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
-                  echo "::set-env name=PATH::$PWD/bin:$PATH"
+                  echo "::add-path::$PWD/bin"
 
             - name: Test library with Clang
               run: python tools/do_test.py gcc library --verbose
