@@ -23,36 +23,17 @@ kind = args.kind
 cc = args.cc
 extra_args = args.extra_args or []
 
+compiler, diag_opt = cc, []
+if cc == None:
+    if impl == 'clang':
+        compiler, diag_opt = 'clang', ['-fno-caret-diagnostics']
+    elif impl == 'gcc':
+        compiler, diag_opt = 'gcc', ['-fno-diagnostics-show-caret']
+    elif impl == 'msvc':
+        compiler, diag_opt = 'cl', ['-nologo', '-Zc:__cplusplus']
+
 a = yaml.safe_load(open('data.yaml'))
 assert list(a.keys()) == kinds
-
-def run_test(args, testfilename):
-    args = [arg for arg in args if arg is not None]
-    compiler, diag_opt = cc, []
-    if cc == None:
-        if impl == 'clang':
-            compiler, diag_opt = 'clang', ['-fno-caret-diagnostics']
-        elif impl == 'gcc':
-            compiler, diag_opt = 'gcc', ['-fno-diagnostics-show-caret']
-        elif impl == 'msvc':
-            compiler, diag_opt = 'cl', ['-nologo', '-Zc:__cplusplus']
-    run = [compiler, '-E', *diag_opt, *extra_args, *args, str(testfilename)]
-    if dry_run or verbose:
-        print('+', *run)
-    if not dry_run:
-        res = subprocess.run(run, capture_output=True, encoding='utf-8')
-        stderr = res.stderr
-        if cc == None and impl == 'msvc':
-            stderr = stderr[stderr.index('\n')+1:]
-        if stderr.strip() != '':
-            print(stderr.strip())
-            print('compiler options: ', args)
-            stdout = res.stdout
-            if s in stdout:
-                line = stdout.index(s)
-                print(stdout[line:stdout.index('\n', line)])
-        return res.returncode
-    return 0
 
 testbasedir = pathlib.Path('test/individuals')
 if dry_run:
@@ -76,18 +57,33 @@ for macro in a[kind]:
     generator.generate_test_item(macro)
     output += generator.output
 
-    outfilepath = testbasedir / f'{macro["name"]}.cpp'
+    testfile = str(testbasedir / f'{macro["name"]}.cpp')
     if dry_run:
-        print('Would create', outfilepath)
+        print('Would create', testfile)
     else:
-        open(outfilepath, 'w').write(output)
+        open(testfile, 'w').write(output)
 
     for std, std_opt in std_options(impl):
-        for args in generator.make_options(macro):
+        for opts in generator.make_options(macro):
             pedantic = generator.pedantic_options(macro) or [None]
             for ped_opt in pedantic:
-                returncode = run_test([std_opt, ped_opt, *args], str(outfilepath))
-                exitcode = exitcode or returncode
+                args = opts + [std_opt] + ([ped_opt] if ped_opt else [])
+                run = [compiler, '-E', *diag_opt, *extra_args, *args, testfile]
+                if dry_run or verbose:
+                    print('+', *run)
+                if not dry_run:
+                    res = subprocess.run(run, capture_output=True, encoding='utf-8')
+                    stderr = res.stderr
+                    if cc == None and impl == 'msvc':
+                        stderr = stderr[stderr.index('\n')+1:]
+                    if stderr.strip() != '':
+                        print(stderr.strip())
+                        print('compiler options: ', args)
+                        stdout = res.stdout
+                        if s in stdout:
+                            line = stdout.index(s)
+                            print(stdout[line:stdout.index('\n', line)])
+                    exitcode = exitcode or res.returncode
 
 sys.exit(exitcode)
 
