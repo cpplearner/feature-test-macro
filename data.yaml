@@ -589,7 +589,11 @@ language:
     cppreference-description: '[[cpp/language/coroutines|Coroutines]] (compiler support)'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 201902
+    - option: -fcoroutines
+      value: 201902
     msvc: null
 - name: __cpp_impl_destroying_delete
   rows:
@@ -1719,7 +1723,10 @@ library:
     cppreference-description: '[[cpp/language/coroutines|Coroutines]] (library support)'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++14
+      depends: __cpp_impl_coroutine
+      value: 201902
     msvc: null
 - name: __cpp_lib_destroying_delete
   header_list: new
