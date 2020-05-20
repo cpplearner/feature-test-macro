@@ -67,7 +67,7 @@ for macro in a[kind]:
         for opts in generator.make_options(macro):
             pedantic = generator.pedantic_options(macro) or [None]
             for ped_opt in pedantic:
-                args = opts + [std_opt] + ([ped_opt] if ped_opt else [])
+                args = [std_opt] + ([ped_opt] if ped_opt else []) + opts
                 run = [compiler, '-E', *diag_opt, *extra_args, *args, testfile]
                 if dry_run or verbose:
                     print('+', *run)
