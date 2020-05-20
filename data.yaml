@@ -1228,7 +1228,9 @@ library:
     cppreference-description: '{{lc|std::atomic_flag::test}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 201907
     msvc:
     - since: C++20
       value: 201907
