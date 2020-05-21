@@ -1107,7 +1107,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: __has_builtin(__builtin_addressof) || _GNUC_VER >= 700
+      depends: __has_builtin(__builtin_addressof) || __GNUC__ >= 7
       value: 201603
     gcc:
     - since: C++17
@@ -1258,7 +1258,7 @@ library:
   support:
     clang:
     - since: C++17
-      invconfig: _LIBCPP_HAS_NO_THREADS
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
       value: 201603
     gcc:
     - since: C++17
@@ -1440,7 +1440,7 @@ library:
       value: 201603
     msvc:
     - since: C++17
-      config: _HAS_STD_BYTE
+      depends: _HAS_STD_BYTE
       value: 201603
 - name: __cpp_lib_char8_t
   header_list: atomic filesystem istream limits locale ostream string string_view
@@ -1939,7 +1939,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!__is_identifier(__has_unique_object_representations)'
+      depends: '!__is_identifier(__has_unique_object_representations) || __GNUC__ >= 7'
       value: 201606
     gcc:
     - since: C++17
@@ -2081,7 +2081,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: __has_keyword(__is_aggregate) || _GNUC_VER_NEW >= 7001
+      depends: __has_keyword(__is_aggregate) || __GNUC__ >= 7
       value: 201703
     gcc:
     - since: C++17
@@ -2099,7 +2099,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: __has_builtin(__builtin_is_constant_evaluated) || _GNUC_VER >= 900
+      depends: __has_builtin(__builtin_is_constant_evaluated) || __GNUC__ >= 9
       value: 201811
     gcc:
     - since: C++20
@@ -2217,7 +2217,7 @@ library:
     clang: null
     gcc:
     - since: C++20
-      config: _GLIBCXX_HAS_GTHREADS
+      depends: defined(_GLIBCXX_HAS_GTHREADS)
       value: 201911
     msvc: null
 - name: __cpp_lib_latch
@@ -2382,10 +2382,10 @@ library:
     clang: null
     gcc:
     - since: C++17
-      config: _GLIBCXX_HAS_GTHREADS
+      depends: defined(_GLIBCXX_HAS_GTHREADS)
       value: 201603
     - since: C++17
-      invconfig: _GLIBCXX_HAS_GTHREADS
+      depends: '!defined(_GLIBCXX_HAS_GTHREADS)'
       value: 1
     msvc:
     - since: C++17
@@ -2621,7 +2621,7 @@ library:
       value: 201703
     gcc:
     - since: C++17
-      config: _GLIBCXX_HAS_GTHREADS
+      depends: defined(_GLIBCXX_HAS_GTHREADS)
       value: 201703
     msvc:
     - since: C++17
@@ -2646,11 +2646,11 @@ library:
   support:
     clang:
     - since: C++17
-      invconfig: _LIBCPP_HAS_NO_THREADS
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
       value: 201505
     gcc:
     - since: C++17
-      config: _GLIBCXX_HAS_GTHREADS
+      depends: defined(_GLIBCXX_HAS_GTHREADS)
       value: 201505
     msvc:
     - value: 201505
@@ -2697,11 +2697,11 @@ library:
   support:
     clang:
     - since: C++14
-      invconfig: _LIBCPP_HAS_NO_THREADS
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
       value: 201402
     gcc:
     - since: C++14
-      config: _GLIBCXX_HAS_GTHREADS
+      depends: defined(_GLIBCXX_HAS_GTHREADS)
       value: 201402
     msvc:
     - value: 201402

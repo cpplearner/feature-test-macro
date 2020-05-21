@@ -96,16 +96,17 @@ class TestsuiteGenerator:
         space = ' ' * self.depth
         self.writeln(f"#{space}endif")
 
+    def test_expr(self, name):
+        if self.kind == 'attributes':
+            return f'__has_cpp_attribute({name})'
+        else:
+            return f'{name}'
+
     def generate_positive_test(self, name, value):
         space = ' ' * self.depth
-        if self.kind == 'attributes':
-            self.writeln(f"#{space}if __has_cpp_attribute({name}) != {value}")
-            self.writeln(f"#{space} error __has_cpp_attribute({name}) is not equal to {value}")
-            self.writeln(f"#{space}endif")
-        else:
-            self.writeln(f"#{space}if {name} != {value}")
-            self.writeln(f"#{space} error {name} is not equal to {value}")
-            self.writeln(f"#{space}endif")
+        self.writeln(f"#{space}if {self.test_expr(name)} != {value}")
+        self.writeln(f"#{space} error {self.test_expr(name)} is not equal to {value}")
+        self.writeln(f"#{space}endif")
 
     def generate_negative_test(self, name):
         space = ' ' * self.depth
@@ -132,10 +133,6 @@ class TestsuiteGenerator:
             if 'invoption' in item:
                 o = ['!'+to_identifier(option) for option in item['invoption'].split(' ')]
                 condition.append(' && '.join(o))
-            if 'config' in item:
-                condition.append(f"{item['config']}")
-            if 'invconfig' in item:
-                condition.append(f"!{item['invconfig']}")
             if 'depends' in item:
                 condition.append(f"({item['depends']})")
             if 'pedantic' in item:
