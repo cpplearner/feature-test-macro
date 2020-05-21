@@ -9,6 +9,15 @@ on:
 env:
     LLVM_VERSION: 11
     GCC_VERSION: 11
+    INSTALL_CLANG: |
+        REPO_NAME='deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
+        wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+        sudo add-apt-repository "$REPO_NAME"
+        sudo apt-get update
+        sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
+          --no-install-recommends
+        mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
+        echo "::add-path::$PWD/bin"
 
 jobs:
     clang:
@@ -22,14 +31,7 @@ jobs:
               run: pip install pyyaml
             - name: Install Clang
               run: |
-                  REPO_NAME='deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
-                  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-                  sudo add-apt-repository "$REPO_NAME"
-                  sudo apt-get update
-                  sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
-                    --no-install-recommends
-                  mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
-                  echo "::add-path::$PWD/bin"
+                  bash --noprofile --norc -eo pipefail -c "$INSTALL_CLANG"
 
             - name: Test attributes
               run: python tools/do_test.py clang attributes --verbose
@@ -96,18 +98,19 @@ jobs:
 
             - name: Install Clang
               run: |
-                  REPO_NAME='deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
-                  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-                  sudo add-apt-repository "$REPO_NAME"
-                  sudo apt-get update
-                  sudo apt-get install -y clang-$LLVM_VERSION --no-install-recommends
-                  mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
-                  echo "::add-path::$PWD/bin"
+                  bash --noprofile --norc -eo pipefail -c "$INSTALL_CLANG"
 
-            - name: Test library with Clang
+            - name: Test libstdc++ with Clang
               run: python tools/do_test.py gcc library --verbose
                     --cc clang --extra-args -fno-caret-diagnostics
                      -stdlib=libstdc++ --gcc-toolchain="$PWD/gcc-latest"
+
+            - name: Test libc++ with GCC
+              run: python tools/do_test.py clang library --verbose
+                    --cc gcc --std C++11 C++14 C++17 C++20
+                    --extra-args -fno-diagnostics-show-caret
+                     -ftrack-macro-expansion=0 -nostdinc++
+                     -I /usr/lib/llvm-$LLVM_VERSION/include/c++/v1/
     msvc:
         runs-on: windows-2019
         steps:
