@@ -1747,7 +1747,10 @@ library:
     - since: C++20
       depends: __cpp_impl_destroying_delete
       value: 201806
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: defined(__cpp_impl_destroying_delete)
+      value: 201806
 - name: __cpp_lib_enable_shared_from_this
   header_list: memory
   rows:
