@@ -1926,9 +1926,7 @@ library:
     cppreference-description: '[[cpp/thread/hardware_destructive_interference_size|constexpr
       std::hardware_{constructive, destructive}_interference_size]]'
   support:
-    clang:
-    - since: C++17
-      value: 201703
+    clang: null
     gcc: null
     msvc:
     - since: C++17
