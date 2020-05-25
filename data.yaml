@@ -1192,7 +1192,7 @@ library:
     - since: C++17
       value: 201803
     - since: C++20
-      value: 201806
+      value: 201811
 - name: __cpp_lib_as_const
   header_list: utility
   rows:
@@ -1616,7 +1616,9 @@ library:
     gcc:
     - since: C++20
       value: 201907
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201811
 - name: __cpp_lib_constexpr_iterator
   header_list: iterator
   rows:
@@ -1629,7 +1631,9 @@ library:
     gcc:
     - since: C++20
       value: 201811
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201811
 - name: __cpp_lib_constexpr_memory
   header_list: memory
   rows:
@@ -1680,7 +1684,9 @@ library:
     gcc:
     - since: C++20
       value: 201811
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201811
 - name: __cpp_lib_constexpr_tuple
   header_list: tuple
   rows:
@@ -1693,7 +1699,9 @@ library:
     gcc:
     - since: C++20
       value: 201811
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201811
 - name: __cpp_lib_constexpr_utility
   header_list: utility
   rows:
@@ -1706,7 +1714,9 @@ library:
     gcc:
     - since: C++20
       value: 201811
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201811
 - name: __cpp_lib_constexpr_vector
   header_list: vector
   rows:
