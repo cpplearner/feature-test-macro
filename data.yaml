@@ -1183,6 +1183,8 @@ library:
     clang:
     - since: C++17
       value: 201603
+    - since: C++20
+      value: 201811
     gcc:
     - since: C++17
       value: 201803
