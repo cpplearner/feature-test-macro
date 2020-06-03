@@ -437,6 +437,8 @@ language:
     msvc:
     - since: C++17
       value: 201703
+    - since: C++20
+      value: 201907
 - name: __cpp_delegating_constructors
   rows:
   - value: 200604
@@ -465,7 +467,9 @@ language:
     gcc:
     - since: C++20
       value: 201707
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201707
 - name: __cpp_enumerator_attributes
   rows:
   - value: 201411
@@ -533,6 +537,8 @@ language:
       value: 201707
     msvc:
     - value: 201304
+    - since: C++20
+      value: 201707
 - name: __cpp_guaranteed_copy_elision
   rows:
   - value: 201606
@@ -607,7 +613,9 @@ language:
     gcc:
     - since: C++20
       value: 201806
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201806
 - name: __cpp_impl_three_way_comparison
   rows:
   - value: 201711
@@ -670,6 +678,8 @@ language:
       value: 201803
     msvc:
     - value: 201304
+    - since: C++20
+      value: 201803
 - name: __cpp_initializer_lists
   rows:
   - value: 200806
@@ -839,7 +849,9 @@ language:
     - since: C++17
       value: 201603
     msvc:
-    - value: 201603
+    - value: 200907
+    - since: C++17
+      value: 201603
 - name: __cpp_raw_strings
   rows:
   - value: 200710
