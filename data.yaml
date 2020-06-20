@@ -2378,7 +2378,9 @@ library:
     papers: P0631R8
     cppreference-description: '[[cpp/header/numbers|Mathematical constants]]'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc:
     - since: C++20
       value: 201907
