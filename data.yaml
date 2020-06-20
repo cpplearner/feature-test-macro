@@ -1753,7 +1753,10 @@ library:
     - since: C++14
       depends: __cpp_impl_coroutine
       value: 201902
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: defined(__cpp_impl_coroutine)
+      value: 197000
 - name: __cpp_lib_destroying_delete
   header_list: new
   rows:
