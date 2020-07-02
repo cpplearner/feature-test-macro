@@ -1680,6 +1680,10 @@ library:
 - name: __cpp_lib_constexpr_string
   header_list: string
   rows:
+  - value: 201611
+    papers: P0426R1
+  - value: 201811
+    papers: P1032R1
   - value: 201907
     papers: P0980R1
     cppreference-description: Constexpr for {{lc|std::string}}
@@ -1690,6 +1694,8 @@ library:
 - name: __cpp_lib_constexpr_string_view
   header_list: string_view
   rows:
+  - value: 201611
+    papers: P0426R1
   - value: 201811
     papers: P1032R1
     cppreference-description: Misc constexpr bits ({{lc|std::string_view::copy}})
