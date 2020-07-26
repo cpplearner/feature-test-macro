@@ -296,7 +296,9 @@ language:
     cppreference-description: '[[cpp/language/consteval|Immediate functions]]'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 201811
     msvc: null
 - name: __cpp_constexpr
   rows:
@@ -781,6 +783,8 @@ language:
     gcc:
     - since: C++17
       value: 201411
+    - since: C++20
+      value: 201911
     msvc:
     - since: C++17
       value: 201411
