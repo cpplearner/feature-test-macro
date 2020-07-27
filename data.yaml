@@ -1397,7 +1397,6 @@ library:
       value: 201907
     msvc:
     - since: C++20
-      depends: defined(__clang__)
       value: 201907
 - name: __cpp_lib_bool_constant
   header_list: type_traits
@@ -1636,7 +1635,7 @@ library:
       value: 201907
     msvc:
     - since: C++20
-      value: 201811
+      value: 201907
 - name: __cpp_lib_constexpr_iterator
   header_list: iterator
   rows:
@@ -1786,7 +1785,6 @@ library:
       value: 201806
     msvc:
     - since: C++20
-      depends: defined(__cpp_impl_destroying_delete)
       value: 201806
 - name: __cpp_lib_enable_shared_from_this
   header_list: memory
@@ -2033,7 +2031,6 @@ library:
       value: 202002
     msvc:
     - since: C++20
-      depends: defined(__clang__)
       value: 202002
 - name: __cpp_lib_integer_comparison_functions
   header_list: utility
