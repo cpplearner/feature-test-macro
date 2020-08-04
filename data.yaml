@@ -1344,7 +1344,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201907
 - name: __cpp_lib_barrier
   header_list: barrier
   rows:
@@ -1867,6 +1869,8 @@ library:
     msvc:
     - since: C++17
       value: 201603
+    - since: C++20
+      value: 201902
 - name: __cpp_lib_filesystem
   header_list: filesystem
   rows:
