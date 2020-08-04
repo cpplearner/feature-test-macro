@@ -2091,7 +2091,9 @@ library:
     gcc:
     - since: C++20
       value: 201902
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201902
 - name: __cpp_lib_invoke
   header_list: functional
   rows:
