@@ -111,6 +111,7 @@ jobs:
                     --extra-args -fno-diagnostics-show-caret
                      -ftrack-macro-expansion=0 -nostdinc++
                      -I /usr/lib/llvm-$LLVM_VERSION/include/c++/v1/
+
     msvc:
         runs-on: windows-2019
         steps:
@@ -131,6 +132,7 @@ jobs:
                     --installPath "$LOC/msvc-preview" `
                     --add Microsoft.VisualStudio.Component.VC.CoreIde `
                     --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64
+                  if ($LASTEXITCODE -eq 3010) { exit 0 }
             - name: Set Path
               shell: cmd
               run: |
