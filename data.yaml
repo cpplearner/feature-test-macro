@@ -154,7 +154,9 @@ language:
     gcc:
     - since: C++20
       value: 201902
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201902
 - name: __cpp_alias_templates
   rows:
   - value: 200704
@@ -606,7 +608,9 @@ language:
       value: 201902
     - option: -fcoroutines
       value: 201902
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 197000
 - name: __cpp_impl_destroying_delete
   rows:
   - value: 201806
