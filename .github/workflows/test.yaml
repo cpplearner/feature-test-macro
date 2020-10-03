@@ -151,7 +151,7 @@ jobs:
 
             - name: Test MSVC STL with EDG
               run: python tools/do_test.py msvc library --verbose
-                    --extra-args -BE
+                    --extra-args -BE -dE--brief_diagnostics
 
             - name: Install Clang
               run: |
