@@ -1245,7 +1245,9 @@ library:
     gcc:
     - since: C++20
       value: 201811
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201811
 - name: __cpp_lib_atomic_flag_test
   header_list: atomic
   rows:
@@ -1320,7 +1322,9 @@ library:
     gcc:
     - since: C++20
       value: 201806
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201806
 - name: __cpp_lib_atomic_shared_ptr
   header_list: memory
   rows:
@@ -1370,7 +1374,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201907
 - name: __cpp_lib_bind_front
   header_list: functional
   rows:
@@ -2278,7 +2284,9 @@ library:
     - since: C++20
       depends: defined(_GLIBCXX_HAS_GTHREADS)
       value: 201911
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201911
 - name: __cpp_lib_latch
   header_list: latch
   rows:
@@ -2288,7 +2296,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201907
 - name: __cpp_lib_launder
   header_list: new
   rows:
@@ -2559,7 +2569,9 @@ library:
     gcc:
     - since: C++20
       value: 201902
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201902
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
   rows:
@@ -2697,7 +2709,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201907
 - name: __cpp_lib_shared_mutex
   header_list: shared_mutex
   rows:
