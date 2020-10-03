@@ -7,7 +7,7 @@ on:
         - cron: '0 0 */10 * *'
 
 env:
-    LLVM_VERSION: 11
+    LLVM_VERSION: 12
     GCC_VERSION: 11
     INSTALL_CLANG: |
         REPO_NAME='deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
