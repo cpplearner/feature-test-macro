@@ -40,7 +40,9 @@ attributes:
   - value: 201803
     papers: P0479R5
   support:
-    clang: null
+    clang:
+    - since: C++11
+      value: 2
     gcc:
     - value: 201803
     msvc:
@@ -101,7 +103,9 @@ attributes:
   - value: 201803
     papers: P0479R5
   support:
-    clang: null
+    clang:
+    - since: C++11
+      value: 2
     gcc:
     - value: 201803
     msvc:
