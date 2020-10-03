@@ -1249,7 +1249,9 @@ library:
     papers: P1135R6
     cppreference-description: '{{lc|std::atomic_flag::test}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc:
     - since: C++20
       value: 201907
@@ -1296,7 +1298,9 @@ library:
     cppreference-description: atomic lockfree integral types ({{lc|std::atomic_signed_lock_free}},
       {{lc|std::atomic_unsigned_lock_free}})
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc: null
     msvc:
     - since: C++20
@@ -1346,7 +1350,9 @@ library:
     papers: P1135R6
     cppreference-description: Efficient {{lc|std::atomic}} waiting
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc: null
     msvc:
     - since: C++20
@@ -1620,7 +1626,9 @@ library:
     papers: P0784R7
     cppreference-description: Constexpr for {{lc|std::allocator}} and related utilities
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc:
     - since: C++20
       value: 201907
@@ -1739,7 +1747,9 @@ library:
     cppreference-description: Misc constexpr bits ({{lc|1=std::pair::operator=}} et
       al.)
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201811
     gcc:
     - since: C++20
       value: 201811
