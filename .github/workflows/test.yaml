@@ -148,3 +148,11 @@ jobs:
 
             - name: Test library
               run: python tools/do_test.py msvc library --verbose
+      
+            - name: Install Clang
+              run: |
+                  choco install llvm
+
+            - name: Test MSVC STL with Clang
+              run: python tools/do_test.py msvc library --verbose
+                    --cc clang-cl --extra-args -fno-caret-diagnostics
