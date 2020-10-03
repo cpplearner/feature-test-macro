@@ -148,10 +148,15 @@ jobs:
 
             - name: Test library
               run: python tools/do_test.py msvc library --verbose
-      
+
+            - name: Test MSVC STL with EDG
+              run: python tools/do_test.py msvc library --verbose
+                    --extra-args -BE
+
             - name: Install Clang
               run: |
                   choco install llvm
+                  echo ::set-env name=PATH::C:\Program Files\LLVM\bin;%PATH%
 
             - name: Test MSVC STL with Clang
               run: python tools/do_test.py msvc library --verbose
