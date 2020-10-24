@@ -17,7 +17,7 @@ env:
         sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
           --no-install-recommends
         mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
-        echo "::add-path::$PWD/bin"
+        echo "$PWD/bin" >> $GITHUB_PATH
 
 jobs:
     clang:
@@ -85,7 +85,7 @@ jobs:
                       make -j2 && make install
                       echo "::endgroup::"
                   fi
-                  echo "::add-path::$LOC/gcc-latest/bin"
+                  echo "$LOC/gcc-latest/bin" >> $GITHUB_PATH
 
             - name: Test attributes
               run: python tools/do_test.py gcc attributes --verbose
@@ -137,8 +137,8 @@ jobs:
               shell: cmd
               run: |
                   call "msvc-preview/Common7/Tools/VsDevCmd.bat"
-                  echo ::set-env name=PATH::%PATH%
-                  echo ::set-env name=INCLUDE::msvc/STL/stl/inc;%INCLUDE%
+                  echo PATH=%PATH% >> %GITHUB_ENV%
+                  echo INCLUDE=msvc/STL/stl/inc;%INCLUDE% >> %GITHUB_ENV%
 
             - name: Test attributes
               run: python tools/do_test.py msvc attributes --verbose
@@ -156,7 +156,7 @@ jobs:
             - name: Install Clang
               run: |
                   choco install llvm
-                  echo ::set-env name=PATH::C:\Program Files\LLVM\bin;%PATH%
+                  echo "C:\Program Files\LLVM\bin" >> $GITHUB_PATH
 
             - name: Test MSVC STL with Clang
               run: python tools/do_test.py msvc library --verbose
