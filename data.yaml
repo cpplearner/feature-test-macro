@@ -2809,7 +2809,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 202002
 - name: __cpp_lib_source_location
   header_list: source_location
   rows:
