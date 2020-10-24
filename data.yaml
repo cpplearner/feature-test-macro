@@ -610,7 +610,7 @@ language:
       value: 201902
     msvc:
     - since: C++20
-      value: 197000
+      value: 201902
 - name: __cpp_impl_destroying_delete
   rows:
   - value: 201806
