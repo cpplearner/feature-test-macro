@@ -155,8 +155,10 @@ jobs:
 
             - name: Install Clang
               run: |
-                  choco install llvm
-                  echo "C:\Program Files\LLVM\bin" >> $GITHUB_PATH
+                  curl.exe -L -o llvm.exe `
+                    https://github.com/llvm/llvm-project/releases/download/llvmorg-11.0.0/LLVM-11.0.0-win64.exe
+                  7z x llvm.exe -o LLVM
+                  echo "$PWD\LLVM\bin" >> $GITHUB_PATH
 
             - name: Test MSVC STL with Clang
               run: python tools/do_test.py msvc library --verbose
