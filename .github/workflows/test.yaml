@@ -162,4 +162,4 @@ jobs:
 
             - name: Test MSVC STL with Clang
               run: python tools/do_test.py msvc library --verbose
-                    --cc clang-cl --extra-args -fno-caret-diagnostics
+                    --cc clang-cl --extra-args -diagnostics:classic
