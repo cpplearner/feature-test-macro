@@ -67,11 +67,7 @@ jobs:
                   TARFILE=$(grep -Eo "gcc-$GCC_VERSION-[0-9]{8}.tar.xz" index.html | uniq)
                   PKGDATE=$(echo $TARFILE | grep -Eo "[0-9]{8}")
                   BASENAME=gcc-$GCC_VERSION-$PKGDATE
-                  if [ -f "$LOC/gcc-latest/bin/gcc" ]; then
-                      "$LOC/gcc-latest/bin/gcc" --version
-                      HAS_VERSION=$("$LOC/gcc-latest/bin/gcc" --version | grep $PKGDATE)
-                  fi
-                  if [ -z "$HAS_VERSION" ]; then
+                  if [ -z "$("$LOC/gcc-latest/bin/gcc" --version | grep $PKGDATE)" ]; then
                       wget --progress=dot:giga "$URL/$TARFILE"
                       echo "::group::Installing GCC"
                       tar -xf "$TARFILE"
