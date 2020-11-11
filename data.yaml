@@ -2920,7 +2920,10 @@ library:
       {{lc|std::osyncstream}}) and manipulators
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      depends: _GLIBCXX_USE_CXX11_ABI
+      value: 201803
     msvc: null
 - name: __cpp_lib_three_way_comparison
   header_list: compare
