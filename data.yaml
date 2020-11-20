@@ -1076,7 +1076,9 @@ language:
     cppreference-description: Using enum
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 201907
     msvc:
     - since: C++20
       value: 201907
