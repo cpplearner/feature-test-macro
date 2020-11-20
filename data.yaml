@@ -1983,7 +1983,9 @@ library:
     cppreference-description: Heterogeneous comparison lookup in unordered associative
       containers
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201811
     gcc: null
     msvc:
     - since: C++20
