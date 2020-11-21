@@ -2432,6 +2432,7 @@ library:
   support:
     clang:
     - since: C++20
+      depends: 'defined(__cpp_concepts) && __cpp_concepts >= 201811'
       value: 201907
     gcc:
     - since: C++20
@@ -2613,6 +2614,7 @@ library:
     clang: null
     gcc:
     - since: C++20
+      depends: __cpp_lib_concepts
       value: 201911
     msvc: null
 - name: __cpp_lib_raw_memory_algorithms
@@ -2844,6 +2846,7 @@ library:
       value: 202002
     gcc:
     - since: C++20
+      depends: __cpp_lib_concepts
       value: 202002
     msvc:
     - since: C++20
