@@ -1797,9 +1797,6 @@ library:
     msvc:
     - since: C++20
       depends: defined(__cpp_impl_coroutine)
-      value: 197000
-    - since: C++20
-      depends: 'defined(__cpp_impl_coroutine) && __cpp_impl_coroutine >= 201902'
       value: 201902
 - name: __cpp_lib_destroying_delete
   header_list: new
