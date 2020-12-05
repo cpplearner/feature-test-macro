@@ -2063,7 +2063,9 @@ library:
       power-of-2 operations]] ({{lc|std::has_single_bit}}, {{lc|std::bit_ceil}}, {{lc|std::bit_floor}},
       {{lc|std::bit_length}})'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 202002
     gcc:
     - since: C++20
       value: 202002
