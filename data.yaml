@@ -2757,7 +2757,9 @@ library:
     papers: P0674R1
     cppreference-description: Array support of {{lc|std::make_shared}}
   support:
-    clang: null
+    clang:
+    - since: C++17
+      value: 201611
     gcc:
     - since: C++11
       value: 201611
