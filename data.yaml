@@ -790,6 +790,8 @@ language:
     clang:
     - since: C++17
       value: 201411
+    - since: C++20
+      value: 201911
     gcc:
     - since: C++17
       value: 201411
