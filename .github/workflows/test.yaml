@@ -9,15 +9,6 @@ on:
 env:
     LLVM_VERSION: 12
     GCC_VERSION: 11
-    INSTALL_CLANG: |
-        REPO_NAME='deb http://apt.llvm.org/focal/ llvm-toolchain-focal main'
-        wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
-        sudo add-apt-repository "$REPO_NAME"
-        sudo apt-get update
-        sudo apt-get install -y clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
-          --no-install-recommends
-        mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
-        echo "$PWD/bin" >> $GITHUB_PATH
 
 jobs:
     clang:
@@ -31,7 +22,14 @@ jobs:
               run: pip install pyyaml
             - name: Install Clang
               run: |
-                  bash --noprofile --norc -eo pipefail -c "$INSTALL_CLANG"
+                  REPO_NAME='deb http://apt.llvm.org/focal/ llvm-toolchain-focal main'
+                  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+                  sudo add-apt-repository "$REPO_NAME" && sudo apt-get update
+                  sudo apt-get install -yV clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
+                    libc++1-$LLVM_VERSION libc++abi1-$LLVM_VERSION \
+                    --no-install-recommends
+                  mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
+                  echo "$PWD/bin" >> $GITHUB_PATH
 
             - name: Test attributes
               run: python tools/do_test.py clang attributes --verbose
@@ -67,7 +65,7 @@ jobs:
                   TARFILE=$(grep -Eo "gcc-$GCC_VERSION-[0-9]{8}.tar.xz" index.html | uniq)
                   PKGDATE=$(echo $TARFILE | grep -Eo "[0-9]{8}")
                   BASENAME=gcc-$GCC_VERSION-$PKGDATE
-                  if [ -z "$("$LOC/gcc-latest/bin/gcc" --version | grep $PKGDATE)" ]; then
+                  if [ ! -d $BASENAME ]; then
                       wget --progress=dot:giga "$URL/$TARFILE"
                       echo "::group::Installing GCC"
                       tar -xf "$TARFILE"
@@ -95,7 +93,14 @@ jobs:
 
             - name: Install Clang
               run: |
-                  bash --noprofile --norc -eo pipefail -c "$INSTALL_CLANG"
+                  REPO_NAME='deb http://apt.llvm.org/focal/ llvm-toolchain-focal main'
+                  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+                  sudo add-apt-repository "$REPO_NAME" && sudo apt-get update
+                  sudo apt-get install -yV clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
+                    libc++1-$LLVM_VERSION libc++abi1-$LLVM_VERSION \
+                    --no-install-recommends
+                  mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
+                  echo "$PWD/bin" >> $GITHUB_PATH
 
             - name: Test libstdc++ with Clang
               run: python tools/do_test.py gcc library --verbose
