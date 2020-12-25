@@ -47,11 +47,11 @@ jobs:
             - uses: actions/checkout@v2
             - uses: actions/setup-python@v2
               with:
-                  python-version: 3.8
+                  python-version: 3.9
             - name: Install PyYAML
               run: pip install pyyaml
+
             - uses: actions/cache@v1
-              id: cache-gcc
               with:
                   path: gcc-latest
                   key: gcc-cache-${{ github.sha }}
@@ -65,7 +65,7 @@ jobs:
                   TARFILE=$(grep -Eo "gcc-$GCC_VERSION-[0-9]{8}.tar.xz" index.html | uniq)
                   PKGDATE=$(echo $TARFILE | grep -Eo "[0-9]{8}")
                   BASENAME=gcc-$GCC_VERSION-$PKGDATE
-                  if [ ! -d $BASENAME ]; then
+                  if [ $(cat "$LOC/gcc-latest/pkgdate.txt") != "$PKGDATE" ]; then
                       wget --progress=dot:giga "$URL/$TARFILE"
                       echo "::group::Installing GCC"
                       tar -xf "$TARFILE"
@@ -80,6 +80,7 @@ jobs:
                       make -j2 && make install
                       echo "::endgroup::"
                   fi
+                  echo "$PKGDATE" > $LOC/gcc-latest/pkgdate.txt
                   echo "$LOC/gcc-latest/bin" >> $GITHUB_PATH
 
             - name: Test attributes
