@@ -10,7 +10,7 @@ env:
     LLVM_VERSION: 12
     GCC_VERSION: 11
     INSTALL_CLANG: |
-        REPO_NAME='deb http://apt.llvm.org/bionic/ llvm-toolchain-bionic main'
+        REPO_NAME='deb http://apt.llvm.org/focal/ llvm-toolchain-focal main'
         wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
         sudo add-apt-repository "$REPO_NAME"
         sudo apt-get update
@@ -21,7 +21,7 @@ env:
 
 jobs:
     clang:
-        runs-on: ubuntu-18.04
+        runs-on: ubuntu-20.04
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-python@v2
@@ -44,7 +44,7 @@ jobs:
                     --extra-args -stdlib=libc++
 
     gcc:
-        runs-on: ubuntu-18.04
+        runs-on: ubuntu-20.04
         steps:
             - uses: actions/checkout@v2
             - uses: actions/setup-python@v2
