@@ -73,6 +73,7 @@ jobs:
                       ./contrib/download_prerequisites
                       mkdir objdir && cd objdir
                       ../configure --prefix="$LOC/gcc-latest" \
+                        --with-gxx-libcxx-include-dir=/usr/lib/llvm-$LLVM_VERSION/include/c++/v1/ \
                         --enable-languages=c,c++ --without-isl --disable-bootstrap \
                         --disable-shared --disable-gcov --disable-multilib \
                         --disable-libsanitizer --disable-libssp --disable-libquadmath \
@@ -112,8 +113,7 @@ jobs:
               run: python tools/do_test.py clang library --verbose
                     --cc gcc --std C++11 C++14 C++17 C++20
                     --extra-args -fno-diagnostics-show-caret
-                     -ftrack-macro-expansion=0 -nostdinc++
-                     -I /usr/lib/llvm-$LLVM_VERSION/include/c++/v1/
+                     -ftrack-macro-expansion=0 -stdlib=libc++
 
     msvc:
         runs-on: windows-2019
