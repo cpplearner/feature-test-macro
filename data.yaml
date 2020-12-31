@@ -1667,7 +1667,9 @@ library:
     cppreference-description: Misc constexpr bits ({{lc|std::default_searcher}});
       constexpr INVOKE
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc:
     - since: C++20
       value: 201907
