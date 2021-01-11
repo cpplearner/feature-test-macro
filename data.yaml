@@ -1384,7 +1384,10 @@ library:
     papers: P1135R6
     cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      value: 201907
     gcc:
     - since: C++20
       depends: '__cpp_lib_atomic_wait && __cpp_aligned_new'
@@ -1460,7 +1463,9 @@ library:
     cppreference-description: '{{ltt|cpp/types/is_bounded_array|std::is_bounded_array}},
       {{ltt|cpp/types/is_unbounded_array|std::is_unbounded_array}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201902
     gcc:
     - since: C++20
       value: 201902
@@ -2246,7 +2251,9 @@ library:
     papers: P0758R1 LWG3356
     cppreference-description: '{{ltt|cpp/types/is_convertible|std::is_nothrow_convertible}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201806
     gcc:
     - since: C++20
       value: 201806
@@ -2319,7 +2326,10 @@ library:
     papers: P1135R6
     cppreference-description: '{{ltt|cpp/thread/latch|std::latch}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      value: 201907
     gcc:
     - since: C++20
       depends: __cpp_lib_atomic_wait
@@ -2658,7 +2668,9 @@ library:
     papers: P0550R2
     cppreference-description: '{{ltt|cpp/types/remove_cvref|std::remove_cvref}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201711
     gcc:
     - since: C++20
       value: 201711
@@ -2737,7 +2749,10 @@ library:
     cppreference-description: '[[cpp/thread/counting_semaphore|{{tt|std::counting_semaphore}},
       {{tt|std::binary_semaphore}}]]'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      value: 201907
     gcc:
     - since: C++20
       depends: __cpp_lib_atomic_wait
@@ -2883,7 +2898,9 @@ library:
     papers: P1227R2
     cppreference-description: '{{ltt|cpp/iterator/size|std::ssize}} and unsigned {{ltt|cpp/container/span/size|std::span::size}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201902
     gcc:
     - since: C++20
       value: 201902
@@ -2899,7 +2916,9 @@ library:
       and {{lc|std::string_view::ends_with|ends_with()}} for {{lc|std::string}} and
       {{lc|std::string_view}})
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201711
     gcc:
     - since: C++20
       value: 201711
@@ -2937,6 +2956,8 @@ library:
     clang:
     - since: C++17
       value: 201606
+    - since: C++20
+      value: 201803
     gcc:
     - since: C++17
       value: 201803
@@ -2985,7 +3006,9 @@ library:
     papers: P0653R2
     cppreference-description: Utility to convert a pointer to a raw pointer ({{lc|std::to_address}})
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201711
     gcc:
     - since: C++20
       value: 201711
@@ -3154,7 +3177,9 @@ library:
     papers: P0318R1 LWG3348
     cppreference-description: '{{lc|std::unwrap_ref_decay}} and {{lc|std::unwrap_reference}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201811
     gcc:
     - since: C++20
       value: 201811
