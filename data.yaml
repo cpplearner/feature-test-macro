@@ -1385,7 +1385,10 @@ library:
     cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      depends: '__cpp_lib_atomic_wait && __cpp_aligned_new'
+      value: 201907
     msvc:
     - since: C++20
       value: 201907
