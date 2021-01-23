@@ -60,7 +60,12 @@ for item in a[args.kind]:
         if args.kind == 'library':
             out.write(' || ')
             out.write(' '.join(f'{{{{header|{hdr}}}}}' for hdr in item['header_list'].split(' ')))
-        standard = next((standard for standard in standards if row["value"] <= standard[1]))
+        for std, __cplusplus in standards:
+            if std == standards[-1][0]:
+                standard = std, 999999
+            elif row["value"] <= __cplusplus:
+                standard = std, __cplusplus
+                break
         out.write(f' || {{{{mark {standard[0].lower()}}}}}\n')
 
         last_value = [r for r in item['rows'] if r['value'] <= standard[1]][-1]
