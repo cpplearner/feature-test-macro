@@ -370,7 +370,9 @@ language:
   rows:
   - value: 201711
     papers: P0859R0
-    cppreference-description: Less eager instantiation of constexpr functions
+    cppreference-description: Generation of function and variable definitions when
+      [[cpp/language/constant expression#Functions and variables needed for constant
+      evaluation|needed for constant evaluation]]
   support:
     clang:
     - since: C++11
@@ -383,7 +385,7 @@ language:
   rows:
   - value: 201907
     papers: P1143R2
-    cppreference-description: '{{ltt|cpp/language/constinit|constinit}}'
+    cppreference-description: '{{ltt|cpp/language/constinit}}'
   support:
     clang:
     - since: C++20
@@ -939,6 +941,16 @@ language:
       value: 200610
     msvc:
     - value: 200610
+- name: __cpp_size_t_suffix
+  rows:
+  - value: 202011
+    papers: P0330R8
+    cppreference-description: '[[cpp/language/integer literal|Literal suffixes for
+      {{tt|size_t}} and its signed version]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_sized_deallocation
   rows:
   - value: 201309
@@ -1372,7 +1384,7 @@ library:
       value: 201907
     gcc:
     - since: C++20
-      depends: 'defined(_GLIBCXX_HAS_GTHREADS) || defined(_GLIBCXX_HAVE_LINUX_FUTEX)'
+      depends: defined(_GLIBCXX_HAS_GTHREADS) || defined(_GLIBCXX_HAVE_LINUX_FUTEX)
       value: 201907
     msvc:
     - since: C++20
@@ -1390,7 +1402,7 @@ library:
       value: 201907
     gcc:
     - since: C++20
-      depends: '__cpp_lib_atomic_wait && __cpp_aligned_new'
+      depends: __cpp_lib_atomic_wait && __cpp_aligned_new
       value: 201907
     msvc:
     - since: C++20
@@ -1666,7 +1678,7 @@ library:
       value: 201907
     msvc:
     - since: C++20
-      depends: 'defined(__cpp_constexpr_dynamic_alloc) && defined(__clang__)'
+      depends: defined(__cpp_constexpr_dynamic_alloc) && defined(__clang__)
       value: 201907
 - name: __cpp_lib_constexpr_functional
   header_list: functional
@@ -2034,7 +2046,8 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!__is_identifier(__has_unique_object_representations) || __GNUC__ >= 7'
+      depends: '!__is_identifier(__has_unique_object_representations) || __GNUC__
+        >= 7'
       value: 201606
     gcc:
     - since: C++17
@@ -2288,6 +2301,16 @@ library:
     clang: null
     gcc: null
     msvc: null
+- name: __cpp_lib_is_scoped_enum
+  header_list: type_traits
+  rows:
+  - value: 202011
+    papers: P1048R1
+    cppreference-description: '{{ltt|cpp/types/is_scoped_enum|std::is_scoped_enum}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_is_swappable
   header_list: type_traits
   rows:
@@ -2462,7 +2485,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: 'defined(__cpp_concepts) && __cpp_concepts >= 201811'
+      depends: defined(__cpp_concepts) && __cpp_concepts >= 201811
       value: 201907
     gcc:
     - since: C++20
@@ -2600,7 +2623,7 @@ library:
     - since: C++17
       value: 201603
 - name: __cpp_lib_polymorphic_allocator
-  header_list: memory
+  header_list: memory_resource
   rows:
   - value: 201902
     papers: P0339R6
@@ -2910,6 +2933,16 @@ library:
     msvc:
     - since: C++20
       value: 201902
+- name: __cpp_lib_stacktrace
+  header_list: stacktrace
+  rows:
+  - value: 202011
+    papers: P0881R7
+    cppreference-description: '[[cpp/utility#Stacktrace|Stacktrace library]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_starts_ends_with
   header_list: string string_view
   rows:
@@ -2928,6 +2961,27 @@ library:
     msvc:
     - since: C++20
       value: 201711
+- name: __cpp_lib_stdatomic_h
+  header_list: stdatomic.h
+  rows:
+  - value: 202011
+    papers: P0943R6
+    cppreference-description: Compatibility header for C atomic operations
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_string_contains
+  header_list: string string_view
+  rows:
+  - value: 202011
+    papers: P1679R3
+    cppreference-description: '{{tt|contains}} functions of {{ltt|cpp/string/basic_string/contains|std::basic_string}}
+      and {{ltt|cpp/string/basic_string_view/contains|std::basic_string_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_string_udls
   header_list: string
   rows:
