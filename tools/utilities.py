@@ -6,6 +6,7 @@ standards = [
     ('C++14', 201402),
     ('C++17', 201703),
     ('C++20', 202002),
+    ('C++23', None),
 ]
 
 library_prologue = """\
@@ -26,15 +27,19 @@ def std_options(impl):
     stdoptions = []
     for std, __cplusplus in standards:
         if impl == 'msvc':
-            if __cplusplus < 201402:
+            if std in ['C++98', 'C++11', 'C++23']:
                 continue
             if std == 'C++20':
-                assert std == standards[-1][0]
                 stdoptions.append((std, '-std:c++latest'))
             else:
                 stdoptions.append((std, f'-std:{std.lower()}'))
         else:
-            stdoptions.append((std, f'-std={std.lower()}'))
+            if std == 'C++23':
+                if impl != 'clang':
+                    continue
+                stdoptions.append((std, '-std=c++2b'))
+            else:
+                stdoptions.append((std, f'-std={std.lower()}'))
     return stdoptions
 
 def get_options(item):
