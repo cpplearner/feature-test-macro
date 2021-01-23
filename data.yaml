@@ -2308,7 +2308,9 @@ library:
     papers: P1048R1
     cppreference-description: '{{ltt|cpp/types/is_scoped_enum|std::is_scoped_enum}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202011
     gcc: null
     msvc: null
 - name: __cpp_lib_is_swappable
@@ -2979,7 +2981,9 @@ library:
     cppreference-description: '{{tt|contains}} functions of {{ltt|cpp/string/basic_string/contains|std::basic_string}}
       and {{ltt|cpp/string/basic_string_view/contains|std::basic_string_view}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202011
     gcc: null
     msvc: null
 - name: __cpp_lib_string_udls
