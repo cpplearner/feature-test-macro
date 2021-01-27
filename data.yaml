@@ -2628,7 +2628,7 @@ library:
   header_list: memory_resource
   rows:
   - value: 201902
-    papers: P0339R6
+    papers: P0339R6 LWG3437
     cppreference-description: '{{lc|std::polymorphic_allocator|std::polymorphic_allocator<>}}
       as a vocabulary type'
   support:
@@ -2865,7 +2865,9 @@ library:
     papers: P0769R2
     cppreference-description: '{{ltt|cpp/algorithm/shift|std::shift_left}} and {{ltt|cpp/algorithm/shift|std::shift_right}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201806
     gcc:
     - since: C++20
       value: 201806
