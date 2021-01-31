@@ -2303,7 +2303,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: '!defined(__EDG__) && !defined(__clang__)'
+      value: 201907
 - name: __cpp_lib_is_scoped_enum
   header_list: type_traits
   rows:
