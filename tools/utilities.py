@@ -35,8 +35,6 @@ def std_options(impl):
                 stdoptions.append((std, f'-std:{std.lower()}'))
         else:
             if std == 'C++23':
-                if impl != 'clang':
-                    continue
                 stdoptions.append((std, '-std=c++2b'))
             else:
                 stdoptions.append((std, f'-std={std.lower()}'))
