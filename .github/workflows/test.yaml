@@ -7,7 +7,7 @@ on:
         - cron: '0 0 */10 * *'
 
 env:
-    LLVM_VERSION: 12
+    LLVM_VERSION: 13
     GCC_VERSION: 11
 
 jobs:
@@ -59,19 +59,12 @@ jobs:
             - name: Install GCC
               run: |
                   LOC="$PWD"
-                  mkdir gcc && cd gcc
-                  URL="https://gcc.gnu.org/pub/gcc/snapshots/LATEST-$GCC_VERSION"
-                  wget "$URL/index.html"
-                  TARFILE=$(grep -Eo "gcc-$GCC_VERSION-[0-9]{8}.tar.xz" index.html | uniq)
-                  PKGDATE=$(echo $TARFILE | grep -Eo "[0-9]{8}")
-                  BASENAME=gcc-$GCC_VERSION-$PKGDATE
-                  if [ "$(cat "$LOC/gcc-latest/pkgdate.txt" || echo)" != "$PKGDATE" ]; then
-                      wget --progress=dot:giga "$URL/$TARFILE"
-                      echo "::group::Installing GCC"
-                      tar -xf "$TARFILE"
-                      cd $BASENAME
+                  if [ "$(cat "$LOC/gcc-latest/builddate.txt" || echo)" != "$(date +%F)" ]; then
+                      git clone --depth=1 https://gcc.gnu.org/git/gcc.git
+                      cd gcc
                       ./contrib/download_prerequisites
                       mkdir objdir && cd objdir
+                      echo "::group::Installing GCC"
                       ../configure --prefix="$LOC/gcc-latest" \
                         --with-gxx-libcxx-include-dir=/usr/lib/llvm-$LLVM_VERSION/include/c++/v1/ \
                         --enable-languages=c,c++ --without-isl --disable-bootstrap \
@@ -80,8 +73,8 @@ jobs:
                         --disable-libgomp --disable-libvtv --disable-lto
                       make -j2 && make install
                       echo "::endgroup::"
+                      date +%F > $LOC/gcc-latest/builddate.txt
                   fi
-                  echo "$PKGDATE" > $LOC/gcc-latest/pkgdate.txt
                   echo "$LOC/gcc-latest/bin" >> $GITHUB_PATH
 
             - name: Test attributes
