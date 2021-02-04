@@ -1678,7 +1678,7 @@ library:
       value: 201907
     msvc:
     - since: C++20
-      depends: defined(__cpp_constexpr_dynamic_alloc) && defined(__clang__)
+      depends: defined(__cpp_constexpr_dynamic_alloc)
       value: 201907
 - name: __cpp_lib_constexpr_functional
   header_list: functional
