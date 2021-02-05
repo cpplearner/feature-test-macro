@@ -1644,7 +1644,9 @@ library:
     papers: P0879R0 LWG3256
     cppreference-description: Constexpr for [[cpp/algorithm|algorithms]]
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201806
     gcc:
     - since: C++20
       value: 201806
