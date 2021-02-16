@@ -1725,7 +1725,9 @@ library:
     papers: P1006R1
     cppreference-description: Constexpr in {{lc|std::pointer_traits}}
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201811
     gcc:
     - since: C++20
       value: 201811
