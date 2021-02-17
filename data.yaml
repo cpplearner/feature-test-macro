@@ -1822,7 +1822,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: defined(__cpp_constexpr_dynamic_alloc) && !defined(__clang__)
+      value: 201907
 - name: __cpp_lib_coroutine
   header_list: coroutine
   rows:
