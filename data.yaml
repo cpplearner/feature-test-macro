@@ -3059,7 +3059,9 @@ library:
     - since: C++20
       depends: _GLIBCXX_USE_CXX11_ABI
       value: 201803
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201803
 - name: __cpp_lib_three_way_comparison
   header_list: compare
   rows:
@@ -3078,7 +3080,7 @@ library:
     msvc:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
-      value: 201711
+      value: 201907
 - name: __cpp_lib_to_address
   header_list: memory
   rows:
