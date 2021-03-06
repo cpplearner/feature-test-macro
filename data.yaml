@@ -1416,7 +1416,9 @@ library:
     papers: P1651R0
     cppreference-description: '{{ltt|cpp/utility/functional/bind_front|std::bind_front}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc:
     - since: C++20
       value: 201907
