@@ -1842,8 +1842,7 @@ library:
       depends: __cpp_impl_coroutine
       value: 201902
     msvc:
-    - since: C++20
-      depends: defined(__cpp_impl_coroutine)
+    - depends: defined(__cpp_impl_coroutine) || defined(_DOWNLEVEL_COROUTINES_SUPPORTED)
       value: 201902
 - name: __cpp_lib_destroying_delete
   header_list: new
@@ -2689,7 +2688,10 @@ library:
     - since: C++20
       depends: __cpp_lib_concepts
       value: 201911
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: defined(__cpp_lib_concepts)
+      value: 201911
 - name: __cpp_lib_raw_memory_algorithms
   header_list: memory
   rows:
