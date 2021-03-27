@@ -1711,7 +1711,9 @@ library:
     cppreference-description: Misc constexpr bits ({{lc|std::insert_iterator}} et
       al.)
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201811
     gcc:
     - since: C++20
       value: 201811
@@ -1762,7 +1764,9 @@ library:
     papers: P0980R1
     cppreference-description: Constexpr for {{lc|std::string}}
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201811
     gcc: null
     msvc:
     - since: C++20
@@ -1777,7 +1781,9 @@ library:
     papers: P1032R1
     cppreference-description: Misc constexpr bits ({{lc|std::string_view::copy}})
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201811
     gcc:
     - since: C++20
       value: 201811
@@ -1792,7 +1798,9 @@ library:
     cppreference-description: Misc constexpr bits ({{lc|1=std::tuple::operator=}}
       et al.)
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201811
     gcc:
     - since: C++20
       value: 201811
@@ -3143,7 +3151,9 @@ library:
     papers: P1682R3
     cppreference-description: '{{ltt|cpp/utility/to_underlying|std::to_underlying}} <!--{{lc|std::to_underlying}}-->'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202102
     gcc: null
     msvc: null
 - name: __cpp_lib_transformation_trait_aliases
