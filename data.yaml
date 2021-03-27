@@ -3136,6 +3136,16 @@ library:
     msvc:
     - since: C++17
       value: 201611
+- name: __cpp_lib_to_underlying
+  header_list: utility
+  rows:
+  - value: 202102
+    papers: P1682R3
+    cppreference-description: '{{ltt|cpp/utility/to_underlying|std::to_underlying}} <!--{{lc|std::to_underlying}}-->'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_transformation_trait_aliases
   header_list: type_traits
   rows:
@@ -3284,10 +3294,13 @@ library:
   - value: 201606
     papers: P0088R3 P0393R3 P0032R3
     cppreference-description: '{{lc|std::variant}}: a type-safe union for C++17'
+  - value: 202102
+    papers: P2162R2
+    cppreference-description: '{{lc|std::visit}} for classes derived from {{lc|std::variant}}'
   support:
     clang:
     - since: C++17
-      value: 201606
+      value: 202102
     gcc:
     - since: C++17
       value: 201606
