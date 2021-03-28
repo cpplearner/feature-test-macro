@@ -851,8 +851,8 @@ language:
     cppreference-description: '[[cpp/language/range-for|Range-based {{tt|for}} loop]]'
   - value: 201603
     papers: P0184R0
-    cppreference-description: Range-based {{tt|for}} loop with different {{tt|begin}}/{{tt|end}}
-      types
+    cppreference-description: '[[cpp/language/range-for#Explanation|Range-based {{tt|for}}
+      loop]] with different {{tt|begin}}/{{tt|end}} types'
   support:
     clang:
     - since: C++11
@@ -1087,7 +1087,8 @@ language:
   rows:
   - value: 201907
     papers: P1099R5
-    cppreference-description: Using enum
+    cppreference-description: '{{ltt|cpp/language/enum#Using-enum-declaration|using
+      enum}}'
   support:
     clang: null
     gcc:
@@ -1524,7 +1525,7 @@ library:
     papers: P0482R6
   - value: 201907
     papers: P1423R3
-    cppreference-description: Library support for {{c|char8_t}}
+    cppreference-description: Library support for {{ltt|cpp/language/types#char8_t|char8_t}}
   support:
     clang:
     - since: C++20
@@ -2006,7 +2007,8 @@ library:
   rows:
   - value: 201304
     papers: N3657
-    cppreference-description: Heterogeneous comparison lookup in associative containers
+    cppreference-description: Heterogeneous comparison lookup in [[cpp/container#Associative_containers|associative
+      containers]]
   support:
     clang:
     - since: C++14
@@ -2033,8 +2035,8 @@ library:
   rows:
   - value: 201811
     papers: P0919R3
-    cppreference-description: Heterogeneous comparison lookup in unordered associative
-      containers
+    cppreference-description: Heterogeneous comparison lookup in [[cpp/container#Unordered_associative_containers|unordered
+      associative containers]]
   support:
     clang:
     - since: C++20
@@ -2048,8 +2050,8 @@ library:
   rows:
   - value: 201703
     papers: P0154R1
-    cppreference-description: '[[cpp/thread/hardware_destructive_interference_size|constexpr
-      std::hardware_{constructive, destructive}_interference_size]]'
+    cppreference-description: '{{ltt|cpp/thread/hardware_destructive_interference_size|constexpr
+      std::hardware_{constructive, destructive}_interference_size}}'
   support:
     clang: null
     gcc: null
@@ -2345,7 +2347,8 @@ library:
   rows:
   - value: 201603
     papers: P0185R1
-    cppreference-description: '[[cpp/types/is_swappable|[nothrow-]swappable traits]]'
+    cppreference-description: '[[cpp/types/is_swappable|[{{tt|nothrow}}-]swappable
+      traits]]'
   support:
     clang:
     - since: C++17
@@ -2740,7 +2743,7 @@ library:
   rows:
   - value: 201210
     papers: N3462
-    cppreference-description: '{{lc|std::result_of}} and SFINAE'
+    cppreference-description: '{{lc|std::result_of}} and [[cpp/language/sfinae|SFINAE]]'
   support:
     clang:
     - since: C++14
@@ -3149,7 +3152,8 @@ library:
   rows:
   - value: 202102
     papers: P1682R3
-    cppreference-description: '{{ltt|cpp/utility/to_underlying|std::to_underlying}} <!--{{lc|std::to_underlying}}-->'
+    cppreference-description: '{{ltt|cpp/utility/to_underlying|std::to_underlying}}
+      <!--{{lc|std::to_underlying}}-->'
   support:
     clang:
     - since: C++23
