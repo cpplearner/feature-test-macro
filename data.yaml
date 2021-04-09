@@ -946,7 +946,9 @@ language:
     cppreference-description: '[[cpp/language/integer literal|Literal suffixes for
       {{tt|size_t}} and its signed version]]'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202011
     gcc:
     - since: C++23
       value: 202011
