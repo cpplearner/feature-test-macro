@@ -279,7 +279,7 @@ language:
       value: 201907
     msvc:
     - since: C++20
-      value: 201811
+      value: 201907
 - name: __cpp_conditional_explicit
   rows:
   - value: 201806
@@ -305,7 +305,9 @@ language:
     gcc:
     - since: C++20
       value: 201811
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201811
 - name: __cpp_constexpr
   rows:
   - value: 200704
@@ -350,6 +352,8 @@ language:
     - value: 201304
     - since: C++17
       value: 201603
+    - since: C++20
+      value: 201907
 - name: __cpp_constexpr_dynamic_alloc
   rows:
   - value: 201907
@@ -393,7 +397,9 @@ language:
     gcc:
     - since: C++20
       value: 201907
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201907
 - name: __cpp_decltype
   rows:
   - value: 200707
@@ -746,7 +752,9 @@ language:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      value: 201907
 - name: __cpp_namespace_attributes
   rows:
   - value: 201411
