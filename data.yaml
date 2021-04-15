@@ -1989,7 +1989,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: defined(__cpp_lib_concepts)
+      value: 201907
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
