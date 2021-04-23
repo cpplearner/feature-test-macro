@@ -1578,6 +1578,9 @@ library:
     - value: 201510
     - since: C++17
       value: 201611
+    - since: C++20
+      depends: defined(__cpp_lib_concepts)
+      value: 201907
 - name: __cpp_lib_chrono_udls
   header_list: chrono
   rows:
