@@ -3164,7 +3164,10 @@ library:
       {{lc|std::from_chars}})
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++17
+      depends: _GLIBCXX_HAVE_USELOCALE
+      value: 201611
     msvc:
     - since: C++17
       value: 201611
