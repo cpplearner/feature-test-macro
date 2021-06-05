@@ -2063,7 +2063,9 @@ library:
     clang:
     - since: C++20
       value: 201811
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 201811
     msvc:
     - since: C++20
       value: 201811
