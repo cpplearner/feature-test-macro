@@ -1100,7 +1100,9 @@ language:
     cppreference-description: '{{ltt|cpp/language/enum#Using-enum-declaration|using
       enum}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc:
     - since: C++20
       value: 201907
