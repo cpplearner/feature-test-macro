@@ -591,6 +591,15 @@ language:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_if_consteval
+  rows:
+  - value: 202106
+    papers: P1938R3
+    cppreference-description: '[[cpp/language/if|{{tt|consteval if}}]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_if_constexpr
   rows:
   - value: 201606
@@ -1153,6 +1162,17 @@ language:
     - since: C++17
       value: 201611
 library:
+- name: __cpp_lib_adaptor_iterator_pair_constructor
+  header_list: stack queue
+  rows:
+  - value: 202106
+    papers: P1425R4
+    cppreference-description: Iterator pair constructors for {{lc|std::stack}} and
+      {{lc|std::queue}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_addressof_constexpr
   header_list: memory
   rows:
@@ -1169,6 +1189,16 @@ library:
       value: 201603
     msvc:
     - value: 201603
+- name: __cpp_lib_allocate_at_least
+  header_list: memory
+  rows:
+  - value: 202106
+    papers: P0401R6
+    cppreference-description: '{{lc|std::allocate_at_least}} etc.'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_allocator_traits_is_always_equal
   header_list: memory scoped_allocator string deque forward_list list vector map set
     unordered_map unordered_set
@@ -1829,6 +1859,16 @@ library:
     msvc:
     - since: C++20
       value: 201811
+- name: __cpp_lib_constexpr_typeinfo
+  header_list: typeinfo
+  rows:
+  - value: 202106
+    papers: P1328R1
+    cppreference-description: Constexpr for {{lc|1=std::type_info::operator==}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_utility
   header_list: utility
   rows:
@@ -2003,6 +2043,8 @@ library:
   - value: 201907
     papers: P0645R10 P1361R2 P1652R1
     cppreference-description: '[[cpp/utility/format|Text formatting]]'
+  - value: 202106
+    papers: P2216R3
   support:
     clang: null
     gcc: null
@@ -2233,6 +2275,16 @@ library:
       value: 201411
     msvc:
     - value: 201411
+- name: __cpp_lib_invoke_r
+  header_list: functional
+  rows:
+  - value: 202106
+    papers: P2136R3
+    cppreference-description: '{{ltt|cpp/utility/functional/invoke|std::invoke_r}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_is_aggregate
   header_list: type_traits
   rows:
@@ -2659,6 +2711,8 @@ library:
   - value: 201606
     papers: P0032R3 P0307R2
     cppreference-description: '{{lc|std::optional}}'
+  - value: 202106
+    papers: P2231R1
   support:
     clang:
     - since: C++17
@@ -2669,6 +2723,15 @@ library:
     msvc:
     - since: C++17
       value: 201606
+- name: __cpp_lib_out_ptr
+  header_list: memory
+  rows:
+  - value: 202106
+    papers: P1132R8
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_parallel_algorithm
   header_list: algorithm numeric
   rows:
@@ -2724,6 +2787,8 @@ library:
     papers: P1716R3
     cppreference-description: '[[cpp/ranges|Ranges library]] and [[cpp/algorithm/ranges|constrained
       algorithms]]'
+  - value: 202106
+    papers: P2325R3
   support:
     clang: null
     gcc:
@@ -2734,6 +2799,16 @@ library:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
       value: 201911
+- name: __cpp_lib_ranges_starts_ends_with
+  header_list: algorithm
+  rows:
+  - value: 202106
+    papers: P1659R3
+    cppreference-description: '{{lc|std::ranges::starts_with}}, {{lc|std::ranges::ends_with}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_raw_memory_algorithms
   header_list: memory
   rows:
@@ -2986,6 +3061,15 @@ library:
     msvc:
     - since: C++20
       value: 202002
+- name: __cpp_lib_spanstream
+  header_list: spanstream
+  rows:
+  - value: 202106
+    papers: P0448R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ssize
   header_list: iterator
   rows:
@@ -3345,6 +3429,8 @@ library:
   - value: 202102
     papers: P2162R2
     cppreference-description: '{{lc|std::visit}} for classes derived from {{lc|std::variant}}'
+  - value: 202106
+    papers: P2231R1
   support:
     clang:
     - since: C++17
