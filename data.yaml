@@ -2047,6 +2047,7 @@ library:
     cppreference-description: '[[cpp/utility/format|Text formatting]]'
   - value: 202106
     papers: P2216R3
+    cppreference-description: 'Compile-time format string checks; Reducing parameterization of {{lc|std::vformat_to}}'
   support:
     clang: null
     gcc: null
@@ -2717,6 +2718,7 @@ library:
     cppreference-description: '{{lc|std::optional}}'
   - value: 202106
     papers: P2231R1
+    cppreference-description: Fully {{tt|constexpr}} {{lc|std::optional}}
   support:
     clang:
     - since: C++17
@@ -2732,6 +2734,7 @@ library:
   rows:
   - value: 202106
     papers: P1132R8
+    cppreference-description: '{{lc|std::out_ptr}}, {{lc|std::inout_ptr}}'
   support:
     clang: null
     gcc: null
@@ -2755,7 +2758,7 @@ library:
   rows:
   - value: 201902
     papers: P0339R6 LWG3437
-    cppreference-description: '{{lc|std::polymorphic_allocator|std::polymorphic_allocator<>}}
+    cppreference-description: '{{lc|std::pmr::polymorphic_allocator|std::pmr::polymorphic_allocator<>}}
       as a vocabulary type'
   support:
     clang: null
@@ -2802,7 +2805,7 @@ library:
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
-      value: 201911
+      value: 202106
 - name: __cpp_lib_ranges_starts_ends_with
   header_list: algorithm
   rows:
@@ -3070,6 +3073,7 @@ library:
   rows:
   - value: 202106
     papers: P0448R4
+    cppreference-description: '{{ltt|cpp/io/basic_spanbuf|std::spanbuf}}, {{ltt|cpp/io/basic_spanstream|std::spanstream}}'
   support:
     clang: null
     gcc: null
@@ -3142,7 +3146,9 @@ library:
     gcc:
     - since: C++23
       value: 202011
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202011
 - name: __cpp_lib_string_udls
   header_list: string
   rows:
@@ -3281,7 +3287,9 @@ library:
     gcc:
     - since: C++23
       value: 202102
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202102
 - name: __cpp_lib_transformation_trait_aliases
   header_list: type_traits
   rows:
@@ -3435,6 +3443,7 @@ library:
     cppreference-description: '{{lc|std::visit}} for classes derived from {{lc|std::variant}}'
   - value: 202106
     papers: P2231R1
+    cppreference-description: Fully {{tt|constexpr}} {{lc|std::variant}}
   support:
     clang:
     - since: C++17
@@ -3444,7 +3453,7 @@ library:
       value: 201606
     msvc:
     - since: C++17
-      value: 201606
+      value: 202102
 - name: __cpp_lib_void_t
   header_list: type_traits
   rows:
