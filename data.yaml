@@ -1410,7 +1410,10 @@ library:
     cppreference-description: Fixing atomic initialization (value-initialize {{lc|std::atomic}}
       by default)
   support:
-    clang: null
+    clang:
+    - since: C++20
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      value: 201911
     gcc:
     - since: C++20
       value: 201911
