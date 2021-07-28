@@ -1735,7 +1735,6 @@ library:
       value: 201907
     msvc:
     - since: C++20
-      depends: defined(__cpp_constexpr_dynamic_alloc)
       value: 201907
 - name: __cpp_lib_constexpr_functional
   header_list: functional
@@ -1827,7 +1826,6 @@ library:
       value: 201811
     msvc:
     - since: C++20
-      depends: defined(__cpp_constexpr_dynamic_alloc) && !defined(__clang__)
       value: 201907
 - name: __cpp_lib_constexpr_string_view
   header_list: string_view
@@ -1902,7 +1900,6 @@ library:
     gcc: null
     msvc:
     - since: C++20
-      depends: defined(__cpp_constexpr_dynamic_alloc) && !defined(__clang__)
       value: 201907
 - name: __cpp_lib_coroutine
   header_list: coroutine
