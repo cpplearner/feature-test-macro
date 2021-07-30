@@ -1200,7 +1200,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202106
 - name: __cpp_lib_allocator_traits_is_always_equal
   header_list: memory scoped_allocator string deque forward_list list vector map set
     unordered_map unordered_set
@@ -2738,7 +2741,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202106
 - name: __cpp_lib_parallel_algorithm
   header_list: algorithm numeric
   rows:
