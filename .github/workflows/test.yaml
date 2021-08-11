@@ -7,7 +7,7 @@ on:
         - cron: '0 0 */10 * *'
 
 env:
-    LLVM_VERSION: 13
+    LLVM_VERSION: 14
 
 jobs:
     clang:
@@ -16,7 +16,7 @@ jobs:
             - uses: actions/checkout@v2
             - uses: actions/setup-python@v2
               with:
-                  python-version: 3.8
+                  python-version: 3.9
             - name: Install PyYAML
               run: pip install pyyaml
             - name: Install Clang
@@ -113,7 +113,7 @@ jobs:
             - uses: actions/checkout@v2
             - uses: actions/setup-python@v2
               with:
-                  python-version: 3.8
+                  python-version: 3.9
             - name: Install PyYAML
               run: pip install pyyaml
             - name: Install MSVC
@@ -151,11 +151,10 @@ jobs:
             - name: Install Clang
               run: |
                   curl.exe -L -o llvm.exe `
-                    https://github.com/llvm/llvm-project/releases/download/llvmorg-12.0.1/LLVM-12.0.1-win64.exe
+                    https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.0-rc1/LLVM-13.0.0-rc1-win64.exe
                   7z x llvm.exe -oLLVM
                   echo "$PWD\LLVM\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
 
             - name: Test MSVC STL with Clang
               run: python tools/do_test.py msvc library --verbose
-                    --cc clang-cl --std C++14 C++17 C++23
-                    --extra-args -diagnostics:classic
+                    --cc clang-cl --extra-args -diagnostics:classic
