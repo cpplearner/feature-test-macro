@@ -153,8 +153,9 @@ jobs:
                   curl.exe -L -o llvm.exe `
                     https://github.com/llvm/llvm-project/releases/download/llvmorg-13.0.0-rc1/LLVM-13.0.0-rc1-win64.exe
                   7z x llvm.exe -oLLVM
-                  echo "$PWD\LLVM\bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
+                  echo "$PWD\LLVM\bin" | Out-File -FilePath "$env:GITHUB_PATH" -Encoding utf8 -Append
 
             - name: Test MSVC STL with Clang
               run: python tools/do_test.py msvc library --verbose
-                    --cc clang-cl --extra-args -diagnostics:classic
+                    --cc clang-cl
+                    --extra-args -Xclang -fms-compatibility-version=0 -diagnostics:classic
