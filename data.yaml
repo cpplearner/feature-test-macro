@@ -2405,7 +2405,10 @@ library:
     cppreference-description: Pointer-interconvertibility traits
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      depends: __has_builtin(__is_pointer_interconvertible_base_of) && __has_builtin(__builtin_is_pointer_interconvertible_with_class)
+      value: 201907
     msvc:
     - since: C++20
       depends: '!defined(__EDG__) && !defined(__clang__)'
