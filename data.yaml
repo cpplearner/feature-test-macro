@@ -1174,7 +1174,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202106
 - name: __cpp_lib_addressof_constexpr
   header_list: memory
   rows:
@@ -1430,7 +1432,11 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
+        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 110000) ||
+        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 140000) ||
+        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 140000) ||
+        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 70000)))'
       value: 201907
     gcc:
     - since: C++20
@@ -1448,7 +1454,11 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
+        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 110000) ||
+        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 140000) ||
+        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 140000) ||
+        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 70000)))'
       value: 201907
     gcc:
     - since: C++20
@@ -2034,6 +2044,11 @@ library:
   support:
     clang:
     - since: C++17
+      depends: '(defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
+        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 101500) ||
+        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 130000) ||
+        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 130000) ||
+        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 60000)))'
       value: 201703
     gcc:
     - since: C++17
@@ -2049,7 +2064,8 @@ library:
     cppreference-description: '[[cpp/utility/format|Text formatting]]'
   - value: 202106
     papers: P2216R3
-    cppreference-description: 'Compile-time format string checks; Reducing parameterization of {{lc|std::vformat_to}}'
+    cppreference-description: Compile-time format string checks; Reducing parameterization
+      of {{lc|std::vformat_to}}
   support:
     clang: null
     gcc: null
@@ -2287,7 +2303,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202106
 - name: __cpp_lib_is_aggregate
   header_list: type_traits
   rows:
@@ -2473,7 +2491,11 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
+        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 110000) ||
+        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 140000) ||
+        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 140000) ||
+        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 70000)))'
       value: 201907
     gcc:
     - since: C++20
@@ -2927,7 +2949,11 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
+        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 110000) ||
+        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 140000) ||
+        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 140000) ||
+        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 70000)))'
       value: 201907
     gcc:
     - since: C++20
@@ -2945,7 +2971,11 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
+        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 101200) ||
+        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 100000) ||
+        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 100000) ||
+        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 30000)))'
       value: 201505
     gcc:
     - since: C++17
@@ -2998,7 +3028,11 @@ library:
   support:
     clang:
     - since: C++14
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
+        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 101200) ||
+        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 100000) ||
+        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 100000) ||
+        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 30000)))'
       value: 201402
     gcc:
     - since: C++14
@@ -3135,7 +3169,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202011
 - name: __cpp_lib_string_contains
   header_list: string string_view
   rows:
