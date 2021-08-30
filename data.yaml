@@ -2755,6 +2755,9 @@ library:
     msvc:
     - since: C++17
       value: 201606
+    - since: C++20
+      depends: (defined(__clang__) || defined(__EDG__))
+      value: 202106
 - name: __cpp_lib_out_ptr
   header_list: memory
   rows:
@@ -3497,6 +3500,9 @@ library:
     msvc:
     - since: C++17
       value: 202102
+    - since: C++20
+      depends: (defined(__clang__) || defined(__EDG__))
+      value: 202106
 - name: __cpp_lib_void_t
   header_list: type_traits
   rows:
