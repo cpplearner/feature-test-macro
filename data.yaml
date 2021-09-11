@@ -1492,7 +1492,9 @@ library:
     papers: P0476R2
     cppreference-description: '{{ltt|cpp/numeric/bit_cast|std::bit_cast}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201806
     gcc:
     - since: C++20
       depends: __has_builtin(__builtin_bit_cast)
