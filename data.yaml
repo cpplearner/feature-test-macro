@@ -3123,7 +3123,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202106
 - name: __cpp_lib_ssize
   header_list: iterator
   rows:
