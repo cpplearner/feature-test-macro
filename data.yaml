@@ -2145,7 +2145,10 @@ library:
       std::hardware_{constructive, destructive}_interference_size}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++17
+      depends: defined(__GCC_DESTRUCTIVE_SIZE)
+      value: 201703
     msvc:
     - since: C++17
       value: 201703
