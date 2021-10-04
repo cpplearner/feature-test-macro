@@ -3505,7 +3505,7 @@ library:
       value: 202102
     gcc:
     - since: C++17
-      value: 201606
+      value: 202102
     msvc:
     - since: C++17
       value: 202102
