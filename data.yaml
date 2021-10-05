@@ -1173,7 +1173,9 @@ library:
       {{lc|std::queue}}
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202106
     msvc:
     - since: C++23
       value: 202106
