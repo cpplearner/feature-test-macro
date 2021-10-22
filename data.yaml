@@ -329,6 +329,10 @@ language:
     papers: P1331R2 P1668R1
     cppreference-description: Trivial [[cpp/language/default initialization|default
       initialization]] and [[cpp/language/asm|asm-declaration]] in constexpr functions
+  - value: 202110
+    papers: P2242R3
+    cppreference-description: Non-[[cpp/named req/LiteralType|literal]] variables,
+      labels, and {{ltt|cpp/language|goto}} statements in constexpr functions
   support:
     clang:
     - since: C++11
@@ -516,6 +520,15 @@ language:
     msvc:
     - option: /EHs
       value: 199711
+- name: __cpp_explicit_this_parameter
+  rows:
+  - value: 202110
+    papers: P0847R7
+    cppreference-description: Explicit object parameter
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_fold_expressions
   rows:
   - value: 201411
@@ -540,7 +553,7 @@ language:
     cppreference-description: '[[cpp/language/lambda|Generic lambda expressions]]'
   - value: 201707
     papers: P0428R2
-    cppreference-description: Familiar template syntax for [[cpp/language/lambda|generic
+    cppreference-description: Explicit template parameter list for [[cpp/language/lambda|generic
       lambdas]]
   support:
     clang:
@@ -766,6 +779,16 @@ language:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_multidimensional_subscript
+  rows:
+  - value: 202110
+    papers: P2128R6
+    cppreference-description: Multidimensional [[cpp/language/operator member access|subscript
+      operator]]
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_namespace_attributes
   rows:
   - value: 201411
@@ -1303,6 +1326,18 @@ library:
       value: 201510
     msvc:
     - value: 201510
+- name: __cpp_lib_associative_heterogeneous_erasure
+  header_list: map set unordered_map unordered_set
+  rows:
+  - value: 202110
+    papers: P2077R3
+    cppreference-description: Heterogeneous erasure in [[cpp/container#Associative
+      containers|associative containers]] and [[cpp/container#Unordered associative
+      containers|unordered associative containers]]
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_assume_aligned
   header_list: memory
   rows:
@@ -1339,7 +1374,7 @@ library:
   rows:
   - value: 201711
     papers: P0020R6
-    cppreference-description: '[[cpp/atomic/atomic|Floating point atomic]]'
+    cppreference-description: '[[cpp/atomic/atomic|Floating-point atomic]]'
   support:
     clang: null
     gcc:
@@ -1434,11 +1469,12 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
-        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 110000) ||
-        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 140000) ||
-        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 140000) ||
-        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 70000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
+        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
+        < 110000) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
+        < 140000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
+        < 140000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
+        < 70000)))'
       value: 201907
     gcc:
     - since: C++20
@@ -1456,11 +1492,12 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
-        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 110000) ||
-        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 140000) ||
-        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 140000) ||
-        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 70000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
+        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
+        < 110000) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
+        < 140000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
+        < 140000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
+        < 70000)))'
       value: 201907
     gcc:
     - since: C++20
@@ -1581,6 +1618,16 @@ library:
     - since: C++17
       depends: _HAS_STD_BYTE
       value: 201603
+- name: __cpp_lib_byteswap
+  header_list: bit
+  rows:
+  - value: 202110
+    papers: P1272R4
+    cppreference-description: '{{ltt|cpp/numeric/byteswap|std::byteswap}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_char8_t
   header_list: atomic filesystem istream limits locale ostream string string_view
   rows:
@@ -2048,11 +2095,11 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '(defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
-        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 101500) ||
-        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 130000) ||
-        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 130000) ||
-        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 60000)))'
+      depends: (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__)
+        && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 101500) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__)
+        && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 130000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__)
+        && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 130000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__)
+        && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 60000)))
       value: 201703
     gcc:
     - since: C++17
@@ -2070,6 +2117,10 @@ library:
     papers: P2216R3
     cppreference-description: Compile-time format string checks; Reducing parameterization
       of {{lc|std::vformat_to}}
+  - value: 202110
+    papers: P2372R3 P2418R2
+    cppreference-description: Fixing locale handling in chrono formatters; Use of
+      forwarding references in format arguments
   support:
     clang: null
     gcc: null
@@ -2503,11 +2554,12 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
-        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 110000) ||
-        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 140000) ||
-        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 140000) ||
-        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 70000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
+        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
+        < 110000) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
+        < 140000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
+        < 140000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
+        < 70000)))'
       value: 201907
     gcc:
     - since: C++20
@@ -2679,6 +2731,26 @@ library:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_lib_monadic_optional
+  header_list: optional
+  rows:
+  - value: 202110
+    papers: P0798R8
+    cppreference-description: Monadic Operations in {{lc|std::optional}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_move_only_function
+  header_list: functional
+  rows:
+  - value: 202110
+    papers: P0288R9
+    cppreference-description: '{{lc|std::move_only_function}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_node_extract
   header_list: map set unordered_map unordered_set
   rows:
@@ -2837,6 +2909,11 @@ library:
       algorithms]]'
   - value: 202106
     papers: P2325R3
+    cppreference-description: Non-[[cpp/concepts/default_initializable|default-initializable]]
+      [[cpp/ranges/view|view]]s
+  - value: 202110
+    papers: P2415R2
+    cppreference-description: '[[cpp/ranges/view|View]]s with [[cpp/ranges/owning_view|ownership]]'
   support:
     clang: null
     gcc:
@@ -2853,6 +2930,17 @@ library:
   - value: 202106
     papers: P1659R3
     cppreference-description: '{{lc|std::ranges::starts_with}}, {{lc|std::ranges::ends_with}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_ranges_zip
+  header_list: ranges tuple utility
+  rows:
+  - value: 202110
+    papers: P1072R10
+    cppreference-description: '{{lc|std::ranges::zip_view}}, {{lc|std::ranges::zip_transform_view}},
+      {{lc|std::ranges::adjacent_view}}, {{lc|std::ranges::adjacent_transform_view}}'
   support:
     clang: null
     gcc: null
@@ -2964,11 +3052,12 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
-        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 110000) ||
-        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 140000) ||
-        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 140000) ||
-        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 70000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
+        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
+        < 110000) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
+        < 140000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
+        < 140000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
+        < 70000)))'
       value: 201907
     gcc:
     - since: C++20
@@ -2986,11 +3075,12 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
-        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 101200) ||
-        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 100000) ||
-        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 100000) ||
-        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 30000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
+        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
+        < 101200) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
+        < 100000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
+        < 100000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
+        < 30000)))'
       value: 201505
     gcc:
     - since: C++17
@@ -3043,11 +3133,12 @@ library:
   support:
     clang:
     - since: C++14
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) ||
-        !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 101200) ||
-        (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 100000) ||
-        (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 100000) ||
-        (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 30000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
+        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
+        < 101200) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
+        < 100000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
+        < 100000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
+        < 30000)))'
       value: 201402
     gcc:
     - since: C++14
@@ -3206,6 +3297,16 @@ library:
     msvc:
     - since: C++23
       value: 202011
+- name: __cpp_lib_string_resize_and_overwrite
+  header_list: string
+  rows:
+  - value: 202110
+    papers: P1072R10
+    cppreference-description: '{{lc|std::basic_string::resize_and_overwrite}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_string_udls
   header_list: string
   rows:
