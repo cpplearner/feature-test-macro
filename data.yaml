@@ -1627,7 +1627,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202110
 - name: __cpp_lib_char8_t
   header_list: atomic filesystem istream limits locale ostream string string_view
   rows:
@@ -2933,7 +2935,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202106
 - name: __cpp_lib_ranges_zip
   header_list: ranges tuple utility
   rows:
