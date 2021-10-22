@@ -610,7 +610,9 @@ language:
     papers: P1938R3
     cppreference-description: '[[cpp/language/if|{{tt|consteval if}}]]'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202106
     gcc:
     - since: C++23
       value: 202106
