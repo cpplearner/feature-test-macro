@@ -1192,7 +1192,7 @@ language:
       value: 201611
 library:
 - name: __cpp_lib_adaptor_iterator_pair_constructor
-  header_list: stack queue
+  header_list: queue stack
   rows:
   - value: 202106
     papers: P1425R4
@@ -1985,6 +1985,14 @@ library:
     msvc:
     - depends: defined(__cpp_impl_coroutine) || defined(_DOWNLEVEL_COROUTINES_SUPPORTED)
       value: 201902
+- name: __cpp_lib_deduction_guides
+  rows:
+  - value: 201703
+    papers: P0433R2
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_destroying_delete
   header_list: new
   rows:
@@ -2856,7 +2864,7 @@ library:
   header_list: memory
   rows:
   - value: 202106
-    papers: P1132R8
+    papers: P1132R7
     cppreference-description: '{{lc|std::out_ptr}}, {{lc|std::inout_ptr}}'
   support:
     clang: null
@@ -2954,7 +2962,7 @@ library:
   header_list: ranges tuple utility
   rows:
   - value: 202110
-    papers: P1072R10
+    papers: P2321R2
     cppreference-description: '{{lc|std::ranges::zip_view}}, {{lc|std::ranges::zip_transform_view}},
       {{lc|std::ranges::adjacent_view}}, {{lc|std::ranges::adjacent_transform_view}}'
   support:
@@ -3454,7 +3462,7 @@ library:
   header_list: utility
   rows:
   - value: 202102
-    papers: P1682R3
+    papers: P1682R2
     cppreference-description: '{{ltt|cpp/utility/to_underlying|std::to_underlying}}
       <!--{{lc|std::to_underlying}}-->'
   support:
