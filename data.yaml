@@ -1062,7 +1062,7 @@ language:
       template-arguments]]
   support:
     clang:
-    - invoption: -fno-relaxed-template-template-args
+    - option: -frelaxed-template-template-args
       value: 201611
     gcc:
     - since: C++17
