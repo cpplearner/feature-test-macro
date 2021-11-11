@@ -640,7 +640,9 @@ language:
     papers: P0912R5 LWG3393
     cppreference-description: '[[cpp/language/coroutines|Coroutines]] (compiler support)'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201902
     gcc:
     - since: C++20
       value: 201902
