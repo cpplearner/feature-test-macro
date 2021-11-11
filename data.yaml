@@ -190,7 +190,7 @@ language:
       value: 201606
     msvc:
     - since: C++17
-      invoption: /Zc:alignedNew-
+      disabled-by: /Zc:alignedNew-
       value: 201606
 - name: __cpp_attributes
   rows:
@@ -514,10 +514,10 @@ language:
     feature: Exception handling
   support:
     clang:
-    - invoption: -fno-exceptions -fno-cxx-exceptions
+    - disabled-by: -fno-exceptions -fno-cxx-exceptions
       value: 199711
     gcc:
-    - invoption: -fno-exceptions
+    - disabled-by: -fno-exceptions
       value: 199711
     msvc:
     - option: /EHs
@@ -650,6 +650,8 @@ language:
       value: 201902
     msvc:
     - since: C++20
+      value: 201902
+    - enabled-by: /await:strict
       value: 201902
 - name: __cpp_impl_destroying_delete
   rows:
@@ -824,7 +826,7 @@ language:
       value: 201510
     msvc:
     - since: C++17
-      invoption: /Zc:noexceptTypes-
+      disabled-by: /Zc:noexceptTypes-
       value: 201510
 - name: __cpp_nontype_template_args
   rows:
@@ -965,13 +967,13 @@ language:
     feature: Run-time type identification
   support:
     clang:
-    - invoption: -fno-rtti
+    - disabled-by: -fno-rtti
       value: 199711
     gcc:
-    - invoption: -fno-rtti
+    - disabled-by: -fno-rtti
       value: 199711
     msvc:
-    - invoption: /GR-
+    - disabled-by: /GR-
       value: 199711
 - name: __cpp_rvalue_references
   rows:
@@ -1016,7 +1018,7 @@ language:
     - option: -fsized-deallocation
       value: 201309
     msvc:
-    - invoption: /Zc:sizedDealloc-
+    - disabled-by: /Zc:sizedDealloc-
       value: 201309
 - name: __cpp_static_assert
   rows:
@@ -1080,13 +1082,13 @@ language:
       initialization and destruction with concurrency]]'
   support:
     clang:
-    - invoption: -fno-threadsafe-statics
+    - disabled-by: -fno-threadsafe-statics
       value: 200806
     gcc:
-    - invoption: -fno-threadsafe-statics
+    - disabled-by: -fno-threadsafe-statics
       value: 200806
     msvc:
-    - invoption: /Zc:threadSafeInit-
+    - disabled-by: /Zc:threadSafeInit-
       value: 200806
 - name: __cpp_unicode_characters
   rows:

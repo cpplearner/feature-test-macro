@@ -43,7 +43,8 @@ def std_options(impl):
 def get_options(item):
     opts = item.get('option', '').split()
     opts += [negate_option(opt) for opt in item.get('option', '').split()]
-    opts += item.get('invoption', '').split()
+    opts += item.get('enabled-by', '').split()
+    opts += item.get('disabled-by', '').split()
     return opts
 
 def to_identifier(option):
@@ -133,8 +134,11 @@ class TestsuiteGenerator:
             if 'since' in item:
                 index = [i for i, [std, _] in enumerate(standards) if std == item['since']][0]
                 condition.append(f"__cplusplus > {standards[index - 1][1]}")
-            if 'invoption' in item:
-                o = ['!'+to_identifier(option) for option in item['invoption'].split(' ')]
+            if 'enabled-by' in item:
+                o = [to_identifier(option) for option in item['enabled-by'].split()]
+                condition.append(' && '.join(o))
+            if 'disabled-by' in item:
+                o = ['!'+to_identifier(option) for option in item['disabled-by'].split()]
                 condition.append(' && '.join(o))
             if 'depends' in item:
                 condition.append(f"({item['depends']})")
@@ -143,7 +147,7 @@ class TestsuiteGenerator:
                 condition.append(nonpedantic_option())
 
             if 'option' in item:
-                option = item['option'].split(' ')
+                option = item['option'].split()
                 hasopt = [to_identifier(opt) for opt in option]
                 hasinvopt = [to_identifier(negate_option(opt)) for opt in option]
 
