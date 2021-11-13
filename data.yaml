@@ -2862,7 +2862,6 @@ library:
     - since: C++17
       value: 201606
     - since: C++20
-      depends: (defined(__clang__) || defined(__EDG__))
       value: 202106
 - name: __cpp_lib_out_ptr
   header_list: memory
@@ -2948,7 +2947,7 @@ library:
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
-      value: 202106
+      value: 202110
 - name: __cpp_lib_ranges_starts_ends_with
   header_list: algorithm
   rows:
@@ -3337,7 +3336,9 @@ library:
     - since: C++23
       depends: _GLIBCXX_USE_CXX11_ABI
       value: 202110
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202110
 - name: __cpp_lib_string_udls
   header_list: string
   rows:
@@ -3647,7 +3648,6 @@ library:
     - since: C++17
       value: 202102
     - since: C++20
-      depends: (defined(__clang__) || defined(__EDG__))
       value: 202106
 - name: __cpp_lib_void_t
   header_list: type_traits
