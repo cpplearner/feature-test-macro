@@ -1892,9 +1892,14 @@ library:
       value: 201811
     gcc:
     - since: C++17
+      depends: __has_builtin(__builtin_is_constant_evaluated) || !__is_identifier(__builtin_is_constant_evaluated)
       value: 201611
     - since: C++20
+      depends: __has_builtin(__builtin_is_constant_evaluated) || !__is_identifier(__builtin_is_constant_evaluated)
       value: 201811
+    - since: C++20
+      depends: (__has_builtin(__builtin_is_constant_evaluated) || !__is_identifier(__builtin_is_constant_evaluated)) && _GLIBCXX_USE_CXX11_ABI
+      value: 201907
     msvc:
     - since: C++20
       value: 201907
@@ -2235,7 +2240,7 @@ library:
       value: 201606
     gcc:
     - since: C++17
-      depends: __GNUC__ >= 7 || !__is_identifier(__has_unique_object_representations)
+      depends: __has_builtin(__has_unique_object_representations) || !__is_identifier(__has_unique_object_representations)
       value: 201606
     msvc:
     - since: C++17
@@ -2396,7 +2401,7 @@ library:
       value: 201703
     gcc:
     - since: C++17
-      depends: __GNUC__ >= 7 || !__is_identifier(__is_aggregate)
+      depends: __has_builtin(__is_aggregate) || !__is_identifier(__is_aggregate)
       value: 201703
     msvc:
     - since: C++17
@@ -2413,7 +2418,7 @@ library:
       value: 201811
     gcc:
     - since: C++20
-      depends: __GNUC__ >= 9 || __has_builtin(__builtin_is_constant_evaluated)
+      depends: __has_builtin(__builtin_is_constant_evaluated) || !__is_identifier(__builtin_is_constant_evaluated)
       value: 201811
     msvc:
     - since: C++20
@@ -2599,7 +2604,7 @@ library:
       value: 201606
     gcc:
     - since: C++17
-      depends: __GNUC__ >= 7 || __has_builtin(__builtin_launder)
+      depends: __has_builtin(__builtin_launder) || !__is_identifier(__builtin_launder)
       value: 201606
     msvc:
     - since: C++17
