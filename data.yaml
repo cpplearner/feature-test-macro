@@ -1369,7 +1369,6 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
       value: 201907
     gcc:
     - since: C++20
@@ -1401,7 +1400,6 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
       value: 201603
     gcc:
     - since: C++17
@@ -1419,7 +1417,6 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
       value: 201907
     gcc: null
     msvc:
@@ -1461,7 +1458,6 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
       value: 201911
     gcc:
     - since: C++20
@@ -1633,7 +1629,9 @@ library:
     papers: P1272R4
     cppreference-description: '{{ltt|cpp/numeric/byteswap|std::byteswap}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202110
     gcc: null
     msvc:
     - since: C++23
@@ -1981,7 +1979,9 @@ library:
     papers: P0912R5 LWG3393
     cppreference-description: '[[cpp/language/coroutines|Coroutines]] (library support)'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201902
     gcc:
     - since: C++14
       depends: __cpp_impl_coroutine
