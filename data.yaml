@@ -1347,7 +1347,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202110
 - name: __cpp_lib_assume_aligned
   header_list: memory
   rows:
@@ -2154,7 +2156,7 @@ library:
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
-      value: 201907
+      value: 202106
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
@@ -2770,7 +2772,10 @@ library:
     - since: C++23
       depends: __cpp_lib_concepts
       value: 202110
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: __cpp_lib_concepts
+      value: 202110
 - name: __cpp_lib_move_only_function
   header_list: functional
   rows:
@@ -2782,7 +2787,9 @@ library:
     gcc:
     - since: C++23
       value: 202110
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202110
 - name: __cpp_lib_node_extract
   header_list: map set unordered_map unordered_set
   rows:
