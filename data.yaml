@@ -2767,7 +2767,9 @@ library:
     papers: P0798R8
     cppreference-description: Monadic Operations in {{lc|std::optional}}
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202110
     gcc:
     - since: C++23
       depends: __cpp_lib_concepts
