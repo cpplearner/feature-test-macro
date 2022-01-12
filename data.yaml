@@ -1205,7 +1205,9 @@ library:
     cppreference-description: Iterator pair constructors for {{lc|std::stack}} and
       {{lc|std::queue}}
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202106
     gcc:
     - since: C++23
       value: 202106
@@ -3352,7 +3354,9 @@ library:
     papers: P1072R10
     cppreference-description: '{{lc|std::basic_string::resize_and_overwrite}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202110
     gcc:
     - since: C++23
       depends: _GLIBCXX_USE_CXX11_ABI
@@ -3574,7 +3578,9 @@ library:
     papers: P0887R1
     cppreference-description: '{{lc|std::type_identity}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201806
     gcc:
     - since: C++20
       value: 201806
