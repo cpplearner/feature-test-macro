@@ -1450,7 +1450,9 @@ library:
     cppreference-description: '{{ltt|cpp/memory/shared_ptr/atomic2|std::atomic<std::shared_ptr>}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 201711
     msvc:
     - since: C++20
       value: 201711
@@ -3153,6 +3155,8 @@ library:
     gcc:
     - since: C++11
       value: 201611
+    - since: C++20
+      value: 201707
     msvc:
     - value: 201611
     - since: C++20
@@ -3220,7 +3224,9 @@ library:
       {{lc|std::make_shared_for_overwrite}}, {{lc|std::make_unique_for_overwrite}})
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 202002
     msvc:
     - since: C++20
       value: 202002
@@ -3300,7 +3306,10 @@ library:
     cppreference-description: '[[cpp/utility#Stacktrace|Stacktrace library]]'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      depends: _GLIBCXX_HAVE_STACKTRACE
+      value: 202011
     msvc: null
 - name: __cpp_lib_starts_ends_with
   header_list: string string_view
