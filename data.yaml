@@ -2162,7 +2162,7 @@ library:
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
-      value: 202106
+      value: 202110
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
