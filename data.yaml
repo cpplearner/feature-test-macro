@@ -1768,7 +1768,7 @@ library:
     msvc:
     - since: C++20
       depends: '!defined(__EDG__) || defined(__INTELLISENSE__)'
-      value: 201907
+      value: 202002
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm
   rows:
@@ -2780,10 +2780,7 @@ library:
     - since: C++23
       depends: __cpp_lib_concepts
       value: 202110
-    msvc:
-    - since: C++23
-      depends: __cpp_lib_concepts
-      value: 202110
+    msvc: null
 - name: __cpp_lib_move_only_function
   header_list: functional
   rows:
@@ -2887,6 +2884,9 @@ library:
       value: 201606
     - since: C++20
       value: 202106
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202110
 - name: __cpp_lib_out_ptr
   header_list: memory
   rows:
