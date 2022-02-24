@@ -2967,7 +2967,7 @@ library:
     gcc:
     - since: C++20
       depends: __cpp_lib_concepts
-      value: 202106
+      value: 202110
     msvc:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
