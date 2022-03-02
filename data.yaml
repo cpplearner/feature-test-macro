@@ -650,6 +650,7 @@ language:
       value: 201902
     msvc:
     - since: C++20
+      disabled-by: /await
       value: 201902
     - enabled-by: /await:strict
       value: 201902
@@ -2004,7 +2005,7 @@ library:
       depends: __cpp_impl_coroutine
       value: 201902
     msvc:
-    - depends: defined(__cpp_impl_coroutine) || defined(_DOWNLEVEL_COROUTINES_SUPPORTED)
+    - depends: defined(__cpp_impl_coroutine)
       value: 201902
 - name: __cpp_lib_deduction_guides
   rows:
