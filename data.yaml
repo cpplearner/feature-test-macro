@@ -2374,7 +2374,6 @@ library:
   support:
     clang:
     - since: C++20
-      depends: defined(__cpp_concepts) && __cpp_concepts >= 201907
       value: 202002
     gcc:
     - since: C++20
@@ -2783,7 +2782,6 @@ library:
   support:
     clang:
     - since: C++20
-      depends: defined(__cpp_concepts) && __cpp_concepts >= 201907
       value: 201907
     gcc:
     - since: C++20
