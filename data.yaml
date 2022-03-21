@@ -3779,7 +3779,9 @@ library:
     papers: P0627R6
     cppreference-description: '{{lc|std::unreachable}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202202
     gcc: null
     msvc:
     - since: C++23
