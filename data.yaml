@@ -3495,7 +3495,7 @@ library:
     clang: null
     gcc:
     - since: C++17
-      depends: _GLIBCXX_HAVE_USELOCALE
+      depends: _GLIBCXX_FLOAT_IS_IEEE_BINARY32 && _GLIBCXX_DOUBLE_IS_IEEE_BINARY64 && __SIZE_WIDTH__ >= 32
       value: 201611
     msvc:
     - since: C++17
