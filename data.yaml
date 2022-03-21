@@ -1900,6 +1900,8 @@ library:
     msvc:
     - since: C++20
       value: 201811
+    - since: C++23
+      value: 202202
 - name: __cpp_lib_constexpr_numeric
   header_list: numeric
   rows:
@@ -3039,7 +3041,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202202
 - name: __cpp_lib_ranges_iota
   header_list: numeric
   rows:
@@ -3776,7 +3781,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202202
 - name: __cpp_lib_unwrap_ref
   header_list: type_traits
   rows:
