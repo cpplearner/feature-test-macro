@@ -268,6 +268,9 @@ language:
   - value: 201907
     papers: P1452R2
     cppreference-description: '[[cpp/language/constraints|Concepts]]'
+  - value: 202002
+    papers: P0848R3 P2493R0
+    cppreference-description: Conditional trivial special member functions
   support:
     clang:
     - since: C++20
@@ -329,6 +332,9 @@ language:
     papers: P1331R2 P1668R1
     cppreference-description: Trivial [[cpp/language/default initialization|default
       initialization]] and [[cpp/language/asm|asm-declaration]] in constexpr functions
+  - value: 202002
+    papers: P1330R0 P2493R0
+    cppreference-description: Changing the active member of a union in constant evaluation
   - value: 202110
     papers: P2242R3
     cppreference-description: Non-[[cpp/named req/LiteralType|literal]] variables,
@@ -1519,6 +1525,16 @@ library:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_lib_bind_back
+  header_list: functional
+  rows:
+  - value: 202202
+    papers: P2387R3
+    cppreference-description: '{{lc|std::bind_back}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_bind_front
   header_list: functional
   rows:
@@ -1605,7 +1621,7 @@ library:
   rows:
   - value: 201603
     papers: P0220R1
-    cppreference-description: '{{lc|std::boyer_moore_searcher|Searchers}}'
+    cppreference-description: '[[cpp/utility/functional#Searchers|Searchers]]'
   support:
     clang: null
     gcc:
@@ -1788,6 +1804,17 @@ library:
     msvc:
     - since: C++20
       value: 201806
+- name: __cpp_lib_constexpr_cmath
+  header_list: cmath cstdlib
+  rows:
+  - value: 202202
+    papers: P0533R9
+    cppreference-description: Constexpr for mathematical functions in {{header|cmath}}
+      and {{header|cstdlib}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_complex
   header_list: complex
   rows:
@@ -1826,7 +1853,7 @@ library:
   - value: 201907
     papers: P1065R2
     cppreference-description: Misc constexpr bits ({{lc|std::default_searcher}});
-      constexpr INVOKE
+      constexpr {{tt|INVOKE}}
   support:
     clang:
     - since: C++20
@@ -1860,6 +1887,9 @@ library:
   - value: 201811
     papers: P1006R1
     cppreference-description: Constexpr in {{lc|std::pointer_traits}}
+  - value: 202202
+    papers: P2273R3
+    cppreference-description: Constexpr {{lc|std::unique_ptr}}
   support:
     clang:
     - since: C++20
@@ -1875,8 +1905,8 @@ library:
   rows:
   - value: 201911
     papers: P1645R1
-    cppreference-description: Constexpr for [[cpp/algorithm#Numeric_operations|<numeric>
-      algorithms]]
+    cppreference-description: Constexpr for [[cpp/algorithm#Numeric_operations|algorithms]]
+      in {{header|numeric}}
   support:
     clang:
     - since: C++20
@@ -1909,7 +1939,8 @@ library:
       depends: __has_builtin(__builtin_is_constant_evaluated) || !__is_identifier(__builtin_is_constant_evaluated)
       value: 201811
     - since: C++20
-      depends: (__has_builtin(__builtin_is_constant_evaluated) || !__is_identifier(__builtin_is_constant_evaluated)) && _GLIBCXX_USE_CXX11_ABI
+      depends: (__has_builtin(__builtin_is_constant_evaluated) || !__is_identifier(__builtin_is_constant_evaluated))
+        && _GLIBCXX_USE_CXX11_ABI
       value: 201907
     msvc:
     - since: C++20
@@ -1990,6 +2021,17 @@ library:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_lib_containers_ranges
+  header_list: vector list forward_list map set unordered_map unordered_set deque
+    queue stack string
+  rows:
+  - value: 202202
+    papers: P1206R7
+    cppreference-description: Ranges construction and insertion for containers
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_coroutine
   header_list: coroutine
   rows:
@@ -2118,6 +2160,16 @@ library:
       value: 201603
     - since: C++20
       value: 201902
+- name: __cpp_lib_expected
+  header_list: expected
+  rows:
+  - value: 202202
+    papers: P0323R12
+    cppreference-description: class template {{lc|std::expected}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_filesystem
   header_list: filesystem
   rows:
@@ -2155,8 +2207,8 @@ library:
       of {{lc|std::vformat_to}}
   - value: 202110
     papers: P2372R3 P2418R2
-    cppreference-description: Fixing locale handling in chrono formatters; Use of
-      forwarding references in format arguments
+    cppreference-description: Fixing locale handling in chrono formatters; Supporting
+      non-const-formattable types
   support:
     clang: null
     gcc: null
@@ -2279,7 +2331,9 @@ library:
   rows:
   - value: 201505
     papers: N4510
-    cppreference-description: Minimal incomplete type support for standard containers
+    cppreference-description: Minimal incomplete type support for [[cpp/container/forward_list#Template
+      parameters|std::forward_list]], [[cpp/container/list#Template parameters|std::list]],
+      and [[cpp/container/vector#Template parameters|std::vector]]
   support:
     clang:
     - since: C++17
@@ -2297,7 +2351,7 @@ library:
     papers: P1956R1
     cppreference-description: '[[cpp/numeric#Bit_manipulation_(since_C++20)|Integral
       power-of-2 operations]] ({{lc|std::has_single_bit}}, {{lc|std::bit_ceil}}, {{lc|std::bit_floor}},
-      {{lc|std::bit_length}})'
+      {{lc|std::bit_width}})'
   support:
     clang:
     - since: C++20
@@ -2519,7 +2573,8 @@ library:
   rows:
   - value: 201907
     papers: P0466R5
-    cppreference-description: Pointer-interconvertibility traits
+    cppreference-description: 'Pointer-interconvertibility traits: {{ltt|cpp/types/is_pointer_interconvertible_with_class|std::is_pointer_interconvertible_with_class}},
+      {{ltt|cpp/types/is_pointer_interconvertible_base_of|std::is_pointer_interconvertible_base_of}}'
   support:
     clang: null
     gcc:
@@ -2767,21 +2822,6 @@ library:
     msvc:
     - since: C++17
       value: 201603
-- name: __cpp_lib_monadic_optional
-  header_list: optional
-  rows:
-  - value: 202110
-    papers: P0798R8
-    cppreference-description: Monadic Operations in {{lc|std::optional}}
-  support:
-    clang:
-    - since: C++23
-      value: 202110
-    gcc:
-    - since: C++23
-      depends: __cpp_lib_concepts
-      value: 202110
-    msvc: null
 - name: __cpp_lib_move_only_function
   header_list: functional
   rows:
@@ -2871,6 +2911,10 @@ library:
   - value: 202106
     papers: P2231R1
     cppreference-description: Fully {{tt|constexpr}} {{lc|std::optional}}
+  - value: 202110
+    papers: P0798R8 LWG3621
+    cppreference-description: '[[cpp/utility/optional#Monadic operations|Monadic operations]]
+      in {{lc|std::optional}}'
   support:
     clang:
     - since: C++17
@@ -2963,6 +3007,9 @@ library:
   - value: 202110
     papers: P2415R2
     cppreference-description: '[[cpp/ranges/view|View]]s with [[cpp/ranges/owning_view|ownership]]'
+  - value: 202202
+    papers: P2387R3
+    cppreference-description: '{{lc|std::ranges::range_adaptor_closure}}'
   support:
     clang: null
     gcc:
@@ -2973,6 +3020,56 @@ library:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
       value: 202110
+- name: __cpp_lib_ranges_chunk
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P2442R1
+    cppreference-description: '{{lc|std::ranges::chunk_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_ranges_chunk_by
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P2443R1
+    cppreference-description: '{{lc|std::ranges::chunk_by_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_ranges_iota
+  header_list: numeric
+  rows:
+  - value: 202202
+    papers: P2440R1
+    cppreference-description: '{{lc|std::ranges::iota}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_ranges_join_with
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P2441R2
+    cppreference-description: '{{lc|std::ranges::join_with_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_ranges_slide
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P2442R1
+    cppreference-description: '{{lc|std::ranges::slide_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_starts_ends_with
   header_list: algorithm
   rows:
@@ -2986,6 +3083,16 @@ library:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
       value: 202106
+- name: __cpp_lib_ranges_to_container
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P1206R7
+    cppreference-description: '{{lc|std::ranges::to}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_zip
   header_list: ranges tuple utility
   rows:
@@ -3014,6 +3121,17 @@ library:
     msvc:
     - since: C++17
       value: 201606
+- name: __cpp_lib_reference_from_temporary
+  header_list: type_traits
+  rows:
+  - value: 202202
+    papers: P2255R2
+    cppreference-description: '{{lc|std::reference_constructs_from_temporary}} and
+      {{lc|std::reference_converts_from_temporary}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_remove_cvref
   header_list: type_traits
   rows:
@@ -3206,6 +3324,9 @@ library:
   - value: 201806
     papers: P0769R2
     cppreference-description: '{{ltt|cpp/algorithm/shift|std::shift_left}} and {{ltt|cpp/algorithm/shift|std::shift_right}}'
+  - value: 202202
+    papers: P2440R1
+    cppreference-description: '{{lc|std::ranges::shift_left}} and {{lc|std::ranges::shift_right}}'
   support:
     clang:
     - since: C++20
@@ -3304,7 +3425,7 @@ library:
   rows:
   - value: 202011
     papers: P0881R7
-    cppreference-description: '[[cpp/utility#Stacktrace|Stacktrace library]]'
+    cppreference-description: '[[cpp/error#Stacktrace|Stacktrace library]]'
   support:
     clang: null
     gcc:
@@ -3495,7 +3616,8 @@ library:
     clang: null
     gcc:
     - since: C++17
-      depends: _GLIBCXX_FLOAT_IS_IEEE_BINARY32 && _GLIBCXX_DOUBLE_IS_IEEE_BINARY64 && __SIZE_WIDTH__ >= 32
+      depends: _GLIBCXX_FLOAT_IS_IEEE_BINARY32 && _GLIBCXX_DOUBLE_IS_IEEE_BINARY64
+        && __SIZE_WIDTH__ >= 32
       value: 201611
     msvc:
     - since: C++17
@@ -3558,7 +3680,7 @@ library:
   rows:
   - value: 201402
     papers: N3887
-    cppreference-description: '{{ltt|cpp/utility/tuple/tuple_element|std::tuple_element_t}}'
+    cppreference-description: '{{ltt|cpp/utility/tuple_element#Helper_types|std::tuple_element_t}}'
   support:
     clang:
     - since: C++14
@@ -3645,6 +3767,16 @@ library:
       value: 201411
     msvc:
     - value: 201411
+- name: __cpp_lib_unreachable
+  header_list: utility
+  rows:
+  - value: 202202
+    papers: P0627R6
+    cppreference-description: '{{lc|std::unreachable}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_unwrap_ref
   header_list: type_traits
   rows:
