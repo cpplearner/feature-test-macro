@@ -349,6 +349,8 @@ language:
       value: 201603
     - since: C++20
       value: 201907
+    - since: C++23
+      value: 202110
     gcc:
     - since: C++11
       value: 200704
@@ -801,7 +803,9 @@ language:
     cppreference-description: Multidimensional [[cpp/language/operator member access|subscript
       operator]]
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202110
     gcc:
     - since: C++23
       value: 202110
