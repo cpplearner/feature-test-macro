@@ -2023,7 +2023,9 @@ library:
     cppreference-description: Constexpr for {{lc|std::vector}}
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 201907
     msvc:
     - since: C++20
       value: 201907
@@ -2931,6 +2933,9 @@ library:
       value: 201606
     - since: C++20
       value: 202106
+    - since: C++23
+      depends: __cpp_lib_concepts
+      value: 202110
     msvc:
     - since: C++17
       value: 201606
@@ -3469,7 +3474,9 @@ library:
     cppreference-description: Compatibility header for C atomic operations
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202011
     msvc:
     - since: C++23
       value: 202011
@@ -3787,7 +3794,9 @@ library:
     clang:
     - since: C++23
       value: 202202
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202202
     msvc:
     - since: C++23
       value: 202202
