@@ -1247,7 +1247,9 @@ library:
     papers: P0401R6
     cppreference-description: '{{lc|std::allocate_at_least}} etc.'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202106
     gcc: null
     msvc:
     - since: C++23
@@ -1370,7 +1372,9 @@ library:
     papers: P1007R3
     cppreference-description: '{{lc|std::assume_aligned}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201811
     gcc:
     - since: C++20
       value: 201811
@@ -3286,6 +3290,8 @@ library:
     clang:
     - since: C++17
       value: 201611
+    - since: C++20
+      value: 201707
     gcc:
     - since: C++11
       value: 201611
