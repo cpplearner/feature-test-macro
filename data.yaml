@@ -282,7 +282,7 @@ language:
       value: 202002
     msvc:
     - since: C++20
-      value: 201907
+      value: 202002
 - name: __cpp_conditional_explicit
   rows:
   - value: 201806
@@ -367,7 +367,7 @@ language:
     - since: C++17
       value: 201603
     - since: C++20
-      value: 201907
+      value: 202002
 - name: __cpp_constexpr_dynamic_alloc
   rows:
   - value: 201907
