@@ -1905,6 +1905,9 @@ library:
     gcc:
     - since: C++20
       value: 201811
+    - since: C++23
+      depends: __cpp_constexpr_dynamic_alloc
+      value: 202202
     msvc:
     - since: C++20
       value: 201811
