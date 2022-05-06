@@ -1943,7 +1943,7 @@ library:
   support:
     clang:
     - since: C++20
-      value: 201811
+      value: 201907
     gcc:
     - since: C++17
       depends: __has_builtin(__builtin_is_constant_evaluated) || !__is_identifier(__builtin_is_constant_evaluated)
