@@ -3482,7 +3482,9 @@ library:
     papers: P0943R6
     cppreference-description: Compatibility header for C atomic operations
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202011
     gcc:
     - since: C++23
       value: 202011
