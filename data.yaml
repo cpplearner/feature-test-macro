@@ -3048,7 +3048,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202202
 - name: __cpp_lib_ranges_chunk_by
   header_list: ranges
   rows:
@@ -3091,7 +3094,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202202
 - name: __cpp_lib_ranges_starts_ends_with
   header_list: algorithm
   rows:
