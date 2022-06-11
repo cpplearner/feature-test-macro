@@ -2187,7 +2187,10 @@ library:
     - since: C++23
       depends: __cpp_concepts >= 202002
       value: 202202
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202202
 - name: __cpp_lib_filesystem
   header_list: filesystem
   rows:
