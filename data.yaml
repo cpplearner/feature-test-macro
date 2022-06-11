@@ -2935,6 +2935,8 @@ library:
     clang:
     - since: C++17
       value: 201606
+    - since: C++23
+      value: 202110
     gcc:
     - since: C++17
       value: 201606
