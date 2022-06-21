@@ -1690,8 +1690,7 @@ library:
     - depends: defined(_GLIBCXX_USE_CHAR8_T)
       value: 201907
     msvc:
-    - since: C++20
-      depends: defined(__cpp_char8_t)
+    - depends: defined(__cpp_char8_t)
       value: 201907
 - name: __cpp_lib_chrono
   header_list: chrono
@@ -2004,7 +2003,9 @@ library:
     gcc:
     - since: C++23
       value: 202106
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202106
 - name: __cpp_lib_constexpr_utility
   header_list: utility
   rows:
@@ -3079,7 +3080,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202202
 - name: __cpp_lib_ranges_join_with
   header_list: ranges
   rows:
@@ -3089,7 +3093,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202202
 - name: __cpp_lib_ranges_slide
   header_list: ranges
   rows:
@@ -3372,6 +3379,9 @@ library:
     msvc:
     - since: C++20
       value: 201806
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202202
 - name: __cpp_lib_smart_ptr_for_overwrite
   header_list: memory
   rows:
@@ -3467,7 +3477,9 @@ library:
     - since: C++23
       depends: _GLIBCXX_HAVE_STACKTRACE
       value: 202011
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202011
 - name: __cpp_lib_starts_ends_with
   header_list: string string_view
   rows:
