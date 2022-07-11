@@ -1631,7 +1631,9 @@ library:
     papers: P0220R1
     cppreference-description: '[[cpp/utility/functional#Searchers|Searchers]]'
   support:
-    clang: null
+    clang:
+    - since: C++17
+      value: 201603
     gcc:
     - since: C++17
       value: 201603
@@ -2307,7 +2309,10 @@ library:
     cppreference-description: '{{ltt|cpp/thread/hardware_destructive_interference_size|constexpr
       std::hardware_{constructive, destructive}_interference_size}}'
   support:
-    clang: null
+    clang:
+    - since: C++17
+      depends: defined(__GCC_DESTRUCTIVE_SIZE) && defined(__GCC_CONSTRUCTIVE_SIZE)
+      value: 201703
     gcc:
     - since: C++17
       depends: defined(__GCC_DESTRUCTIVE_SIZE)
