@@ -1685,7 +1685,7 @@ library:
     clang:
     - since: C++20
       depends: defined(__cpp_char8_t)
-      value: 201811
+      value: 201907
     gcc:
     - depends: defined(__cpp_char8_t)
       value: 201907
