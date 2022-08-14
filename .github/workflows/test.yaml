@@ -40,6 +40,10 @@ jobs:
               run: python tools/do_test.py clang library --verbose
                     --extra-args -stdlib=libc++
 
+            - name: Test library with -fexperimental-library
+              run: python tools/do_test.py clang library --verbose
+                    --extra-args -stdlib=libc++ -fexperimental-library
+
     gcc:
         runs-on: ubuntu-20.04
         steps:
