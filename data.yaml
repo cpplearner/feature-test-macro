@@ -1496,12 +1496,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
-        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
-        < 110000) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
-        < 140000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
-        < 140000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
-        < 70000)))'
+      depends: '!defined(_LIBCPP_AVAILABILITY_DISABLE_FTM___cpp_lib_atomic_wait)'
       value: 201907
     gcc:
     - since: C++20
@@ -1519,12 +1514,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
-        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
-        < 110000) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
-        < 140000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
-        < 140000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
-        < 70000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_AVAILABILITY_DISABLE_FTM___cpp_lib_barrier)'
       value: 201907
     gcc:
     - since: C++20
@@ -2210,11 +2200,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS) || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__)
-        && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__ < 101500) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__)
-        && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ < 130000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__)
-        && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__ < 130000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__)
-        && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__ < 60000)))
+      depends: '!defined(_LIBCPP_AVAILABILITY_DISABLE_FTM___cpp_lib_filesystem)'
       value: 201703
     gcc:
     - since: C++17
@@ -2237,7 +2223,10 @@ library:
     cppreference-description: Fixing locale handling in chrono formatters; Supporting
       non-const-formattable types
   support:
-    clang: null
+    clang:
+    - since: C++20
+      depends: '!defined(_LIBCPP_AVAILABILITY_DISABLE_FTM___cpp_lib_format) && !defined(_LIBCPP_HAS_NO_INCOMPLETE_FORMAT)'
+      value: 202106
     gcc: null
     msvc:
     - since: C++20
@@ -2674,12 +2663,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
-        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
-        < 110000) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
-        < 140000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
-        < 140000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
-        < 70000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_AVAILABILITY_DISABLE_FTM___cpp_lib_latch)'
       value: 201907
     gcc:
     - since: C++20
@@ -3044,7 +3028,10 @@ library:
     papers: P2387R3
     cppreference-description: '{{lc|std::ranges::range_adaptor_closure}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      depends: '!defined(_LIBCPP_HAS_NO_INCOMPLETE_RANGES)'
+      value: 201811
     gcc:
     - since: C++20
       depends: __cpp_lib_concepts
@@ -3275,12 +3262,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
-        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
-        < 110000) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
-        < 140000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
-        < 140000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
-        < 70000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_AVAILABILITY_DISABLE_FTM___cpp_lib_semaphore)'
       value: 201907
     gcc:
     - since: C++20
@@ -3298,12 +3280,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
-        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
-        < 101200) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
-        < 100000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
-        < 100000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
-        < 30000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_AVAILABILITY_DISABLE_FTM___cpp_lib_shared_mutex)'
       value: 201505
     gcc:
     - since: C++17
@@ -3360,12 +3337,7 @@ library:
   support:
     clang:
     - since: C++14
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && (defined(_LIBCPP_HAS_NO_VENDOR_AVAILABILITY_ANNOTATIONS)
-        || !((defined(__ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_MAC_OS_X_VERSION_MIN_REQUIRED__
-        < 101200) || (defined(__ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__
-        < 100000) || (defined(__ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_TV_OS_VERSION_MIN_REQUIRED__
-        < 100000) || (defined(__ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__) && __ENVIRONMENT_WATCH_OS_VERSION_MIN_REQUIRED__
-        < 30000)))'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_AVAILABILITY_DISABLE_FTM___cpp_lib_shared_timed_mutex)'
       value: 201402
     gcc:
     - since: C++14
