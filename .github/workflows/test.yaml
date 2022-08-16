@@ -129,7 +129,6 @@ jobs:
                   curl.exe -L -o $bootstrapperExe https://aka.ms/vs/17/pre/vs_buildtools.exe &&
                   cmd /c $bootstrapperExe --quiet --norestart --wait --nocache `
                     --installPath "$LOC/msvc-preview" `
-                    --add Microsoft.VisualStudio.Component.VC.CoreIde `
                     --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64
                   if ($LASTEXITCODE -eq 3010) { exit 0 }
             - name: Set Path
@@ -148,10 +147,6 @@ jobs:
             - name: Test library
               run: python tools/do_test.py msvc library --verbose
 
-            - name: Test MSVC STL with EDG
-              run: python tools/do_test.py msvc library --verbose
-                    --extra-args -BE -dE--brief_diagnostics
-
             - name: Install Clang
               run: |
                   curl.exe -L -o llvm.exe `
@@ -162,4 +157,4 @@ jobs:
             - name: Test MSVC STL with Clang
               run: python tools/do_test.py msvc library --verbose
                     --cc clang-cl
-                    --extra-args -Xclang -fms-compatibility-version=0 -diagnostics:classic
+                    --extra-args -diagnostics:classic
