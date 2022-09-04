@@ -1532,7 +1532,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202202
 - name: __cpp_lib_bind_front
   header_list: functional
   rows:
@@ -3040,6 +3042,9 @@ library:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
       value: 202110
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_ranges_chunk
   header_list: ranges
   rows:
