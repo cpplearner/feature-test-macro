@@ -1895,6 +1895,8 @@ library:
     clang:
     - since: C++20
       value: 201811
+    - since: C++23
+      value: 202202
     gcc:
     - since: C++20
       value: 201811
@@ -3032,7 +3034,6 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_INCOMPLETE_RANGES)'
       value: 201811
     gcc:
     - since: C++20
