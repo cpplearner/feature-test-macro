@@ -2227,10 +2227,7 @@ library:
     cppreference-description: Fixing locale handling in chrono formatters; Supporting
       non-const-formattable types
   support:
-    clang:
-    - since: C++20
-      depends: '!defined(_LIBCPP_AVAILABILITY_DISABLE_FTM___cpp_lib_format) && !defined(_LIBCPP_HAS_NO_INCOMPLETE_FORMAT)'
-      value: 202106
+    clang: null
     gcc: null
     msvc:
     - since: C++20
