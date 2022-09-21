@@ -721,7 +721,9 @@ language:
     cppreference-description: Simpler [[cpp/language/return#Automatic move from local
       variables and parameters|implicit move]]
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202011
     gcc: null
     msvc: null
 - name: __cpp_inheriting_constructors
@@ -1291,7 +1293,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_allocate_at_least
   header_list: memory
   rows:
@@ -1868,9 +1873,13 @@ library:
     papers: P2417R2
     cppreference-description: A more constexpr {{lc|std::bitset}}
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202207
 - name: __cpp_lib_constexpr_charconv
   header_list: charconv
   rows:
@@ -1881,7 +1890,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202207
 - name: __cpp_lib_constexpr_cmath
   header_list: cmath cstdlib
   rows:
@@ -2346,7 +2357,7 @@ library:
     msvc:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
-      value: 202110
+      value: 202207
 - name: __cpp_lib_format_ranges
   header_list: format
   rows:
@@ -2364,9 +2375,13 @@ library:
     papers: P2445R1
     cppreference-description: '{{ltt|cpp/utility/forward_like|std::forward_like}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202207
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
@@ -2625,7 +2640,9 @@ library:
       for fstreams
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc: null
 - name: __cpp_lib_is_aggregate
   header_list: type_traits
@@ -3005,7 +3022,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: '!defined(__clang__) && !defined(__EDG__)'
+      value: 202207
 - name: __cpp_lib_monadic_optional
   header_list: optional
   rows:
@@ -3024,7 +3044,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_move_only_function
   header_list: functional
   rows:
@@ -3269,7 +3292,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_ranges_cartesian_product
   header_list: ranges
   rows:
@@ -3315,7 +3341,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_ranges_fold
   header_list: algorithm
   rows:
@@ -3397,7 +3426,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_ranges_to_container
   header_list: ranges
   rows:
