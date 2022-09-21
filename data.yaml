@@ -847,7 +847,9 @@ language:
     cppreference-description: Named [[cpp/language/escape|universal character escapes]]
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc: null
 - name: __cpp_namespace_attributes
   rows:
