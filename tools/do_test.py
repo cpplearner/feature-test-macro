@@ -11,7 +11,7 @@ def do_test(impl, kind, cc, extra_args, enabled_std, dry_run, verbose):
         elif impl == 'gcc':
             compiler, diag_opt = 'gcc', ['-fno-diagnostics-show-caret', '-ftrack-macro-expansion=0']
         elif impl == 'msvc':
-            compiler, diag_opt = 'cl', ['-nologo', '-Zc:__cplusplus']
+            compiler, diag_opt = 'cl.exe', ['-nologo', '-Zc:__cplusplus']
 
     if dry_run:
         print('Dry run...')

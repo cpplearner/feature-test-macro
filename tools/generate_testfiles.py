@@ -20,9 +20,10 @@ for kind in kinds:
         opts = set()
         pedantic_options = None
         for macro in a[kind]:
-            opts |= {tuple(x) for x in generator.make_options(macro)}
-            if pedantic_options is None:
-                pedantic_options = generator.pedantic_options(macro)
+            if 'removed' not in macro['rows'][-1]:
+                opts |= {tuple(x) for x in generator.make_options(macro)}
+                if pedantic_options is None:
+                    pedantic_options = generator.pedantic_options(macro)
 
         if pedantic_options is not None:
             opts = {('-pedantic', *opt) for opt in opts} | {(opt,) for opt in pedantic_options}

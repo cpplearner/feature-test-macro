@@ -1,4 +1,12 @@
 attributes:
+- name: assume
+  rows:
+  - value: 202207
+    papers: P1774R8 CWG2615
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: carries_dependency
   rows:
   - value: 200809
@@ -243,6 +251,11 @@ language:
   - value: 201811
     papers: P0482R6
     cppreference-description: '{{ltt|cpp/keyword/char8_t}}'
+  - value: 202207
+    papers: P2513R3
+    cppreference-description: '{{c|char8_t}} compatibility and portability fix (allow
+      [[cpp/language/aggregate initialization#Character arrays|initialization of (unsigned)
+      char arrays]] from [[cpp/language/string literal|UTF-8 string literals]])'
   support:
     clang:
     - since: C++20
@@ -339,6 +352,9 @@ language:
     papers: P2242R3
     cppreference-description: Non-[[cpp/named req/LiteralType|literal]] variables,
       labels, and {{ltt|cpp/language|goto}} statements in constexpr functions
+  - value: 202207
+    papers: P2448R2
+    cppreference-description: Relaxing some [[cpp/language/constexpr|constexpr]] restrictions
   support:
     clang:
     - since: C++11
@@ -391,6 +407,7 @@ language:
     cppreference-description: Generation of function and variable definitions when
       [[cpp/language/constant expression#Functions and variables needed for constant
       evaluation|needed for constant evaluation]]
+    cppreference-treats-as-dr-against: C++11
   support:
     clang:
     - since: C++11
@@ -534,7 +551,7 @@ language:
   rows:
   - value: 202110
     papers: P0847R7
-    cppreference-description: Explicit object parameter
+    cppreference-description: '[[cpp/language/member_functions#Explicit_object_parameter|Explicit object parameter]]'
   support:
     clang: null
     gcc: null
@@ -697,6 +714,16 @@ language:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_implicit_move
+  rows:
+  - value: 202207
+    papers: P2266R3
+    cppreference-description: Simpler [[cpp/language/return#Automatic move from local
+      variables and parameters|implicit move]]
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_inheriting_constructors
   rows:
   - value: 200802
@@ -706,6 +733,7 @@ language:
   - value: 201511
     papers: P0136R1
     cppreference-description: Rewording inheriting constructors
+    cppreference-treats-as-dr-against: C++11
   support:
     clang:
     - since: C++11
@@ -810,6 +838,15 @@ language:
     - since: C++23
       value: 202110
     msvc: null
+- name: __cpp_named_character_escapes
+  rows:
+  - value: 202207
+    papers: P2071R2
+    cppreference-description: Named [[cpp/language/escape|universal character escapes]]
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_namespace_attributes
   rows:
   - value: 201411
@@ -888,10 +925,6 @@ language:
   - value: 201911
     papers: P1907R1
     removed: true
-  support:
-    clang: null
-    gcc: null
-    msvc: null
 - name: __cpp_nsdmi
   rows:
   - value: 200809
@@ -1056,6 +1089,15 @@ language:
     - value: 200410
     - since: C++17
       value: 201411
+- name: __cpp_static_call_operator
+  rows:
+  - value: 202207
+    papers: P1169R4
+    cppreference-description: '{{tt|static}} {{ltt|cpp/language/operators|operator()}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_structured_bindings
   rows:
   - value: 201606
@@ -1240,6 +1282,16 @@ library:
       value: 201603
     msvc:
     - value: 201603
+- name: __cpp_lib_algorithm_iterator_requirements
+  header_list: algorithm memory numeric
+  rows:
+  - value: 202207
+    papers: P2408R5
+    cppreference-description: Ranges iterators as inputs to non-Ranges [[cpp/algorithm|algorithms]]
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_allocate_at_least
   header_list: memory
   rows:
@@ -1766,7 +1818,7 @@ library:
     msvc:
     - value: 201309
 - name: __cpp_lib_concepts
-  header_list: concepts
+  header_list: compare concepts
   rows:
   - value: 201806
     papers: P0898R3
@@ -1775,6 +1827,10 @@ library:
   - value: 202002
     papers: P1964R2
     cppreference-description: '[[cpp/concepts|Standard library concepts]]'
+  - value: 202207
+    papers: P2404R3
+    cppreference-description: Move-only types for {{lconcept|equality_comparable_with}},
+      {{lconcept|totally_ordered_with}}, and {{lconcept|three_way_comparable_with}}
   support:
     clang:
     - since: C++20
@@ -1805,6 +1861,27 @@ library:
     msvc:
     - since: C++20
       value: 201806
+- name: __cpp_lib_constexpr_bitset
+  header_list: bitset
+  rows:
+  - value: 202207
+    papers: P2417R2
+    cppreference-description: A more constexpr {{lc|std::bitset}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_constexpr_charconv
+  header_list: charconv
+  rows:
+  - value: 202207
+    papers: P2291R3
+    cppreference-description: Add {{tt|constexpr}} modifiers to functions {{lc|std::to_chars}}
+      and {{lc|std::from_chars}} for integral types
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_cmath
   header_list: cmath cstdlib
   rows:
@@ -2212,6 +2289,37 @@ library:
     msvc:
     - since: C++17
       value: 201703
+- name: __cpp_lib_find_last
+  header_list: algorithm
+  rows:
+  - value: 202207
+    papers: P1223R5
+    cppreference-description: '{{ltt|cpp/algorithm/ranges/find_last|std::ranges::find_last}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_flat_map
+  header_list: flat_map
+  rows:
+  - value: 202207
+    papers: P0429R9
+    cppreference-description: '{{ltt|cpp/container/flat_map|std::flat_map}} and {{ltt|cpp/container/flat_multimap|std::flat_multimap}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_flat_set
+  header_list: flat_set
+  rows:
+  - value: 202207
+    papers: P1222R4 LWG3751
+    cppreference-description: '{{ltt|cpp/container/flat_set|std::flat_set}} and {{ltt|cpp/container/flat_multiset|std::flat_multiset}}<!--LWG
+      3751-->'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_format
   header_list: format
   rows:
@@ -2222,10 +2330,16 @@ library:
     papers: P2216R3
     cppreference-description: Compile-time format string checks; Reducing parameterization
       of {{lc|std::vformat_to}}
+    cppreference-treats-as-dr-against: C++20
   - value: 202110
     papers: P2372R3 P2418R2
     cppreference-description: Fixing locale handling in chrono formatters; Supporting
       non-const-formattable types
+    cppreference-treats-as-dr-against: C++20
+  - value: 202207
+    papers: P2419R2 P2508R1
+    cppreference-description: Exposing {{ltt|cpp/utility/format/basic_format_string|std::basic_format_string}}; clarify handling
+      of encodings in localized formatting of chrono types
   support:
     clang: null
     gcc: null
@@ -2233,6 +2347,26 @@ library:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
       value: 202110
+- name: __cpp_lib_format_ranges
+  header_list: format
+  rows:
+  - value: 202207
+    papers: P2286R8 P2585R1 LWG3750
+    cppreference-description: Formatting ranges
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_forward_like
+  header_list: utility
+  rows:
+  - value: 202207
+    papers: P2445R1
+    cppreference-description: '{{ltt|cpp/utility/forward_like|std::forward_like}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
@@ -2249,6 +2383,17 @@ library:
     msvc:
     - since: C++17
       value: 201606
+- name: __cpp_lib_generator
+  header_list: generator
+  rows:
+  - value: 202207
+    papers: P2502R2
+    cppreference-description: '{{lc|std::generator}}: synchronous coroutine generator
+      for ranges'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_generic_associative_lookup
   header_list: map set
   rows:
@@ -2273,10 +2418,6 @@ library:
   - value: 201907
     papers: P1661R1
     removed: true
-  support:
-    clang: null
-    gcc: null
-    msvc: null
 - name: __cpp_lib_generic_unordered_lookup
   header_list: unordered_map unordered_set
   rows:
@@ -2475,6 +2616,17 @@ library:
     msvc:
     - since: C++23
       value: 202106
+- name: __cpp_lib_ios_noreplace
+  header_list: ios
+  rows:
+  - value: 202207
+    papers: P2467R1
+    cppreference-description: Support [[cpp/io/ios_base/openmode|exclusive mode]]
+      for fstreams
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_is_aggregate
   header_list: type_traits
   rows:
@@ -2817,6 +2969,16 @@ library:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_lib_mdspan
+  header_list: mdspan
+  rows:
+  - value: 202207
+    papers: P0009R18 P2599R2 P2604R0 P2613R1
+    cppreference-description: '{{ltt|cpp/container/mdspan|std::mdspan}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_memory_resource
   header_list: memory_resource
   rows:
@@ -2835,6 +2997,34 @@ library:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_lib_modules
+  rows:
+  - papers: P2465R3
+    value: 202207
+    cppreference-description: Standard library modules {{tt|std}} and {{tt|std.compat}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_monadic_optional
+  header_list: optional
+  rows:
+  - value: 202110
+    papers: P0798R8
+  - value: 202202
+    papers: LWG3621
+    removed: true
+- name: __cpp_lib_move_iterator_concept
+  header_list: iterator
+  rows:
+  - value: 202207
+    papers: P2520R0
+    cppreference-description: Make {{lc|std::move_iterator|std::move_iterator<T*>}}
+      a random access iterator
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_move_only_function
   header_list: functional
   rows:
@@ -2924,6 +3114,7 @@ library:
   - value: 202106
     papers: P2231R1
     cppreference-description: Fully {{tt|constexpr}} {{lc|std::optional}}
+    cppreference-treats-as-dr-against: C++20
   - value: 202110
     papers: P0798R8 LWG3621
     cppreference-description: '[[cpp/utility/optional#Monadic operations|Monadic operations]]
@@ -2992,6 +3183,16 @@ library:
     msvc:
     - since: C++20
       value: 201902
+- name: __cpp_lib_print
+  header_list: ostream print
+  rows:
+  - value: 202207
+    papers: P2093R14
+    cppreference-description: Formatted output
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
   rows:
@@ -3022,12 +3223,18 @@ library:
     papers: P2325R3
     cppreference-description: Non-[[cpp/concepts/default_initializable|default-initializable]]
       [[cpp/ranges/view|view]]s
+    cppreference-treats-as-dr-against: C++20
   - value: 202110
     papers: P2415R2
     cppreference-description: '[[cpp/ranges/view|View]]s with [[cpp/ranges/owning_view|ownership]]'
+    cppreference-treats-as-dr-against: C++20
   - value: 202202
     papers: P2387R3
     cppreference-description: '{{lc|std::ranges::range_adaptor_closure}}'
+  - value: 202207
+    papers: P2494R2
+    cppreference-description: Relaxing [[cpp/ranges|range adaptors]] to allow for
+      move only types
   support:
     clang:
     - since: C++20
@@ -3043,6 +3250,36 @@ library:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
       value: 202207
+- name: __cpp_lib_ranges_as_const
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P2278R4
+    cppreference-description: '{{lc|std::const_iterator}}, {{ltt|cpp/ranges/as_const_view|std::ranges::as_const_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_ranges_as_rvalue
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P2446R2
+    cppreference-description: '{{ltt|cpp/ranges/as_rvalue_view|std::ranges::as_rvalue_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_ranges_cartesian_product
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P2374R4 P2540R1
+    cppreference-description: '{{ltt|cpp/ranges/cartesian_product_view|std::ranges::cartesian_product_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_chunk
   header_list: ranges
   rows:
@@ -3069,6 +3306,26 @@ library:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
       value: 202202
+- name: __cpp_lib_ranges_contains
+  header_list: algorithm
+  rows:
+  - value: 202207
+    papers: P2302R4
+    cppreference-description: '{{ltt|cpp/algorithm/ranges/contains|std::ranges::contains}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_ranges_fold
+  header_list: algorithm
+  rows:
+  - value: 202207
+    papers: P2322R6
+    cppreference-description: '{{tt|std::ranges}} {{tt|fold}} algorithms'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_iota
   header_list: numeric
   rows:
@@ -3095,6 +3352,16 @@ library:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
       value: 202202
+- name: __cpp_lib_ranges_repeat
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P2474R2
+    cppreference-description: '{{ltt|cpp/ranges/repeat_view|std::ranges::repeat_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_slide
   header_list: ranges
   rows:
@@ -3121,6 +3388,16 @@ library:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
       value: 202106
+- name: __cpp_lib_ranges_stride
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P1899R3
+    cppreference-description: '{{ltt|cpp/ranges/stride_view|std::ranges::stride_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_to_container
   header_list: ranges
   rows:
@@ -3468,6 +3745,16 @@ library:
     msvc:
     - since: C++23
       value: 202011
+- name: __cpp_lib_start_lifetime_as
+  header_list: memory
+  rows:
+  - value: 202207
+    papers: P2590R2
+    cppreference-description: Explicit lifetime management ({{lc|std::start_lifetime_as}})
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_starts_ends_with
   header_list: string string_view
   rows:
@@ -3649,8 +3936,8 @@ library:
   rows:
   - value: 201611
     papers: P0067R5 P0682R1 LWG3137
-    cppreference-description: Elementary string conversions ({{lc|std::to_chars}},
-      {{lc|std::from_chars}})
+    cppreference-description: Elementary string conversions ({{ltt|cpp/utility/to_chars|std::to_chars}},
+      {{ltt|cpp/utility/from_chars|std::from_chars}})
   support:
     clang: null
     gcc:
@@ -3729,6 +4016,17 @@ library:
       value: 201402
     msvc:
     - value: 201402
+- name: __cpp_lib_tuple_like
+  header_list: map tuple unordered_map utility
+  rows:
+  - value: 202207
+    papers: P2165R4
+    cppreference-description: Compatibility between {{lc|std::tuple}} and tuple-like
+      objects ({{lc|std::pair}}, {{lc|std::array}}, {{lc|std::subrange}})
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_tuples_by_type
   header_list: tuple utility
   rows:
@@ -3847,9 +4145,11 @@ library:
   - value: 202102
     papers: P2162R2
     cppreference-description: '{{lc|std::visit}} for classes derived from {{lc|std::variant}}'
+    cppreference-treats-as-dr-against: C++17
   - value: 202106
     papers: P2231R1
     cppreference-description: Fully {{tt|constexpr}} {{lc|std::variant}}
+    cppreference-treats-as-dr-against: C++20
   support:
     clang:
     - since: C++17
