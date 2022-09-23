@@ -1878,7 +1878,10 @@ library:
     clang:
     - since: C++23
       value: 202207
-    gcc: null
+    gcc:
+    - since: C++23
+      depends: __cpp_constexpr_dynamic_alloc
+      value: 202202
     msvc:
     - since: C++23
       value: 202207
