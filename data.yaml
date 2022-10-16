@@ -1901,7 +1901,9 @@ library:
     cppreference-description: Add {{tt|constexpr}} modifiers to functions {{lc|std::to_chars}}
       and {{lc|std::from_chars}} for integral types
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202202
@@ -3018,7 +3020,9 @@ library:
     papers: P0220R1
     cppreference-description: '{{lc|std::pmr::memory_resource}}'
   support:
-    clang: null
+    clang:
+    - since: C++17
+      value: 201603
     gcc:
     - since: C++17
       depends: defined(_GLIBCXX_HAS_GTHREADS)
