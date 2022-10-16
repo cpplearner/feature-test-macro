@@ -1902,7 +1902,9 @@ library:
       and {{lc|std::from_chars}} for integral types
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202202
     msvc:
     - since: C++23
       value: 202207
