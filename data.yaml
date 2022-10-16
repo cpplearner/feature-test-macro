@@ -848,7 +848,8 @@ language:
     papers: P2071R2
     cppreference-description: Named [[cpp/language/escape|universal character escapes]]
   support:
-    clang: null
+    clang:
+    - value: 202207
     gcc:
     - since: C++23
       value: 202207
@@ -1101,7 +1102,9 @@ language:
     papers: P1169R4
     cppreference-description: '{{tt|static}} {{ltt|cpp/language/operators|operator()}}'
   support:
-    clang: null
+    clang:
+    - since: C++11
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
