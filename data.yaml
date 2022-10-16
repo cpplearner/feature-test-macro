@@ -5,7 +5,8 @@ attributes:
     papers: P1774R8 CWG2615
   support:
     clang: null
-    gcc: null
+    gcc:
+    - value: 202207
     msvc: null
 - name: carries_dependency
   rows:
