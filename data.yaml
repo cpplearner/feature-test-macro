@@ -1906,7 +1906,7 @@ library:
       value: 202207
     gcc:
     - since: C++23
-      value: 202202
+      value: 202207
     msvc:
     - since: C++23
       value: 202207
