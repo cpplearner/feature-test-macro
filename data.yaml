@@ -260,9 +260,9 @@ language:
   support:
     clang:
     - since: C++20
-      value: 201811
+      value: 202207
     - option: -fchar8_t
-      value: 201811
+      value: 202207
     gcc:
     - since: C++20
       value: 202207
