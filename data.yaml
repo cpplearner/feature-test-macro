@@ -270,9 +270,9 @@ language:
       value: 202207
     msvc:
     - since: C++20
-      value: 201811
+      value: 202207
     - option: /Zc:char8_t
-      value: 201811
+      value: 202207
 - name: __cpp_concepts
   rows:
   - value: 201707
