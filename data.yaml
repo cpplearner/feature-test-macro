@@ -2131,7 +2131,9 @@ library:
     papers: P1004R2
     cppreference-description: Constexpr for {{lc|std::vector}}
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc:
     - since: C++20
       value: 201907
