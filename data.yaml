@@ -367,7 +367,7 @@ language:
     - since: C++20
       value: 201907
     - since: C++23
-      value: 202110
+      value: 202211
     gcc:
     - since: C++11
       value: 200704
@@ -838,7 +838,7 @@ language:
   support:
     clang:
     - since: C++23
-      value: 202110
+      value: 202211
     gcc:
     - since: C++23
       value: 202211
