@@ -3297,7 +3297,7 @@ library:
       value: 202110
     - since: C++23
       depends: defined(__cpp_lib_concepts)
-      value: 202207
+      value: 202211
 - name: __cpp_lib_ranges_as_const
   header_list: ranges
   rows:
