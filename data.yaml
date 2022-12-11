@@ -3222,7 +3222,9 @@ library:
     cppreference-description: '{{lc|std::pmr::polymorphic_allocator|std::pmr::polymorphic_allocator<>}}
       as a vocabulary type'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201902
     gcc:
     - since: C++20
       value: 201902
