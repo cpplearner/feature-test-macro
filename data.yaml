@@ -2289,7 +2289,9 @@ library:
     papers: P0323R12
     cppreference-description: class template {{lc|std::expected}}
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202202
     gcc:
     - since: C++23
       depends: __cpp_concepts >= 202002
