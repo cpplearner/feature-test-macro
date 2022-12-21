@@ -159,7 +159,9 @@ language:
     cppreference-description: '[[cpp/language/aggregate initialization|Aggregate initialization]]
       in the form of [[cpp/language/direct initialization|direct initialization]]'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201902
     gcc:
     - since: C++20
       value: 201902
