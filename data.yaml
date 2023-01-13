@@ -3325,7 +3325,9 @@ library:
     cppreference-description: '{{ltt|cpp/ranges/as_rvalue_view|std::ranges::as_rvalue_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3338,7 +3340,9 @@ library:
     cppreference-description: '{{ltt|cpp/ranges/cartesian_product_view|std::ranges::cartesian_product_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc: null
 - name: __cpp_lib_ranges_chunk
   header_list: ranges
@@ -3348,7 +3352,9 @@ library:
     cppreference-description: '{{lc|std::ranges::chunk_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202202
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3361,7 +3367,9 @@ library:
     cppreference-description: '{{lc|std::ranges::chunk_by_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202202
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3413,7 +3421,9 @@ library:
     cppreference-description: '{{lc|std::ranges::join_with_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202202
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3426,7 +3436,9 @@ library:
     cppreference-description: '{{ltt|cpp/ranges/repeat_view|std::ranges::repeat_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc: null
 - name: __cpp_lib_ranges_slide
   header_list: ranges
@@ -3436,7 +3448,9 @@ library:
     cppreference-description: '{{lc|std::ranges::slide_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202202
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3462,7 +3476,9 @@ library:
     cppreference-description: '{{ltt|cpp/ranges/stride_view|std::ranges::stride_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3489,7 +3505,9 @@ library:
       {{lc|std::ranges::adjacent_view}}, {{lc|std::ranges::adjacent_transform_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202110
     msvc: null
 - name: __cpp_lib_raw_memory_algorithms
   header_list: memory
