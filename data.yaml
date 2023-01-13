@@ -1932,7 +1932,9 @@ library:
     papers: P0415R1
     cppreference-description: Constexpr for {{lc|std::complex}}
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201711
     gcc:
     - since: C++20
       value: 201711
@@ -3756,7 +3758,10 @@ library:
     papers: P1208R6
     cppreference-description: Source-code information capture ({{lc|std::source_location}})
   support:
-    clang: null
+    clang:
+    - since: C++20
+      depends: __has_builtin(__builtin_source_location)
+      value: 201907
     gcc:
     - since: C++20
       depends: __has_builtin(__builtin_source_location)
