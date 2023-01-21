@@ -3294,7 +3294,7 @@ library:
   support:
     clang:
     - since: C++20
-      value: 201811
+      value: 202106
     gcc:
     - since: C++20
       depends: __cpp_lib_concepts
