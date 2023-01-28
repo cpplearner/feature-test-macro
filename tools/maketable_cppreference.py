@@ -1,6 +1,11 @@
 #!/usr/bin/env python3
-import argparse, sys, yaml
+import argparse, sys, textwrap, yaml
 from utilities import kinds, standards
+
+def find_std_value(name):
+    for stdname, value in standards:
+        if stdname == name:
+            return value
 
 parser = argparse.ArgumentParser()
 parser.add_argument('kind', choices=kinds, help='Table to generate')
@@ -22,6 +27,7 @@ elif args.kind == 'language':
 ! Feature
 ! Value
 ! <abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr>
+! Paper(s)
 """)
 elif args.kind == 'library':
     out.write("""\
@@ -32,15 +38,49 @@ elif args.kind == 'library':
 ! Value
 ! Header
 ! <abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr>
+! Paper(s)
 """)
 
 for item in a[args.kind]:
     if 'removed' in item['rows'][-1]:
         continue
 
-    stdrevmap = {}
+    rows = []
+    papers = []
+    for row in item['rows']:
+        if 'papers' in row:
+            papers += row['papers'].split()
 
-    rows = [row for row in item['rows'] if 'cppreference-description' in row]
+        if 'cppreference-description' in row:
+            prev = rows[-1] if len(rows) > 0 else None
+            if 'cppreference-treats-as-dr-against' in row:
+                row['std'] = row['cppreference-treats-as-dr-against']
+                stdvalue = find_std_value(row['std'])
+                if row['value'] <= stdvalue:
+                    print(f'warning: invalid DR for {item["name"]}', file=sys.stderr)
+                    print(f'  standard: {row["std"]}', file=sys.stderr)
+                    print(f'  printing: {row["value"]}', file=sys.stderr)
+                elif prev and find_std_value(prev['std']) > stdvalue:
+                    print(f'warning: invalid DR for {item["name"]}', file=sys.stderr)
+                    print(f'  standard: {row["std"]}', file=sys.stderr)
+                    print(f'  printing: {row["value"]}', file=sys.stderr)
+                    print(f'  previous: {prev["std"]}, {prev["value"]}', file=sys.stderr)
+            else:
+                nextstd = [stdname for stdname, value in standards if value is None or row['value'] < value][0]
+                row['std'] = nextstd
+
+                if prev and prev['std'] == row['std']:
+                    print(f'warning: there is a newer value for {item["name"]}', file=sys.stderr)
+                    print(f'  standard: {nextstd}', file=sys.stderr)
+                    print(f'  printing: {row["value"]}', file=sys.stderr)
+                    print(f'  previous value: {prev["value"]}', file=sys.stderr)
+                    print(f'  support:', file=sys.stderr)
+                    print(textwrap.indent(yaml.safe_dump(item['support']), '    '), file=sys.stderr)
+
+            row['papers'] = papers
+            rows.append(row)
+            papers = []
+
     for index, row in enumerate(rows):
         out.write('|-\n')
         if index == 0:
@@ -67,51 +107,13 @@ for item in a[args.kind]:
             else:
                 assert item['name'] == '__cpp_lib_modules'
 
+        out.write(f' || {{{{mark {row["std"].lower()}}}}}')
         if 'cppreference-treats-as-dr-against' in row:
-            stdname = row['cppreference-treats-as-dr-against']
-            out.write(f' || {{{{mark {stdname.lower()}}}}}{{{{mark|DR}}}}\n')
-            stdvalue = [value for std, value in standards if std == stdname][0]
+            out.write(f'{{{{mark|DR}}}}')
 
-            stdrevmap[tuple(row)] = stdname, stdvalue
+        papers = ' '.join(f'{{{{stddoc|{paper}}}}}' for paper in row['papers'])
+        out.write(f' || {papers}\n')
 
-            if row['value'] <= stdvalue:
-                print(f'warning: invalid DR for {item["name"]}', file=sys.stderr)
-                print(f'  standard: {stdname}', file=sys.stderr)
-                print(f'  printing: {row["value"]}', file=sys.stderr)
-                print(f'  support: {item["support"]}', file=sys.stderr)
-            elif index > 0:
-                prevrow = rows[index - 1]
-                prevstd = stdrevmap[tuple(prevrow)]
-                if prevstd[1] > stdvalue:
-                    print(f'warning: invalid DR for {item["name"]}', file=sys.stderr)
-                    print(f'  standard: {stdname}', file=sys.stderr)
-                    print(f'  printing: {row["value"]}', file=sys.stderr)
-                    print(f'  previous: {prevstd[0]}, {prevrow["value"]}', file=sys.stderr)
-                    print(f'  support: {item["support"]}', file=sys.stderr)
-        else:
-            def standard_around(value):
-                previous = None
-                for std in standards:
-                    name, __cplusplus = std
-                    if __cplusplus is None or value <= __cplusplus:
-                        return {'previous': previous, 'next': std}
-                    previous = std
-
-            nextstd = standard_around(row['value'])['next']
-            out.write(f' || {{{{mark {nextstd[0].lower()}}}}}\n')
-
-            stdrevmap[tuple(row)] = nextstd
-
-            if nextstd[1]:
-                last_value = [r for r in item['rows'] if r['value'] <= nextstd[1]][-1]
-            else:
-                last_value = item['rows'][-1]
-            if row is not last_value:
-                print(f'warning: there is a newer value for {item["name"]}', file=sys.stderr)
-                print(f'  standard: {nextstd[0]}', file=sys.stderr)
-                print(f'  printing: {row["value"]}', file=sys.stderr)
-                print(f'  new value: {last_value["value"]}', file=sys.stderr)
-                print(f'  support: {item["support"]}', file=sys.stderr)
 
 out.write('|}')
 
