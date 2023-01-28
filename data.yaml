@@ -319,6 +319,9 @@ language:
   - value: 201811
     papers: P1073R3
     cppreference-description: '[[cpp/language/consteval|Immediate functions]]'
+  - value: 202211
+    papers: P2564R3
+    cppreference-description: 'Making {{tt|consteval}} propagate up'
   support:
     clang: null
     gcc:
@@ -357,7 +360,10 @@ language:
       labels, and {{ltt|cpp/language|goto}} statements in constexpr functions
   - value: 202207
     papers: P2448R2
-    cppreference-description: Relaxing some [[cpp/language/constexpr|constexpr]] restrictions
+    cppreference-description: Relaxing some restrictions on [[cpp/language/constexpr|constexpr]] functions and function templates
+  - value: 202211
+    papers: P2647R1
+    cppreference-description: Permitting static constexpr variables in constexpr functions
   support:
     clang:
     - since: C++11
@@ -554,7 +560,8 @@ language:
   rows:
   - value: 202110
     papers: P0847R7
-    cppreference-description: '[[cpp/language/member_functions#Explicit_object_parameter|Explicit object parameter]]'
+    cppreference-description: '[[cpp/language/member_functions#Explicit_object_parameter|Explicit
+      object parameter]]'
   support:
     clang: null
     gcc: null
@@ -837,6 +844,9 @@ language:
     papers: P2128R6
     cppreference-description: Multidimensional [[cpp/language/operator member access|subscript
       operator]]
+  - value: 202211
+    papers: P2589R1
+    cppreference-description: '{{tt|static}} {{ltt|cpp/language/operators|operator[]}}'
   support:
     clang:
     - since: C++23
@@ -2294,6 +2304,9 @@ library:
   - value: 202202
     papers: P0323R12
     cppreference-description: class template {{lc|std::expected}}
+  - value: 202211
+    papers: P2505R5
+    cppreference-description: Monadic functions for {{lc|std::expected}}
   support:
     clang:
     - since: C++23
@@ -2376,8 +2389,8 @@ library:
     cppreference-treats-as-dr-against: C++20
   - value: 202207
     papers: P2419R2 P2508R1
-    cppreference-description: Exposing {{ltt|cpp/utility/format/basic_format_string|std::basic_format_string}}; clarify handling
-      of encodings in localized formatting of chrono types
+    cppreference-description: Exposing {{ltt|cpp/utility/format/basic_format_string|std::basic_format_string}};
+      clarify handling of encodings in localized formatting of chrono types
   support:
     clang: null
     gcc: null
@@ -2912,7 +2925,7 @@ library:
   rows:
   - value: 201510
     papers: P0013R1
-    cppreference-description: '[[cpp/types#Operations_on_traits|Logical operator type
+    cppreference-description: '[[cpp/meta#Operations on traits|Logical operations on type
       traits]]'
   support:
     clang:
@@ -2989,7 +3002,7 @@ library:
   rows:
   - value: 201907
     papers: P0631R8
-    cppreference-description: '[[cpp/header/numbers|Mathematical constants]]'
+    cppreference-description: '[[cpp/numeric/constants|Mathematical constants]]'
   support:
     clang:
     - since: C++20
@@ -3049,7 +3062,7 @@ library:
   rows:
   - papers: P2465R3
     value: 202207
-    cppreference-description: Standard library modules {{tt|std}} and {{tt|std.compat}}
+    cppreference-description: '[[cpp/standard library#Importing modules|Standard library modules]] {{tt|std}} and {{tt|std.compat}}'
   support:
     clang: null
     gcc: null
@@ -3291,6 +3304,9 @@ library:
     papers: P2494R2
     cppreference-description: Relaxing [[cpp/ranges|range adaptors]] to allow for
       move only types
+  - value: 202211
+    papers: P2602R2
+    cppreference-description: Removing 'poison pills' overloads in {{lc|ranges::begin}} et al.
   support:
     clang:
     - since: C++20
