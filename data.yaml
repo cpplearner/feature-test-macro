@@ -3457,7 +3457,10 @@ library:
     gcc:
     - since: C++23
       value: 202207
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_ranges_slide
   header_list: ranges
   rows:
