@@ -1872,6 +1872,9 @@ library:
     - since: C++20
       depends: '!defined(__EDG__) || defined(__INTELLISENSE__)'
       value: 202002
+    - since: C++23
+      depends: '!defined(__EDG__) || defined(__INTELLISENSE__)'
+      value: 202207
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm
   rows:
