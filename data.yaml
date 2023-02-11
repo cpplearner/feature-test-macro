@@ -2323,7 +2323,7 @@ library:
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
-      value: 202202
+      value: 202211
 - name: __cpp_lib_filesystem
   header_list: filesystem
   rows:
