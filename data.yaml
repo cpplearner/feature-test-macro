@@ -2119,7 +2119,9 @@ library:
     papers: P1328R1
     cppreference-description: Constexpr for {{lc|1=std::type_info::operator==}}
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202106
     gcc:
     - since: C++23
       value: 202106
