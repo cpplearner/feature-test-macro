@@ -2669,7 +2669,9 @@ library:
     papers: P2136R3
     cppreference-description: '{{ltt|cpp/utility/functional/invoke|std::invoke_r}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202106
     gcc:
     - since: C++23
       value: 202106
