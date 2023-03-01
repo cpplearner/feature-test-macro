@@ -3349,7 +3349,9 @@ library:
     papers: P2446R2
     cppreference-description: '{{ltt|cpp/ranges/as_rvalue_view|std::ranges::as_rvalue_view}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
