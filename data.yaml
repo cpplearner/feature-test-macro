@@ -3328,7 +3328,7 @@ library:
       value: 202110
     - since: C++23
       depends: defined(__cpp_lib_concepts)
-      value: 202211
+      value: 202302
 - name: __cpp_lib_ranges_as_const
   header_list: ranges
   rows:
@@ -4146,7 +4146,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_tuples_by_type
   header_list: tuple utility
   rows:
