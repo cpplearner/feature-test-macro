@@ -3093,7 +3093,9 @@ library:
     cppreference-description: Make {{lc|std::move_iterator|std::move_iterator<T*>}}
       a random access iterator
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 202207
     gcc: null
     msvc:
     - since: C++20
