@@ -3489,7 +3489,9 @@ library:
     cppreference-description: '{{lc|std::ranges::enumerate_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202302
     msvc: null
 - name: __cpp_lib_ranges_find_last
   header_list: algorithm
@@ -3500,7 +3502,9 @@ library:
       {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if}}, and {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if_not}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc: null
 - name: __cpp_lib_ranges_fold
   header_list: algorithm
