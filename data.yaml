@@ -2412,7 +2412,10 @@ library:
     papers: P2286R8 P2585R1 LWG3750
     cppreference-description: Formatting ranges
   support:
-    clang: null
+    clang:
+    - since: C++23
+      depends: '!defined(_LIBCPP_HAS_NO_INCOMPLETE_FORMAT)'
+      value: 202207
     gcc: null
     msvc: null
 - name: __cpp_lib_forward_like
