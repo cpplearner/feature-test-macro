@@ -3278,7 +3278,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
   rows:
@@ -3384,7 +3387,10 @@ library:
     gcc:
     - since: C++23
       value: 202207
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_ranges_chunk
   header_list: ranges
   rows:
@@ -3558,7 +3564,10 @@ library:
     gcc:
     - since: C++23
       value: 202110
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202110
 - name: __cpp_lib_raw_memory_algorithms
   header_list: memory
   rows:
