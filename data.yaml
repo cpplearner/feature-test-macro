@@ -1848,7 +1848,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: 'defined(__cpp_lib_concepts)'
+      value: 202302
 - name: __cpp_lib_common_reference_wrapper
   header_list: functional
   rows:
@@ -1858,7 +1861,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++20
+      depends: 'defined(__cpp_lib_concepts)'
+      value: 202302
 - name: __cpp_lib_complex_udls
   header_list: complex
   rows:
@@ -3492,7 +3498,10 @@ library:
     gcc:
     - since: C++23
       value: 202302
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: 'defined(__cpp_lib_concepts)'
+      value: 202302
 - name: __cpp_lib_ranges_find_last
   header_list: algorithm
   rows:
@@ -3505,7 +3514,10 @@ library:
     gcc:
     - since: C++23
       value: 202207
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: 'defined(__cpp_lib_concepts)'
+      value: 202207
 - name: __cpp_lib_ranges_fold
   header_list: algorithm
   rows:
