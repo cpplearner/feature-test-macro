@@ -3329,6 +3329,8 @@ library:
     - since: C++20
       depends: __cpp_lib_concepts
       value: 202110
+    - since: C++23
+      value: 202202
     msvc:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
@@ -3344,7 +3346,9 @@ library:
     cppreference-description: '{{lc|std::const_iterator}}, {{ltt|cpp/ranges/as_const_view|std::ranges::as_const_view}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3416,7 +3420,9 @@ library:
     cppreference-description: '{{ltt|cpp/algorithm/ranges/contains|std::ranges::contains}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3429,7 +3435,9 @@ library:
     cppreference-description: '{{tt|std::ranges}} {{tt|fold}} algorithms'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3442,7 +3450,9 @@ library:
     cppreference-description: '{{lc|std::ranges::iota}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202202
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
