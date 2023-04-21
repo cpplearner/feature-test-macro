@@ -21,9 +21,9 @@ if args.kind == 'attributes':
     exit()
 elif args.kind == 'language':
     out.write("""\
-{| class="wikitable sortable"
+{| class="wikitable sortable" style="font-size:90%;"
 |-
-! Macro name
+! style="width:0" | Macro name
 ! Feature
 ! Value
 ! <abbr title="Standard in which the feature is introduced; DR means defect report against that revision">Std</abbr>
@@ -31,9 +31,9 @@ elif args.kind == 'language':
 """)
 elif args.kind == 'library':
     out.write("""\
-{| class="wikitable sortable"
+{| class="wikitable sortable" style="font-size:90%;"
 |-
-! Macro name
+! style="width:0" | Macro name
 ! Feature
 ! Value
 ! Header
@@ -41,10 +41,8 @@ elif args.kind == 'library':
 ! Paper(s)
 """)
 
-for item in a[args.kind]:
-    if 'removed' in item['rows'][-1]:
-        continue
-
+macros = [item for item in a[args.kind] if 'removed' not in item['rows'][-1]]
+for item in macros:
     rows = []
     papers = []
     for row in item['rows']:
@@ -66,10 +64,10 @@ for item in a[args.kind]:
                     print(f'  printing: {row["value"]}', file=sys.stderr)
                     print(f'  previous: {prev["std"]}, {prev["value"]}', file=sys.stderr)
             else:
-                nextstd = [stdname for stdname, value in standards if value is None or row['value'] < value][0]
+                nextstd = [stdname for stdname, value in standards if value is None or row['value'] <= value][0]
                 row['std'] = nextstd
 
-                if prev and prev['std'] == row['std']:
+                if prev and prev['std'] == row['std'] and row['std'] != standards[-1][0]:
                     print(f'warning: there is a newer value for {item["name"]}', file=sys.stderr)
                     print(f'  standard: {nextstd}', file=sys.stderr)
                     print(f'  printing: {row["value"]}', file=sys.stderr)
@@ -88,32 +86,46 @@ for item in a[args.kind]:
                 out.write(f'| rowspan="{len(rows)}" | ')
             else:
                 out.write('| ')
-            length_threshold = 31 if args.kind == 'language' else 30
+            length_threshold = 30
             if len(item['name']) > length_threshold:
-                break_opportunity = item['name'].find('_', 15) + 1
-                if break_opportunity == 0 or break_opportunity > 25:
-                    print(item['name'], file=sys.stderr)
-                    break_opportunity = item['name'].rfind('_', 0, 15) + 1
-                out.write(f'{{{{c|{item["name"][:break_opportunity]}}}}}')
-                out.write(f'{{{{c|{item["name"][break_opportunity:]}}}}} |')
+                break_point = item['name'].find('_', 15, 25) + 1
+                assert break_point != 0
+                out.write(f'{{{{tt|1={item["name"][:break_point]}{{{{br}}}}{item["name"][break_point:]}}}}} |')
             else:
-                out.write(f'{{{{c|{item["name"]}}}}} |')
+                out.write(f'{{{{tt|{item["name"]}}}}} |')
+
         out.write(f'| {row["cppreference-description"]}')
+
         out.write(f' || {{{{c|{row["value"]}L}}}}')
+
         if args.kind == 'library':
-            out.write(' || ')
-            if 'header_list' in item:
-                out.write(' '.join(f'{{{{header|{hdr}}}}}' for hdr in item['header_list'].split(' ')))
+            if 'cppreference-header_list' in row:
+                header_list = row['cppreference-header_list'].split(' ')
+            elif 'header_list' in item:
+                header_list = item['header_list'].split(' ')
             else:
+                header_list = ''
                 assert item['name'] == '__cpp_lib_modules'
+
+            if len(header_list) > 2 and len(rows) > 1 and not any('cppreference-header_list' in row for row in rows):
+                if index == 0:
+                    out.write(f' || rowspan="{len(rows)}" | ')
+                    out.write(' '.join(f'{{{{header|{hdr}}}}}' for hdr in header_list))
+            else:
+                out.write(' || ')
+                out.write(' '.join(f'{{{{header|{hdr}}}}}' for hdr in header_list))
 
         out.write(f' || {{{{mark {row["std"].lower()}}}}}')
         if 'cppreference-treats-as-dr-against' in row:
-            out.write(f'{{{{mark|DR}}}}')
+            out.write(f'<br>{{{{mark|DR}}}}')
 
-        papers = ' '.join(f'{{{{stddoc|{paper}}}}}' for paper in row['papers'])
+        papers = '<br>'.join(f'{{{{stddoc|{paper}}}}}' for paper in row['papers'])
         out.write(f' || {papers}\n')
 
+out.write('|-\n')
+colspan = 6 if args.kind == 'library' else 5
+viable_macros = [item for item in macros if any('cppreference-description' in row for row in item['rows'])]
+out.write(f'! colspan="{colspan}" | Total number of macros: {len(viable_macros)} <!-- do not forget to update -->\n')
 
 out.write('|}')
 

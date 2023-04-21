@@ -255,8 +255,8 @@ language:
     papers: P0482R6
     cppreference-description: '{{ltt|cpp/keyword/char8_t}}'
   - value: 202207
-    papers: P2513R3
-    cppreference-description: '{{c|char8_t}} compatibility and portability fix (allow
+    papers: P2513R4
+    cppreference-description: '{{co|char8_t}} compatibility and portability fix (allow
       [[cpp/language/aggregate initialization#Character arrays|initialization of (unsigned)
       char arrays]] from [[cpp/language/string literal|UTF-8 string literals]])'
   support:
@@ -321,7 +321,7 @@ language:
     cppreference-description: '[[cpp/language/consteval|Immediate functions]]'
   - value: 202211
     papers: P2564R3
-    cppreference-description: 'Making {{tt|consteval}} propagate up'
+    cppreference-description: Making {{tt|consteval}} propagate up
   support:
     clang: null
     gcc:
@@ -360,7 +360,8 @@ language:
       labels, and {{ltt|cpp/language|goto}} statements in constexpr functions
   - value: 202207
     papers: P2448R2
-    cppreference-description: Relaxing some restrictions on [[cpp/language/constexpr|constexpr]] functions and function templates
+    cppreference-description: Relaxing some restrictions on [[cpp/language/constexpr|constexpr]]
+      functions and function templates
   - value: 202211
     papers: P2647R1
     cppreference-description: Permitting static constexpr variables in constexpr functions
@@ -969,6 +970,9 @@ language:
     papers: P0184R0
     cppreference-description: '[[cpp/language/range-for#Explanation|Range-based {{tt|for}}
       loop]] with different {{tt|begin}}/{{tt|end}} types'
+  - value: 202211
+    papers: P2718R0 CWG2659
+    cppreference-description: 'Lifetime extension in range-based {{tt|for}}'
   support:
     clang:
     - since: C++11
@@ -1173,8 +1177,8 @@ language:
   rows:
   - value: 200704
     papers: N2249
-    cppreference-description: '[[cpp/language/types|New character types]] ({{c|char16_t}}
-      and {{c|char32_t}})'
+    cppreference-description: '[[cpp/language/types|New character types]] ({{co|char16_t}}
+      and {{co|char32_t}})'
   support:
     clang:
     - since: C++11
@@ -1324,7 +1328,10 @@ library:
   rows:
   - value: 202106
     papers: P0401R6
-    cppreference-description: '{{lc|std::allocate_at_least}} etc.'
+  - value: 202302
+    papers: P2652R2 LWG3887
+    cppreference-description: 'Size-feedback in the Allocator interface, e.g.: {{l2tt
+      std|cpp/memory/allocator/allocate_at_least}}, {{l2tt std|cpp/memory/allocator_traits/allocate_at_least}}'
   support:
     clang:
     - since: C++23
@@ -1591,6 +1598,9 @@ library:
   - value: 201907
     papers: P1135R6
     cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}'
+  - value: 202302
+    papers: P2588R3
+    cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}''s phase completion guarantees'
   support:
     clang:
     - since: C++20
@@ -1829,6 +1839,26 @@ library:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_lib_common_reference
+  header_list: type_traits
+  rows:
+  - value: 202302
+    papers: P2655R3
+    cppreference-description: Make {{lc|std::common_reference_t}} of {{lc|std::reference_wrapper}} a reference type
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_common_reference_wrapper
+  header_list: functional
+  rows:
+  - value: 202302
+    papers: P2655R3
+    cppreference-description: Make {{lc|std::common_reference_t}} of {{lc|std::reference_wrapper}} a reference type
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_complex_udls
   header_list: complex
   rows:
@@ -1855,6 +1885,7 @@ library:
   - value: 202002
     papers: P1964R2
     cppreference-description: '[[cpp/concepts|Standard library concepts]]'
+    cppreference-header_list: concepts
   - value: 202207
     papers: P2404R3
     cppreference-description: Move-only types for {{lconcept|equality_comparable_with}},
@@ -2344,16 +2375,6 @@ library:
     msvc:
     - since: C++17
       value: 201703
-- name: __cpp_lib_find_last
-  header_list: algorithm
-  rows:
-  - value: 202207
-    papers: P1223R5
-    cppreference-description: '{{ltt|cpp/algorithm/ranges/find_last|std::ranges::find_last}}'
-  support:
-    clang: null
-    gcc: null
-    msvc: null
 - name: __cpp_lib_flat_map
   header_list: flat_map
   rows:
@@ -2415,6 +2436,16 @@ library:
     - since: C++23
       depends: '!defined(_LIBCPP_HAS_NO_INCOMPLETE_FORMAT)'
       value: 202207
+    gcc: null
+    msvc: null
+- name: __cpp_lib_formatters
+  header_list: stacktrace thread
+  rows:
+  - value: 202302
+    papers: P2693R1
+    cppreference-description: Formatting {{lc|std::thread::id}} and {{ltt|cpp/utility/basic_stacktrace|std::stacktrace}}
+  support:
+    clang: null
     gcc: null
     msvc: null
 - name: __cpp_lib_forward_like
@@ -2746,6 +2777,16 @@ library:
       value: 201402
     msvc:
     - value: 201402
+- name: __cpp_lib_is_implicit_lifetime
+  header_list: type_traits
+  rows:
+  - value: 202302
+    papers: P2674R1
+    cppreference-description: '{{ltt std|cpp/types/is_implicit_lifetime}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_is_invocable
   header_list: type_traits
   rows:
@@ -2936,8 +2977,8 @@ library:
   rows:
   - value: 201510
     papers: P0013R1
-    cppreference-description: '[[cpp/meta#Operations on traits|Logical operations on type
-      traits]]'
+    cppreference-description: '[[cpp/meta#Operations on traits|Logical operations
+      on type traits]]'
   support:
     clang:
     - since: C++17
@@ -3073,7 +3114,8 @@ library:
   rows:
   - papers: P2465R3
     value: 202207
-    cppreference-description: '[[cpp/standard library#Importing modules|Standard library modules]] {{tt|std}} and {{tt|std.compat}}'
+    cppreference-description: '[[cpp/standard library#Importing modules|Standard library
+      modules]] {{tt|std}} and {{tt|std.compat}}'
   support:
     clang: null
     gcc: null
@@ -3322,10 +3364,14 @@ library:
   - value: 202207
     papers: P2494R2
     cppreference-description: Relaxing [[cpp/ranges|range adaptors]] to allow for
-      move only types
+      move-only types
   - value: 202211
     papers: P2602R2
-    cppreference-description: Removing 'poison pills' overloads in {{lc|ranges::begin}} et al.
+    cppreference-description: Removing 'poison pill' overloads in {{lc|ranges::begin}},
+      {{lc|ranges::end}}, {{lc|ranges::rbegin}}, {{lc|ranges::rend}}, and {{lc|ranges::size}}
+  - value: 202302
+    papers: P2609R3
+    cppreference-description: 'Relaxing ranges to allow certain projections'
   support:
     clang:
     - since: C++20
@@ -3435,6 +3481,27 @@ library:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
       value: 202207
+- name: __cpp_lib_ranges_enumerate
+  header_list: ranges
+  rows:
+  - value: 202302
+    papers: P2164R9
+    cppreference-description: '{{lc|std::ranges::enumerate_view}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_ranges_find_last
+  header_list: algorithm
+  rows:
+  - value: 202207
+    papers: P1223R5
+    cppreference-description: '{{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last}},
+      {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if}}, and {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if_not}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_fold
   header_list: algorithm
   rows:
@@ -4134,6 +4201,7 @@ library:
     papers: N3421
     cppreference-description: Transparent operator functors ({{lc|std::less<>}} et
       al)
+    cppreference-header_list: functional
   - value: 201510
     papers: P0074R0
     cppreference-description: Transparent {{lc|std::owner_less}} ({{ltt|cpp/memory/owner_less_void|std::owner_less<void>}})
