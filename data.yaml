@@ -2351,7 +2351,7 @@ library:
   support:
     clang:
     - since: C++23
-      value: 202202
+      value: 202211
     gcc:
     - since: C++23
       depends: __cpp_concepts >= 202002
