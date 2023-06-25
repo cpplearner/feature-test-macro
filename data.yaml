@@ -1667,7 +1667,9 @@ library:
     papers: P0553R4
     cppreference-description: '[[cpp/numeric#Bit_manipulation_(since_C++20)|Bit operations]]'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201907
     gcc:
     - since: C++20
       value: 201907
@@ -3381,7 +3383,7 @@ library:
   support:
     clang:
     - since: C++20
-      value: 202106
+      value: 202207
     gcc:
     - since: C++20
       depends: __cpp_lib_concepts
