@@ -323,7 +323,9 @@ language:
     papers: P2564R3
     cppreference-description: Making {{tt|consteval}} propagate up
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 202211
     gcc:
     - since: C++20
       value: 201811
