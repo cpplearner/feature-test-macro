@@ -3576,7 +3576,9 @@ library:
     papers: P2474R2
     cppreference-description: '{{ltt|cpp/ranges/repeat_view|std::ranges::repeat_view}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
@@ -3634,7 +3636,9 @@ library:
     papers: P1206R7
     cppreference-description: '{{lc|std::ranges::to}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202202
     gcc: null
     msvc:
     - since: C++23
