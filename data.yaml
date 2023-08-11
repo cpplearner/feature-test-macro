@@ -2457,7 +2457,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202302
 - name: __cpp_lib_forward_like
   header_list: utility
   rows:
