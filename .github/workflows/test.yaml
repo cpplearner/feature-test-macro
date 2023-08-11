@@ -54,7 +54,7 @@ jobs:
             - name: Install PyYAML
               run: pip install pyyaml
 
-            - uses: actions/cache@v3
+            - uses: actions/cache/restore@v3
               with:
                   path: gcc-latest
                   key: gcc-cache-${{ github.sha }}
@@ -79,6 +79,10 @@ jobs:
                       date +%F > $LOC/gcc-latest/builddate.txt
                   fi
                   echo "$LOC/gcc-latest/bin" >> $GITHUB_PATH
+            - uses: actions/cache/save@v3
+              with:
+                path: gcc-latest
+                key: gcc-cache-${{ github.sha }}
 
             - name: Test attributes
               run: python tools/do_test.py gcc attributes --verbose
