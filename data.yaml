@@ -3695,6 +3695,7 @@ library:
     clang: null
     gcc:
     - since: C++23
+      depends: '__has_builtin(__reference_constructs_from_temporary) && __has_builtin(__reference_converts_from_temporary)'
       value: 202202
     msvc: null
 - name: __cpp_lib_remove_cvref
