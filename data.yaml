@@ -292,8 +292,10 @@ language:
     - since: C++20
       value: 201907
     gcc:
-    - option: -fconcepts
+    - option: -fconcepts-ts
       value: 201507
+    - option: -fconcepts
+      value: 202002
     - since: C++20
       value: 202002
     msvc:
