@@ -404,6 +404,8 @@ language:
       value: 201907
     - since: C++23
       value: 202211
+    - since: C++26
+      value: 202306
     gcc:
     - since: C++11
       value: 200704
@@ -996,7 +998,8 @@ language:
     papers: P2169R4
     cppreference-description: A nice placeholder with no name
   support:
-    clang: null
+    clang:
+    - value: 202306
     gcc: null
     msvc: null
 - name: __cpp_range_based_for
@@ -1146,6 +1149,8 @@ language:
       value: 200410
     - since: C++17
       value: 201411
+    - since: C++26
+      value: 202306
     gcc:
     - since: C++11
       value: 200410
