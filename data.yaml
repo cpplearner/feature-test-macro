@@ -217,6 +217,16 @@ language:
       value: 200809
     msvc:
     - value: 200809
+- name: __cpp_auto_cast
+  rows:
+  - value: 202110
+    papers: P0849R8
+    cppreference-description: '[[cpp/language/explicit_cast|{{c|auto(x)}} and {{c|auto{x}
+      }}]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_binary_literals
   rows:
   - value: 201304
@@ -259,6 +269,7 @@ language:
     cppreference-description: '{{co|char8_t}} compatibility and portability fix (allow
       [[cpp/language/aggregate initialization#Character arrays|initialization of (unsigned)
       char arrays]] from [[cpp/language/string literal|UTF-8 string literals]])'
+    cppreference-treats-as-dr-against: C++20
   support:
     clang:
     - since: C++20
@@ -324,6 +335,7 @@ language:
   - value: 202211
     papers: P2564R3
     cppreference-description: Making {{tt|consteval}} propagate up
+    cppreference-treats-as-dr-against: C++20
   support:
     clang:
     - since: C++20
@@ -349,8 +361,13 @@ language:
     cppreference-description: '[[cpp/language/lambda|Constexpr lambda]]'
   - value: 201806
     papers: P1064R0
+    cppreference-description: '[[cpp/language/virtual|Virtual function]] calls in
+      constant expressions'
   - value: 201811
-    papers: P1002R1 P1327R1 P1330R0
+    papers: P1002R1 P1327R1
+    cppreference-description: '{{ltt|cpp/language/try_catch|try-catch}} blocks in
+      constexpr functions, {{ltt|cpp/language/dynamic_cast}} and polymorphic {{ltt|cpp/language/typeid}}
+      in constant expressions'
   - value: 201907
     papers: P1331R2 P1668R1
     cppreference-description: Trivial [[cpp/language/default initialization|default
@@ -369,6 +386,10 @@ language:
   - value: 202211
     papers: P2647R1
     cppreference-description: Permitting static constexpr variables in constexpr functions
+  - value: 202306
+    papers: P2738R1
+    cppreference-description: 'Constexpr cast from {{tt|void*}}: towards constexpr
+      type-erasure'
   support:
     clang:
     - since: C++11
@@ -965,6 +986,15 @@ language:
       value: 200809
     msvc:
     - value: 200809
+- name: __cpp_placeholder_variables
+  rows:
+  - value: 202306
+    papers: P2169R4
+    cppreference-description: A nice placeholder with no name
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_range_based_for
   rows:
   - value: 200907
@@ -975,8 +1005,8 @@ language:
     cppreference-description: '[[cpp/language/range-for#Explanation|Range-based {{tt|for}}
       loop]] with different {{tt|begin}}/{{tt|end}} types'
   - value: 202211
-    papers: P2718R0 CWG2659
-    cppreference-description: 'Lifetime extension in range-based {{tt|for}}'
+    papers: P2644R1 P2718R0 CWG2659
+    cppreference-description: Lifetime extension in range-based {{tt|for}}
   support:
     clang:
     - since: C++11
@@ -1102,6 +1132,10 @@ language:
   - value: 201411
     papers: N3928
     cppreference-description: '[[cpp/language/static_assert|Single-argument {{tt|static_assert}}]]'
+  - value: 202306
+    papers: P2741R3
+    cppreference-description: '[[cpp/language/static_assert|User-generated {{tt|static_assert}}
+      messages]]'
   support:
     clang:
     - since: C++11
@@ -1454,6 +1488,17 @@ library:
     msvc:
     - since: C++23
       value: 202110
+- name: __cpp_lib_associative_heterogeneous_insertion
+  header_list: map set unordered_map unordered_set
+  rows:
+  - value: 202306
+    papers: P2363R5
+    cppreference-description: Heterogeneous overloads for the remaining member functions
+      in ordered and unordered associative containers
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_assume_aligned
   header_list: memory
   rows:
@@ -1604,7 +1649,8 @@ library:
     cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}'
   - value: 202302
     papers: P2588R3
-    cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}''s phase completion guarantees'
+    cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}''s phase completion
+      guarantees'
   support:
     clang:
     - since: C++20
@@ -1623,6 +1669,10 @@ library:
   - value: 202202
     papers: P2387R3
     cppreference-description: '{{lc|std::bind_back}}'
+  - value: 202306
+    papers: P2714R1
+    cppreference-description: Allow passing callable objects as non-type template
+      arguments to {{lc|std::bind_back}}
   support:
     clang: null
     gcc: null
@@ -1637,6 +1687,10 @@ library:
   - value: 201907
     papers: P1651R0
     cppreference-description: '{{ltt|cpp/utility/functional/bind_front|std::bind_front}}'
+  - value: 202306
+    papers: P2714R1
+    cppreference-description: Allow passing callable objects as non-type template
+      arguments to {{lc|std::bind_front}}
   support:
     clang:
     - since: C++20
@@ -1680,6 +1734,16 @@ library:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_lib_bitset
+  header_list: bitset
+  rows:
+  - value: 202306
+    papers: P2697R1
+    cppreference-description: Interfacing {{lc|std::bitset}} with {{lc|std::string_view}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_bool_constant
   header_list: type_traits
   rows:
@@ -1799,6 +1863,10 @@ library:
     papers: P1466R3
     cppreference-description: '[[cpp/chrono#Calendar|Calendars]] and [[cpp/chrono#Time
       zone|Time Zones]]'
+  - value: 202306
+    papers: P2592R3
+    cppreference-description: '[[cpp/utility/hash|Hashing]] support for {{ltt std|cpp/chrono}}
+      value classes'
   support:
     clang:
     - since: C++17
@@ -1852,26 +1920,28 @@ library:
   rows:
   - value: 202302
     papers: P2655R3
-    cppreference-description: Make {{lc|std::common_reference_t}} of {{lc|std::reference_wrapper}} a reference type
+    cppreference-description: Make {{lc|std::common_reference_t}} of {{lc|std::reference_wrapper}}
+      a reference type
   support:
     clang: null
     gcc: null
     msvc:
     - since: C++20
-      depends: 'defined(__cpp_lib_concepts)'
+      depends: defined(__cpp_lib_concepts)
       value: 202302
 - name: __cpp_lib_common_reference_wrapper
   header_list: functional
   rows:
   - value: 202302
     papers: P2655R3
-    cppreference-description: Make {{lc|std::common_reference_t}} of {{lc|std::reference_wrapper}} a reference type
+    cppreference-description: Make {{lc|std::common_reference_t}} of {{lc|std::reference_wrapper}}
+      a reference type
   support:
     clang: null
     gcc: null
     msvc:
     - since: C++20
-      depends: 'defined(__cpp_lib_concepts)'
+      depends: defined(__cpp_lib_concepts)
       value: 202302
 - name: __cpp_lib_complex_udls
   header_list: complex
@@ -1920,13 +1990,16 @@ library:
       depends: '!defined(__EDG__) || defined(__INTELLISENSE__)'
       value: 202207
 - name: __cpp_lib_constexpr_algorithms
-  header_list: algorithm
+  header_list: algorithm utility
   rows:
   - value: 201703
     papers: P0202R3
   - value: 201806
-    papers: P0879R0 LWG3256
+    papers: P0879R0 LWG3256 LWG3792
     cppreference-description: Constexpr for [[cpp/algorithm|algorithms]]
+  - value: 202306
+    papers: P2562R1
+    cppreference-description: Constexpr stable sorting
   support:
     clang:
     - since: C++20
@@ -1978,6 +2051,9 @@ library:
     papers: P0533R9
     cppreference-description: Constexpr for mathematical functions in {{header|cmath}}
       and {{header|cstdlib}}
+  - value: 202306
+    papers: P1383R2
+    cppreference-description: More constexpr for {{header|cmath}} and {{header|complex}}
   support:
     clang: null
     gcc: null
@@ -1988,6 +2064,9 @@ library:
   - value: 201711
     papers: P0415R1
     cppreference-description: Constexpr for {{lc|std::complex}}
+  - value: 202306
+    papers: P1383R2
+    cppreference-description: More constexpr for {{header|cmath}} and {{header|complex}}
   support:
     clang:
     - since: C++20
@@ -2211,7 +2290,8 @@ library:
   rows:
   - value: 202202
     papers: P1206R7
-    cppreference-description: Ranges construction and insertion for containers
+    cppreference-description: '[[cpp/ranges/to#container compatible range|Ranges-aware]]
+      construction and insertion for containers and strings'
   support:
     clang: null
     gcc: null
@@ -2219,6 +2299,16 @@ library:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
       value: 202202
+- name: __cpp_lib_copyable_function
+  header_list: functional
+  rows:
+  - value: 202306
+    papers: P2548R6
+    cppreference-description: '{{lc|std::copyable_function}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_coroutine
   header_list: coroutine
   rows:
@@ -2269,7 +2359,7 @@ library:
   rows:
   - value: 201603
     papers: P0033R1
-    cppreference-description: More precise specification of {{lc|std::enable_shared_from_this}}
+    cppreference-description: '{{lc|std::enable_shared_from_this::weak_from_this}}'
   support:
     clang:
     - since: C++17
@@ -2430,6 +2520,15 @@ library:
     papers: P2419R2 P2508R1
     cppreference-description: Exposing {{ltt|cpp/utility/format/basic_format_string|std::basic_format_string}};
       clarify handling of encodings in localized formatting of chrono types
+  - value: 202304
+    papers: P2510R3
+    cppreference-description: Formatting pointers
+  - value: 202305
+    papers: P2757R3
+    cppreference-description: Type-checking format args
+  - value: 202306
+    papers: P2637R3
+    cppreference-description: Member {{ltt|cpp/utility/format/basic_format_arg|visit}}
   support:
     clang: null
     gcc:
@@ -2479,6 +2578,176 @@ library:
     msvc:
     - since: C++23
       value: 202207
+- name: __cpp_lib_freestanding_char_traits
+  header_list: string
+  rows:
+  - value: 202306
+    papers: P2338R4
+    cppreference-description: Freestanding {{lc|std::char_traits}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_charconv
+  header_list: charconv
+  rows:
+  - value: 202306
+    papers: P2338R4
+    cppreference-description: Freestanding facilities in {{header|charconv}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_cstdlib
+  header_list: cmath cstdlib
+  rows:
+  - value: 202306
+    papers: P2338R4
+    cppreference-description: Freestanding facilities in {{header|cstdlib}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_cstring
+  header_list: cstring
+  rows:
+  - value: 202306
+    papers: P2338R4
+    cppreference-description: Freestanding facilities in {{header|cstring}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_cwchar
+  header_list: cwchar
+  rows:
+  - value: 202306
+    papers: P2338R4
+    cppreference-description: Freestanding facilities in {{header|cwchar}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_errc
+  header_list: cerrno system_error
+  rows:
+  - value: 202306
+    papers: P2338R4
+    cppreference-description: Freestanding {{lc|std::errc}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_feature_test_macros
+  rows:
+  - value: 202306
+    papers: P2198R7
+    cppreference-description: Support for freestanding feature-test macros
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_functional
+  header_list: functional
+  rows:
+  - value: 202306
+    papers: P2198R7
+    cppreference-description: Freestanding facilities in {{header|functional}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_iterator
+  header_list: iterator
+  rows:
+  - value: 202306
+    papers: P2198R7
+    cppreference-description: Freestanding facilities in {{header|iterator}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_memory
+  header_list: memory
+  rows:
+  - value: 202306
+    papers: P2198R7
+    cppreference-description: Freestanding facilities in {{header|memory}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_operator_new
+  header_list: new
+  rows:
+  - value: 202306
+    papers: P2198R7
+    cppreference-description: Definition of {{lc|operator new}} (optional in freestanding
+      implementations)
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_ranges
+  header_list: ranges
+  rows:
+  - value: 202306
+    papers: P2198R7
+    cppreference-description: Freestanding facilities in {{header|ranges}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_ratio
+  header_list: ratio
+  rows:
+  - value: 202306
+    papers: P2198R7
+    cppreference-description: Freestanding facilities in {{header|ratio}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_tuple
+  header_list: tuple
+  rows:
+  - value: 202306
+    papers: P2198R7
+    cppreference-description: Freestanding facilities in {{header|tuple}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_freestanding_utility
+  header_list: utility
+  rows:
+  - value: 202306
+    papers: P2198R7
+    cppreference-description: Freestanding facilities in {{header|utility}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_fstream_native_handle
+  header_list: fstream
+  rows:
+  - value: 202306
+    papers: P1759R6
+    cppreference-description: Obtaining native handles from file streams
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_function_ref
+  header_list: functional
+  rows:
+  - value: 202306
+    papers: P0792R14
+    cppreference-description: '{{lc|std::function_ref}}: a type-erased callable reference'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
@@ -2583,6 +2852,16 @@ library:
     msvc:
     - since: C++17
       value: 201606
+- name: __cpp_lib_hazard_pointer
+  header_list: hazard_pointer
+  rows:
+  - value: 202306
+    papers: P2530R3
+    cppreference-description: Hazard pointers
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_hypot
   header_list: cmath
   rows:
@@ -2917,6 +3196,16 @@ library:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_lib_is_within_lifetime
+  header_list: type_traits
+  rows:
+  - value: 202306
+    papers: P2641R4
+    cppreference-description: Checking if a union alternative is active ({{ltt|cpp/types/is_within_lifetime|std::is_within_lifetime}})
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_jthread
   header_list: stop_token thread
   rows:
@@ -3221,6 +3510,10 @@ library:
   - value: 201603
     papers: P0005R4
     cppreference-description: '{{lc|std::not_fn()}}'
+  - value: 202306
+    papers: P2714R1
+    cppreference-description: Allow passing callable objects as non-type template
+      arguments to {{lc|std::not_fn}}
   support:
     clang:
     - since: C++17
@@ -3390,7 +3683,7 @@ library:
       {{lc|ranges::end}}, {{lc|ranges::rbegin}}, {{lc|ranges::rend}}, and {{lc|ranges::size}}
   - value: 202302
     papers: P2609R3
-    cppreference-description: 'Relaxing ranges to allow certain projections'
+    cppreference-description: Relaxing ranges to allow certain projections
   support:
     clang:
     - since: C++20
@@ -3516,13 +3809,13 @@ library:
       value: 202302
     msvc:
     - since: C++23
-      depends: 'defined(__cpp_lib_concepts)'
+      depends: defined(__cpp_lib_concepts)
       value: 202302
 - name: __cpp_lib_ranges_find_last
   header_list: algorithm
   rows:
   - value: 202207
-    papers: P1223R5
+    papers: P1223R5 LWG3807
     cppreference-description: '{{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last}},
       {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if}}, and {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if_not}}'
   support:
@@ -3532,7 +3825,7 @@ library:
       value: 202207
     msvc:
     - since: C++23
-      depends: 'defined(__cpp_lib_concepts)'
+      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_ranges_fold
   header_list: algorithm
@@ -3670,6 +3963,16 @@ library:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
       value: 202110
+- name: __cpp_lib_ratio
+  header_list: ratio
+  rows:
+  - value: 202306
+    papers: P2734R0
+    cppreference-description: Adding the new 2022 SI prefixes
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_raw_memory_algorithms
   header_list: memory
   rows:
@@ -3687,6 +3990,16 @@ library:
     msvc:
     - since: C++17
       value: 201606
+- name: __cpp_lib_rcu
+  header_list: rcu
+  rows:
+  - value: 202306
+    papers: P2545R4
+    cppreference-description: Read-Copy Update (RCU)
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_reference_from_temporary
   header_list: type_traits
   rows:
@@ -3698,7 +4011,7 @@ library:
     clang: null
     gcc:
     - since: C++23
-      depends: '__has_builtin(__reference_constructs_from_temporary) && __has_builtin(__reference_converts_from_temporary)'
+      depends: __has_builtin(__reference_constructs_from_temporary) && __has_builtin(__reference_converts_from_temporary)
       value: 202202
     msvc: null
 - name: __cpp_lib_remove_cvref
@@ -3911,6 +4224,17 @@ library:
     msvc:
     - since: C++20
       value: 202002
+- name: __cpp_lib_smart_ptr_owner_equality
+  header_list: memory
+  rows:
+  - value: 202306
+    papers: P1901R2
+    cppreference-description: Enabling the use of {{lc|std::weak_ptr}} as keys in
+      unordered associative containers
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_source_location
   header_list: source_location
   rows:
@@ -3981,6 +4305,16 @@ library:
     msvc:
     - since: C++20
       value: 201902
+- name: __cpp_lib_sstream_from_string_view
+  header_list: sstream
+  rows:
+  - value: 202306
+    papers: P2495R3
+    cppreference-description: Interfacing {{lc|std::stringstream}}s with {{lc|std::string_view}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_stacktrace
   header_list: stacktrace
   rows:
@@ -4112,6 +4446,16 @@ library:
     msvc:
     - since: C++17
       value: 201803
+- name: __cpp_lib_submdspan
+  header_list: mdspan
+  rows:
+  - value: 202306
+    papers: P2630R4
+    cppreference-description: '{{lc|std::submdspan}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_syncbuf
   header_list: syncstream
   rows:
@@ -4130,6 +4474,16 @@ library:
     msvc:
     - since: C++20
       value: 201803
+- name: __cpp_lib_text_encoding
+  header_list: text_encoding
+  rows:
+  - value: 202306
+    papers: P1885R12
+    cppreference-description: '{{lc|std::text_encoding}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_three_way_comparison
   header_list: compare
   rows:
@@ -4188,6 +4542,10 @@ library:
     papers: P0067R5 P0682R1 LWG3137
     cppreference-description: Elementary string conversions ({{ltt|cpp/utility/to_chars|std::to_chars}},
       {{ltt|cpp/utility/from_chars|std::from_chars}})
+  - value: 202306
+    papers: P2497R0
+    cppreference-description: Testing for success or failure of {{header|charconv}}
+      functions
   support:
     clang: null
     gcc:
@@ -4198,6 +4556,16 @@ library:
     msvc:
     - since: C++17
       value: 201611
+- name: __cpp_lib_to_string
+  header_list: string
+  rows:
+  - value: 202306
+    papers: P2587R3
+    cppreference-description: Redefining {{lc|std::to_string}} in terms of {{lc|std::format}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_to_underlying
   header_list: utility
   rows:
@@ -4404,6 +4772,9 @@ library:
     papers: P2231R1
     cppreference-description: Fully {{tt|constexpr}} {{lc|std::variant}}
     cppreference-treats-as-dr-against: C++20
+  - value: 202306
+    papers: P2637R3
+    cppreference-description: Member {{ltt|cpp/utility/variant/visit2|visit}}
   support:
     clang:
     - since: C++17
