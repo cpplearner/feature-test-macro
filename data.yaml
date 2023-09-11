@@ -3478,7 +3478,9 @@ library:
     papers: P2443R1
     cppreference-description: '{{lc|std::ranges::chunk_by_view}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202202
     gcc:
     - since: C++23
       value: 202202
