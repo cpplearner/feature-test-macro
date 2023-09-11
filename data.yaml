@@ -3400,7 +3400,8 @@ library:
       depends: __cpp_lib_concepts
       value: 202110
     - since: C++23
-      value: 202202
+      depends: __cpp_lib_concepts
+      value: 202211
     msvc:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
@@ -4066,7 +4067,6 @@ library:
       value: 202110
     gcc:
     - since: C++23
-      depends: _GLIBCXX_USE_CXX11_ABI
       value: 202110
     msvc:
     - since: C++23
