@@ -105,7 +105,6 @@ for item in macros:
                 header_list = item['header_list'].split(' ')
             else:
                 header_list = ''
-                assert item['name'] == '__cpp_lib_modules'
 
             if len(header_list) > 2 and len(rows) > 1 and not any('cppreference-header_list' in row for row in rows):
                 if index == 0:
