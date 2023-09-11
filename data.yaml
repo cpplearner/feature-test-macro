@@ -1755,7 +1755,9 @@ library:
     papers: P2697R1
     cppreference-description: Interfacing {{lc|std::bitset}} with {{lc|std::string_view}}
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202306
     gcc: null
     msvc: null
 - name: __cpp_lib_bool_constant
