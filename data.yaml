@@ -2770,7 +2770,9 @@ library:
     cppreference-description: Obtaining native handles from file streams
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202306
     msvc: null
 - name: __cpp_lib_function_ref
   header_list: functional
@@ -4594,6 +4596,10 @@ library:
       depends: _GLIBCXX_FLOAT_IS_IEEE_BINARY32 && _GLIBCXX_DOUBLE_IS_IEEE_BINARY64
         && __SIZE_WIDTH__ >= 32
       value: 201611
+    - since: C++26
+      depends: _GLIBCXX_FLOAT_IS_IEEE_BINARY32 && _GLIBCXX_DOUBLE_IS_IEEE_BINARY64
+        && __SIZE_WIDTH__ >= 32
+      value: 202306
     msvc:
     - since: C++17
       value: 201611
