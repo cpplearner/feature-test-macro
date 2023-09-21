@@ -3431,7 +3431,10 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__cpp_lib_concepts)
+      value: 202207
 - name: __cpp_lib_memory_resource
   header_list: memory_resource
   rows:
