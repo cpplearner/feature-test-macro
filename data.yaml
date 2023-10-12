@@ -3254,7 +3254,10 @@ library:
     cppreference-description: '[[cpp/thread/stop_token|Stop token]] and [[cpp/thread/jthread|joining
       thread]]'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_HAS_NO_EXPERIMENTAL_STOP_TOKEN) && !defined(_LIBCPP_AVAILABILITY_HAS_NO_SYNC)'
+      value: 201911
     gcc:
     - since: C++20
       depends: defined(_GLIBCXX_HAS_GTHREADS)
