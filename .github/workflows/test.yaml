@@ -93,6 +93,27 @@ jobs:
             - name: Test library
               run: python tools/do_test.py gcc library --verbose
 
+    mix:
+        runs-on: ubuntu-20.04
+        needs: gcc
+        steps:
+            - uses: actions/checkout@v3
+            - uses: actions/setup-python@v4
+              with:
+                  python-version: '3.10'
+            - name: Install PyYAML
+              run: pip install pyyaml
+
+            - uses: actions/cache/restore@v3
+              with:
+                  path: gcc-latest
+                  key: gcc-cache-${{ github.sha }}
+                  restore-keys: gcc-cache-
+
+            - name: Install GCC
+              run: |
+                  echo "$PWD/gcc-latest/bin" >> $GITHUB_PATH
+                  "$PWD/gcc-latest/bin/gcc" --version
             - name: Install Clang
               run: |
                   REPO_NAME='deb http://apt.llvm.org/focal/ llvm-toolchain-focal main'
