@@ -3434,7 +3434,9 @@ library:
     papers: P0009R18 P2599R2 P2604R0 P2613R1
     cppreference-description: '{{ltt|cpp/container/mdspan|std::mdspan}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc: null
     msvc:
     - since: C++23
