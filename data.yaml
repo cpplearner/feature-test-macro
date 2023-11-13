@@ -3256,7 +3256,8 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_HAS_NO_EXPERIMENTAL_STOP_TOKEN) && !defined(_LIBCPP_AVAILABILITY_HAS_NO_SYNC)'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_HAS_NO_EXPERIMENTAL_STOP_TOKEN)
+        && !defined(_LIBCPP_AVAILABILITY_HAS_NO_SYNC)'
       value: 201911
     gcc:
     - since: C++20
@@ -4173,7 +4174,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_AVAILABILITY_HAS_NO_SHARED_MUTEX)'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
       value: 201505
     gcc:
     - since: C++17
@@ -4230,7 +4231,7 @@ library:
   support:
     clang:
     - since: C++14
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && !defined(_LIBCPP_AVAILABILITY_HAS_NO_SHARED_MUTEX)'
+      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
       value: 201402
     gcc:
     - since: C++14
@@ -4518,7 +4519,10 @@ library:
     cppreference-description: Synchronized buffered ostream ({{lc|std::syncbuf}},
       {{lc|std::osyncstream}}) and manipulators
   support:
-    clang: null
+    clang:
+    - since: C++20
+      depends: '!defined(_LIBCPP_HAS_NO_EXPERIMENTAL_SYNCSTREAM)'
+      value: 201803
     gcc:
     - since: C++20
       depends: _GLIBCXX_USE_CXX11_ABI
