@@ -3055,7 +3055,9 @@ library:
     cppreference-description: Support [[cpp/io/ios_base/openmode|exclusive mode]]
       for fstreams
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
