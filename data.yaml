@@ -2640,7 +2640,7 @@ library:
     clang: null
     gcc: null
     msvc:
-    - value: 202306
+    - value: 202311
 - name: __cpp_lib_freestanding_cwchar
   header_list: cwchar
   rows:
