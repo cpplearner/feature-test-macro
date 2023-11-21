@@ -3633,7 +3633,9 @@ library:
     cppreference-description: '{{lc|std::out_ptr}}, {{lc|std::inout_ptr}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202106
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
