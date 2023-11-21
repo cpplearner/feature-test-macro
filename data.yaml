@@ -3768,7 +3768,7 @@ library:
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
-      value: 202207
+      value: 202311
 - name: __cpp_lib_ranges_as_rvalue
   header_list: ranges
   rows:
