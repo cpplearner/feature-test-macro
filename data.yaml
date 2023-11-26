@@ -2638,7 +2638,9 @@ library:
     cppreference-description: Freestanding facilities in {{header|cstring}}
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202311
     msvc:
     - value: 202311
 - name: __cpp_lib_freestanding_cwchar
@@ -3637,7 +3639,7 @@ library:
     clang: null
     gcc:
     - since: C++23
-      value: 202106
+      value: 202311
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -3994,7 +3996,9 @@ library:
     clang:
     - since: C++23
       value: 202202
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202202
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
@@ -4328,6 +4332,9 @@ library:
     - since: C++20
       depends: __cpp_lib_concepts
       value: 202002
+    - since: C++26
+      depends: __cpp_lib_concepts
+      value: 202311
     msvc:
     - since: C++20
       value: 202002
