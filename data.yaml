@@ -344,7 +344,7 @@ language:
       value: 202211
     gcc:
     - since: C++20
-      value: 201811
+      value: 202211
     msvc:
     - since: C++20
       value: 201811
