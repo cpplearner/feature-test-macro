@@ -2552,7 +2552,7 @@ library:
     clang: null
     gcc:
     - since: C++20
-      value: 202106
+      value: 202110
     msvc:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
