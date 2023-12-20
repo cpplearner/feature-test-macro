@@ -80,8 +80,8 @@ for item in macros:
             papers = []
 
     for index, row in enumerate(rows):
-        out.write('|-\n')
         if index == 0:
+            out.write(f'|- id="{item["name"][2:]}"\n')
             if len(rows) > 1:
                 out.write(f'| rowspan="{len(rows)}" | ')
             else:
@@ -93,6 +93,8 @@ for item in macros:
                 out.write(f'{{{{tt|1={item["name"][:break_point]}{{{{br}}}}{item["name"][break_point:]}}}}} |')
             else:
                 out.write(f'{{{{tt|{item["name"]}}}}} |')
+        else:
+            out.write('|-\n')
 
         out.write(f'| {row["cppreference-description"]}')
 
@@ -124,7 +126,7 @@ for item in macros:
 out.write('|-\n')
 colspan = 6 if args.kind == 'library' else 5
 viable_macros = [item for item in macros if any('cppreference-description' in row for row in item['rows'])]
-out.write(f'! colspan="{colspan}" | Total number of macros: {len(viable_macros)} <!-- do not forget to update -->\n')
+out.write(f'! colspan="{colspan}" | Total number of macros: {len(viable_macros)} <!-- do not forget to update, see the talk page -->\n')
 
 out.write('|}')
 
