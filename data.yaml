@@ -3688,7 +3688,9 @@ library:
     cppreference-description: Formatted output
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202211
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
