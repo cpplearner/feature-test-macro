@@ -3687,7 +3687,9 @@ library:
     papers: P2093R14
     cppreference-description: Formatted output
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202211
