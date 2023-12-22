@@ -2817,7 +2817,10 @@ library:
       for ranges'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      depends: __cpp_lib_coroutine
+      value: 202207
     msvc: null
 - name: __cpp_lib_generic_associative_lookup
   header_list: map set
@@ -4298,7 +4301,8 @@ library:
   rows:
   - value: 202306
     papers: P1901R2
-    cppreference-description: 'Enabling the use of {{lc|std::weak_ptr}} as keys in {{lsd|cpp/container#Unordered associative containers}}'
+    cppreference-description: Enabling the use of {{lc|std::weak_ptr}} as keys in
+      {{lsd|cpp/container#Unordered associative containers}}
   support:
     clang: null
     gcc: null
