@@ -1492,9 +1492,8 @@ library:
   rows:
   - value: 202110
     papers: P2077R3
-    cppreference-description: Heterogeneous erasure in [[cpp/container#Associative
-      containers|associative containers]] and [[cpp/container#Unordered associative
-      containers|unordered associative containers]]
+    cppreference-description: Heterogeneous erasure in {{lsd|cpp/container#Associative
+      containers}} and {{lsd|cpp/container#Unordered associative containers}}
   support:
     clang: null
     gcc: null
@@ -1507,7 +1506,8 @@ library:
   - value: 202306
     papers: P2363R5
     cppreference-description: Heterogeneous overloads for the remaining member functions
-      in ordered and unordered associative containers
+      in [[cpp/container#Associative containers|ordered]] and {{lsd|cpp/container#Unordered
+      associative containers}}
   support:
     clang: null
     gcc: null
@@ -2073,7 +2073,7 @@ library:
       and {{header|cstdlib}}
   - value: 202306
     papers: P1383R2
-    cppreference-description: More constexpr for {{header|cmath}} and {{header|complex}}
+    cppreference-description: More constexpr for {{header|cmath}}
   support:
     clang: null
     gcc: null
@@ -2086,7 +2086,7 @@ library:
     cppreference-description: Constexpr for {{lc|std::complex}}
   - value: 202306
     papers: P1383R2
-    cppreference-description: More constexpr for {{header|cmath}} and {{header|complex}}
+    cppreference-description: More constexpr for {{header|complex}}
   support:
     clang:
     - since: C++20
@@ -2824,8 +2824,8 @@ library:
   rows:
   - value: 201304
     papers: N3657
-    cppreference-description: Heterogeneous comparison lookup in [[cpp/container#Associative_containers|associative
-      containers]]
+    cppreference-description: Heterogeneous comparison lookup in {{lsd|cpp/container#Associative
+      containers}}
   support:
     clang:
     - since: C++14
@@ -2848,8 +2848,8 @@ library:
   rows:
   - value: 201811
     papers: P0919R3
-    cppreference-description: Heterogeneous comparison lookup in [[cpp/container#Unordered_associative_containers|unordered
-      associative containers]]
+    cppreference-description: Heterogeneous comparison lookup in {{lsd|cpp/container#Unordered
+      associative containers}}
   support:
     clang:
     - since: C++20
@@ -3894,7 +3894,8 @@ library:
   rows:
   - value: 202207
     papers: P2322R6
-    cppreference-description: '{{tt|std::ranges}} {{tt|fold}} algorithms'
+    cppreference-description: '{{tt|std::ranges}} [[cpp/algorithm/ranges#Constrained
+      fold operations|fold algorithms]]'
   support:
     clang: null
     gcc:
@@ -4297,8 +4298,7 @@ library:
   rows:
   - value: 202306
     papers: P1901R2
-    cppreference-description: Enabling the use of {{lc|std::weak_ptr}} as keys in
-      unordered associative containers
+    cppreference-description: 'Enabling the use of {{lc|std::weak_ptr}} as keys in {{lsd|cpp/container#Unordered associative containers}}'
   support:
     clang: null
     gcc: null
