@@ -2597,7 +2597,9 @@ library:
     papers: P2909R4
     cppreference-description: Fix formatting of code units as integers
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 202311
     gcc: null
     msvc:
     - since: C++20
