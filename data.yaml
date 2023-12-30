@@ -363,17 +363,15 @@ language:
     cppreference-description: '[[cpp/language/lambda|Constexpr lambda]]'
   - value: 201806
     papers: P1064R0
-    cppreference-description: '[[cpp/language/virtual|Virtual function]] calls in
-      constant expressions'
   - value: 201811
     papers: P1002R1 P1327R1
-    cppreference-description: '{{ltt|cpp/language/try_catch|try-catch}} blocks in
-      constexpr functions, {{ltt|cpp/language/dynamic_cast}} and polymorphic {{ltt|cpp/language/typeid}}
-      in constant expressions'
   - value: 201907
     papers: P1331R2 P1668R1
-    cppreference-description: Trivial [[cpp/language/default initialization|default
-      initialization]] and [[cpp/language/asm|asm-declaration]] in constexpr functions
+    cppreference-description: '[[cpp/language/virtual|Virtual function]] calls in
+      constant expressions; {{ltt|cpp/language/try_catch|try-catch}} blocks in constexpr
+      functions, {{ltt|cpp/language/dynamic_cast}} and polymorphic {{ltt|cpp/language/typeid}}
+      in constant expressions; trivial [[cpp/language/default initialization|default
+      initialization]] and [[cpp/language/asm|asm-declaration]] in constexpr functions'
   - value: 202002
     papers: P1330R0 P2493R0
     cppreference-description: Changing the active member of a union in constant evaluation
@@ -992,6 +990,15 @@ language:
       value: 200809
     msvc:
     - value: 200809
+- name: __cpp_pack_indexing
+  rows:
+  - value: 202311
+    papers: P2662R3
+    cppreference-description: '[[cpp/language/pack indexing|Pack indexing]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_placeholder_variables
   rows:
   - value: 202306
@@ -2345,6 +2352,16 @@ library:
     msvc:
     - depends: defined(__cpp_impl_coroutine)
       value: 201902
+- name: __cpp_lib_debugging
+  header_list: debugging
+  rows:
+  - value: 202311
+    papers: P2546R5
+    cppreference-description: '[[cpp/utility#Debugging support|Debugging support]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_deduction_guides
   rows:
   - value: 201703
@@ -2548,6 +2565,10 @@ library:
   - value: 202306
     papers: P2637R3
     cppreference-description: Member {{ltt|cpp/utility/format/basic_format_arg|visit}}
+  - value: 202311
+    papers: P2918R2
+    cppreference-description: '[[cpp/utility/format/runtime_format|Runtime format
+      strings]]'
   support:
     clang: null
     gcc:
@@ -2567,6 +2588,16 @@ library:
     clang:
     - since: C++23
       value: 202207
+    gcc: null
+    msvc: null
+- name: __cpp_lib_format_uchar
+  header_list: format
+  rows:
+  - value: 202311
+    papers: P2909R4
+    cppreference-description: Fix formatting of code units as integers
+  support:
+    clang: null
     gcc: null
     msvc: null
 - name: __cpp_lib_formatters
@@ -2600,6 +2631,30 @@ library:
     msvc:
     - since: C++23
       value: 202207
+- name: __cpp_lib_freestanding_algorithm
+  header_list: algorithm
+  rows:
+  - value: 202311
+    papers: P2407R5
+    cppreference-description: Freestanding facilities in {{header|algorithm}}
+  support:
+    clang: null
+    gcc:
+    - since: C++23
+      value: 202311
+    msvc: null
+- name: __cpp_lib_freestanding_array
+  header_list: array
+  rows:
+  - value: 202311
+    papers: P2407R5
+    cppreference-description: Make parts of {{lc|std::array}} freestanding
+  support:
+    clang: null
+    gcc:
+    - since: C++23
+      value: 202311
+    msvc: null
 - name: __cpp_lib_freestanding_char_traits
   header_list: string
   rows:
@@ -2640,6 +2695,9 @@ library:
   - value: 202306
     papers: P2338R4
     cppreference-description: Freestanding facilities in {{header|cstring}}
+  - value: 202311
+    papers: P2937R0
+    cppreference-description: Removing {{lc|std::strtok}} from freestanding facilities
   support:
     clang: null
     gcc:
@@ -2669,6 +2727,19 @@ library:
     gcc: null
     msvc:
     - value: 202306
+- name: __cpp_lib_freestanding_expected
+  header_list: expected
+  rows:
+  - value: 202311
+    papers: P2833R2
+    cppreference-description: Make parts of {{lc|std::expected}} freestanding
+  support:
+    clang: null
+    gcc:
+    - since: C++23
+      depends: __cpp_lib_expected
+      value: 202311
+    msvc: null
 - name: __cpp_lib_freestanding_feature_test_macros
   rows:
   - value: 202306
@@ -2701,6 +2772,16 @@ library:
     gcc: null
     msvc:
     - value: 202306
+- name: __cpp_lib_freestanding_mdspan
+  header_list: mdspan
+  rows:
+  - value: 202311
+    papers: P2833R2
+    cppreference-description: Freestanding {{lc|std::mdspan}}
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_freestanding_memory
   header_list: memory
   rows:
@@ -2712,6 +2793,17 @@ library:
     gcc: null
     msvc:
     - value: 202306
+- name: __cpp_lib_freestanding_numeric
+  header_list: numeric
+  rows:
+  - value: 202311
+    papers: P0543R3
+    cppreference-description: Freestanding facilities in {{header|numeric}} (saturation
+      arithmetic)
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_freestanding_operator_new
   header_list: new
   rows:
@@ -2724,6 +2816,18 @@ library:
     gcc: null
     msvc:
     - value: 202306
+- name: __cpp_lib_freestanding_optional
+  header_list: optional
+  rows:
+  - value: 202311
+    papers: P2407R5
+    cppreference-description: Making parts of {{lc|std::optional}} freestanding
+  support:
+    clang: null
+    gcc:
+    - since: C++23
+      value: 202311
+    msvc: null
 - name: __cpp_lib_freestanding_ranges
   header_list: ranges
   rows:
@@ -2748,6 +2852,18 @@ library:
     gcc: null
     msvc:
     - value: 202306
+- name: __cpp_lib_freestanding_string_view
+  header_list: string_view
+  rows:
+  - value: 202311
+    papers: P2407R5
+    cppreference-description: Making parts of {{lc|std::string_view}} freestanding
+  support:
+    clang: null
+    gcc:
+    - since: C++23
+      value: 202311
+    msvc: null
 - name: __cpp_lib_freestanding_tuple
   header_list: tuple
   rows:
@@ -2770,6 +2886,18 @@ library:
     gcc: null
     msvc:
     - value: 202306
+- name: __cpp_lib_freestanding_variant
+  header_list: variant
+  rows:
+  - value: 202311
+    papers: P2407R5
+    cppreference-description: Making parts of {{lc|std::variant}} freestanding
+  support:
+    clang: null
+    gcc:
+    - since: C++23
+      value: 202311
+    msvc: null
 - name: __cpp_lib_fstream_native_handle
   header_list: fstream
   rows:
@@ -3313,6 +3441,17 @@ library:
     msvc:
     - since: C++17
       value: 201606
+- name: __cpp_lib_linalg
+  header_list: linalg
+  rows:
+  - value: 202311
+    papers: P1673R13
+    cppreference-description: '[[cpp/numeric/linalg|A free function linear algebra
+      interface based on the BLAS]]'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_list_remove_return_type
   header_list: forward_list list
   rows:
@@ -3642,6 +3781,9 @@ library:
   - value: 202106
     papers: P1132R7
     cppreference-description: '{{lc|std::out_ptr}}, {{lc|std::inout_ptr}}'
+  - value: 202311
+    papers: P2833R2
+    cppreference-description: Freestanding {{lc|std::out_ptr}}, {{lc|std::inout_ptr}}
   support:
     clang: null
     gcc:
@@ -3773,6 +3915,10 @@ library:
   - value: 202207
     papers: P2278R4
     cppreference-description: '{{lc|std::const_iterator}}, {{ltt|cpp/ranges/as_const_view|std::ranges::as_const_view}}'
+  - value: 202311
+    papers: P2836R1
+    cppreference-description: Making {{lc|std::basic_const_iterator}} follow its underlying
+      type's convertibility
   support:
     clang: null
     gcc:
@@ -4149,6 +4295,19 @@ library:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_lib_saturation_arithmetic
+  header_list: numeric
+  rows:
+  - value: 202311
+    papers: P0543R3
+    cppreference-description: '[[cpp/numeric#Saturation arithmetic (since C++26)|Saturation
+      arithmetic]]'
+  support:
+    clang: null
+    gcc:
+    - since: C++26
+      value: 202311
+    msvc: null
 - name: __cpp_lib_scoped_lock
   header_list: mutex
   rows:
@@ -4336,6 +4495,9 @@ library:
   - value: 202002
     papers: P1976R2
     cppreference-description: '{{ltt|cpp/container/span|std::span}}'
+  - value: 202311
+    papers: P2821R5 P2833R2
+    cppreference-description: Making parts of {{lc|std::span}} freestanding
   support:
     clang:
     - since: C++20
@@ -4350,6 +4512,16 @@ library:
     msvc:
     - since: C++20
       value: 202002
+- name: __cpp_lib_span_initializer_list
+  header_list: span
+  rows:
+  - value: 202311
+    papers: P2447R6
+    cppreference-description: Constructing {{lc|std::span}} from an initializer list
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_spanstream
   header_list: spanstream
   rows:
@@ -4729,6 +4901,9 @@ library:
     papers: P2165R4
     cppreference-description: Compatibility between {{lc|std::tuple}} and tuple-like
       objects ({{lc|std::pair}}, {{lc|std::array}}, {{lc|std::subrange}})
+  - value: 202311
+    papers: P2819R2
+    cppreference-description: Add tuple protocol to {{lc|std::complex}}
   support:
     clang: null
     gcc: null
