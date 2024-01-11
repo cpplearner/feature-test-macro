@@ -2910,7 +2910,9 @@ library:
     papers: P1759R6
     cppreference-description: Obtaining native handles from file streams
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202306
     gcc:
     - since: C++26
       value: 202306
