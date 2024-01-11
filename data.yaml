@@ -594,7 +594,9 @@ language:
       object parameter]]'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202110
     msvc: null
 - name: __cpp_fold_expressions
   rows:
