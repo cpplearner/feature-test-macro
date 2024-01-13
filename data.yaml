@@ -2579,7 +2579,7 @@ library:
     msvc:
     - since: C++20
       depends: defined(__cpp_lib_concepts)
-      value: 202207
+      value: 202304
 - name: __cpp_lib_format_ranges
   header_list: format
   rows:
