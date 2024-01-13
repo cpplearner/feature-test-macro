@@ -1700,7 +1700,10 @@ library:
       arguments to {{lc|std::bind_back}}
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      depends: __cpp_explicit_this_parameter
+      value: 202202
     msvc:
     - since: C++23
       value: 202202
