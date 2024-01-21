@@ -4533,7 +4533,9 @@ library:
     papers: P2447R6
     cppreference-description: Constructing {{lc|std::span}} from an initializer list
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202311
     gcc: null
     msvc: null
 - name: __cpp_lib_spanstream
