@@ -3937,7 +3937,7 @@ library:
     clang: null
     gcc:
     - since: C++23
-      value: 202207
+      value: 202311
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
