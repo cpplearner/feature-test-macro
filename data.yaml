@@ -1033,6 +1033,8 @@ language:
       value: 200907
     - since: C++17
       value: 201603
+    - since: C++23
+      value: 202211
     gcc:
     - since: C++11
       value: 200907
