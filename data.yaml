@@ -224,7 +224,9 @@ language:
     cppreference-description: '[[cpp/language/explicit_cast|{{c|auto(x)}} and {{c|auto{x}
       }}]]'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202110
     gcc:
     - since: C++23
       value: 202110
