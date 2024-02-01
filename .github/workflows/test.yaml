@@ -13,10 +13,10 @@ jobs:
     clang:
         runs-on: ubuntu-20.04
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-python@v4
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v5
               with:
-                  python-version: '3.10'
+                  python-version: '3.12'
             - name: Install PyYAML
               run: pip install pyyaml
             - name: Install Clang
@@ -47,14 +47,14 @@ jobs:
     gcc:
         runs-on: ubuntu-20.04
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-python@v4
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v5
               with:
-                  python-version: '3.10'
+                  python-version: '3.12'
             - name: Install PyYAML
               run: pip install pyyaml
 
-            - uses: actions/cache/restore@v3
+            - uses: actions/cache/restore@v4
               with:
                   path: gcc-latest
                   key: gcc-cache-${{ github.sha }}
@@ -79,7 +79,7 @@ jobs:
                       date +%F > $LOC/gcc-latest/builddate.txt
                   fi
                   echo "$LOC/gcc-latest/bin" >> $GITHUB_PATH
-            - uses: actions/cache/save@v3
+            - uses: actions/cache/save@v4
               with:
                 path: gcc-latest
                 key: gcc-cache-${{ github.sha }}
@@ -97,14 +97,14 @@ jobs:
         runs-on: ubuntu-20.04
         needs: gcc
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-python@v4
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v5
               with:
-                  python-version: '3.10'
+                  python-version: '3.12'
             - name: Install PyYAML
               run: pip install pyyaml
 
-            - uses: actions/cache/restore@v3
+            - uses: actions/cache/restore@v4
               with:
                   path: gcc-latest
                   key: gcc-cache-${{ github.sha }}
@@ -139,10 +139,10 @@ jobs:
     msvc:
         runs-on: windows-2019
         steps:
-            - uses: actions/checkout@v3
-            - uses: actions/setup-python@v4
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v5
               with:
-                  python-version: '3.10'
+                  python-version: '3.12'
             - name: Install PyYAML
               run: pip install pyyaml
             - name: Install MSVC
@@ -175,7 +175,7 @@ jobs:
             - name: Install Clang
               run: |
                   curl.exe -L -o llvm.exe `
-                    https://github.com/llvm/llvm-project/releases/download/llvmorg-15.0.7/LLVM-15.0.7-win64.exe
+                    https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.0-rc1/LLVM-18.1.0-rc1-win64.exe
                   7z x llvm.exe -oLLVM
                   echo "$PWD\LLVM\bin" | Out-File -FilePath "$env:GITHUB_PATH" -Encoding utf8 -Append
 
