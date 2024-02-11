@@ -4931,7 +4931,9 @@ library:
     cppreference-description: Add tuple protocol to {{lc|std::complex}}
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc:
     - since: C++23
       depends: defined(__cpp_lib_concepts)
