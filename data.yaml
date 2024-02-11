@@ -1399,7 +1399,7 @@ library:
   support:
     clang:
     - since: C++23
-      value: 202106
+      value: 202302
     gcc: null
     msvc:
     - since: C++23
