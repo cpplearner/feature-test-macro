@@ -1385,7 +1385,6 @@ library:
     gcc: null
     msvc:
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_allocate_at_least
   header_list: memory
@@ -1917,7 +1916,6 @@ library:
     - since: C++17
       value: 201611
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 201907
 - name: __cpp_lib_chrono_udls
   header_list: chrono
@@ -1963,7 +1961,6 @@ library:
     gcc: null
     msvc:
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 202302
 - name: __cpp_lib_common_reference_wrapper
   header_list: functional
@@ -1977,7 +1974,6 @@ library:
     gcc: null
     msvc:
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 202302
 - name: __cpp_lib_complex_udls
   header_list: complex
@@ -2020,10 +2016,8 @@ library:
       value: 202002
     msvc:
     - since: C++20
-      depends: '!defined(__EDG__) || defined(__INTELLISENSE__)'
       value: 202002
     - since: C++23
-      depends: '!defined(__EDG__) || defined(__INTELLISENSE__)'
       value: 202207
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm utility
@@ -2332,7 +2326,6 @@ library:
     gcc: null
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202202
 - name: __cpp_lib_copyable_function
   header_list: functional
@@ -2501,7 +2494,6 @@ library:
       value: 202211
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202211
 - name: __cpp_lib_filesystem
   header_list: filesystem
@@ -2585,7 +2577,6 @@ library:
       value: 202110
     msvc:
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 202304
 - name: __cpp_lib_format_ranges
   header_list: format
@@ -2614,7 +2605,6 @@ library:
       value: 202311
     msvc:
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 202311
 - name: __cpp_lib_formatters
   header_list: stacktrace thread
@@ -2629,7 +2619,6 @@ library:
       value: 202302
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202302
 - name: __cpp_lib_forward_like
   header_list: utility
@@ -2855,7 +2844,6 @@ library:
     gcc: null
     msvc:
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 202306
 - name: __cpp_lib_freestanding_ratio
   header_list: ratio
@@ -3309,7 +3297,7 @@ library:
       value: 201907
     msvc:
     - since: C++20
-      depends: '!defined(__EDG__) && !defined(__clang__)'
+      depends: '!defined(__clang__)'
       value: 201907
 - name: __cpp_lib_is_nothrow_convertible
   header_list: type_traits
@@ -3357,7 +3345,7 @@ library:
       value: 201907
     msvc:
     - since: C++20
-      depends: '!defined(__EDG__) && !defined(__clang__)'
+      depends: '!defined(__clang__)'
       value: 201907
 - name: __cpp_lib_is_scoped_enum
   header_list: type_traits
@@ -3610,7 +3598,6 @@ library:
     gcc: null
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_memory_resource
   header_list: memory_resource
@@ -3671,7 +3658,6 @@ library:
       value: 202207
     msvc:
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_move_only_function
   header_list: functional
@@ -3792,7 +3778,6 @@ library:
     - since: C++20
       value: 202106
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202110
 - name: __cpp_lib_out_ptr
   header_list: memory
@@ -3810,7 +3795,6 @@ library:
       value: 202311
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202106
 - name: __cpp_lib_parallel_algorithm
   header_list: algorithm numeric
@@ -3859,7 +3843,6 @@ library:
       value: 202211
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
@@ -3924,10 +3907,8 @@ library:
       value: 202211
     msvc:
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 202110
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202302
 - name: __cpp_lib_ranges_as_const
   header_list: ranges
@@ -3946,7 +3927,6 @@ library:
       value: 202311
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202311
 - name: __cpp_lib_ranges_as_rvalue
   header_list: ranges
@@ -3963,7 +3943,6 @@ library:
       value: 202207
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_ranges_cartesian_product
   header_list: ranges
@@ -3978,7 +3957,6 @@ library:
       value: 202207
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_ranges_chunk
   header_list: ranges
@@ -3993,7 +3971,6 @@ library:
       value: 202202
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202202
 - name: __cpp_lib_ranges_chunk_by
   header_list: ranges
@@ -4010,7 +3987,6 @@ library:
       value: 202202
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202202
 - name: __cpp_lib_ranges_contains
   header_list: algorithm
@@ -4025,7 +4001,6 @@ library:
       value: 202207
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_ranges_enumerate
   header_list: ranges
@@ -4040,7 +4015,6 @@ library:
       value: 202302
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202302
 - name: __cpp_lib_ranges_find_last
   header_list: algorithm
@@ -4056,7 +4030,6 @@ library:
       value: 202207
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_ranges_fold
   header_list: algorithm
@@ -4072,7 +4045,6 @@ library:
       value: 202207
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_ranges_iota
   header_list: numeric
@@ -4087,7 +4059,6 @@ library:
       value: 202202
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202202
 - name: __cpp_lib_ranges_join_with
   header_list: ranges
@@ -4102,7 +4073,6 @@ library:
       value: 202202
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202202
 - name: __cpp_lib_ranges_repeat
   header_list: ranges
@@ -4119,7 +4089,6 @@ library:
       value: 202207
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_ranges_slide
   header_list: ranges
@@ -4134,7 +4103,6 @@ library:
       value: 202202
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202202
 - name: __cpp_lib_ranges_starts_ends_with
   header_list: algorithm
@@ -4147,7 +4115,6 @@ library:
     gcc: null
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202106
 - name: __cpp_lib_ranges_stride
   header_list: ranges
@@ -4162,7 +4129,6 @@ library:
       value: 202207
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_ranges_to_container
   header_list: ranges
@@ -4179,7 +4145,6 @@ library:
       value: 202202
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202202
 - name: __cpp_lib_ranges_zip
   header_list: ranges tuple utility
@@ -4195,7 +4160,6 @@ library:
       value: 202110
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202110
 - name: __cpp_lib_ratio
   header_list: ratio
@@ -4461,7 +4425,6 @@ library:
     - since: C++20
       value: 201806
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202202
 - name: __cpp_lib_smart_ptr_for_overwrite
   header_list: memory
@@ -4778,7 +4741,6 @@ library:
       value: 201907
     msvc:
     - since: C++20
-      depends: defined(__cpp_lib_concepts)
       value: 201907
 - name: __cpp_lib_to_address
   header_list: memory
@@ -4937,7 +4899,6 @@ library:
       value: 202207
     msvc:
     - since: C++23
-      depends: defined(__cpp_lib_concepts)
       value: 202207
 - name: __cpp_lib_tuples_by_type
   header_list: tuple utility
