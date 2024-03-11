@@ -4,7 +4,8 @@ attributes:
   - value: 202207
     papers: P1774R8 CWG2615
   support:
-    clang: null
+    clang:
+    - value: 202207
     gcc:
     - value: 202207
     msvc: null
