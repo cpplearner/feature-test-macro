@@ -14,8 +14,7 @@ attributes:
     papers: N2782
   support:
     clang:
-    - since: C++11
-      value: 200809
+    - value: 200809
     gcc: null
     msvc:
     - value: 200809
@@ -25,8 +24,7 @@ attributes:
     papers: N3760
   support:
     clang:
-    - since: C++11
-      value: 201309
+    - value: 201309
     gcc:
     - value: 201309
     msvc:
@@ -37,8 +35,7 @@ attributes:
     papers: P0188R1
   support:
     clang:
-    - since: C++11
-      value: 201603
+    - value: 201603
     gcc:
     - value: 201603
     msvc:
@@ -50,8 +47,7 @@ attributes:
     papers: P0479R5
   support:
     clang:
-    - since: C++11
-      value: 201803
+    - value: 201803
     gcc:
     - value: 201803
     msvc:
@@ -63,8 +59,7 @@ attributes:
     papers: P0212R1
   support:
     clang:
-    - since: C++11
-      value: 201603
+    - value: 201603
     gcc:
     - value: 201603
     msvc:
@@ -76,8 +71,7 @@ attributes:
     papers: P0840R2
   support:
     clang:
-    - since: C++11
-      value: 201803
+    - value: 201803
     gcc:
     - value: 201803
     msvc: null
@@ -89,8 +83,7 @@ attributes:
     papers: P1301R4 P1771R1
   support:
     clang:
-    - since: C++11
-      value: 201907
+    - value: 201907
     gcc:
     - value: 201907
     msvc:
@@ -101,8 +94,7 @@ attributes:
     papers: N2761
   support:
     clang:
-    - since: C++11
-      value: 200809
+    - value: 200809
     gcc:
     - value: 200809
     msvc:
@@ -113,8 +105,7 @@ attributes:
     papers: P0479R5
   support:
     clang:
-    - since: C++11
-      value: 201803
+    - value: 201803
     gcc:
     - value: 201803
     msvc:
