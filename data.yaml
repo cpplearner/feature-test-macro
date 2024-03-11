@@ -4538,7 +4538,9 @@ library:
     papers: P2495R3
     cppreference-description: Interfacing {{lc|std::stringstream}}s with {{lc|std::string_view}}
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202306
     gcc: null
     msvc: null
 - name: __cpp_lib_stacktrace
