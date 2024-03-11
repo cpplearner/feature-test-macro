@@ -3987,7 +3987,9 @@ library:
     papers: P2302R4
     cppreference-description: '{{ltt|cpp/algorithm/ranges/contains|std::ranges::contains}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
@@ -4103,7 +4105,9 @@ library:
     papers: P1659R3
     cppreference-description: '{{lc|std::ranges::starts_with}}, {{lc|std::ranges::ends_with}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202106
     gcc: null
     msvc:
     - since: C++23
