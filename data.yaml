@@ -297,7 +297,7 @@ language:
   support:
     clang:
     - since: C++20
-      value: 201907
+      value: 202002
     gcc:
     - option: -fconcepts-ts
       value: 201507
