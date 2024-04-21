@@ -1695,7 +1695,9 @@ library:
     cppreference-description: Allow passing callable objects as non-type template
       arguments to {{lc|std::bind_back}}
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202202
     gcc:
     - since: C++23
       depends: __cpp_explicit_this_parameter
