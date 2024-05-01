@@ -1194,6 +1194,8 @@ language:
     gcc:
     - since: C++17
       value: 201606
+    - since: C++26
+      value: 202403
     msvc:
     - since: C++17
       value: 201606
