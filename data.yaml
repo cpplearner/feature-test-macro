@@ -1207,7 +1207,7 @@ language:
       template-arguments]]
   support:
     clang:
-    - option: -frelaxed-template-template-args
+    - disabled-by: -fno-relaxed-template-template-args
       value: 201611
     gcc:
     - since: C++17
