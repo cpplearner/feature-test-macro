@@ -1190,7 +1190,7 @@ language:
   support:
     clang:
     - since: C++17
-      value: 201606
+      value: 202403
     gcc:
     - since: C++17
       value: 201606
