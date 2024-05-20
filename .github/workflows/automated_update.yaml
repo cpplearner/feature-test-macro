@@ -1,0 +1,33 @@
+name: Automated update
+
+on:
+    workflow_dispatch:
+    schedule:
+        - cron: '0 0 */2 * *'
+
+jobs:
+    glibcxx:
+        runs-on: ubuntu-20.04
+        steps:
+            - uses: actions/checkout@v4
+            - uses: actions/setup-python@v5
+              with:
+                  python-version: '3.12'
+            - name: Install PyYAML
+              run: pip install pyyaml
+
+            - name: Update data.yaml
+              run: |
+                  VERSION_DEF_PATH=https://raw.githubusercontent.com/gcc-mirror/gcc/master/libstdc++-v3/include/bits/version.def
+                  wget "$VERSION_DEF_PATH" -O version.def
+                  python tools/update_from_glibcxx_version_def.py version.def data2.yaml
+                  mv data2.yaml data.yaml
+                  rm version.def
+
+            - name: Create pull request
+              uses: peter-evans/create-pull-request@v6
+              with:
+                  add-paths: data.yaml
+                  commit-message: '[automated] Update data.yaml from libstdc++ data'
+                  branch: automated/libstdc++
+                  title: '[automated] Update `data.yaml` from libstdc++ data'
