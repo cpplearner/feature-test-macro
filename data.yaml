@@ -2358,7 +2358,10 @@ library:
     papers: P2944R3
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++20
+      depends: __cpp_lib_three_way_comparison
+      value: 202403
     msvc: null
 - name: __cpp_lib_containers_ranges
   header_list: vector list forward_list map set unordered_map unordered_set deque
@@ -4308,7 +4311,9 @@ library:
     clang:
     - since: C++26
       value: 202403
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202403
     msvc: null
 - name: __cpp_lib_remove_cvref
   header_list: type_traits
