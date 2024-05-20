@@ -536,6 +536,14 @@ language:
       value: 200604
     msvc:
     - value: 200604
+- name: __cpp_deleted_function
+  rows:
+  - value: 202403
+    papers: P2573R2
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_designated_initializers
   rows:
   - value: 201707
@@ -1187,6 +1195,8 @@ language:
   - value: 201606
     papers: P0217R3
     cppreference-description: '[[cpp/language/structured_binding|Structured bindings]]'
+  - value: 202403
+    papers: P0609R3
   support:
     clang:
     - since: C++17
@@ -1306,6 +1316,14 @@ language:
       value: 201304
     msvc:
     - value: 201304
+- name: __cpp_variadic_friend
+  rows:
+  - value: 202403
+    papers: P2893R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_variadic_templates
   rows:
   - value: 200704
@@ -1368,6 +1386,15 @@ library:
       value: 201603
     msvc:
     - value: 201603
+- name: __cpp_lib_algorithm_default_value_type
+  header_list: algorithm deque forward_list list ranges string vector
+  rows:
+  - value: 202403
+    papers: P2248R8
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_algorithm_iterator_requirements
   header_list: algorithm memory numeric
   rows:
@@ -1599,6 +1626,15 @@ library:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_lib_atomic_min_max
+  header_list: atomic
+  rows:
+  - value: 202403
+    papers: P0493R5
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_atomic_ref
   header_list: atomic
   rows:
@@ -2310,6 +2346,15 @@ library:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_lib_constrained_equality
+  header_list: optional tuple utility variant
+  rows:
+  - value: 202403
+    papers: P2944R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_containers_ranges
   header_list: vector list forward_list map set unordered_map unordered_set deque
     queue stack string
@@ -2359,6 +2404,8 @@ library:
   - value: 202311
     papers: P2546R5
     cppreference-description: '[[cpp/utility#Debugging support|Debugging support]]'
+  - value: 202403
+    papers: P2810R4
   support:
     clang: null
     gcc: null
@@ -2577,6 +2624,15 @@ library:
     msvc:
     - since: C++20
       value: 202304
+- name: __cpp_lib_format_path
+  header_list: filesystem
+  rows:
+  - value: 202403
+    papers: P2845R8
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_format_ranges
   header_list: format
   rows:
@@ -3832,6 +3888,8 @@ library:
   - value: 202207
     papers: P2093R14
     cppreference-description: Formatted output
+  - value: 202403
+    papers: P3107R5
   support:
     clang:
     - since: C++23
@@ -3986,6 +4044,15 @@ library:
     msvc:
     - since: C++23
       value: 202202
+- name: __cpp_lib_ranges_concat
+  header_list: ranges
+  rows:
+  - value: 202403
+    papers: P2542R8
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_contains
   header_list: algorithm
   rows:
@@ -4046,6 +4113,15 @@ library:
     msvc:
     - since: C++23
       value: 202207
+- name: __cpp_lib_ranges_generate_random
+  header_list: random
+  rows:
+  - value: 202403
+    papers: P1068R11
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_iota
   header_list: numeric
   rows:
@@ -4217,6 +4293,15 @@ library:
     - since: C++23
       depends: __has_builtin(__reference_constructs_from_temporary) && __has_builtin(__reference_converts_from_temporary)
       value: 202202
+    msvc: null
+- name: __cpp_lib_reference_wrapper
+  header_list: functional
+  rows:
+  - value: 202403
+    papers: P2944R3
+  support:
+    clang: null
+    gcc: null
     msvc: null
 - name: __cpp_lib_remove_cvref
   header_list: type_traits
@@ -4672,6 +4757,8 @@ library:
   - value: 201803
     papers: P0858R0 LWG3257
     cppreference-description: '{{named req|ConstexprIterator}}'
+  - value: 202403
+    papers: P2591R5
   support:
     clang:
     - since: C++17
@@ -4690,6 +4777,8 @@ library:
   - value: 202306
     papers: P2630R4
     cppreference-description: '{{lc|std::submdspan}}'
+  - value: 202403
+    papers: P2642R6
   support:
     clang: null
     gcc: null
