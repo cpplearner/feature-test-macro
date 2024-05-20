@@ -541,7 +541,8 @@ language:
   - value: 202403
     papers: P2573R2
   support:
-    clang: null
+    clang:
+    - value: 202403
     gcc: null
     msvc: null
 - name: __cpp_designated_initializers
