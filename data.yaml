@@ -543,7 +543,9 @@ language:
   support:
     clang:
     - value: 202403
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202403
     msvc: null
 - name: __cpp_designated_initializers
   rows:
@@ -1323,7 +1325,9 @@ language:
     papers: P2893R3
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202403
     msvc: null
 - name: __cpp_variadic_templates
   rows:
