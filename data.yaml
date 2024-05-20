@@ -540,6 +540,8 @@ language:
   rows:
   - value: 202403
     papers: P2573R2
+    cppreference-description: Deleted [[cpp/language/function|function definitions]]
+      with messages ({{c/core|1== delete("should have a reason");}})
   support:
     clang:
     - value: 202403
@@ -1200,6 +1202,8 @@ language:
     cppreference-description: '[[cpp/language/structured_binding|Structured bindings]]'
   - value: 202403
     papers: P0609R3
+    cppreference-description: '[[cpp/language/attributes|Attributes]] for [[cpp/language/structured
+      binding|structured bindings]]'
   support:
     clang:
     - since: C++17
@@ -1323,6 +1327,7 @@ language:
   rows:
   - value: 202403
     papers: P2893R3
+    cppreference-description: Variadic [[cpp/language/friend|friend declarations]]
   support:
     clang: null
     gcc:
@@ -1396,6 +1401,8 @@ library:
   rows:
   - value: 202403
     papers: P2248R8
+    cppreference-description: Enabling [[cpp/language/list initialization|list-initialization]]
+      for [[cpp/algorithm|algorithms]]
   support:
     clang: null
     gcc: null
@@ -1636,6 +1643,8 @@ library:
   rows:
   - value: 202403
     papers: P0493R5
+    cppreference-description: Atomic minimum/maximum ({{ltt|cpp/atomic/atomic/fetch_min|std::atomic::fetch_min}},
+      etc)
   support:
     clang: null
     gcc: null
@@ -2356,6 +2365,8 @@ library:
   rows:
   - value: 202403
     papers: P2944R3
+    cppreference-description: Constrained relational operators for {{lc|std::pair}},
+      {{lc|std::tuple}}, {{lc|std::optional}}, and {{lc|std::variant}}
   support:
     clang: null
     gcc:
@@ -2414,6 +2425,7 @@ library:
     cppreference-description: '[[cpp/utility#Debugging support|Debugging support]]'
   - value: 202403
     papers: P2810R4
+    cppreference-description: Replaceable {{ltt|cpp/utility/is_debugger_present|std::is_debugger_present}}
   support:
     clang: null
     gcc: null
@@ -2637,6 +2649,7 @@ library:
   rows:
   - value: 202403
     papers: P2845R8
+    cppreference-description: Formatting of {{lc|std::filesystem::path}}
   support:
     clang: null
     gcc: null
@@ -3898,6 +3911,7 @@ library:
     cppreference-description: Formatted output
   - value: 202403
     papers: P3107R5
+    cppreference-description: Permit an efficient implementation of {{lc|std::print}}
   support:
     clang:
     - since: C++23
@@ -3946,7 +3960,7 @@ library:
     cppreference-treats-as-dr-against: C++20
   - value: 202202
     papers: P2387R3
-    cppreference-description: '{{lc|std::ranges::range_adaptor_closure}}'
+    cppreference-description: '{{ltt|cpp/ranges/range_adaptor_closure|std::ranges::range_adaptor_closure}}'
   - value: 202207
     papers: P2494R2
     cppreference-description: Relaxing [[cpp/ranges|range adaptors]] to allow for
@@ -4027,7 +4041,7 @@ library:
   rows:
   - value: 202202
     papers: P2442R1
-    cppreference-description: '{{lc|std::ranges::chunk_view}}'
+    cppreference-description: '{{ltt|cpp/ranges/chunk_view|std::ranges::chunk_view}}'
   support:
     clang: null
     gcc:
@@ -4041,7 +4055,7 @@ library:
   rows:
   - value: 202202
     papers: P2443R1
-    cppreference-description: '{{lc|std::ranges::chunk_by_view}}'
+    cppreference-description: '{{ltt|cpp/ranges/chunk_by_view|std::ranges::chunk_by_view}}'
   support:
     clang:
     - since: C++23
@@ -4057,6 +4071,7 @@ library:
   rows:
   - value: 202403
     papers: P2542R8
+    cppreference-description: '{{ltt|cpp/ranges/concat_view|std::views::concat}}'
   support:
     clang: null
     gcc: null
@@ -4126,6 +4141,7 @@ library:
   rows:
   - value: 202403
     papers: P1068R11
+    cppreference-description: Vector API for random number generation ({{ltt|cpp/algorithm/ranges/generate_random|std::ranges::generate_random}})
   support:
     clang: null
     gcc: null
@@ -4307,6 +4323,7 @@ library:
   rows:
   - value: 202403
     papers: P2944R3
+    cppreference-description: Comparisons for {{lc|std::reference_wrapper}}
   support:
     clang:
     - since: C++26
@@ -4771,6 +4788,8 @@ library:
     cppreference-description: '{{named req|ConstexprIterator}}'
   - value: 202403
     papers: P2591R5
+    cppreference-description: '[[cpp/string/basic_string/operator+|Concatenation]]
+      of {{lc|std::string}}s and {{lc|std::string_view}}s'
   support:
     clang:
     - since: C++17
@@ -4791,6 +4810,7 @@ library:
     cppreference-description: '{{lc|std::submdspan}}'
   - value: 202403
     papers: P2642R6
+    cppreference-description: Padded mdspan layouts
   support:
     clang: null
     gcc: null
