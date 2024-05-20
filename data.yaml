@@ -2319,7 +2319,9 @@ library:
     cppreference-description: '[[cpp/ranges/to#container compatible range|Ranges-aware]]
       construction and insertion for containers and strings'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202202
     gcc: null
     msvc:
     - since: C++23
