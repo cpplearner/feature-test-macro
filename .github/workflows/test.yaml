@@ -31,17 +31,17 @@ jobs:
                   echo "$PWD/bin" >> $GITHUB_PATH
 
             - name: Test attributes
-              run: python tools/do_test.py clang attributes --verbose
+              run: python tools/do_test.py clang attributes
 
             - name: Test language
-              run: python tools/do_test.py clang language --verbose
+              run: python tools/do_test.py clang language
 
             - name: Test library
-              run: python tools/do_test.py clang library --verbose
+              run: python tools/do_test.py clang library
                     --extra-args -stdlib=libc++
 
             - name: Test library with -fexperimental-library
-              run: python tools/do_test.py clang library --verbose
+              run: python tools/do_test.py clang library
                     --extra-args -stdlib=libc++ -fexperimental-library
 
     gcc:
@@ -85,13 +85,13 @@ jobs:
                 key: gcc-cache-${{ github.sha }}
 
             - name: Test attributes
-              run: python tools/do_test.py gcc attributes --verbose
+              run: python tools/do_test.py gcc attributes
 
             - name: Test language
-              run: python tools/do_test.py gcc language --verbose
+              run: python tools/do_test.py gcc language
 
             - name: Test library
-              run: python tools/do_test.py gcc library --verbose
+              run: python tools/do_test.py gcc library
 
     mix:
         runs-on: ubuntu-20.04
@@ -126,12 +126,12 @@ jobs:
                   echo "$PWD/bin" >> $GITHUB_PATH
 
             - name: Test libstdc++ with Clang
-              run: python tools/do_test.py gcc library --verbose
+              run: python tools/do_test.py gcc library
                     --cc clang --extra-args -fno-caret-diagnostics
                      -stdlib=libstdc++ --gcc-toolchain="$PWD/gcc-latest"
 
             - name: Test libc++ with GCC
-              run: python tools/do_test.py clang library --verbose
+              run: python tools/do_test.py clang library
                     --cc gcc --std C++11 C++14 C++17 C++20 C++23 C++26
                     --extra-args -fno-diagnostics-show-caret
                      -ftrack-macro-expansion=0 -stdlib=libc++
@@ -164,22 +164,22 @@ jobs:
                   echo INCLUDE=msvc/STL/stl/inc;%INCLUDE% >> %GITHUB_ENV%
 
             - name: Test attributes
-              run: python tools/do_test.py msvc attributes --verbose
+              run: python tools/do_test.py msvc attributes
 
             - name: Test language
-              run: python tools/do_test.py msvc language --verbose
+              run: python tools/do_test.py msvc language
 
             - name: Test library
-              run: python tools/do_test.py msvc library --verbose
+              run: python tools/do_test.py msvc library
 
             - name: Install Clang
               run: |
                   curl.exe -L -o llvm.exe `
-                    https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.0-rc1/LLVM-18.1.0-rc1-win64.exe
+                    https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.5/LLVM-18.1.5-win64.exe
                   7z x llvm.exe -oLLVM
                   echo "$PWD\LLVM\bin" | Out-File -FilePath "$env:GITHUB_PATH" -Encoding utf8 -Append
 
             - name: Test MSVC STL with Clang
-              run: python tools/do_test.py msvc library --verbose
+              run: python tools/do_test.py msvc library
                     --cc clang-cl
                     --extra-args -diagnostics:classic
