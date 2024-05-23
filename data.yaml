@@ -1141,6 +1141,8 @@ language:
     cppreference-description: '[[cpp/memory/new/operator_delete|Sized deallocation]]'
   support:
     clang:
+    - since: C++14
+      value: 201309
     - option: -fsized-deallocation
       value: 201309
     gcc:
