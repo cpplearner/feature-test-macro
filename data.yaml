@@ -1633,7 +1633,8 @@ library:
       value: 201907
     gcc:
     - since: C++20
-      depends: '(__GCC_ATOMIC_INT_LOCK_FREE | __GCC_ATOMIC_LONG_LOCK_FREE | __GCC_ATOMIC_CHAR_LOCK_FREE) & 2'
+      depends: (__GCC_ATOMIC_INT_LOCK_FREE | __GCC_ATOMIC_LONG_LOCK_FREE | __GCC_ATOMIC_CHAR_LOCK_FREE)
+        & 2
       value: 201907
     msvc:
     - since: C++20
@@ -3030,7 +3031,7 @@ library:
     clang: null
     gcc:
     - since: C++23
-      depends: __cpp_lib_coroutine
+      depends: __cpp_lib_coroutine && __cpp_sized_deallocation
       value: 202207
     msvc: null
 - name: __cpp_lib_generic_associative_lookup
