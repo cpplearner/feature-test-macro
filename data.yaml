@@ -3706,7 +3706,9 @@ library:
     cppreference-description: '[[cpp/standard library#Importing modules|Standard library
       modules]] {{tt|std}} and {{tt|std.compat}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc: null
     msvc:
     - since: C++20
@@ -4864,7 +4866,9 @@ library:
     cppreference-description: '[[cpp/language/operator_comparison#Three-way comparison|Three-way
       comparison]] (library support); adding three-way comparison to the library'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201711
     gcc:
     - since: C++20
       depends: __cpp_impl_three_way_comparison >= 201907L && __cpp_lib_concepts
