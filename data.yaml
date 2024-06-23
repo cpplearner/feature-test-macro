@@ -1960,6 +1960,7 @@ library:
     - since: C++17
       value: 201611
     - since: C++20
+      depends: _GLIBCXX_USE_CXX11_ABI
       value: 201907
     msvc:
     - value: 201510
