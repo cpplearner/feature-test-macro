@@ -2727,7 +2727,8 @@ library:
     gcc:
     - since: C++23
       value: 202311
-    msvc: null
+    msvc:
+    - value: 202311
 - name: __cpp_lib_freestanding_array
   header_list: array
   rows:
@@ -2739,7 +2740,8 @@ library:
     gcc:
     - since: C++23
       value: 202311
-    msvc: null
+    msvc:
+    - value: 202311
 - name: __cpp_lib_freestanding_char_traits
   header_list: string
   rows:
@@ -2824,7 +2826,9 @@ library:
     - since: C++23
       depends: __cpp_lib_expected
       value: 202311
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202311
 - name: __cpp_lib_freestanding_feature_test_macros
   rows:
   - value: 202306
@@ -2866,7 +2870,9 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202311
 - name: __cpp_lib_freestanding_memory
   header_list: memory
   rows:
@@ -2912,7 +2918,9 @@ library:
     gcc:
     - since: C++23
       value: 202311
-    msvc: null
+    msvc:
+    - since: C++17
+      value: 202311
 - name: __cpp_lib_freestanding_ranges
   header_list: ranges
   rows:
@@ -2947,7 +2955,9 @@ library:
     gcc:
     - since: C++23
       value: 202311
-    msvc: null
+    msvc:
+    - since: C++17
+      value: 202311
 - name: __cpp_lib_freestanding_tuple
   header_list: tuple
   rows:
@@ -2981,7 +2991,9 @@ library:
     gcc:
     - since: C++23
       value: 202311
-    msvc: null
+    msvc:
+    - since: C++17
+      value: 202311
 - name: __cpp_lib_fstream_native_handle
   header_list: fstream
   rows:
@@ -3876,7 +3888,7 @@ library:
       value: 202311
     msvc:
     - since: C++23
-      value: 202106
+      value: 202311
 - name: __cpp_lib_parallel_algorithm
   header_list: algorithm numeric
   rows:
