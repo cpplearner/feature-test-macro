@@ -299,8 +299,6 @@ language:
     - since: C++20
       value: 202002
     gcc:
-    - option: -fconcepts-ts
-      value: 201507
     - option: -fconcepts
       value: 202002
     - since: C++20
