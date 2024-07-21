@@ -4003,7 +4003,7 @@ library:
     - since: C++20
       value: 202110
     - since: C++23
-      value: 202302
+      value: 202406
 - name: __cpp_lib_ranges_as_const
   header_list: ranges
   rows:
