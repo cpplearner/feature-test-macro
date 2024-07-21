@@ -1657,7 +1657,9 @@ library:
     papers: P0019R8
     cppreference-description: '{{ltt|cpp/atomic/atomic_ref|std::atomic_ref}}'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201806
     gcc:
     - since: C++20
       value: 201806
@@ -2639,7 +2641,9 @@ library:
     cppreference-description: '[[cpp/utility/format/runtime_format|Runtime format
       strings]]'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 202110
     gcc:
     - since: C++20
       value: 202110
@@ -3685,6 +3689,8 @@ library:
     clang:
     - since: C++23
       value: 202207
+    - since: C++26
+      value: 202406
     gcc: null
     msvc:
     - since: C++23
@@ -3880,7 +3886,11 @@ library:
     papers: P2833R2
     cppreference-description: Freestanding {{lc|std::out_ptr}}, {{lc|std::inout_ptr}}
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202106
+    - since: C++26
+      value: 202311
     gcc:
     - since: C++23
       value: 202311
@@ -4132,7 +4142,9 @@ library:
     cppreference-description: '{{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last}},
       {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if}}, and {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if_not}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
@@ -4814,6 +4826,8 @@ library:
       value: 201606
     - since: C++20
       value: 201803
+    - since: C++26
+      value: 202403
     gcc:
     - since: C++17
       value: 201803
