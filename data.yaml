@@ -117,7 +117,7 @@ language:
   rows:
   - value: 201603
     papers: P0017R1
-    cppreference-description: '[[cpp/language/aggregate_initialization|Aggregate classes]]
+    cppreference-description: '[[cpp/language/aggregate initialization|Aggregate classes]]
       with base classes'
   support:
     clang:
@@ -133,7 +133,7 @@ language:
   rows:
   - value: 201304
     papers: N3653
-    cppreference-description: '[[cpp/language/aggregate_initialization|Aggregate classes]]
+    cppreference-description: '[[cpp/language/aggregate initialization|Aggregate classes]]
       with [[cpp/language/data_members#Member initialization|default member initializers]]'
   support:
     clang:
@@ -164,7 +164,7 @@ language:
   rows:
   - value: 200704
     papers: N2258
-    cppreference-description: '[[cpp/language/type_alias|Alias templates]]'
+    cppreference-description: '[[cpp/language/type alias|Alias templates]]'
   support:
     clang:
     - since: C++11
@@ -213,7 +213,7 @@ language:
   rows:
   - value: 202110
     papers: P0849R8
-    cppreference-description: '[[cpp/language/explicit_cast|{{c|auto(x)}} and {{c|auto{x}
+    cppreference-description: '[[cpp/language/explicit cast|{{c|auto(x)}} and {{c|auto{x}
       }}]]'
   support:
     clang:
@@ -243,7 +243,7 @@ language:
   rows:
   - value: 201603
     papers: P0018R3
-    cppreference-description: '[[cpp/language/lambda#Lambda_capture|Lambda capture
+    cppreference-description: '[[cpp/language/lambda#Lambda capture|Lambda capture
       of *this by value as [=,*this] ]]'
   support:
     clang:
@@ -360,28 +360,31 @@ language:
   - value: 201907
     papers: P1331R2 P1668R1
     cppreference-description: '[[cpp/language/virtual|Virtual function]] calls in
-      constant expressions; {{ltt|cpp/language/try_catch|try-catch}} blocks in constexpr
+      constant expressions; [[cpp/language/try|{{c/core|try}} blocks]] in {{c/core|constexpr}}
       functions, {{ltt|cpp/language/dynamic_cast}} and polymorphic {{ltt|cpp/language/typeid}}
       in constant expressions; trivial [[cpp/language/default initialization|default
-      initialization]] and [[cpp/language/asm|asm-declaration]] in constexpr functions'
+      initialization]] and [[cpp/language/asm|asm-declaration]] in {{c/core|constexpr}} functions'
   - value: 202002
     papers: P1330R0 P2493R0
     cppreference-description: Changing the active member of a union in constant evaluation
   - value: 202110
     papers: P2242R3
     cppreference-description: Non-[[cpp/named req/LiteralType|literal]] variables,
-      labels, and {{ltt|cpp/language|goto}} statements in constexpr functions
+      labels, and {{ltt|cpp/language|goto}} statements in {{c/core|constexpr}} functions
   - value: 202207
     papers: P2448R2
     cppreference-description: Relaxing some restrictions on [[cpp/language/constexpr|constexpr]]
       functions and function templates
   - value: 202211
     papers: P2647R1
-    cppreference-description: Permitting static constexpr variables in constexpr functions
+    cppreference-description: Permitting static {{c/core|constexpr}} variables in {{c/core|constexpr}} functions
   - value: 202306
     papers: P2738R1
-    cppreference-description: 'Constexpr cast from {{tt|void*}}: towards constexpr
+    cppreference-description: 'Constexpr cast from {{c|void*}}: towards {{c/core|constexpr}}
       type-erasure'
+  - value: 202406
+    papers: P2747R2
+    cppreference-description: '{{c/core|constexpr}} placement new'
   support:
     clang:
     - since: C++11
@@ -419,7 +422,7 @@ language:
   rows:
   - value: 201907
     papers: P0784R7
-    cppreference-description: Operations for dynamic storage duration in constexpr
+    cppreference-description: Operations for dynamic storage duration in {{c/core|constexpr}}
       functions
   support:
     clang:
@@ -499,11 +502,11 @@ language:
     papers: P0512R0
   - value: 201703
     papers: P0620R0
-    cppreference-description: '[[cpp/language/class_template_argument_deduction|Template
+    cppreference-description: '[[cpp/language/class template argument deduction|Template
       argument deduction for class templates]]'
   - value: 201907
     papers: P1814R0 P1816R0
-    cppreference-description: '[[cpp/language/class_template_argument_deduction|<abbr
+    cppreference-description: '[[cpp/language/class template argument deduction|<abbr
       title="Class template argument deduction">CTAD</abbr>]] for aggregates and aliases'
   support:
     clang:
@@ -523,7 +526,7 @@ language:
   rows:
   - value: 200604
     papers: N1986
-    cppreference-description: '[[cpp/language/initializer_list#Delegating_constructor|Delegating
+    cppreference-description: '[[cpp/language/initializer list#Delegating constructor|Delegating
       constructors]]'
   support:
     clang:
@@ -551,7 +554,7 @@ language:
   rows:
   - value: 201707
     papers: P0329R4
-    cppreference-description: '[[cpp/language/aggregate_initialization#Designated_initializers|Designated
+    cppreference-description: '[[cpp/language/aggregate initialization#Designated initializers|Designated
       initializer]]'
   support:
     clang:
@@ -595,7 +598,7 @@ language:
   rows:
   - value: 202110
     papers: P0847R7
-    cppreference-description: '[[cpp/language/member_functions#Explicit_object_parameter|Explicit
+    cppreference-description: '[[cpp/language/member functions#Explicit object parameter|Explicit
       object parameter]]'
   support:
     clang: null
@@ -664,7 +667,7 @@ language:
   rows:
   - value: 201603
     papers: P0245R1
-    cppreference-description: '[[cpp/language/floating_literal|Hexadecimal floating
+    cppreference-description: '[[cpp/language/floating literal|Hexadecimal floating
       literals]]'
   support:
     clang:
@@ -730,7 +733,7 @@ language:
   rows:
   - value: 201806
     papers: P0722R3
-    cppreference-description: '[[cpp/memory/new/operator_delete|Destroying operator
+    cppreference-description: '[[cpp/memory/new/operator delete|Destroying operator
       delete]] (compiler support)'
   support:
     clang:
@@ -749,7 +752,7 @@ language:
     papers: P1185R2
   - value: 201907
     papers: P1630R1
-    cppreference-description: '[[cpp/language/operator_comparison#Three-way_comparison|Three-way
+    cppreference-description: '[[cpp/language/operator comparison#Three-way comparison|Three-way
       comparison]] (compiler support)'
   support:
     clang:
@@ -779,7 +782,7 @@ language:
   rows:
   - value: 200802
     papers: N2540
-    cppreference-description: '[[cpp/language/using_declaration#Inheriting_constructors|Inheriting
+    cppreference-description: '[[cpp/language/using declaration#Inheriting constructors|Inheriting
       constructors]]'
   - value: 201511
     papers: P0136R1
@@ -824,7 +827,7 @@ language:
   rows:
   - value: 200806
     papers: N2672
-    cppreference-description: '[[cpp/language/list_initialization|List-initialization]]
+    cppreference-description: '[[cpp/language/list initialization|List-initialization]]
       and {{lc|std::initializer_list}}'
   support:
     clang:
@@ -922,7 +925,7 @@ language:
   rows:
   - value: 201510
     papers: P0012R1
-    cppreference-description: Make [[cpp/language/noexcept_spec|exception specifications]]
+    cppreference-description: Make [[cpp/language/noexcept spec|exception specifications]]
       be part of the type system
   support:
     clang:
@@ -939,11 +942,11 @@ language:
   rows:
   - value: 201411
     papers: N4268
-    cppreference-description: Allow constant evaluation for all [[cpp/language/template_parameters#Template_non-type_arguments|non-type
+    cppreference-description: Allow constant evaluation for all [[cpp/language/template parameters#Template non-type arguments|non-type
       template arguments]]
   - value: 201911
     papers: P1907R1
-    cppreference-description: Class types and floating-point types in [[cpp/language/template_parameters#Non-type_template_parameter|non-type
+    cppreference-description: Class types and floating-point types in [[cpp/language/template parameters#Non-type template parameter|non-type
       template parameters]]
   support:
     clang:
@@ -963,7 +966,7 @@ language:
   rows:
   - value: 201606
     papers: P0127R2
-    cppreference-description: Declaring [[cpp/language/template_parameters#Non-type_template_parameter|non-type
+    cppreference-description: Declaring [[cpp/language/template parameters#Non-type template parameter|non-type
       template parameters]] with {{tt|auto}}
   support:
     clang:
@@ -986,7 +989,7 @@ language:
   rows:
   - value: 200809
     papers: N2756
-    cppreference-description: '[[cpp/language/data_members#Member_initialization|Non-static
+    cppreference-description: '[[cpp/language/data members#Member initialization|Non-static
       data member initializers]]'
   support:
     clang:
@@ -1051,7 +1054,7 @@ language:
   rows:
   - value: 200710
     papers: N2442
-    cppreference-description: '[[cpp/language/string_literal|Raw string literals]]'
+    cppreference-description: '[[cpp/language/string literal|Raw string literals]]'
   support:
     clang:
     - since: C++11
@@ -1065,7 +1068,7 @@ language:
   rows:
   - value: 200710
     papers: N2439
-    cppreference-description: '[[cpp/language/member_functions|ref-qualifiers]]'
+    cppreference-description: '[[cpp/language/member functions|ref-qualifiers]]'
   support:
     clang:
     - since: C++11
@@ -1136,7 +1139,7 @@ language:
   rows:
   - value: 201309
     papers: N3778
-    cppreference-description: '[[cpp/memory/new/operator_delete|Sized deallocation]]'
+    cppreference-description: '[[cpp/memory/new/operator delete|Sized deallocation]]'
   support:
     clang:
     - since: C++14
@@ -1199,7 +1202,7 @@ language:
   rows:
   - value: 201606
     papers: P0217R3
-    cppreference-description: '[[cpp/language/structured_binding|Structured bindings]]'
+    cppreference-description: '[[cpp/language/structured binding|Structured bindings]]'
   - value: 202403
     papers: P0609R3
     cppreference-description: '[[cpp/language/attributes|Attributes]] for [[cpp/language/structured
@@ -1220,7 +1223,7 @@ language:
   rows:
   - value: 201611
     papers: P0522R0
-    cppreference-description: Matching of [[cpp/language/template_parameters#Template_template_arguments|template
+    cppreference-description: Matching of [[cpp/language/template parameters#Template template arguments|template
       template-arguments]]
   support:
     clang:
@@ -1236,7 +1239,7 @@ language:
   rows:
   - value: 200806
     papers: N2660
-    cppreference-description: '[[cpp/language/storage_duration#Static_local_variables|Dynamic
+    cppreference-description: '[[cpp/language/storage duration#Static local variables|Dynamic
       initialization and destruction with concurrency]]'
   support:
     clang:
@@ -1269,7 +1272,7 @@ language:
   rows:
   - value: 200710
     papers: N2442
-    cppreference-description: '[[cpp/language/string_literal|Unicode string literals]]'
+    cppreference-description: '[[cpp/language/string literal|Unicode string literals]]'
   support:
     clang:
     - since: C++11
@@ -1283,7 +1286,7 @@ language:
   rows:
   - value: 200809
     papers: N2765
-    cppreference-description: '[[cpp/language/user_literal|User-defined literals]]'
+    cppreference-description: '[[cpp/language/user literal|User-defined literals]]'
   support:
     clang:
     - since: C++11
@@ -1313,7 +1316,7 @@ language:
   rows:
   - value: 201304
     papers: N3651
-    cppreference-description: '[[cpp/language/variable_template|Variable templates]]'
+    cppreference-description: '[[cpp/language/variable template|Variable templates]]'
   support:
     clang:
     - since: C++14
@@ -1338,7 +1341,7 @@ language:
   rows:
   - value: 200704
     papers: N2242
-    cppreference-description: '[[cpp/language/parameter_pack|Variadic templates]]'
+    cppreference-description: '[[cpp/language/parameter pack|Variadic templates]]'
   support:
     clang:
     - since: C++11
@@ -1352,7 +1355,7 @@ language:
   rows:
   - value: 201611
     papers: P0195R2
-    cppreference-description: Pack expansions in [[cpp/language/using_declaration|{{tt|using}}-declarations]]
+    cppreference-description: Pack expansions in [[cpp/language/using declaration|{{tt|using}}-declarations]]
   support:
     clang:
     - since: C++17
@@ -1644,7 +1647,7 @@ library:
   rows:
   - value: 202403
     papers: P0493R5
-    cppreference-description: Atomic minimum/maximum ({{ltt|cpp/atomic/atomic/fetch_min|std::atomic::fetch_min}},
+    cppreference-description: Atomic minimum/maximum ({{ltt|cpp/atomic/atomic/fetch_min|std::atomic::fetch_min}}, {{ltt|cpp/atomic/atomic/fetch_max|std::atomic::fetch_max}},
       etc)
   support:
     clang: null
@@ -2236,12 +2239,22 @@ library:
       value: 201811
     - since: C++23
       value: 202202
+- name: __cpp_lib_constexpr_new
+  header_list: new
+  rows:
+  - value: 202406
+    papers: P2747R2
+    cppreference-description: '{{c/core|constexpr}} [[cpp/language/new#Placement new|placement]] {{ltt|cpp/memory/new/operator new|new}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_numeric
   header_list: numeric
   rows:
   - value: 201911
     papers: P1645R1
-    cppreference-description: Constexpr for [[cpp/algorithm#Numeric_operations|algorithms]]
+    cppreference-description: Constexpr for [[cpp/algorithm#Numeric operations|algorithms]]
       in {{header|numeric}}
   support:
     clang:
@@ -3170,6 +3183,16 @@ library:
     - value: 201505
     msvc:
     - value: 201505
+- name: __cpp_lib_inplace_vector
+  header_list: inplace_vector
+  rows:
+    - value: 202406
+      papers: P0843R14
+      cppreference-description: '{{lc|std::inplace_vector}}: dynamically-resizable vector with fixed capacity (inplace storage)'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_int_pow2
   header_list: bit
   rows:
@@ -3474,6 +3497,16 @@ library:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_lib_is_virtual_base_of
+  header_list: type_traits
+  rows:
+  - value: 202406
+    papers: P2985R0
+    cppreference-description: '{{lc|std::is_virtual_base_of}}: type trait for detecting virtual base classes'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_is_within_lifetime
   header_list: type_traits
   rows:
@@ -3685,6 +3718,9 @@ library:
   - value: 202207
     papers: P0009R18 P2599R2 P2604R0 P2613R1
     cppreference-description: '{{ltt|cpp/container/mdspan|std::mdspan}}'
+  - value: 202406
+    papers: P2389R2
+    cppreference-description: '{{lc|std::dims}} for {{lc|std::mdspan}}'
   support:
     clang:
     - since: C++23
@@ -3876,6 +3912,16 @@ library:
       value: 202106
     - since: C++23
       value: 202110
+- name: __cpp_lib_optional_range_support
+  header_list: optional
+  rows:
+  - value: 202406
+    papers: P3168R2
+    cppreference-description: '{{lc|std::optional}} range support'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_out_ptr
   header_list: memory
   rows:
@@ -3911,6 +3957,16 @@ library:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_lib_philox_engine
+  header_list: random
+  rows:
+  - value: 202406
+    papers: P2075R6
+    cppreference-description: '{{lc|std::philox_engine}}: counter-based random number engine'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_polymorphic_allocator
   header_list: memory_resource
   rows:
@@ -3938,6 +3994,9 @@ library:
   - value: 202403
     papers: P3107R5
     cppreference-description: Permit an efficient implementation of {{lc|std::print}}
+  - value: 202406
+    papers: P3235R3
+    cppreference-description: 'Printing Blank Lines with {{lc|std::println}}'
   support:
     clang:
     - since: C++23
@@ -3998,6 +4057,9 @@ library:
   - value: 202302
     papers: P2609R3
     cppreference-description: Relaxing ranges to allow certain projections
+  - value: 202406
+    papers: P2997R1
+    cppreference-description: Removing the common reference requirement from the indirectly invocable concepts
   support:
     clang:
     - since: C++20
@@ -4477,6 +4539,16 @@ library:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_lib_senders
+  header_list: execution
+  rows:
+  - value: 202406
+    papers: P2300R10
+    cppreference-description: '{{lc|std::execution}}: sender-receiver model of execution control'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_shared_mutex
   header_list: shared_mutex
   rows:
