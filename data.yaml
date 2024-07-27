@@ -363,7 +363,8 @@ language:
       constant expressions; [[cpp/language/try|{{c/core|try}} blocks]] in {{c/core|constexpr}}
       functions, {{ltt|cpp/language/dynamic_cast}} and polymorphic {{ltt|cpp/language/typeid}}
       in constant expressions; trivial [[cpp/language/default initialization|default
-      initialization]] and [[cpp/language/asm|asm-declaration]] in {{c/core|constexpr}} functions'
+      initialization]] and [[cpp/language/asm|asm-declaration]] in {{c/core|constexpr}}
+      functions'
   - value: 202002
     papers: P1330R0 P2493R0
     cppreference-description: Changing the active member of a union in constant evaluation
@@ -377,7 +378,8 @@ language:
       functions and function templates
   - value: 202211
     papers: P2647R1
-    cppreference-description: Permitting static {{c/core|constexpr}} variables in {{c/core|constexpr}} functions
+    cppreference-description: Permitting static {{c/core|constexpr}} variables in
+      {{c/core|constexpr}} functions
   - value: 202306
     papers: P2738R1
     cppreference-description: 'Constexpr cast from {{c|void*}}: towards {{c/core|constexpr}}
@@ -554,8 +556,8 @@ language:
   rows:
   - value: 201707
     papers: P0329R4
-    cppreference-description: '[[cpp/language/aggregate initialization#Designated initializers|Designated
-      initializer]]'
+    cppreference-description: '[[cpp/language/aggregate initialization#Designated
+      initializers|Designated initializer]]'
   support:
     clang:
     - since: C++20
@@ -942,12 +944,12 @@ language:
   rows:
   - value: 201411
     papers: N4268
-    cppreference-description: Allow constant evaluation for all [[cpp/language/template parameters#Template non-type arguments|non-type
-      template arguments]]
+    cppreference-description: Allow constant evaluation for all [[cpp/language/template
+      parameters#Template non-type arguments|non-type template arguments]]
   - value: 201911
     papers: P1907R1
-    cppreference-description: Class types and floating-point types in [[cpp/language/template parameters#Non-type template parameter|non-type
-      template parameters]]
+    cppreference-description: Class types and floating-point types in [[cpp/language/template
+      parameters#Non-type template parameter|non-type template parameters]]
   support:
     clang:
     - since: C++17
@@ -966,8 +968,8 @@ language:
   rows:
   - value: 201606
     papers: P0127R2
-    cppreference-description: Declaring [[cpp/language/template parameters#Non-type template parameter|non-type
-      template parameters]] with {{tt|auto}}
+    cppreference-description: Declaring [[cpp/language/template parameters#Non-type
+      template parameter|non-type template parameters]] with {{tt|auto}}
   support:
     clang:
     - since: C++17
@@ -1223,8 +1225,8 @@ language:
   rows:
   - value: 201611
     papers: P0522R0
-    cppreference-description: Matching of [[cpp/language/template parameters#Template template arguments|template
-      template-arguments]]
+    cppreference-description: Matching of [[cpp/language/template parameters#Template
+      template arguments|template template-arguments]]
   support:
     clang:
     - disabled-by: -fno-relaxed-template-template-args
@@ -1647,8 +1649,8 @@ library:
   rows:
   - value: 202403
     papers: P0493R5
-    cppreference-description: Atomic minimum/maximum ({{ltt|cpp/atomic/atomic/fetch_min|std::atomic::fetch_min}}, {{ltt|cpp/atomic/atomic/fetch_max|std::atomic::fetch_max}},
-      etc)
+    cppreference-description: Atomic minimum/maximum ({{ltt|cpp/atomic/atomic/fetch_min|std::atomic::fetch_min}},
+      {{ltt|cpp/atomic/atomic/fetch_max|std::atomic::fetch_max}}, etc)
   support:
     clang: null
     gcc: null
@@ -2244,7 +2246,8 @@ library:
   rows:
   - value: 202406
     papers: P2747R2
-    cppreference-description: '{{c/core|constexpr}} [[cpp/language/new#Placement new|placement]] {{ltt|cpp/memory/new/operator new|new}}'
+    cppreference-description: '{{c/core|constexpr}} [[cpp/language/new#Placement new|placement]]
+      {{ltt|cpp/memory/new/operator new|new}}'
   support:
     clang: null
     gcc: null
@@ -3186,9 +3189,10 @@ library:
 - name: __cpp_lib_inplace_vector
   header_list: inplace_vector
   rows:
-    - value: 202406
-      papers: P0843R14
-      cppreference-description: '{{lc|std::inplace_vector}}: dynamically-resizable vector with fixed capacity (inplace storage)'
+  - value: 202406
+    papers: P0843R14
+    cppreference-description: '{{lc|std::inplace_vector}}: dynamically-resizable vector
+      with fixed capacity (inplace storage)'
   support:
     clang: null
     gcc: null
@@ -3502,7 +3506,8 @@ library:
   rows:
   - value: 202406
     papers: P2985R0
-    cppreference-description: '{{lc|std::is_virtual_base_of}}: type trait for detecting virtual base classes'
+    cppreference-description: '{{lc|std::is_virtual_base_of}}: type trait for detecting
+      virtual base classes'
   support:
     clang: null
     gcc: null
@@ -3962,7 +3967,8 @@ library:
   rows:
   - value: 202406
     papers: P2075R6
-    cppreference-description: '{{lc|std::philox_engine}}: counter-based random number engine'
+    cppreference-description: '{{lc|std::philox_engine}}: counter-based random number
+      engine'
   support:
     clang: null
     gcc: null
@@ -3996,7 +4002,7 @@ library:
     cppreference-description: Permit an efficient implementation of {{lc|std::print}}
   - value: 202406
     papers: P3235R3
-    cppreference-description: 'Printing Blank Lines with {{lc|std::println}}'
+    cppreference-description: Printing Blank Lines with {{lc|std::println}}
   support:
     clang:
     - since: C++23
@@ -4059,7 +4065,8 @@ library:
     cppreference-description: Relaxing ranges to allow certain projections
   - value: 202406
     papers: P2997R1
-    cppreference-description: Removing the common reference requirement from the indirectly invocable concepts
+    cppreference-description: Removing the common reference requirement from the indirectly
+      invocable concepts
   support:
     clang:
     - since: C++20
@@ -4544,7 +4551,8 @@ library:
   rows:
   - value: 202406
     papers: P2300R10
-    cppreference-description: '{{lc|std::execution}}: sender-receiver model of execution control'
+    cppreference-description: '{{lc|std::execution}}: sender-receiver model of execution
+      control'
   support:
     clang: null
     gcc: null
