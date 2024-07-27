@@ -4965,7 +4965,7 @@ library:
   support:
     clang:
     - since: C++20
-      value: 201711
+      value: 201907
     gcc:
     - since: C++20
       depends: __cpp_impl_three_way_comparison >= 201907L && __cpp_lib_concepts
