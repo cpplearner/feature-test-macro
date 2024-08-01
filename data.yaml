@@ -2662,7 +2662,9 @@ library:
       value: 202110
     gcc:
     - since: C++20
-      value: 202110
+      value: 202304
+    - since: C++26
+      value: 202311
     msvc:
     - since: C++20
       value: 202304
@@ -5275,6 +5277,9 @@ library:
     - since: C++20
       depends: __cpp_concepts >= 202002L && __cpp_constexpr >= 201811L
       value: 202106
+    - since: C++26
+      depends: __cpp_concepts >= 202002L && __cpp_constexpr >= 201811L && __cpp_explicit_this_parameter
+      value: 202306
     msvc:
     - since: C++17
       value: 202102
