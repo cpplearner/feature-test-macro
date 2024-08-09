@@ -1008,7 +1008,8 @@ language:
     papers: P2662R3
     cppreference-description: '[[cpp/language/pack indexing|Pack indexing]]'
   support:
-    clang: null
+    clang:
+    - value: 202311
     gcc: null
     msvc: null
 - name: __cpp_placeholder_variables
