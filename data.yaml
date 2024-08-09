@@ -2250,7 +2250,10 @@ library:
       {{ltt|cpp/memory/new/operator new|new}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      depends: __cpp_constexpr >= 202406L
+      value: 202406
     msvc: null
 - name: __cpp_lib_constexpr_numeric
   header_list: numeric
