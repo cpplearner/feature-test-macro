@@ -413,7 +413,7 @@ language:
     - since: C++23
       value: 202211
     - since: C++26
-      value: 202306
+      value: 202406
     msvc:
     - value: 201304
     - since: C++17
