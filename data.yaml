@@ -2693,7 +2693,9 @@ library:
     - since: C++23
       value: 202207
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202207
 - name: __cpp_lib_format_uchar
   header_list: format
   rows:
