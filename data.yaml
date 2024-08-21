@@ -1335,7 +1335,8 @@ language:
     papers: P2893R3
     cppreference-description: Variadic [[cpp/language/friend|friend declarations]]
   support:
-    clang: null
+    clang:
+    - value: 202403
     gcc:
     - since: C++26
       value: 202403
