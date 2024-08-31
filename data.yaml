@@ -4079,7 +4079,9 @@ library:
   support:
     clang:
     - since: C++20
-      value: 202207
+      value: 202110
+    - since: C++23
+      value: 202406
     gcc:
     - since: C++20
       depends: __cpp_lib_concepts
