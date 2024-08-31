@@ -2251,7 +2251,10 @@ library:
     cppreference-description: '{{c/core|constexpr}} [[cpp/language/new#Placement new|placement]]
       {{ltt|cpp/memory/new/operator new|new}}'
   support:
-    clang: null
+    clang:
+    - since: C++26
+      depends: '!defined(_LIBCPP_ABI_VCRUNTIME)'
+      value: 202406
     gcc:
     - since: C++26
       depends: __cpp_constexpr >= 202406L
