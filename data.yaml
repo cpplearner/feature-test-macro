@@ -4020,7 +4020,7 @@ library:
       value: 202211
     msvc:
     - since: C++23
-      value: 202207
+      value: 202406
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
   rows:
