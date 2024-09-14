@@ -3517,7 +3517,10 @@ library:
     cppreference-description: '{{lc|std::is_virtual_base_of}}: type trait for detecting
       virtual base classes'
   support:
-    clang: null
+    clang:
+    - since: C++26
+      depends: '__has_builtin(__builtin_is_virtual_base_of)'
+      value: 202406
     gcc: null
     msvc: null
 - name: __cpp_lib_is_within_lifetime
