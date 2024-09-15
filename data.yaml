@@ -3519,7 +3519,7 @@ library:
   support:
     clang:
     - since: C++26
-      depends: '__has_builtin(__builtin_is_virtual_base_of)'
+      depends: __has_builtin(__builtin_is_virtual_base_of)
       value: 202406
     gcc: null
     msvc: null
