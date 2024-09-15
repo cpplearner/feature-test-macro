@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import argparse, logging, sys, textwrap, yaml
-from utilities import kinds, standards
+from utilities import kinds, standards, infer_std
 
 def find_std_value(name):
     for stdname, value in standards:
@@ -13,11 +13,11 @@ parser.add_argument('-o', dest='outfilename', help='Output file name (use stdout
 parser.add_argument('--disable-warning', action='store_true')
 args = parser.parse_args()
 
-out = open(args.outfilename, 'w') if args.outfilename else sys.stdout
+out = open(args.outfilename, 'w', encoding='utf-8') if args.outfilename else sys.stdout
 if args.disable_warning:
     logging.disable(logging.WARNING)
 
-a = yaml.safe_load(open('data.yaml'))
+a = yaml.safe_load(open('data.yaml', encoding='utf-8'))
 
 if args.kind == 'attributes':
     logging.critical("unimplemented")
@@ -69,13 +69,12 @@ for item in macros:
                           printing: {row["value"]}
                           previous: {prev["std"]}, {prev["value"]}'''))
             else:
-                nextstd = [stdname for stdname, value in standards if value is None or row['value'] <= value][0]
-                row['std'] = nextstd
+                row['std'] = infer_std(row)
 
                 if prev and prev['std'] == row['std'] and row['std'] != standards[-1][0]:
                     logging.warning(textwrap.dedent(f'''\
                         there is a newer value for {item["name"]}
-                          standard: {nextstd}
+                          standard: {row["std"]}
                           printing: {row["value"]}
                           previous value: {prev["value"]}
                           support:
@@ -135,7 +134,11 @@ for item in macros:
 out.write('|-\n')
 colspan = 6 if args.kind == 'library' else 5
 viable_macros = [item for item in macros if any('cppreference-description' in row for row in item['rows'])]
-out.write(f'! colspan="{colspan}" | Total number of macros: {len(viable_macros)} <!-- do not forget to update, see the talk page -->\n')
+
+if args.kind == 'library':
+    out.write(f'! colspan="{colspan}" | Total number of macros: {len(viable_macros)} <!-- do not forget to update, see the talk page -->\n')
+else:
+    out.write(f'! colspan="{colspan}" | Total number of macros: {len(viable_macros)} <!-- update me, e.g., use the script on the talk page -->\n')
 
 out.write('|}')
 

@@ -2,7 +2,7 @@
 import yaml, pathlib
 from utilities import kinds, implementations, standards, library_prologue, std_options, TestsuiteGenerator
 
-a = yaml.safe_load(open('data.yaml'))
+a = yaml.safe_load(open('data.yaml', encoding='utf-8'))
 assert list(a.keys()) == kinds
 
 testbasedir = pathlib.Path('test')
@@ -13,7 +13,7 @@ for kind in kinds:
         testdir = testbasedir / kind
         testdir.mkdir(exist_ok=True)
 
-        testfile = open(testdir / f"{impl}.cpp", 'w+')
+        testfile = open(testdir / f"{impl}.cpp", 'w+', encoding='ascii')
 
         generator = TestsuiteGenerator(kind, impl)
 

@@ -2385,7 +2385,7 @@ library:
     - since: C++20
       value: 201907
 - name: __cpp_lib_constrained_equality
-  header_list: optional tuple utility variant
+  header_list: utility tuple optional variant
   rows:
   - value: 202403
     papers: P2944R3
@@ -2856,6 +2856,7 @@ library:
     - since: C++23
       value: 202311
 - name: __cpp_lib_freestanding_feature_test_macros
+  header_list: ''
   rows:
   - value: 202306
     papers: P2198R7
@@ -4069,7 +4070,7 @@ library:
       move-only types
   - value: 202211
     papers: P2602R2
-    cppreference-description: Removing 'poison pill' overloads in {{lc|ranges::begin}},
+    cppreference-description: Removing “poison pill” overloads in {{lc|ranges::begin}},
       {{lc|ranges::end}}, {{lc|ranges::rbegin}}, {{lc|ranges::rend}}, and {{lc|ranges::size}}
   - value: 202302
     papers: P2609R3

@@ -7,7 +7,7 @@ parser.add_argument('output_filename', help='output file name')
 
 args = parser.parse_args()
 
-s = open(args.input_filename).read()
+s = open(args.input_filename, encoding='ascii').read()
 
 s = re.sub(r'//.*?\n', '', s)
 s = re.sub(r'/\*.*?\*/', '', s)
@@ -62,7 +62,7 @@ def recursive_parse_definitions():
 
 raw = recursive_parse_definitions()
 
-with open('data.yaml') as data:
+with open('data.yaml', encoding='utf-8') as data:
     a = yaml.safe_load(data)
 
     for ftm in raw['ftms']:
@@ -115,4 +115,4 @@ with open('data.yaml') as data:
             support.reverse()
             mac['support']['gcc'] = support
 
-yaml.safe_dump(a, open(args.output_filename, 'w'), sort_keys=False)
+yaml.safe_dump(a, open(args.output_filename, 'w', encoding='utf-8'), sort_keys=False)

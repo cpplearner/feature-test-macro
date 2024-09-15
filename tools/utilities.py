@@ -180,3 +180,8 @@ class TestsuiteGenerator:
             return ['-pedantic', f"-D{nonpedantic_option()}=1"]
         else:
             return None
+
+def infer_std(row):
+    for std, __cplusplus in standards:
+        if __cplusplus is None or row['value'] <= __cplusplus:
+            return std

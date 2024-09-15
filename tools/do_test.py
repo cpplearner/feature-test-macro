@@ -16,7 +16,7 @@ def do_test(impl, kind, cc, extra_args, enabled_std, dry_run, verbose):
     if dry_run:
         print('Dry run...')
 
-    a = yaml.safe_load(open('data.yaml'))
+    a = yaml.safe_load(open('data.yaml', encoding='utf-8'))
     assert list(a.keys()) == kinds
 
     testbasedir = pathlib.Path('test/individuals')
@@ -44,7 +44,7 @@ def do_test(impl, kind, cc, extra_args, enabled_std, dry_run, verbose):
         if dry_run:
             print('Would create', testfile)
         else:
-            open(testfile, 'w').write(output)
+            open(testfile, 'w', encoding='ascii').write(output)
 
         compiler_args = []
         for std_opt in test_std_opts:

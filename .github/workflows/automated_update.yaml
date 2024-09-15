@@ -31,3 +31,4 @@ jobs:
                   commit-message: '[automated] Update data.yaml from libstdc++ data'
                   branch: automated/libstdc++
                   title: '[automated] Update `data.yaml` from libstdc++ data'
+                  assignees: cpplearner
