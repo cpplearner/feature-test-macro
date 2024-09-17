@@ -115,4 +115,4 @@ with open('data.yaml', encoding='utf-8') as data:
             support.reverse()
             mac['support']['gcc'] = support
 
-yaml.safe_dump(a, open(args.output_filename, 'w', encoding='utf-8'), sort_keys=False)
+yaml.safe_dump(a, open(args.output_filename, 'w', encoding='utf-8'), allow_unicode=True, sort_keys=False)
