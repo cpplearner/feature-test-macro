@@ -3075,7 +3075,9 @@ library:
     - since: C++23
       depends: __cpp_lib_coroutine && __cpp_sized_deallocation
       value: 202207
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202207
 - name: __cpp_lib_generic_associative_lookup
   header_list: map set
   rows:
