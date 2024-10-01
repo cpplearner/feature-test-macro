@@ -1049,6 +1049,11 @@ language:
       value: 200907
     - since: C++17
       value: 201603
+    - since: C++17
+      enabled-by: -frange-for-ext-temps
+      value: 202211
+    - since: C++23
+      value: 202211
     msvc:
     - value: 200907
     - since: C++17
