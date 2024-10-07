@@ -3531,7 +3531,10 @@ library:
     - since: C++26
       depends: __has_builtin(__builtin_is_virtual_base_of)
       value: 202406
-    gcc: null
+    gcc:
+    - since: C++26
+      depends: __has_builtin(__builtin_is_virtual_base_of)
+      value: 202406
     msvc: null
 - name: __cpp_lib_is_within_lifetime
   header_list: type_traits
