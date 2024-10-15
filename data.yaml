@@ -2404,7 +2404,7 @@ library:
     gcc:
     - since: C++20
       depends: __cpp_lib_three_way_comparison
-      value: 202403
+      value: 202411
     msvc: null
 - name: __cpp_lib_containers_ranges
   header_list: vector list forward_list map set unordered_map unordered_set deque
