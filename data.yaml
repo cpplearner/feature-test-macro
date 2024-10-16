@@ -3404,7 +3404,10 @@ library:
     papers: P2674R1
     cppreference-description: '{{ltt std|cpp/types/is_implicit_lifetime}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      depends: __has_builtin(__builtin_is_implicit_lifetime)
+      value: 202302
     gcc: null
     msvc: null
 - name: __cpp_lib_is_invocable
