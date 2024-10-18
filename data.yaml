@@ -1932,7 +1932,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_CHAR8_T)'
+      depends: _LIBCPP_HAS_CHAR8_T
       value: 201907
     gcc:
     - depends: defined(__cpp_char8_t)
