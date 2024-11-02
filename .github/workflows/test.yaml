@@ -150,11 +150,12 @@ jobs:
                   $LOC="$PWD"
                   mkdir msvc && cd msvc
                   git clone --depth=1 https://github.com/microsoft/STL/
-                  [string]$bootstrapperExe = '.\vs_buildtools.exe'
-                  curl.exe -L -o $bootstrapperExe https://aka.ms/vs/17/pre/vs_buildtools.exe &&
+                  [string]$bootstrapperExe = '.\vs_community.exe'
+                  curl.exe -L -o $bootstrapperExe https://aka.ms/vs/17/pre/vs_community.exe &&
                   cmd /c $bootstrapperExe --quiet --norestart --wait --nocache `
                     --installPath "$LOC/msvc-preview" `
-                    --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64
+                    --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
+                    --add Microsoft.VisualStudio.Component.VC.CoreIde
                   if ($LASTEXITCODE -eq 3010) { exit 0 }
             - name: Set Path
               shell: cmd
