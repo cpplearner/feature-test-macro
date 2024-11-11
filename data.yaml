@@ -4696,7 +4696,9 @@ library:
     cppreference-description: Smart pointer creation with default initialization ({{lc|std::allocate_shared_for_overwrite}},
       {{lc|std::make_shared_for_overwrite}}, {{lc|std::make_unique_for_overwrite}})
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 202002
     gcc:
     - since: C++20
       value: 202002
