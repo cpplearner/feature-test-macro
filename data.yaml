@@ -437,6 +437,14 @@ language:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_constexpr_exceptions
+  rows:
+  - value: 202411
+    papers: P3068R6
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_constexpr_in_decltype
   rows:
   - value: 201711
@@ -1216,6 +1224,8 @@ language:
     papers: P0609R3
     cppreference-description: '[[cpp/language/attributes|Attributes]] for [[cpp/language/structured
       binding|structured bindings]]'
+  - value: 202411
+    papers: P1061R10
   support:
     clang:
     - since: C++17
@@ -1434,6 +1444,15 @@ library:
     msvc:
     - since: C++20
       value: 202207
+- name: __cpp_lib_aligned_accessor
+  header_list: mdspan
+  rows:
+  - value: 202411
+    papers: P2897R7
+  support:
+    gcc: null
+    clang: null
+    msvc: null
 - name: __cpp_lib_allocate_at_least
   header_list: memory
   rows:
@@ -1671,6 +1690,8 @@ library:
   - value: 201806
     papers: P0019R8
     cppreference-description: '{{ltt|cpp/atomic/atomic_ref|std::atomic_ref}}'
+  - value: 202411
+    papers: P2835R7
   support:
     clang:
     - since: C++20
@@ -2106,6 +2127,15 @@ library:
     msvc:
     - since: C++20
       value: 201806
+- name: __cpp_lib_constexpr_atomic
+  header_list: atomic
+  rows:
+  - value: 202411
+    papers: P3309R3
+  support:
+    gcc: null
+    clang: null
+    msvc: null
 - name: __cpp_lib_constexpr_bitset
   header_list: bitset
   rows:
@@ -2397,12 +2427,14 @@ library:
     - since: C++20
       value: 201907
 - name: __cpp_lib_constrained_equality
-  header_list: utility tuple optional variant
+  header_list: utility tuple optional variant expected
   rows:
   - value: 202403
     papers: P2944R3
     cppreference-description: Constrained relational operators for {{lc|std::pair}},
       {{lc|std::tuple}}, {{lc|std::optional}}, and {{lc|std::variant}}
+  - value: 202411
+    papers: P3379R1
   support:
     clang: null
     gcc:
@@ -3510,6 +3542,15 @@ library:
     msvc:
     - since: C++23
       value: 202011
+- name: __cpp_lib_is_sufficiently_aligned
+  header_list: memory
+  rows:
+  - value: 202411
+    papers: P2897R7
+  support:
+    gcc: null
+    clang: null
+    msvc: null
 - name: __cpp_lib_is_swappable
   header_list: type_traits
   rows:
@@ -3618,6 +3659,8 @@ library:
     papers: P1673R13
     cppreference-description: '[[cpp/numeric/linalg|A free function linear algebra
       interface based on the BLAS]]'
+  - value: 202411
+    papers: P3222R0
   support:
     clang: null
     gcc: null
@@ -4158,6 +4201,15 @@ library:
     msvc:
     - since: C++23
       value: 202207
+- name: __cpp_lib_ranges_cache_latest
+  header_list: ranges
+  rows:
+  - value: 202411
+    papers: P3138R5
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_cartesian_product
   header_list: ranges
   rows:
@@ -4424,6 +4476,8 @@ library:
     papers: P0040R3
     cppreference-description: '[[cpp/memory#Uninitialized_storage|Extending memory
       management tools]]'
+  - value: 202411
+    papers: P3508R8 P3369R0
   support:
     clang:
     - since: C++17
@@ -4968,6 +5022,8 @@ library:
   - value: 202403
     papers: P2642R6
     cppreference-description: Padded mdspan layouts
+  - value: 202411
+    papers: P3355R1
   support:
     clang: null
     gcc: null
