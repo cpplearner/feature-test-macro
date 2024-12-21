@@ -612,7 +612,9 @@ language:
     cppreference-description: '[[cpp/language/member functions#Explicit object parameter|Explicit
       object parameter]]'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202110
     gcc:
     - since: C++23
       value: 202110
