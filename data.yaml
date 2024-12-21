@@ -2626,7 +2626,9 @@ library:
     cppreference-description: '{{ltt|cpp/container/flat_map|std::flat_map}} and {{ltt|cpp/container/flat_multimap|std::flat_multimap}}'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc: null
 - name: __cpp_lib_flat_set
   header_list: flat_set
@@ -2637,7 +2639,9 @@ library:
       3751-->'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc: null
 - name: __cpp_lib_format
   header_list: format
