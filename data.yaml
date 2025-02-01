@@ -2659,7 +2659,9 @@ library:
     papers: P0429R9
     cppreference-description: '{{ltt|cpp/container/flat_map|std::flat_map}} and {{ltt|cpp/container/flat_multimap|std::flat_multimap}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
