@@ -5050,7 +5050,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_EXPERIMENTAL_SYNCSTREAM)'
+      depends: '_LIBCPP_HAS_EXPERIMENTAL_SYNCSTREAM'
       value: 201803
     gcc:
     - since: C++20
