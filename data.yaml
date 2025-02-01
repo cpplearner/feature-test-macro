@@ -1157,7 +1157,9 @@ language:
     gcc:
     - since: C++23
       value: 202011
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202011
 - name: __cpp_sized_deallocation
   rows:
   - value: 201309
