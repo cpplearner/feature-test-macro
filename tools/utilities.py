@@ -12,16 +12,6 @@ standards = [
 
 library_prologue = """\
 #include <version>
-
-#ifndef __is_identifier
-# define __is_identifier(x) 1
-#endif
-#ifndef __has_builtin
-# define __has_builtin(x) 0
-#endif
-#ifndef __has_keyword
-# define __has_keyword(x) 0
-#endif
 """
 
 def std_options(impl):
