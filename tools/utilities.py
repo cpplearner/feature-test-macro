@@ -18,10 +18,12 @@ def std_options(impl):
     stdoptions = []
     for std, __cplusplus in standards:
         if impl == 'msvc':
-            if std in ['C++98', 'C++11', 'C++26']:
+            if std in ['C++98', 'C++11']:
                 continue
-            if std == 'C++23':
+            if std == 'C++26':
                 stdoptions.append((std, '-std:c++latest'))
+            elif std == 'C++23':
+                stdoptions.append((std, '-std:c++23preview'))
             else:
                 stdoptions.append((std, f'-std:{std.lower()}'))
         else:
