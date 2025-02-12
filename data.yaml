@@ -911,7 +911,7 @@ language:
       value: 202211
     msvc:
     - since: C++23
-      value: 202110
+      value: 202211
 - name: __cpp_named_character_escapes
   rows:
   - value: 202207
