@@ -706,7 +706,9 @@ language:
     gcc:
     - since: C++23
       value: 202106
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202106
 - name: __cpp_if_constexpr
   rows:
   - value: 201606
