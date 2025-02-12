@@ -1250,8 +1250,7 @@ language:
       template arguments|template template-arguments]]
   support:
     clang:
-    - disabled-by: -fno-relaxed-template-template-args
-      value: 201611
+    - value: 201611
     gcc:
     - since: C++17
       value: 201611
