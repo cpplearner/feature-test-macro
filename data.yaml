@@ -2720,6 +2720,7 @@ library:
   support:
     clang:
     - since: C++20
+      depends: _LIBCPP_AVAILABILITY_HAS_TO_CHARS_FLOATING_POINT
       value: 202110
     gcc:
     - since: C++20
@@ -4100,6 +4101,7 @@ library:
   support:
     clang:
     - since: C++23
+      depends: _LIBCPP_AVAILABILITY_HAS_TO_CHARS_FLOATING_POINT
       value: 202207
     gcc:
     - since: C++23
