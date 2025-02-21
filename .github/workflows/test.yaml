@@ -11,17 +11,17 @@ env:
 
 jobs:
     clang:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-24.04
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-python@v5
               with:
-                  python-version: '3.12'
+                  python-version: '3.13'
             - name: Install PyYAML
               run: pip install pyyaml
             - name: Install Clang
               run: |
-                  REPO_NAME='deb http://apt.llvm.org/focal/ llvm-toolchain-focal main'
+                  REPO_NAME='deb http://apt.llvm.org/noble/ llvm-toolchain-noble main'
                   wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
                   sudo add-apt-repository "$REPO_NAME" && sudo apt-get update
                   sudo apt-get install -yV clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
@@ -45,12 +45,12 @@ jobs:
                     --extra-args -stdlib=libc++ -fexperimental-library
 
     gcc:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-24.04
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-python@v5
               with:
-                  python-version: '3.12'
+                  python-version: '3.13'
             - name: Install PyYAML
               run: pip install pyyaml
 
@@ -94,13 +94,13 @@ jobs:
               run: python tools/do_test.py gcc library
 
     mix:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-24.04
         needs: gcc
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-python@v5
               with:
-                  python-version: '3.12'
+                  python-version: '3.13'
             - name: Install PyYAML
               run: pip install pyyaml
 
@@ -116,7 +116,7 @@ jobs:
                   "$PWD/gcc-latest/bin/gcc" --version
             - name: Install Clang
               run: |
-                  REPO_NAME='deb http://apt.llvm.org/focal/ llvm-toolchain-focal main'
+                  REPO_NAME='deb http://apt.llvm.org/noble/ llvm-toolchain-noble main'
                   wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
                   sudo add-apt-repository "$REPO_NAME" && sudo apt-get update
                   sudo apt-get install -yV clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
@@ -137,12 +137,12 @@ jobs:
                      -ftrack-macro-expansion=0 -stdlib=libc++
 
     msvc:
-        runs-on: windows-2019
+        runs-on: windows-2022
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-python@v5
               with:
-                  python-version: '3.12'
+                  python-version: '3.13'
             - name: Install PyYAML
               run: pip install pyyaml
             - name: Install MSVC
@@ -176,7 +176,7 @@ jobs:
             - name: Install Clang
               run: |
                   curl.exe -L -o llvm.exe `
-                    https://github.com/llvm/llvm-project/releases/download/llvmorg-18.1.5/LLVM-18.1.5-win64.exe
+                    https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.0-rc2/LLVM-20.1.0-rc2-win64.exe
                   7z x llvm.exe -oLLVM
                   echo "$PWD\LLVM\bin" | Out-File -FilePath "$env:GITHUB_PATH" -Encoding utf8 -Append
 
