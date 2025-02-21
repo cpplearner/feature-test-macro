@@ -7,12 +7,12 @@ on:
 
 jobs:
     glibcxx:
-        runs-on: ubuntu-20.04
+        runs-on: ubuntu-24.04
         steps:
             - uses: actions/checkout@v4
             - uses: actions/setup-python@v5
               with:
-                  python-version: '3.12'
+                  python-version: '3.13'
             - name: Install PyYAML
               run: pip install pyyaml
 
@@ -25,7 +25,7 @@ jobs:
                   rm version.def
 
             - name: Create pull request
-              uses: peter-evans/create-pull-request@v6
+              uses: peter-evans/create-pull-request@v7
               with:
                   add-paths: data.yaml
                   commit-message: '[automated] Update data.yaml from libstdc++ data'
