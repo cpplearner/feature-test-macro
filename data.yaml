@@ -1637,7 +1637,9 @@ library:
     papers: P0020R6
     cppreference-description: '[[cpp/atomic/atomic|Floating-point atomic]]'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 201711
     gcc:
     - since: C++20
       value: 201711
