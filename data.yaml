@@ -4229,7 +4229,9 @@ library:
     papers: P3138R5
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202411
     msvc: null
 - name: __cpp_lib_ranges_cartesian_product
   header_list: ranges
@@ -4507,6 +4509,9 @@ library:
     gcc:
     - since: C++17
       value: 201606
+    - since: C++26
+      depends: __cpp_constexpr >= 202406L
+      value: 202411
     msvc:
     - since: C++17
       value: 201606
@@ -5261,6 +5266,9 @@ library:
     gcc:
     - since: C++23
       value: 202207
+    - since: C++26
+      depends: __cpp_explicit_this_parameter >= 202110L
+      value: 202311
     msvc:
     - since: C++23
       value: 202207
