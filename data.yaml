@@ -1738,6 +1738,7 @@ library:
       value: 201911
     gcc:
     - since: C++20
+      depends: __cpp_concepts >= 201907L
       value: 201911
     msvc:
     - value: 201911
