@@ -397,7 +397,7 @@ language:
     - since: C++17
       value: 201603
     - since: C++20
-      value: 201907
+      value: 202002
     - since: C++23
       value: 202211
     - since: C++26
