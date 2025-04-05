@@ -2757,7 +2757,9 @@ library:
     clang:
     - since: C++23
       value: 202207
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 1
     msvc:
     - since: C++23
       value: 202207
