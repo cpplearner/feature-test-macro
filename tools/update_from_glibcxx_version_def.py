@@ -66,7 +66,7 @@ with open('data.yaml', encoding='utf-8') as data:
     a = yaml.safe_load(data)
 
     for ftm in raw['ftms']:
-        if 'no_stdname' not in ftm:
+        if 'no_stdname' in ftm:
             continue
 
         name = f"__cpp_lib_{ftm['name']}"
