@@ -490,6 +490,14 @@ language:
       value: 200707
     msvc:
     - value: 200707
+- name: __cpp_contracts
+  rows:
+  - value: 202502
+    papers: P2900R14
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_decltype_auto
   rows:
   - value: 201304
@@ -1041,6 +1049,14 @@ language:
     - since: C++26
       value: 202306
     msvc: null
+- name: __cpp_pp_embed
+  rows:
+  - value: 202502
+    papers: P1967R14
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_range_based_for
   rows:
   - value: 200907
@@ -1246,6 +1262,14 @@ language:
     msvc:
     - since: C++17
       value: 201606
+- name: __cpp_template_parameters
+  rows:
+  - value: 202502
+    papers: P2841R7
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_template_template_args
   rows:
   - value: 201611
@@ -1277,6 +1301,22 @@ language:
     msvc:
     - disabled-by: /Zc:threadSafeInit-
       value: 200806
+- name: __cpp_trivial_relocatability
+  rows:
+  - value: 202502
+    papers: P2786R13
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_trivial_union
+  rows:
+  - value: 202502
+    papers: P3074R7
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_unicode_characters
   rows:
   - value: 200704
@@ -2217,6 +2257,15 @@ library:
     msvc:
     - since: C++20
       value: 201711
+- name: __cpp_lib_constexpr_deque
+  header_list: deque
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_dynamic_alloc
   header_list: memory
   rows:
@@ -2233,6 +2282,44 @@ library:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_lib_constexpr_exceptions
+  header_list: exception stdexcept expected optional variant format
+  rows:
+  - value: 202411
+    papers: P3068R6
+  - value: 202502
+    papers: P3378R2
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_constexpr_flat_map
+  header_list: flat_map
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_constexpr_flat_set
+  header_list: flat_set
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_constexpr_forward_list
+  header_list: forward_list
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_functional
   header_list: functional
   rows:
@@ -2252,6 +2339,15 @@ library:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_lib_constexpr_inplace_vector
+  header_list: inplace_vector
+  rows:
+  - value: 202502
+    papers: P3074R7
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_iterator
   header_list: iterator
   rows:
@@ -2269,6 +2365,24 @@ library:
     msvc:
     - since: C++20
       value: 201811
+- name: __cpp_lib_constexpr_list
+  header_list: list
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_constexpr_map
+  header_list: map
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_memory
   header_list: memory
   rows:
@@ -2329,6 +2443,33 @@ library:
     msvc:
     - since: C++20
       value: 201911
+- name: __cpp_lib_constexpr_queue
+  header_list: queue
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_constexpr_set
+  header_list: set
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_constexpr_stack
+  header_list: stack
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_string
   header_list: string
   rows:
@@ -2407,6 +2548,24 @@ library:
     msvc:
     - since: C++23
       value: 202106
+- name: __cpp_lib_constexpr_unordered_map
+  header_list: unordered_map
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_constexpr_unordered_set
+  header_list: unordered_set
+  rows:
+  - value: 202502
+    papers: P3372R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_utility
   header_list: utility
   rows:
@@ -2477,6 +2636,15 @@ library:
     msvc:
     - since: C++23
       value: 202202
+- name: __cpp_lib_contracts
+  header_list: contracts
+  rows:
+  - value: 202502
+    papers: P2900R14
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_copyable_function
   header_list: functional
   rows:
@@ -2818,6 +2986,8 @@ library:
   - value: 202311
     papers: P2407R5
     cppreference-description: Freestanding facilities in {{header|algorithm}}
+  - value: 202502
+    papers: P2976R1
   support:
     clang: null
     gcc:
@@ -2910,6 +3080,15 @@ library:
     gcc: null
     msvc:
     - value: 202306
+- name: __cpp_lib_freestanding_execution
+  header_list: execution
+  rows:
+  - value: 202502
+    papers: P2976R1
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_freestanding_expected
   header_list: expected
   rows:
@@ -2976,6 +3155,8 @@ library:
   - value: 202306
     papers: P2198R7
     cppreference-description: Freestanding facilities in {{header|memory}}
+  - value: 202502
+    papers: P2976R1
   support:
     clang: null
     gcc: null
@@ -2988,6 +3169,8 @@ library:
     papers: P0543R3
     cppreference-description: Freestanding facilities in {{header|numeric}} (saturation
       arithmetic)
+  - value: 202502
+    papers: P2976R1
   support:
     clang: null
     gcc: null
@@ -3018,6 +3201,15 @@ library:
     msvc:
     - since: C++17
       value: 202311
+- name: __cpp_lib_freestanding_random
+  header_list: random
+  rows:
+  - value: 202502
+    papers: P2976R1
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_freestanding_ranges
   header_list: ranges
   rows:
@@ -3235,6 +3427,15 @@ library:
     clang: null
     gcc: null
     msvc: null
+- name: __cpp_lib_hive
+  header_list: hive
+  rows:
+  - value: 202502
+    papers: P0447R28
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_hypot
   header_list: cmath
   rows:
@@ -3267,6 +3468,15 @@ library:
     - value: 201505
     msvc:
     - value: 201505
+- name: __cpp_lib_indirect
+  header_list: memory
+  rows:
+  - value: 202502
+    papers: P3019R14
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_inplace_vector
   header_list: inplace_vector
   rows:
@@ -3687,6 +3897,8 @@ library:
       interface based on the BLAS]]'
   - value: 202411
     papers: P3222R0
+  - value: 202412
+    papers: P3050R2
   support:
     clang: null
     gcc: null
@@ -4080,6 +4292,15 @@ library:
     clang: null
     gcc: null
     msvc: null
+- name: __cpp_lib_polymorphic
+  header_list: memory
+  rows:
+  - value: 202502
+    papers: P3019R14
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_polymorphic_allocator
   header_list: memory_resource
   rows:
@@ -4414,6 +4635,15 @@ library:
     msvc:
     - since: C++23
       value: 202207
+- name: __cpp_lib_ranges_reserve_hint
+  header_list: ranges
+  rows:
+  - value: 202502
+    papers: P2846R6
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_slide
   header_list: ranges
   rows:
@@ -4472,6 +4702,15 @@ library:
     msvc:
     - since: C++23
       value: 202202
+- name: __cpp_lib_ranges_to_input
+  header_list: ranges
+  rows:
+  - value: 202502
+    papers: P3137R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_zip
   header_list: ranges tuple utility
   rows:
@@ -4782,6 +5021,26 @@ library:
       value: 201806
     - since: C++23
       value: 202202
+- name: __cpp_lib_simd
+  header_list: simd
+  rows:
+  - value: 202411
+    papers: P1928R15
+  - value: 202502
+    papers: P2933R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_simd_complex
+  header_list: simd
+  rows:
+  - value: 202502
+    papers: P2663R7
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_smart_ptr_for_overwrite
   header_list: memory
   rows:
@@ -5244,6 +5503,15 @@ library:
       value: 201510
     msvc:
     - value: 201510
+- name: __cpp_lib_trivially_relocatable
+  header_list: P2786R13
+  rows:
+  - value: 202502
+    papers: P2786R13
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_tuple_element_t
   header_list: tuple
   rows:
