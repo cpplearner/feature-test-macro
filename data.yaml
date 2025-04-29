@@ -2932,7 +2932,9 @@ library:
     clang:
     - since: C++23
       value: 202207
-    gcc: null
+    gcc:
+    - since: C++23
+      value: 202207
     msvc:
     - since: C++23
       value: 202207
@@ -4711,7 +4713,9 @@ library:
     papers: P3137R3
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
     msvc: null
 - name: __cpp_lib_ranges_zip
   header_list: ranges tuple utility
