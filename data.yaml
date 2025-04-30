@@ -1500,7 +1500,9 @@ library:
     papers: P2897R7
   support:
     gcc: null
-    clang: null
+    clang:
+    - since: C++26
+      value: 202411
     msvc: null
 - name: __cpp_lib_allocate_at_least
   header_list: memory
@@ -2861,7 +2863,9 @@ library:
     cppreference-description: '{{ltt|cpp/container/flat_set|std::flat_set}} and {{ltt|cpp/container/flat_multiset|std::flat_multiset}}<!--LWG
       3751-->'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
@@ -3789,7 +3793,9 @@ library:
     papers: P2897R7
   support:
     gcc: null
-    clang: null
+    clang:
+    - since: C++26
+      value: 202411
     msvc: null
 - name: __cpp_lib_is_swappable
   header_list: type_traits
@@ -4602,7 +4608,9 @@ library:
     papers: P2440R1
     cppreference-description: '{{lc|std::ranges::iota}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202202
     gcc:
     - since: C++23
       value: 202202
