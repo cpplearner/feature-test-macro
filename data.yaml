@@ -1818,7 +1818,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && _LIBCPP_AVAILABILITY_HAS_SYNC'
+      depends: '_LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC'
       value: 201907
     gcc:
     - since: C++20
@@ -2831,7 +2831,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!defined(_LIBCPP_HAS_NO_FILESYSTEM) && _LIBCPP_AVAILABILITY_HAS_FILESYSTEM_LIBRARY'
+      depends: '_LIBCPP_HAS_FILESYSTEM && _LIBCPP_AVAILABILITY_HAS_FILESYSTEM_LIBRARY'
       value: 201703
     gcc:
     - since: C++17
@@ -3296,7 +3296,7 @@ library:
   support:
     clang:
     - since: C++26
-      depends: '!defined(_LIBCPP_HAS_NO_FILESYSTEM) && !defined(_LIBCPP_HAS_NO_LOCALIZATION)'
+      depends: '_LIBCPP_HAS_FILESYSTEM && _LIBCPP_HAS_LOCALIZATION'
       value: 202306
     gcc:
     - since: C++26
@@ -3847,7 +3847,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && _LIBCPP_AVAILABILITY_HAS_SYNC'
+      depends: '_LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC'
       value: 201911
     gcc:
     - since: C++20
@@ -3865,7 +3865,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && _LIBCPP_AVAILABILITY_HAS_SYNC'
+      depends: '_LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC'
       value: 201907
     gcc:
     - since: C++20
@@ -4355,7 +4355,7 @@ library:
   support:
     clang:
     - since: C++14
-      depends: '!defined(_LIBCPP_HAS_NO_LOCALIZATION)'
+      depends: '_LIBCPP_HAS_LOCALIZATION'
       value: 201304
     gcc:
     - since: C++14
@@ -4893,7 +4893,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      depends: '_LIBCPP_HAS_THREADS'
       value: 201703
     gcc:
     - since: C++17
@@ -4912,7 +4912,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS) && _LIBCPP_AVAILABILITY_HAS_SYNC'
+      depends: '_LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC'
       value: 201907
     gcc:
     - since: C++20
@@ -4941,7 +4941,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      depends: '_LIBCPP_HAS_THREADS'
       value: 201505
     gcc:
     - since: C++17
@@ -4998,7 +4998,7 @@ library:
   support:
     clang:
     - since: C++14
-      depends: '!defined(_LIBCPP_HAS_NO_THREADS)'
+      depends: '_LIBCPP_HAS_THREADS'
       value: 201402
     gcc:
     - since: C++14
