@@ -476,6 +476,14 @@ language:
     msvc:
     - since: C++20
       value: 201907
+- name: __cpp_contracts
+  rows:
+  - value: 202502
+    papers: P2900R14
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_decltype
   rows:
   - value: 200707
@@ -490,14 +498,6 @@ language:
       value: 200707
     msvc:
     - value: 200707
-- name: __cpp_contracts
-  rows:
-  - value: 202502
-    papers: P2900R14
-  support:
-    clang: null
-    gcc: null
-    msvc: null
 - name: __cpp_decltype_auto
   rows:
   - value: 201304
@@ -1499,10 +1499,10 @@ library:
   - value: 202411
     papers: P2897R7
   support:
-    gcc: null
     clang:
     - since: C++26
       value: 202411
+    gcc: null
     msvc: null
 - name: __cpp_lib_allocate_at_least
   header_list: memory
@@ -1820,7 +1820,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '_LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC'
+      depends: _LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC
       value: 201907
     gcc:
     - since: C++20
@@ -2191,8 +2191,8 @@ library:
   - value: 202411
     papers: P3309R3
   support:
-    gcc: null
     clang: null
+    gcc: null
     msvc: null
 - name: __cpp_lib_constexpr_bitset
   header_list: bitset
@@ -2833,7 +2833,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '_LIBCPP_HAS_FILESYSTEM && _LIBCPP_AVAILABILITY_HAS_FILESYSTEM_LIBRARY'
+      depends: _LIBCPP_HAS_FILESYSTEM && _LIBCPP_AVAILABILITY_HAS_FILESYSTEM_LIBRARY
       value: 201703
     gcc:
     - since: C++17
@@ -3300,7 +3300,7 @@ library:
   support:
     clang:
     - since: C++26
-      depends: '_LIBCPP_HAS_FILESYSTEM && _LIBCPP_HAS_LOCALIZATION'
+      depends: _LIBCPP_HAS_FILESYSTEM && _LIBCPP_HAS_LOCALIZATION
       value: 202306
     gcc:
     - since: C++26
@@ -3792,10 +3792,10 @@ library:
   - value: 202411
     papers: P2897R7
   support:
-    gcc: null
     clang:
     - since: C++26
       value: 202411
+    gcc: null
     msvc: null
 - name: __cpp_lib_is_swappable
   header_list: type_traits
@@ -3853,7 +3853,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '_LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC'
+      depends: _LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC
       value: 201911
     gcc:
     - since: C++20
@@ -3871,7 +3871,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '_LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC'
+      depends: _LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC
       value: 201907
     gcc:
     - since: C++20
@@ -4361,7 +4361,7 @@ library:
   support:
     clang:
     - since: C++14
-      depends: '_LIBCPP_HAS_LOCALIZATION'
+      depends: _LIBCPP_HAS_LOCALIZATION
       value: 201304
     gcc:
     - since: C++14
@@ -4901,7 +4901,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '_LIBCPP_HAS_THREADS'
+      depends: _LIBCPP_HAS_THREADS
       value: 201703
     gcc:
     - since: C++17
@@ -4920,7 +4920,7 @@ library:
   support:
     clang:
     - since: C++20
-      depends: '_LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC'
+      depends: _LIBCPP_HAS_THREADS && _LIBCPP_AVAILABILITY_HAS_SYNC
       value: 201907
     gcc:
     - since: C++20
@@ -4949,7 +4949,7 @@ library:
   support:
     clang:
     - since: C++17
-      depends: '_LIBCPP_HAS_THREADS'
+      depends: _LIBCPP_HAS_THREADS
       value: 201505
     gcc:
     - since: C++17
@@ -5006,7 +5006,7 @@ library:
   support:
     clang:
     - since: C++14
-      depends: '_LIBCPP_HAS_THREADS'
+      depends: _LIBCPP_HAS_THREADS
       value: 201402
     gcc:
     - since: C++14
