@@ -4905,7 +4905,6 @@ library:
       value: 201703
     gcc:
     - since: C++17
-      depends: defined(_GLIBCXX_HAS_GTHREADS)
       value: 201703
     msvc:
     - since: C++17
