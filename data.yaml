@@ -3316,7 +3316,9 @@ library:
     cppreference-description: '{{lc|std::function_ref}}: a type-erased callable reference'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202306
     msvc: null
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
@@ -3485,7 +3487,9 @@ library:
     papers: P3019R14
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
     msvc: null
 - name: __cpp_lib_inplace_vector
   header_list: inplace_vector
