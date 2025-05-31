@@ -4929,7 +4929,7 @@ library:
       value: 201907
     gcc:
     - since: C++20
-      depends: __cpp_lib_atomic_wait || _GLIBCXX_HAVE_POSIX_SEMAPHORE
+      depends: __cpp_lib_atomic_wait
       value: 201907
     msvc:
     - since: C++20
