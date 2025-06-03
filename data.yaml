@@ -4315,7 +4315,9 @@ library:
     papers: P3019R14
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
     msvc: null
 - name: __cpp_lib_polymorphic_allocator
   header_list: memory_resource
