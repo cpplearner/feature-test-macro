@@ -4260,7 +4260,9 @@ library:
     cppreference-description: '{{lc|std::optional}} range support'
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202406
     msvc: null
 - name: __cpp_lib_out_ptr
   header_list: memory
