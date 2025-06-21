@@ -2321,7 +2321,9 @@ library:
   - value: 202502
     papers: P3372R3
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202502
     gcc: null
     msvc: null
 - name: __cpp_lib_constexpr_functional
@@ -2375,7 +2377,9 @@ library:
   - value: 202502
     papers: P3372R3
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202502
     gcc: null
     msvc: null
 - name: __cpp_lib_constexpr_map
@@ -2453,7 +2457,9 @@ library:
   - value: 202502
     papers: P3372R3
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202502
     gcc: null
     msvc: null
 - name: __cpp_lib_constexpr_set
