@@ -28,7 +28,7 @@ jobs:
                     libc++1-$LLVM_VERSION libc++abi1-$LLVM_VERSION \
                     --no-install-recommends
                   mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
-                  echo "$PWD/bin" >> $GITHUB_PATH
+                  echo "$PWD/bin" >> "$GITHUB_PATH"
 
             - name: Test attributes
               run: python tools/do_test.py clang attributes
@@ -59,27 +59,36 @@ jobs:
                   path: gcc-latest
                   key: gcc-cache-${{ github.sha }}
                   restore-keys: gcc-cache-
-            - name: Install GCC
+            - id: check_gcc_builddate
+              run: |
+                if [ "$(cat "$PWD/gcc-latest/builddate.txt")" = "$(date +%F)" ]; then
+                  echo "needs_rebuild=no" >> "$GITHUB_OUTPUT"
+                else
+                  echo "needs_rebuild=yes" >> "$GITHUB_OUTPUT"
+                fi
+            - name: Build GCC
+              if: ${{ steps.check_gcc_builddate.outputs.needs_rebuild == 'yes' }}
               run: |
                   LOC="$PWD"
-                  if [ "$(cat "$LOC/gcc-latest/builddate.txt" || echo)" != "$(date +%F)" ]; then
-                      git clone --depth=1 https://gcc.gnu.org/git/gcc.git
-                      cd gcc
-                      ./contrib/download_prerequisites
-                      mkdir objdir && cd objdir
-                      echo "::group::Installing GCC"
-                      ../configure --prefix="$LOC/gcc-latest" \
-                        --with-gxx-libcxx-include-dir=/usr/lib/llvm-$LLVM_VERSION/include/c++/v1/ \
-                        --enable-languages=c,c++ --without-isl --disable-bootstrap \
-                        --disable-shared --disable-gcov --disable-multilib \
-                        --disable-libsanitizer --disable-libssp --disable-libquadmath \
-                        --disable-libgomp --disable-libvtv --disable-lto
-                      make -j2 && make install
-                      echo "::endgroup::"
-                      date +%F > $LOC/gcc-latest/builddate.txt
-                  fi
-                  echo "$LOC/gcc-latest/bin" >> $GITHUB_PATH
-            - uses: actions/cache/save@v4
+                  git clone --depth=1 https://gcc.gnu.org/git/gcc.git
+                  cd gcc
+                  ./contrib/download_prerequisites
+                  mkdir objdir && cd objdir
+                  echo "::group::Installing GCC"
+                  ../configure --prefix="$LOC/gcc-latest" \
+                    --with-gxx-libcxx-include-dir=/usr/lib/llvm-$LLVM_VERSION/include/c++/v1/ \
+                    --enable-languages=c,c++ --without-isl --disable-bootstrap \
+                    --disable-shared --disable-gcov --disable-multilib \
+                    --disable-libsanitizer --disable-libssp --disable-libquadmath \
+                    --disable-libgomp --disable-libvtv --disable-lto
+                  make -j2 && make install
+                  echo "::endgroup::"
+                  date +%F > "$LOC/gcc-latest/builddate.txt"
+            - name: Install GCC
+              run: |
+                  echo "$PWD/gcc-latest/bin" >> "$GITHUB_PATH"
+            - if: ${{ steps.check_gcc_builddate.outputs.needs_rebuild == 'yes' }}
+              uses: actions/cache/save@v4
               with:
                 path: gcc-latest
                 key: gcc-cache-${{ github.sha }}
@@ -112,8 +121,7 @@ jobs:
 
             - name: Install GCC
               run: |
-                  echo "$PWD/gcc-latest/bin" >> $GITHUB_PATH
-                  "$PWD/gcc-latest/bin/gcc" --version
+                  echo "$PWD/gcc-latest/bin" >> "$GITHUB_PATH"
             - name: Install Clang
               run: |
                   REPO_NAME='deb http://apt.llvm.org/noble/ llvm-toolchain-noble main'
@@ -123,7 +131,7 @@ jobs:
                     libc++1-$LLVM_VERSION libc++abi1-$LLVM_VERSION \
                     --no-install-recommends
                   mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
-                  echo "$PWD/bin" >> $GITHUB_PATH
+                  echo "$PWD/bin" >> "$GITHUB_PATH"
 
             - name: Test libstdc++ with Clang
               run: python tools/do_test.py gcc library
@@ -176,7 +184,7 @@ jobs:
             - name: Install Clang
               run: |
                   curl.exe -L -o llvm.exe `
-                    https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.0-rc2/LLVM-20.1.0-rc2-win64.exe
+                    https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/LLVM-20.1.7-win64.exe
                   7z x llvm.exe -oLLVM
                   echo "$PWD\LLVM\bin" | Out-File -FilePath "$env:GITHUB_PATH" -Encoding utf8 -Append
 
