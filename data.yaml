@@ -4642,7 +4642,9 @@ library:
     papers: P2441R2
     cppreference-description: '{{lc|std::ranges::join_with_view}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202202
     gcc:
     - since: C++23
       value: 202202
