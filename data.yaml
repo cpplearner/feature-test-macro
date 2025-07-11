@@ -2297,7 +2297,10 @@ library:
     papers: P3378R2
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      depends: __cpp_constexpr_exceptions >= 202411L
+      value: 202502
     msvc: null
 - name: __cpp_lib_constexpr_flat_map
   header_list: flat_map
@@ -5106,7 +5109,9 @@ library:
       {{lsd|cpp/container#Unordered associative containers}}
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202306
     msvc: null
 - name: __cpp_lib_source_location
   header_list: source_location
