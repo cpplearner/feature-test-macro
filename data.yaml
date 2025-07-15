@@ -2302,7 +2302,7 @@ library:
     gcc:
     - since: C++26
       depends: __cpp_constexpr_exceptions >= 202411L
-      value: 202502
+      value: 202411
     msvc: null
 - name: __cpp_lib_constexpr_flat_map
   header_list: flat_map
