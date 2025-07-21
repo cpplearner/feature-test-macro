@@ -7,7 +7,7 @@ on:
         - cron: '0 0 */10 * *'
 
 env:
-    LLVM_VERSION: 21
+    LLVM_VERSION: 22
 
 jobs:
     clang:
@@ -22,7 +22,8 @@ jobs:
             - name: Install Clang
               run: |
                   REPO_NAME='deb http://apt.llvm.org/noble/ llvm-toolchain-noble main'
-                  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+                  wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key |
+                    sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
                   sudo add-apt-repository "$REPO_NAME" && sudo apt-get update
                   sudo apt-get install -yV clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
                     libc++1-$LLVM_VERSION libc++abi1-$LLVM_VERSION \
@@ -125,7 +126,8 @@ jobs:
             - name: Install Clang
               run: |
                   REPO_NAME='deb http://apt.llvm.org/noble/ llvm-toolchain-noble main'
-                  wget -O - https://apt.llvm.org/llvm-snapshot.gpg.key | sudo apt-key add -
+                  wget -qO- https://apt.llvm.org/llvm-snapshot.gpg.key |
+                    sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
                   sudo add-apt-repository "$REPO_NAME" && sudo apt-get update
                   sudo apt-get install -yV clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
                     libc++1-$LLVM_VERSION libc++abi1-$LLVM_VERSION \
@@ -184,7 +186,7 @@ jobs:
             - name: Install Clang
               run: |
                   curl.exe -L -o llvm.exe `
-                    https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.7/LLVM-20.1.7-win64.exe
+                    https://github.com/llvm/llvm-project/releases/download/llvmorg-20.1.8/LLVM-20.1.8-win64.exe
                   7z x llvm.exe -oLLVM
                   echo "$PWD\LLVM\bin" | Out-File -FilePath "$env:GITHUB_PATH" -Encoding utf8 -Append
 
