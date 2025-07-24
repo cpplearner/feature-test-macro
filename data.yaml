@@ -42,6 +42,14 @@ attributes:
     msvc:
     - since: C++17
       value: 201603
+- name: indeterminate
+  rows:
+  - value: 202403
+    papers: P2795R5 CWG3020
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: likely
   rows:
   - value: 201803
@@ -463,6 +471,14 @@ language:
     - since: C++20
       value: 201711
     msvc: null
+- name: __cpp_constexpr_virtual_inheritance
+  rows:
+  - value: 202506
+    papers: P3533R2
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_constinit
   rows:
   - value: 201907
@@ -615,6 +631,14 @@ language:
     msvc:
     - option: /EHs
       value: 199711
+- name: __cpp_expansion_statements
+  rows:
+  - value: 202506
+    papers: P1306R5
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_explicit_this_parameter
   rows:
   - value: 202110
@@ -769,6 +793,14 @@ language:
     msvc:
     - since: C++20
       value: 201806
+- name: __cpp_impl_reflection
+  rows:
+  - value: 202506
+    papers: P2996R13
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_impl_three_way_comparison
   rows:
   - value: 201711
@@ -1560,11 +1592,13 @@ library:
     - since: C++17
       value: 201606
 - name: __cpp_lib_apply
-  header_list: tuple
+  header_list: tuple type_traits
   rows:
   - value: 201603
     papers: P0220R1
     cppreference-description: '{{lc|std::apply}}'
+  - value: 202506
+    papers: P1317R2
   support:
     clang:
     - since: C++17
@@ -1737,6 +1771,8 @@ library:
     papers: P0493R5
     cppreference-description: Atomic minimum/maximum ({{ltt|cpp/atomic/atomic/fetch_min|std::atomic::fetch_min}},
       {{ltt|cpp/atomic/atomic/fetch_max|std::atomic::fetch_max}}, etc)
+  - value: 202506
+    papers: P3008R6
   support:
     clang: null
     gcc: null
@@ -1759,6 +1795,15 @@ library:
     msvc:
     - since: C++20
       value: 201806
+- name: __cpp_lib_atomic_reductions
+  header_list: atomic
+  rows:
+  - value: 202506
+    papers: P3111R8
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_atomic_shared_ptr
   header_list: memory
   rows:
@@ -2170,6 +2215,15 @@ library:
       value: 202002
     - since: C++23
       value: 202207
+- name: __cpp_lib_constant_wrapper
+  header_list: type_traits
+  rows:
+  - value: 202506
+    papers: P2781R9
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm utility
   rows:
@@ -2410,6 +2464,8 @@ library:
   - value: 202202
     papers: P2273R3
     cppreference-description: Constexpr {{lc|std::unique_ptr}}
+  - value: 202506
+    papers: P3037R6
   support:
     clang:
     - since: C++20
@@ -2694,6 +2750,15 @@ library:
     msvc:
     - depends: defined(__cpp_impl_coroutine)
       value: 201902
+- name: __cpp_lib_counting_scope
+  header_list: execution
+  rows:
+  - value: 202506
+    papers: P3149R11
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_debugging
   header_list: debugging
   rows:
@@ -2711,6 +2776,15 @@ library:
   rows:
   - value: 201703
     papers: P0433R2
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_define_static
+  header_list: meta
+  rows:
+  - value: 202506
+    papers: P3491R3
   support:
     clang: null
     gcc: null
@@ -2784,6 +2858,15 @@ library:
     msvc:
     - since: C++20
       value: 202002
+- name: __cpp_lib_exception_ptr_cast
+  header_list: exception
+  rows:
+  - value: 202506
+    papers: P2927R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_exchange_function
   header_list: utility
   rows:
@@ -2940,6 +3023,8 @@ library:
   - value: 202403
     papers: P2845R8
     cppreference-description: Formatting of {{lc|std::filesystem::path}}
+  - value: 202506
+    papers: P2319R5
   support:
     clang: null
     gcc: null
@@ -3219,6 +3304,8 @@ library:
   - value: 202311
     papers: P2407R5
     cppreference-description: Making parts of {{lc|std::optional}} freestanding
+  - value: 202506
+    papers: P2988R12
   support:
     clang: null
     gcc:
@@ -4233,6 +4320,15 @@ library:
       value: 201304
     msvc:
     - value: 201304
+- name: __cpp_lib_observable_checkpoint
+  header_list: utility
+  rows:
+  - value: 202506
+    papers: P3641R0
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_optional
   header_list: optional
   rows:
@@ -4249,6 +4345,8 @@ library:
     papers: P0798R8 LWG3621
     cppreference-description: '[[cpp/utility/optional#Monadic operations|Monadic operations]]
       in {{lc|std::optional}}'
+  - value: 202506
+    papers: P2988R12
   support:
     clang:
     - since: C++17
@@ -4306,11 +4404,13 @@ library:
     - since: C++23
       value: 202311
 - name: __cpp_lib_parallel_algorithm
-  header_list: algorithm numeric
+  header_list: algorithm numeric memory
   rows:
   - value: 201603
     papers: P0024R2
     cppreference-description: '[[cpp/algorithm#Execution policies|Parallel algorithms]]'
+  - value: 202506
+    papers: P3179R9
   support:
     clang: null
     gcc:
@@ -4319,6 +4419,15 @@ library:
     msvc:
     - since: C++17
       value: 201603
+- name: __cpp_lib_parallel_scheduler
+  header_list: execution
+  rows:
+  - value: 202506
+    papers: P2079R10
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_philox_engine
   header_list: random
   rows:
@@ -4631,6 +4740,15 @@ library:
     clang: null
     gcc: null
     msvc: null
+- name: __cpp_lib_ranges_indices
+  header_list: ranges
+  rows:
+  - value: 202506
+    papers: P3060R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_iota
   header_list: numeric
   rows:
@@ -4848,6 +4966,15 @@ library:
     - since: C++26
       value: 202403
     msvc: null
+- name: __cpp_lib_reflection
+  header_list: meta
+  rows:
+  - value: 202506
+    papers: P2996R13
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_remove_cvref
   header_list: type_traits
   rows:
@@ -4969,6 +5096,8 @@ library:
     papers: P2300R10
     cppreference-description: '{{lc|std::execution}}: sender-receiver model of execution
       control'
+  - value: 202506
+    papers: P3570R2
   support:
     clang: null
     gcc: null
@@ -5077,6 +5206,8 @@ library:
     papers: P1928R15
   - value: 202502
     papers: P2933R4
+  - value: 202506
+    papers: P2876R3
   support:
     clang: null
     gcc: null
@@ -5086,6 +5217,15 @@ library:
   rows:
   - value: 202502
     papers: P2663R7
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_simd_permutations
+  header_list: simd
+  rows:
+  - value: 202506
+    papers: P2664R11
   support:
     clang: null
     gcc: null
@@ -5315,6 +5455,15 @@ library:
     msvc:
     - since: C++23
       value: 202110
+- name: __cpp_lib_string_subview
+  header_list: string string_view
+  rows:
+  - value: 202506
+    papers: P3044R2
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_string_udls
   header_list: string
   rows:
@@ -5398,6 +5547,15 @@ library:
     msvc:
     - since: C++20
       value: 201803
+- name: __cpp_lib_task
+  header_list: execution
+  rows:
+  - value: 202506
+    papers: P3552R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_text_encoding
   header_list: text_encoding
   rows:
@@ -5632,6 +5790,15 @@ library:
     msvc:
     - since: C++20
       value: 201806
+- name: __cpp_lib_type_order
+  header_list: compare
+  rows:
+  - value: 202506
+    papers: P2830R10
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_type_trait_variable_templates
   header_list: type_traits
   rows:
