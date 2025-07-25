@@ -2867,7 +2867,9 @@ library:
     papers: P2927R3
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202506
     msvc: null
 - name: __cpp_lib_exchange_function
   header_list: utility
@@ -5799,7 +5801,10 @@ library:
     papers: P2830R10
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      depends: __has_builtin(__builtin_type_order) && __cpp_lib_three_way_comparison >= 201907L
+      value: 202506
     msvc: null
 - name: __cpp_lib_type_trait_variable_templates
   header_list: type_traits
