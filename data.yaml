@@ -2689,7 +2689,9 @@ library:
   - value: 202411
     papers: P3379R1
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202411
     gcc:
     - since: C++20
       depends: __cpp_lib_three_way_comparison
@@ -4383,7 +4385,9 @@ library:
     papers: P3168R2
     cppreference-description: '{{lc|std::optional}} range support'
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202406
     gcc:
     - since: C++26
       value: 202406
