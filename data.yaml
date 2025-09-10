@@ -2229,7 +2229,9 @@ library:
     papers: P2781R9
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202506
     msvc: null
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm utility
