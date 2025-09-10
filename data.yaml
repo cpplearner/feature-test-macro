@@ -656,7 +656,9 @@ language:
     gcc:
     - since: C++23
       value: 202110
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202110
 - name: __cpp_fold_expressions
   rows:
   - value: 201411
@@ -838,7 +840,9 @@ language:
     gcc:
     - since: C++23
       value: 202207
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202207
 - name: __cpp_inheriting_constructors
   rows:
   - value: 200802
@@ -1130,7 +1134,7 @@ language:
     msvc:
     - value: 200907
     - since: C++17
-      value: 201603
+      value: 202211
 - name: __cpp_raw_strings
   rows:
   - value: 200710
