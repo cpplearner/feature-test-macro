@@ -161,7 +161,7 @@ jobs:
                   mkdir msvc && cd msvc
                   git clone --depth=1 https://github.com/microsoft/STL/
                   [string]$bootstrapperExe = '.\vs_community.exe'
-                  curl.exe -L -o $bootstrapperExe https://aka.ms/vs/17/pre/vs_community.exe &&
+                  curl.exe -L -o $bootstrapperExe https://aka.ms/vs/18/insiders/vs_Community.exe &&
                   cmd /c $bootstrapperExe --quiet --norestart --wait --nocache `
                     --installPath "$LOC/msvc-preview" `
                     --add Microsoft.VisualStudio.Component.VC.Tools.x86.x64 `
