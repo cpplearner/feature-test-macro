@@ -1350,7 +1350,8 @@ language:
   - value: 202502
     papers: P2786R13
   support:
-    clang: null
+    clang:
+    - value: 202502
     gcc:
     - since: C++26
       value: 202502
