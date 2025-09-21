@@ -1908,6 +1908,8 @@ library:
     - since: C++23
       depends: __cpp_explicit_this_parameter
       value: 202202
+    - since: C++26
+      value: 202306
     msvc:
     - since: C++23
       value: 202202
@@ -1932,6 +1934,8 @@ library:
     gcc:
     - since: C++20
       value: 201907
+    - since: C++26
+      value: 202306
     msvc:
     - since: C++20
       value: 201907
@@ -4326,6 +4330,8 @@ library:
     gcc:
     - since: C++17
       value: 201603
+    - since: C++26
+      value: 202306
     msvc:
     - since: C++17
       value: 201603
