@@ -3826,7 +3826,10 @@ library:
       depends: __has_builtin(__builtin_is_implicit_lifetime)
       value: 202302
     gcc: null
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: defined(__clang__)
+      value: 202302
 - name: __cpp_lib_is_invocable
   header_list: type_traits
   rows:
