@@ -938,7 +938,9 @@ language:
     papers: P1103R3 P1811R0
     cppreference-description: '[[cpp/language/modules|Modules]]'
   support:
-    clang: null
+    clang:
+    - since: C++20
+      value: 1
     gcc: null
     msvc:
     - since: C++20
