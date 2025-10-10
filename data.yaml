@@ -4992,7 +4992,10 @@ library:
     - since: C++23
       depends: __has_builtin(__reference_constructs_from_temporary) && __has_builtin(__reference_converts_from_temporary)
       value: 202202
-    msvc: null
+    msvc:
+    - since: C++23
+      depends: "defined(__clang__) && !defined(__EDG__)"
+      value: 202202
 - name: __cpp_lib_reference_wrapper
   header_list: functional
   rows:
