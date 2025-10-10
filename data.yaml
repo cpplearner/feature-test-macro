@@ -4786,7 +4786,9 @@ library:
   - value: 202506
     papers: P3060R3
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202506
     gcc: null
     msvc: null
 - name: __cpp_lib_ranges_iota
