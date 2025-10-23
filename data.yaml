@@ -4404,6 +4404,9 @@ library:
     - since: C++23
       depends: __cpp_lib_concepts
       value: 202110
+    - since: C++26
+      depends: __cpp_lib_concepts
+      value: 202506
     msvc:
     - since: C++17
       value: 201606
