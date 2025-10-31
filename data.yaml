@@ -3828,7 +3828,10 @@ library:
     - since: C++23
       depends: __has_builtin(__builtin_is_implicit_lifetime)
       value: 202302
-    gcc: null
+    gcc:
+    - since: C++23
+      depends: __has_builtin(__builtin_is_implicit_lifetime)
+      value: 202302
     msvc:
     - since: C++23
       depends: defined(__clang__)
