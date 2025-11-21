@@ -1354,9 +1354,7 @@ language:
   support:
     clang:
     - value: 202502
-    gcc:
-    - since: C++26
-      value: 202502
+    gcc: null
     msvc: null
 - name: __cpp_trivial_union
   rows:
