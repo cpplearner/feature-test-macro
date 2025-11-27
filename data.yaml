@@ -2122,6 +2122,9 @@ library:
     - since: C++20
       depends: _GLIBCXX_USE_CXX11_ABI
       value: 201907
+    - since: C++26
+      depends: _GLIBCXX_USE_CXX11_ABI
+      value: 202306
     msvc:
     - value: 201510
     - since: C++17
