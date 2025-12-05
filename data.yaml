@@ -5526,7 +5526,9 @@ library:
     clang:
     - since: C++26
       value: 202506
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202506
     msvc: null
 - name: __cpp_lib_string_udls
   header_list: string
