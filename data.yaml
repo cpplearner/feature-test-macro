@@ -2174,7 +2174,9 @@ library:
     clang:
     - since: C++20
       value: 202302
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 202302
     msvc:
     - since: C++20
       value: 202302
@@ -2189,7 +2191,9 @@ library:
     clang:
     - since: C++20
       value: 202302
-    gcc: null
+    gcc:
+    - since: C++20
+      value: 202302
     msvc:
     - since: C++20
       value: 202302
