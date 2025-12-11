@@ -5594,7 +5594,10 @@ library:
     papers: P3355R1
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      depends: __cpp_lib_constant_wrapper >= 202506L
+      value: 202411
     msvc: null
 - name: __cpp_lib_syncbuf
   header_list: syncstream
