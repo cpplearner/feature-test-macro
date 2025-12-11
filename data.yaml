@@ -2238,8 +2238,6 @@ library:
       value: 202207
     msvc:
     - since: C++20
-      value: 202002
-    - since: C++23
       value: 202207
 - name: __cpp_lib_constant_wrapper
   header_list: type_traits
