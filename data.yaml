@@ -547,6 +547,8 @@ language:
     papers: P1814R0 P1816R0
     cppreference-description: '[[cpp/language/class template argument deduction|<abbr
       title="Class template argument deduction">CTAD</abbr>]] for aggregates and aliases'
+  - value: 202207
+    papers: P2582R1
   support:
     clang:
     - since: C++17
@@ -1351,6 +1353,7 @@ language:
   rows:
   - value: 202502
     papers: P2786R13
+    removed: true
   support:
     clang:
     - value: 202502
@@ -1789,6 +1792,15 @@ library:
     clang: null
     gcc: null
     msvc: null
+- name: __cpp_lib_atomic_reductions
+  header_list: atomic
+  rows:
+  - value: 202506
+    papers: P3111R8
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_atomic_ref
   header_list: atomic
   rows:
@@ -1811,15 +1823,6 @@ library:
     msvc:
     - since: C++20
       value: 201806
-- name: __cpp_lib_atomic_reductions
-  header_list: atomic
-  rows:
-  - value: 202506
-    papers: P3111R8
-  support:
-    clang: null
-    gcc: null
-    msvc: null
 - name: __cpp_lib_atomic_shared_ptr
   header_list: memory
   rows:
@@ -2071,7 +2074,7 @@ library:
     - since: C++23
       value: 202110
 - name: __cpp_lib_char8_t
-  header_list: atomic filesystem istream limits locale ostream string string_view
+  header_list: atomic filesystem iosfwd istream limits locale ostream string string_view
   rows:
   - value: 201811
     papers: P0482R6
@@ -2413,6 +2416,15 @@ library:
     gcc:
     - since: C++26
       value: 202502
+    msvc: null
+- name: __cpp_lib_constexpr_format
+  header_list: format
+  rows:
+  - value: 202511
+    papers: P3391R2
+  support:
+    clang: null
+    gcc: null
     msvc: null
 - name: __cpp_lib_constexpr_forward_list
   header_list: forward_list
@@ -2989,6 +3001,8 @@ library:
   - value: 202207
     papers: P0429R9
     cppreference-description: '{{ltt|cpp/container/flat_map|std::flat_map}} and {{ltt|cpp/container/flat_multimap|std::flat_multimap}}'
+  - value: 202511
+    papers: P3567R2
   support:
     clang:
     - since: C++23
@@ -3004,6 +3018,8 @@ library:
     papers: P1222R4 LWG3751
     cppreference-description: '{{ltt|cpp/container/flat_set|std::flat_set}} and {{ltt|cpp/container/flat_multiset|std::flat_multiset}}<!--LWG
       3751-->'
+  - value: 202511
+    papers: P3567R2
   support:
     clang:
     - since: C++23
@@ -3458,6 +3474,8 @@ library:
   - value: 202306
     papers: P0792R14
     cppreference-description: '{{lc|std::function_ref}}: a type-erased callable reference'
+  - value: 202511
+    papers: P3774R1
   support:
     clang: null
     gcc:
@@ -3635,6 +3653,15 @@ library:
     - since: C++26
       value: 202502
     msvc: null
+- name: __cpp_lib_initializer_list
+  header_list: initializer_list
+  rows:
+  - value: 202511
+    papers: P3016R6
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_inplace_vector
   header_list: inplace_vector
   rows:
@@ -3692,6 +3719,8 @@ library:
     papers: N3658
     cppreference-description: '[[cpp/utility/integer_sequence|Compile-time integer
       sequences]]'
+  - value: 202511
+    papers: P1789R3
   support:
     clang:
     - since: C++14
@@ -4072,6 +4101,8 @@ library:
     papers: P3222R0
   - value: 202412
     papers: P3050R2
+  - value: 202511
+    papers: P3371R5
   support:
     clang: null
     gcc: null
@@ -5284,6 +5315,8 @@ library:
     papers: P2933R4
   - value: 202506
     papers: P2876R3
+  - value: 202511
+    papers: P3922R1
   support:
     clang: null
     gcc: null
@@ -5395,7 +5428,7 @@ library:
       value: 202311
     msvc: null
 - name: __cpp_lib_spanstream
-  header_list: spanstream
+  header_list: iosfwd spanstream
   rows:
   - value: 202106
     papers: P0448R4
@@ -5604,6 +5637,8 @@ library:
     cppreference-description: Padded mdspan layouts
   - value: 202411
     papers: P3355R1
+  - value: 202511
+    papers: P3663R3
   support:
     clang: null
     gcc:
@@ -5612,7 +5647,7 @@ library:
       value: 202411
     msvc: null
 - name: __cpp_lib_syncbuf
-  header_list: syncstream
+  header_list: iosfwd syncstream
   rows:
   - value: 201711
     papers: P0053R7
@@ -5800,10 +5835,11 @@ library:
     msvc:
     - value: 201510
 - name: __cpp_lib_trivially_relocatable
-  header_list: P2786R13
+  header_list: memory type_traits
   rows:
   - value: 202502
     papers: P2786R13
+    removed: true
   support:
     clang: null
     gcc: null
@@ -5966,6 +6002,15 @@ library:
     msvc:
     - since: C++20
       value: 201811
+- name: __cpp_lib_valarray
+  header_list: valarray
+  rows:
+  - value: 202511
+    papers: P3016R6
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_variant
   header_list: variant
   rows:
