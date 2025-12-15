@@ -26,7 +26,7 @@ jobs:
                     sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
                   sudo add-apt-repository "$REPO_NAME" && sudo apt-get update
                   sudo apt-get install -yV clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
-                    libc++1-$LLVM_VERSION libc++abi1-$LLVM_VERSION \
+                    libc++1 libc++abi1 \
                     --no-install-recommends
                   mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
                   echo "$PWD/bin" >> "$GITHUB_PATH"
@@ -130,7 +130,7 @@ jobs:
                     sudo tee /etc/apt/trusted.gpg.d/apt.llvm.org.asc
                   sudo add-apt-repository "$REPO_NAME" && sudo apt-get update
                   sudo apt-get install -yV clang-$LLVM_VERSION libc++-$LLVM_VERSION-dev \
-                    libc++1-$LLVM_VERSION libc++abi1-$LLVM_VERSION \
+                    libc++1 libc++abi1 \
                     --no-install-recommends
                   mkdir bin && cp -s /usr/bin/clang-$LLVM_VERSION bin/clang
                   echo "$PWD/bin" >> "$GITHUB_PATH"
