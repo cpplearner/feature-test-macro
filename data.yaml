@@ -3665,7 +3665,8 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - value: 202511
 - name: __cpp_lib_inplace_vector
   header_list: inplace_vector
   rows:
@@ -6013,7 +6014,8 @@ library:
   support:
     clang: null
     gcc: null
-    msvc: null
+    msvc:
+    - value: 202511
 - name: __cpp_lib_variant
   header_list: variant
   rows:
