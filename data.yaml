@@ -2404,7 +2404,9 @@ library:
     clang:
     - since: C++26
       value: 202502
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
     msvc: null
 - name: __cpp_lib_constexpr_flat_set
   header_list: flat_set
