@@ -2236,7 +2236,7 @@ library:
   support:
     clang:
     - since: C++20
-      value: 202002
+      value: 202207
     gcc:
     - since: C++20
       depends: __cpp_concepts >= 201907L
@@ -3010,7 +3010,7 @@ library:
   support:
     clang:
     - since: C++23
-      value: 202207
+      value: 202511
     gcc:
     - since: C++23
       value: 202207
@@ -3569,7 +3569,6 @@ library:
   support:
     clang:
     - since: C++17
-      depends: defined(__GCC_DESTRUCTIVE_SIZE) && defined(__GCC_CONSTRUCTIVE_SIZE)
       value: 201703
     gcc:
     - since: C++17
@@ -3730,6 +3729,8 @@ library:
     clang:
     - since: C++14
       value: 201304
+    - since: C++26
+      value: 202511
     gcc:
     - since: C++14
       value: 201304
@@ -4479,6 +4480,7 @@ library:
   support:
     clang:
     - since: C++26
+      depends: _LIBCPP_HAS_EXPERIMENTAL_LIBRARY
       value: 202406
     gcc:
     - since: C++26
