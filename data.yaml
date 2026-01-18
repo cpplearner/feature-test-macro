@@ -807,7 +807,9 @@ language:
     papers: P2996R13
   support:
     clang: null
-    gcc: null
+    gcc:
+    - option: -freflection
+      value: 202506
     msvc: null
 - name: __cpp_impl_three_way_comparison
   rows:
