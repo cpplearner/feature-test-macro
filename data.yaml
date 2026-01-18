@@ -808,7 +808,8 @@ language:
   support:
     clang: null
     gcc:
-    - option: -freflection
+    - since: C++26
+      option: -freflection
       value: 202506
     msvc: null
 - name: __cpp_impl_three_way_comparison
