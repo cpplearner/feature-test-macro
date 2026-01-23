@@ -5091,7 +5091,7 @@ library:
     clang: null
     gcc:
     - since: C++26
-      depends: __cpp_impl_reflection >= 202506L
+      depends: _GLIBCXX_USE_CXX11_ABI && __cpp_impl_reflection >= 202506L
       value: 202506
     msvc: null
 - name: __cpp_lib_remove_cvref
