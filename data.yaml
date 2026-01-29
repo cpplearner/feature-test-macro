@@ -1795,7 +1795,9 @@ library:
     papers: P3008R6
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202403
     msvc: null
 - name: __cpp_lib_atomic_reductions
   header_list: atomic
@@ -2775,7 +2777,10 @@ library:
     papers: P2900R14
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      depends: __cpp_contracts >= 202502L
+      value: 202502
     msvc: null
 - name: __cpp_lib_copyable_function
   header_list: functional
