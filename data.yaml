@@ -3027,7 +3027,9 @@ library:
     gcc:
     - since: C++23
       value: 202207
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202511
 - name: __cpp_lib_flat_set
   header_list: flat_set
   rows:
@@ -3044,7 +3046,9 @@ library:
     gcc:
     - since: C++23
       value: 202207
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202511
 - name: __cpp_lib_format
   header_list: format
   rows:
