@@ -3044,7 +3044,7 @@ library:
   support:
     clang:
     - since: C++23
-      value: 202207
+      value: 202511
     gcc:
     - since: C++23
       value: 202207
@@ -5016,7 +5016,9 @@ library:
     cppreference-description: '{{lc|std::ranges::zip_view}}, {{lc|std::ranges::zip_transform_view}},
       {{lc|std::ranges::adjacent_view}}, {{lc|std::ranges::adjacent_transform_view}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202110
     gcc:
     - since: C++23
       value: 202110
@@ -5326,6 +5328,8 @@ library:
     clang:
     - since: C++20
       value: 201806
+    - since: C++23
+      value: 202202
     gcc:
     - since: C++20
       value: 201806
