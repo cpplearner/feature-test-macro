@@ -558,6 +558,8 @@ language:
       value: 201703
     - since: C++20
       value: 201907
+    - since: C++23
+      value: 202207
     msvc:
     - since: C++17
       value: 201703
