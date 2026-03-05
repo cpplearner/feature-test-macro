@@ -1702,7 +1702,9 @@ library:
       associative containers}}
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202306
     msvc: null
 - name: __cpp_lib_assume_aligned
   header_list: memory
