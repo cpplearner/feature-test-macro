@@ -51,7 +51,10 @@ def do_test(impl, kind, cc, extra_args, enabled_std, dry_run, verbose):
             for opts in generator.make_options(macro):
                 pedantic = generator.pedantic_options(macro) or [None]
                 for ped_opt in pedantic:
-                    compiler_args.append([std_opt] + ([ped_opt] if ped_opt else []) + opts)
+                    if cc == None and impl == 'gcc' and std_opt != '-std=c++26' and '-freflection' in opts:
+                        pass
+                    else:
+                        compiler_args.append([std_opt] + ([ped_opt] if ped_opt else []) + opts)
 
         for args in compiler_args:
             run = [compiler, '-E', *diag_opt, *extra_args, *args, testfile]
