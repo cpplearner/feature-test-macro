@@ -1064,13 +1064,6 @@ language:
     msvc:
     - since: C++17
       value: 201606
-- name: __cpp_nontype_template_parameter_class
-  rows:
-  - value: 201806
-    papers: P0732R2
-  - value: 201911
-    papers: P1907R1
-    removed: true
 - name: __cpp_nsdmi
   rows:
   - value: 200809
@@ -1371,16 +1364,6 @@ language:
     - value: 200806
     - option: /Zc:threadSafeInit
       value: 200806
-- name: __cpp_trivial_relocatability
-  rows:
-  - value: 202502
-    papers: P2786R13
-    removed: true
-  support:
-    clang:
-    - value: 202502
-    gcc: null
-    msvc: null
 - name: __cpp_trivial_union
   rows:
   - value: 202502
@@ -3576,14 +3559,6 @@ library:
       value: 201304
     msvc:
     - value: 201304
-- name: __cpp_lib_generic_unordered_hash_lookup
-  header_info: '[`<unordered_map>` `<unordered_set>`]{.rm}'
-  rows:
-  - value: 201902
-    papers: P0920R2
-  - value: 201907
-    papers: P1661R1
-    removed: true
 - name: __cpp_lib_generic_unordered_lookup
   header_list: unordered_map unordered_set
   rows:
@@ -4343,14 +4318,6 @@ library:
     - since: C++20
       depends: '!defined(__clang__) && !defined(__EDG__)'
       value: 202207
-- name: __cpp_lib_monadic_optional
-  header_list: optional
-  rows:
-  - value: 202110
-    papers: P0798R8
-  - value: 202202
-    papers: LWG3621
-    removed: true
 - name: __cpp_lib_move_iterator_concept
   header_list: iterator
   rows:
@@ -5889,16 +5856,6 @@ library:
       value: 201510
     msvc:
     - value: 201510
-- name: __cpp_lib_trivially_relocatable
-  header_list: memory type_traits
-  rows:
-  - value: 202502
-    papers: P2786R13
-    removed: true
-  support:
-    clang: null
-    gcc: null
-    msvc: null
 - name: __cpp_lib_tuple_element_t
   header_list: tuple
   rows:

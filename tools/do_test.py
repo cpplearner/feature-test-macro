@@ -28,9 +28,6 @@ def do_test(impl, kind, cc, extra_args, enabled_std, dry_run, verbose):
     exitcode = 0
 
     for macro in a[kind]:
-        if 'removed' in macro['rows'][-1]:
-            continue
-
         generator = TestsuiteGenerator(kind, impl)
         output = library_prologue if kind == 'library' else ''
 

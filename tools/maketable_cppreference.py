@@ -44,7 +44,7 @@ elif args.kind == 'library':
 ! Paper(s)
 """)
 
-macros = [item for item in a[args.kind] if 'removed' not in item['rows'][-1]]
+macros = a[args.kind]
 for item in macros:
     rows = []
     papers = []
