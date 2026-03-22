@@ -502,7 +502,11 @@ language:
     papers: P2900R14
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
+    - option: -fcontracts
+      value: 202502
     msvc: null
 - name: __cpp_decltype
   rows:
