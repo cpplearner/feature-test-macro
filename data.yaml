@@ -201,7 +201,9 @@ language:
       value: 201606
     msvc:
     - since: C++17
-      disabled-by: /Zc:alignedNew-
+      value: 201606
+    - since: C++17
+      option: /Zc:alignedNew
       value: 201606
 - name: __cpp_attributes
   rows:
@@ -633,10 +635,12 @@ language:
     feature: Exception handling
   support:
     clang:
-    - disabled-by: -fno-exceptions -fno-cxx-exceptions
+    - value: 199711
+    - option: -fexceptions -fcxx-exceptions
       value: 199711
     gcc:
-    - disabled-by: -fno-exceptions
+    - value: 199711
+    - option: -fexceptions
       value: 199711
     msvc:
     - option: /EHs
@@ -1016,7 +1020,9 @@ language:
       value: 201510
     msvc:
     - since: C++17
-      disabled-by: /Zc:noexceptTypes-
+      value: 201510
+    - since: C++17
+      option: /Zc:noexceptTypes
       value: 201510
 - name: __cpp_nontype_template_args
   rows:
@@ -1197,13 +1203,16 @@ language:
     feature: Run-time type identification
   support:
     clang:
-    - disabled-by: -fno-rtti
+    - value: 199711
+    - option: -frtti
       value: 199711
     gcc:
-    - disabled-by: -fno-rtti
+    - value: 199711
+    - option: -frtti
       value: 199711
     msvc:
-    - disabled-by: /GR-
+    - value: 199711
+    - option: /GR
       value: 199711
 - name: __cpp_rvalue_references
   rows:
@@ -1252,7 +1261,8 @@ language:
     - option: -fsized-deallocation
       value: 201309
     msvc:
-    - disabled-by: /Zc:sizedDealloc-
+    - value: 201309
+    - option: /Zc:sizedDealloc
       value: 201309
 - name: __cpp_static_assert
   rows:
@@ -1350,13 +1360,16 @@ language:
       initialization and destruction with concurrency]]'
   support:
     clang:
-    - disabled-by: -fno-threadsafe-statics
+    - value: 200806
+    - option: -fthreadsafe-statics
       value: 200806
     gcc:
-    - disabled-by: -fno-threadsafe-statics
+    - value: 200806
+    - option: -fthreadsafe-statics
       value: 200806
     msvc:
-    - disabled-by: /Zc:threadSafeInit-
+    - value: 200806
+    - option: /Zc:threadSafeInit
       value: 200806
 - name: __cpp_trivial_relocatability
   rows:

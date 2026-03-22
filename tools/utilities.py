@@ -15,27 +15,27 @@ library_prologue = """\
 """
 
 def std_options(impl):
-    stdoptions = []
     for std, __cplusplus in standards:
         if impl == 'msvc':
             if std in ['C++98', 'C++11']:
                 continue
             if std == 'C++26':
-                stdoptions.append((std, '-std:c++latest'))
+                yield std, '-std:c++latest'
             elif std == 'C++23':
-                stdoptions.append((std, '-std:c++23preview'))
+                yield std, '-std:c++23preview'
             else:
-                stdoptions.append((std, f'-std:{std.lower()}'))
+                yield std, f'-std:{std.lower()}'
         else:
-            stdoptions.append((std, f'-std={std.lower()}'))
-    return stdoptions
+            yield std, f'-std={std.lower()}'
 
 def get_options(item):
-    opts = item.get('option', '').split()
-    opts += [negate_option(opt) for opt in item.get('option', '').split()]
-    opts += item.get('enabled-by', '').split()
-    opts += item.get('disabled-by', '').split()
-    return opts
+    for opt in item.get('option', '').split():
+        yield opt
+        yield negate_option(opt)
+    if 'enabled-by' in item:
+        yield item['enabled-by']
+    if 'disabled-by' in item:
+        yield item['disabled-by']
 
 def to_identifier(option):
     if option.startswith('/') and option.endswith('-'):
@@ -125,11 +125,11 @@ class TestsuiteGenerator:
                 index = [i for i, [std, _] in enumerate(standards) if std == item['since']][0]
                 condition.append(f"__cplusplus > {standards[index - 1][1]}")
             if 'enabled-by' in item:
-                o = [to_identifier(option) for option in item['enabled-by'].split()]
-                condition.append(' && '.join(o))
+                assert ' ' not in item['enabled-by']
+                condition.append(to_identifier(item['enabled-by']))
             if 'disabled-by' in item:
-                o = ['!'+to_identifier(option) for option in item['disabled-by'].split()]
-                condition.append(' && '.join(o))
+                assert ' ' not in item['disabled-by']
+                condition.append('!' + to_identifier(item['disabled-by']))
             if 'depends' in item:
                 condition.append(f"({item['depends']})")
             if 'pedantic' in item:
@@ -163,8 +163,10 @@ class TestsuiteGenerator:
 
     def make_options(self, macro):
         items = macro['support'][self.impl] or []
-        opts = [opt for item in items for opt in get_options(item)]
-        return [[]] + [[opt, f"-D{to_identifier(opt)}=1"] for opt in opts]
+        yield []
+        for item in items:
+            for opt in get_options(item):
+                yield [opt, f"-D{to_identifier(opt)}=1"]
 
     def pedantic_options(self, macro):
         items = macro['support'][self.impl] or []
