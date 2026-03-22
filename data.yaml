@@ -3576,6 +3576,177 @@ library:
     msvc:
     - since: C++20
       value: 201811
+- name: __cpp_lib_hardened_array
+  header_list: array
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_basic_stacktrace
+  header_list: stacktrace
+  rows:
+  - value: 202506
+    papers: P3697R1
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_basic_string
+  header_list: string
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_basic_string_view
+  header_list: string_view
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_bitset
+  header_list: bitset
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_common_iterator
+  header_list: iterator
+  rows:
+  - value: 202506
+    papers: P3697R1
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_counted_iterator
+  header_list: iterator
+  rows:
+  - value: 202506
+    papers: P3697R1
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_deque
+  header_list: deque
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_expected
+  header_list: expected
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_forward_list
+  header_list: forward_list
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_inplace_vector
+  header_list: inplace_vector
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_list
+  header_list: list
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_mdspan
+  header_list: mdspan
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_optional
+  header_list: optional
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_shared_ptr_array
+  header_list: memory
+  rows:
+  - value: 202506
+    papers: P3697R1
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_span
+  header_list: span
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_valarray
+  header_list: valarray
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_vector
+  header_list: vector
+  rows:
+  - value: 202502
+    papers: P3471R4
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_hardened_view_interface
+  header_list: ranges
+  rows:
+  - value: 202506
+    papers: P3697R1
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_hardware_interference_size
   header_list: new
   rows:
