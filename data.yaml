@@ -5512,7 +5512,11 @@ library:
     papers: P3922R1
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      depends: __cpp_structured_bindings >= 202411L && __cpp_expansion_statements
+        >= 202411L && (__x86_64__ || __i386__)
+      value: 202506
     msvc: null
 - name: __cpp_lib_simd_complex
   header_list: simd
