@@ -63,25 +63,25 @@ def recursive_parse_definitions():
 raw = recursive_parse_definitions()
 
 with open('data.yaml', encoding='utf-8') as data:
-    a = yaml.safe_load(data)
+    doc = yaml.safe_load(data)
 
     for ftm in raw['ftms']:
-        if 'no_stdname' in ftm:
-            continue
-
         name = f"__cpp_lib_{ftm['name']}"
 
-        mac = None
-        for x in a['library']:
-            if x['name'] == name:
-                mac = x
+        macro = None
+        for it in doc['library']:
+            if it['name'] == name:
+                macro = it
 
-        if not mac:
+        if not macro:
             print(f"warning: cannot find macro {name}", file=sys.stderr)
 
-        if mac:
+        if macro:
             support = []
             for value in ftm['values']:
+                if 'no_stdname' in ftm or 'no_stdname' in value:
+                    continue
+
                 row = dict()
 
                 if 'cxxmin' in value:
@@ -116,6 +116,6 @@ with open('data.yaml', encoding='utf-8') as data:
                 support.append(row)
 
             support.reverse()
-            mac['support']['gcc'] = support
+            macro['support']['gcc'] = support or None
 
-yaml.safe_dump(a, open(args.output_filename, 'w', encoding='utf-8'), allow_unicode=True, sort_keys=False)
+yaml.safe_dump(doc, open(args.output_filename, 'w', encoding='utf-8'), allow_unicode=True, sort_keys=False)
