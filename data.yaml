@@ -1368,6 +1368,8 @@ language:
   rows:
   - value: 202502
     papers: P3074R7
+  - value: 202603
+    papers: P3726R2
   support:
     clang: null
     gcc: null
@@ -1522,12 +1524,14 @@ library:
     msvc:
     - value: 201603
 - name: __cpp_lib_algorithm_default_value_type
-  header_list: algorithm deque forward_list list ranges string vector
+  header_list: algorithm deque forward_list list ranges string vector memory
   rows:
   - value: 202403
     papers: P2248R8
     cppreference-description: Enabling [[cpp/language/list initialization|list-initialization]]
       for [[cpp/algorithm|algorithms]]
+  - value: 202603
+    papers: P3787R2
   support:
     clang: null
     gcc:
@@ -1824,6 +1828,8 @@ library:
     cppreference-description: '{{ltt|cpp/atomic/atomic_ref|std::atomic_ref}}'
   - value: 202411
     papers: P2835R7
+  - value: 202603
+    papers: P3936R1
   support:
     clang:
     - since: C++20
@@ -2258,10 +2264,12 @@ library:
     - since: C++20
       value: 202207
 - name: __cpp_lib_constant_wrapper
-  header_list: type_traits
+  header_list: utility
   rows:
   - value: 202506
     papers: P2781R9
+  - value: 202603
+    papers: P3978R3
   support:
     clang: null
     gcc:
@@ -2478,6 +2486,8 @@ library:
   rows:
   - value: 202502
     papers: P3074R7
+  - value: 202603
+    papers: P4022R0
   support:
     clang: null
     gcc: null
@@ -2937,6 +2947,8 @@ library:
   rows:
   - value: 202506
     papers: P2927R3 P3748R0
+  - value: 202603
+    papers: P3981R2
   support:
     clang: null
     gcc:
@@ -3088,6 +3100,8 @@ library:
     papers: P2918R2
     cppreference-description: '[[cpp/utility/format/runtime_format|Runtime format
       strings]]'
+  - value: 202603
+    papers: P3953R3
   support:
     clang:
     - since: C++20
@@ -3505,6 +3519,8 @@ library:
     cppreference-description: '{{lc|std::function_ref}}: a type-erased callable reference'
   - value: 202511
     papers: P3774R1
+  - value: 202603
+    papers: P3948R1 P3961R1
   support:
     clang: null
     gcc:
@@ -3861,6 +3877,8 @@ library:
     papers: P0843R14
     cppreference-description: '{{lc|std::inplace_vector}}: dynamically-resizable vector
       with fixed capacity (inplace storage)'
+  - value: 202603
+    papers: P3981R2
   support:
     clang: null
     gcc:
@@ -4167,6 +4185,15 @@ library:
     msvc:
     - since: C++23
       value: 202011
+- name: __cpp_lib_is_structural
+  header_list: meta type_traits
+  rows:
+  - value: 202603
+    papers: P3856R8
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_is_sufficiently_aligned
   header_list: memory
   rows:
@@ -4220,6 +4247,8 @@ library:
   - value: 202306
     papers: P2641R4
     cppreference-description: Checking if a union alternative is active ({{ltt|cpp/types/is_within_lifetime|std::is_within_lifetime}})
+  - value: 202603
+    papers: P3450R1
   support:
     clang:
     - since: C++26
@@ -4984,6 +5013,15 @@ library:
     msvc:
     - since: C++23
       value: 202302
+- name: __cpp_lib_ranges_filter
+  header_list: ranges
+  rows:
+  - value: 202603
+    papers: P3725R3
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_ranges_find_last
   header_list: algorithm
   rows:
@@ -5156,11 +5194,11 @@ library:
     msvc:
     - since: C++23
       value: 202202
-- name: __cpp_lib_ranges_to_input
+- name: __cpp_lib_ranges_as_input
   header_list: ranges
   rows:
   - value: 202502
-    papers: P3137R3
+    papers: P3137R3 P3828R1
   support:
     clang: null
     gcc:
@@ -5289,6 +5327,15 @@ library:
     msvc:
     - since: C++20
       value: 201711
+- name: __cpp_lib_replaceable_contract_violation_handler
+  header_list: contracts
+  rows:
+  - value: 202603
+    papers: P3886R0
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_result_of_sfinae
   header_list: type_traits functional
   rows:
@@ -5343,6 +5390,8 @@ library:
     papers: P0543R3
     cppreference-description: '[[cpp/numeric#Saturation arithmetic (since C++26)|Saturation
       arithmetic]]'
+  - value: 202603
+    papers: P4052R0
   support:
     clang:
     - since: C++26
@@ -5510,6 +5559,8 @@ library:
     papers: P2876R3 P3480R6
   - value: 202511
     papers: P3922R1
+  - value: 202603
+    papers: P3690R1 P4012R1
   support:
     clang: null
     gcc:
@@ -5610,20 +5661,6 @@ library:
     msvc:
     - since: C++20
       value: 202002
-- name: __cpp_lib_span_initializer_list
-  header_list: span
-  rows:
-  - value: 202311
-    papers: P2447R6
-    cppreference-description: Constructing {{lc|std::span}} from an initializer list
-  support:
-    clang:
-    - since: C++26
-      value: 202311
-    gcc:
-    - since: C++26
-      value: 202311
-    msvc: null
 - name: __cpp_lib_spanstream
   header_list: iosfwd spanstream
   rows:
@@ -5684,6 +5721,15 @@ library:
     msvc:
     - since: C++23
       value: 202011
+- name: __cpp_lib_start_lifetime
+  header_list: memory
+  rows:
+  - value: 202603
+    papers: P3726R2
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_start_lifetime_as
   header_list: memory
   rows:
@@ -5836,6 +5882,8 @@ library:
     papers: P3355R1
   - value: 202511
     papers: P3663R3
+  - value: 202603
+    papers: P3982R2
   support:
     clang: null
     gcc:
