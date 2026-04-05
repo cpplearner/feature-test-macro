@@ -68,6 +68,9 @@ with open('data.yaml', encoding='utf-8') as data:
     for ftm in raw['ftms']:
         name = f"__cpp_lib_{ftm['name']}"
 
+        if 'no_stdname' in ftm or all('no_stdname' in value for value in ftm['values']):
+            continue
+
         macro = None
         for it in doc['library']:
             if it['name'] == name:
@@ -79,9 +82,6 @@ with open('data.yaml', encoding='utf-8') as data:
         if macro:
             support = []
             for value in ftm['values']:
-                if 'no_stdname' in ftm or 'no_stdname' in value:
-                    continue
-
                 row = dict()
 
                 if 'cxxmin' in value:
