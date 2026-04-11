@@ -1536,7 +1536,7 @@ library:
     clang: null
     gcc:
     - since: C++26
-      value: 202403
+      value: 202603
     msvc: null
 - name: __cpp_lib_algorithm_iterator_requirements
   header_list: algorithm memory numeric
@@ -4909,7 +4909,9 @@ library:
     papers: P3137R3 P3828R1
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
     msvc: null
 - name: __cpp_lib_ranges_as_rvalue
   header_list: ranges
