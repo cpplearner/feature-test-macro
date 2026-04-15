@@ -2274,7 +2274,7 @@ library:
     clang: null
     gcc:
     - since: C++26
-      value: 202506
+      value: 202603
     msvc: null
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm utility
@@ -3525,7 +3525,7 @@ library:
     clang: null
     gcc:
     - since: C++26
-      value: 202306
+      value: 202603
     msvc: null
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
@@ -3940,6 +3940,9 @@ library:
     gcc:
     - since: C++14
       value: 201304
+    - since: C++26
+      depends: __cpp_pack_indexing
+      value: 202511
     msvc:
     - value: 201304
 - name: __cpp_lib_integral_constant_callable
@@ -5339,7 +5342,13 @@ library:
     papers: P3886R0
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      depends: __cpp_contracts >= 202502L
+      value: 0
+    - since: C++26
+      depends: __cpp_contracts >= 202502L && __ELF__
+      value: 202603
     msvc: null
 - name: __cpp_lib_result_of_sfinae
   header_list: type_traits functional
