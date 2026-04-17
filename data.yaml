@@ -8,7 +8,9 @@ attributes:
     - value: 202207
     gcc:
     - value: 202207
-    msvc: null
+    msvc:
+    - since: C++23
+      value: 202207
 - name: carries_dependency
   rows:
   - value: 200809
