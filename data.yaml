@@ -819,6 +819,8 @@ language:
   rows:
   - value: 202506
     papers: P2996R13 P3096R12 P3293R3 P3394R4
+  - value: 202603
+    papers: P3795R2
   support:
     clang: null
     gcc:
@@ -5316,6 +5318,8 @@ library:
   rows:
   - value: 202506
     papers: P2996R13 P3096R12 P3293R3 P3394R4 P3560R2
+  - value: 202603
+    papers: P3795R2 P4156R0
   support:
     clang: null
     gcc:
