@@ -826,7 +826,7 @@ language:
     gcc:
     - since: C++26
       option: -freflection
-      value: 202506
+      value: 202603
     msvc: null
 - name: __cpp_impl_three_way_comparison
   rows:
