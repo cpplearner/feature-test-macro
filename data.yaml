@@ -3526,7 +3526,9 @@ library:
   - value: 202511
     papers: P3774R1
   - value: 202603
-    papers: P3948R1 P3961R1
+    papers: P3948R1
+  - value: 202604
+    papers: P3961R1
   support:
     clang: null
     gcc:
@@ -5797,6 +5799,24 @@ library:
     msvc:
     - since: C++23
       value: 202011
+- name: __cpp_lib_stdbit_h
+  header_list: stdbit.h
+  rows:
+  - value: 202603
+    papers: LWG4550
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_stdckdint_h
+  header_list: stdckdint.h
+  rows:
+  - value: 202603
+    papers: LWG4550
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_string_contains
   header_list: string string_view
   rows:
