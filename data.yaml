@@ -1841,7 +1841,7 @@ library:
     - since: C++20
       value: 201806
     - since: C++26
-      value: 202411
+      value: 202603
     gcc:
     - since: C++20
       value: 201806
@@ -2277,7 +2277,9 @@ library:
   - value: 202603
     papers: P3978R3
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202603
     gcc:
     - since: C++26
       value: 202603
@@ -5031,7 +5033,9 @@ library:
     papers: P2164R9
     cppreference-description: '{{lc|std::ranges::enumerate_view}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202302
     gcc:
     - since: C++23
       value: 202302
@@ -5198,7 +5202,9 @@ library:
     papers: P1899R3
     cppreference-description: '{{ltt|cpp/ranges/stride_view|std::ranges::stride_view}}'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
@@ -5419,7 +5425,7 @@ library:
   support:
     clang:
     - since: C++26
-      value: 202311
+      value: 202603
     gcc:
     - since: C++26
       value: 202603
