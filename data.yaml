@@ -3138,7 +3138,7 @@ library:
       strings]]'
   - value: 202603
     papers: P3953R3
-    cppreference-description: 'Renaming {{tt|std::runtime_format}} to {{lc|std::dynamic_format}}'
+    cppreference-description: Renaming {{tt|std::runtime_format}} to {{lc|std::dynamic_format}}
   support:
     clang:
     - since: C++20
@@ -5463,7 +5463,7 @@ library:
       arithmetic]]'
   - value: 202603
     papers: P4052R0
-    cppreference-description: 'Renaming saturation arithmetic functions'
+    cppreference-description: Renaming saturation arithmetic functions
   support:
     clang:
     - since: C++26
