@@ -144,7 +144,7 @@ language:
   - value: 201304
     papers: N3653
     cppreference-description: '[[cpp/language/aggregate initialization|Aggregate classes]]
-      with [[cpp/language/data_members#Member initialization|default member initializers]]'
+      with [[cpp/language/data members#Member initialization|default member initializers]]'
   support:
     clang:
     - since: C++14
@@ -225,8 +225,8 @@ language:
   rows:
   - value: 202110
     papers: P0849R8
-    cppreference-description: '[[cpp/language/explicit cast|{{c|auto(x)}} and {{c|auto{x}
-      }}]]'
+    cppreference-description: '[[cpp/language/explicit cast|Casting an expression
+      to a prvalue]] ({{c|auto(x)}})'
   support:
     clang:
     - since: C++23
@@ -256,7 +256,7 @@ language:
   - value: 201603
     papers: P0018R3
     cppreference-description: '[[cpp/language/lambda#Lambda capture|Lambda capture
-      of *this by value as [=,*this] ]]'
+      of {{tt|*this}} by value as {{tt|1=[=,*this]}}]]'
   support:
     clang:
     - since: C++17
@@ -274,7 +274,7 @@ language:
     cppreference-description: '{{ltt|cpp/keyword/char8_t}}'
   - value: 202207
     papers: P2513R4
-    cppreference-description: '{{co|char8_t}} compatibility and portability fix (allow
+    cppreference-description: '{{tt|char8_t}} compatibility and portability fix (allow
       [[cpp/language/aggregate initialization#Character arrays|initialization of (unsigned)
       char arrays]] from [[cpp/language/string literal|UTF-8 string literals]])'
     cppreference-treats-as-dr-against: C++20
@@ -323,7 +323,8 @@ language:
   rows:
   - value: 201806
     papers: P0892R2
-    cppreference-description: '[[cpp/language/explicit|{{tt|explicit(bool)}}]]'
+    cppreference-description: '[[cpp/language/explicit|Conditional {{tt|explicit}}
+      specifier]]'
   support:
     clang:
     - since: C++20
@@ -341,7 +342,7 @@ language:
     cppreference-description: '[[cpp/language/consteval|Immediate functions]]'
   - value: 202211
     papers: P2564R3
-    cppreference-description: Making {{tt|consteval}} propagate up
+    cppreference-description: Making {{ltt|cpp/language/consteval}} propagate up
     cppreference-treats-as-dr-against: C++20
   support:
     clang:
@@ -373,33 +374,31 @@ language:
   - value: 201907
     papers: P1331R2 P1668R1
     cppreference-description: '[[cpp/language/virtual|Virtual function]] calls in
-      constant expressions; [[cpp/language/try|{{c/core|try}} blocks]] in {{c/core|constexpr}}
-      functions, {{ltt|cpp/language/dynamic_cast}} and polymorphic {{ltt|cpp/language/typeid}}
+      constant expressions; [[cpp/language/try|{{tt|try}} blocks]] in constexpr functions,
+      {{ltt|cpp/language/dynamic_cast}} and polymorphic {{ltt|cpp/language/typeid}}
       in constant expressions; trivial [[cpp/language/default initialization|default
-      initialization]] and [[cpp/language/asm|asm-declaration]] in {{c/core|constexpr}}
-      functions'
+      initialization]] and [[cpp/language/asm|asm-declaration]] in constexpr functions'
   - value: 202002
     papers: P1330R0 P2493R0
     cppreference-description: Changing the active member of a union in constant evaluation
   - value: 202110
     papers: P2242R3
     cppreference-description: Non-[[cpp/named req/LiteralType|literal]] variables,
-      labels, and {{ltt|cpp/language|goto}} statements in {{c/core|constexpr}} functions
+      labels, and {{ltt|cpp/language|goto}} statements in constexpr functions
   - value: 202207
     papers: P2448R2
     cppreference-description: Relaxing some restrictions on [[cpp/language/constexpr|constexpr]]
       functions and function templates
   - value: 202211
     papers: P2647R1
-    cppreference-description: Permitting static {{c/core|constexpr}} variables in
-      {{c/core|constexpr}} functions
+    cppreference-description: Permitting static constexpr variables in constexpr functions
   - value: 202306
     papers: P2738R1
-    cppreference-description: 'Constexpr cast from {{c|void*}}: towards {{c/core|constexpr}}
+    cppreference-description: 'Constexpr cast from {{tt|void*}}: towards constexpr
       type-erasure'
   - value: 202406
     papers: P2747R2
-    cppreference-description: '{{c/core|constexpr}} placement new'
+    cppreference-description: Constexpr placement {{tt|new}}
   support:
     clang:
     - since: C++11
@@ -437,7 +436,7 @@ language:
   rows:
   - value: 201907
     papers: P0784R7
-    cppreference-description: Operations for dynamic storage duration in {{c/core|constexpr}}
+    cppreference-description: Operations for dynamic storage duration in constexpr
       functions
   support:
     clang:
@@ -453,6 +452,7 @@ language:
   rows:
   - value: 202411
     papers: P3068R6
+    cppreference-description: Constexpr {{lt|cpp/language/exceptions}}
   support:
     clang: null
     gcc:
@@ -479,6 +479,7 @@ language:
   rows:
   - value: 202506
     papers: P3533R2
+    cppreference-description: Constexpr virtual inheritance
   support:
     clang: null
     gcc:
@@ -504,6 +505,7 @@ language:
   rows:
   - value: 202502
     papers: P2900R14
+    cppreference-description: '[[cpp/language/contracts|Contracts]]'
   support:
     clang: null
     gcc:
@@ -550,11 +552,10 @@ language:
   - value: 201703
     papers: P0620R0
     cppreference-description: '[[cpp/language/class template argument deduction|Template
-      argument deduction for class templates]]'
+      argument deduction for class templates]] (CTAD)'
   - value: 201907
     papers: P1814R0 P1816R0
-    cppreference-description: '[[cpp/language/class template argument deduction|<abbr
-      title="Class template argument deduction">CTAD</abbr>]] for aggregates and aliases'
+    cppreference-description: CTAD for aggregates and aliases
   - value: 202207
     papers: P2582R1
   support:
@@ -579,8 +580,7 @@ language:
   rows:
   - value: 200604
     papers: N1986
-    cppreference-description: '[[cpp/language/initializer list#Delegating constructor|Delegating
-      constructors]]'
+    cppreference-description: '{{ls|cpp/language/constructor#Delegating constructor}}s'
   support:
     clang:
     - since: C++11
@@ -595,7 +595,7 @@ language:
   - value: 202403
     papers: P2573R2
     cppreference-description: Deleted [[cpp/language/function|function definitions]]
-      with messages ({{c/core|1== delete("should have a reason");}})
+      with messages ({{tt|1== delete("should have a reason");}})
   support:
     clang:
     - value: 202403
@@ -607,8 +607,8 @@ language:
   rows:
   - value: 201707
     papers: P0329R4
-    cppreference-description: '[[cpp/language/aggregate initialization#Designated
-      initializers|Designated initializer]]'
+    cppreference-description: '{{ls|cpp/language/aggregate initialization#Designated
+      initializer}}s'
   support:
     clang:
     - since: C++20
@@ -653,6 +653,7 @@ language:
   rows:
   - value: 202506
     papers: P1306R5
+    cppreference-description: Expansion statements ({{tt|template for}})
   support:
     clang: null
     gcc:
@@ -663,8 +664,8 @@ language:
   rows:
   - value: 202110
     papers: P0847R7
-    cppreference-description: '[[cpp/language/member functions#Explicit object parameter|Explicit
-      object parameter]]'
+    cppreference-description: '[[cpp/language/member functions#Explicit object member
+      functions|Explicit object parameter]]'
   support:
     clang:
     - since: C++23
@@ -754,7 +755,7 @@ language:
   rows:
   - value: 202106
     papers: P1938R3
-    cppreference-description: '[[cpp/language/if|{{tt|consteval if}}]]'
+    cppreference-description: '[[cpp/language/if|{{tt|if consteval}}]]'
   support:
     clang:
     - since: C++23
@@ -769,7 +770,7 @@ language:
   rows:
   - value: 201606
     papers: P0292R2
-    cppreference-description: '[[cpp/language/if|{{tt|constexpr if}}]]'
+    cppreference-description: '[[cpp/language/if|{{tt|if constexpr}}]]'
   support:
     clang:
     - since: C++17
@@ -804,8 +805,8 @@ language:
   rows:
   - value: 201806
     papers: P0722R3
-    cppreference-description: '[[cpp/memory/new/operator delete|Destroying operator
-      delete]] (compiler support)'
+    cppreference-description: Destroying [[cpp/memory/new/operator delete|{{tt|operator
+      delete}}]] (compiler support)
   support:
     clang:
     - value: 201806
@@ -821,6 +822,7 @@ language:
     papers: P2996R13 P3096R12 P3293R3 P3394R4
   - value: 202603
     papers: P3795R2
+    cppreference-description: Reflection
   support:
     clang: null
     gcc:
@@ -836,8 +838,8 @@ language:
     papers: P1185R2
   - value: 201907
     papers: P1630R1
-    cppreference-description: '[[cpp/language/operator comparison#Three-way comparison|Three-way
-      comparison]] (compiler support)'
+    cppreference-description: '{{ls|cpp/language/operator comparison#Three-way comparison}}
+      (compiler support)'
   support:
     clang:
     - since: C++20
@@ -868,11 +870,11 @@ language:
   rows:
   - value: 200802
     papers: N2540
-    cppreference-description: '[[cpp/language/using declaration#Inheriting constructors|Inheriting
-      constructors]]'
+    cppreference-description: '{{ls|cpp/language/using declaration#Inheriting constructors}}'
   - value: 201511
     papers: P0136R1
-    cppreference-description: Rewording inheriting constructors
+    cppreference-description: New specification for {{lsd|cpp/language/using declaration#Inheriting
+      constructors}}
     cppreference-treats-as-dr-against: C++11
   support:
     clang:
@@ -892,8 +894,7 @@ language:
     cppreference-description: '[[cpp/language/lambda|Lambda init-capture]]'
   - value: 201803
     papers: P0780R2
-    cppreference-description: Allow pack expansion in [[cpp/language/lambda|lambda]]
-      init-capture
+    cppreference-description: Allow pack expansion in {{lt|cpp/language/lambda}} init-capture
   support:
     clang:
     - since: C++14
@@ -974,7 +975,7 @@ language:
       operator]]
   - value: 202211
     papers: P2589R1
-    cppreference-description: '{{tt|static}} {{ltt|cpp/language/operators|operator[]}}'
+    cppreference-description: Static {{ltt|cpp/language/operators|operator[]}}
   support:
     clang:
     - since: C++23
@@ -1038,8 +1039,8 @@ language:
       parameters#Template non-type arguments|non-type template arguments]]
   - value: 201911
     papers: P1907R1
-    cppreference-description: Class types and floating-point types in [[cpp/language/template
-      parameters#Non-type template parameter|non-type template parameters]]
+    cppreference-description: Class types and floating-point types in {{lsd|cpp/language/template
+      parameters#Non-type template parameter}}s
   support:
     clang:
     - since: C++17
@@ -1058,8 +1059,8 @@ language:
   rows:
   - value: 201606
     papers: P0127R2
-    cppreference-description: Declaring [[cpp/language/template parameters#Non-type
-      template parameter|non-type template parameters]] with {{tt|auto}}
+    cppreference-description: Declaring {{lsd|cpp/language/template parameters#Non-type
+      template parameter}} with {{tt|auto}}
   support:
     clang:
     - since: C++17
@@ -1113,6 +1114,7 @@ language:
   rows:
   - value: 202502
     papers: P1967R14
+    cppreference-description: '{{ltt|cpp/preprocessor/embed|#embed}}'
   support:
     clang: null
     gcc:
@@ -1232,7 +1234,7 @@ language:
   - value: 202011
     papers: P0330R8
     cppreference-description: '[[cpp/language/integer literal|Literal suffixes for
-      {{tt|size_t}} and its signed version]]'
+      {{tt|std::size_t}} and its signed version]]'
   support:
     clang:
     - since: C++23
@@ -1294,7 +1296,7 @@ language:
   rows:
   - value: 202207
     papers: P1169R4
-    cppreference-description: '{{tt|static}} {{ltt|cpp/language/operators|operator()}}'
+    cppreference-description: Static {{ltt|cpp/language/operators|operator()}}
   support:
     clang:
     - since: C++11
@@ -1312,10 +1314,12 @@ language:
     cppreference-description: '[[cpp/language/structured binding|Structured bindings]]'
   - value: 202403
     papers: P0609R3
-    cppreference-description: '[[cpp/language/attributes|Attributes]] for [[cpp/language/structured
-      binding|structured bindings]]'
+    cppreference-description: '[[cpp/language/attributes|Attributes]] for {{lt|cpp/language/structured
+      binding}}'
   - value: 202411
     papers: P1061R10
+    cppreference-description: '[[cpp/language/structured binding|Structured bindings]]
+      can introduce a {{lt|cpp/language/pack}}'
   support:
     clang:
     - since: C++17
@@ -1332,6 +1336,7 @@ language:
   rows:
   - value: 202502
     papers: P2841R7
+    cppreference-description: Concept and variable-template template-parameters
   support:
     clang: null
     gcc: null
@@ -1340,8 +1345,8 @@ language:
   rows:
   - value: 201611
     papers: P0522R0
-    cppreference-description: Matching of [[cpp/language/template parameters#Template
-      template arguments|template template-arguments]]
+    cppreference-description: Matching of {{lsd|cpp/language/template parameters#Template
+      template arguments}}
   support:
     clang:
     - value: 201611
@@ -1376,6 +1381,7 @@ language:
     papers: P3074R7
   - value: 202603
     papers: P3726R2
+    cppreference-description: Trivial unions
   support:
     clang: null
     gcc: null
@@ -1384,8 +1390,8 @@ language:
   rows:
   - value: 200704
     papers: N2249
-    cppreference-description: '[[cpp/language/types|New character types]] ({{co|char16_t}}
-      and {{co|char32_t}})'
+    cppreference-description: '[[cpp/language/types|New character types]] ({{tt|char16_t}}
+      and {{tt|char32_t}})'
   support:
     clang:
     - since: C++11
@@ -1533,9 +1539,9 @@ library:
   header_list: algorithm deque forward_list list ranges string vector memory
   rows:
   - value: 202403
-    papers: P2248R8
+    papers: P2248R8 P3217R0
     cppreference-description: Enabling [[cpp/language/list initialization|list-initialization]]
-      for [[cpp/algorithm|algorithms]]
+      for {{lt|cpp/algorithm}}s
   - value: 202603
     papers: P3787R2
   support:
@@ -1549,7 +1555,7 @@ library:
   rows:
   - value: 202207
     papers: P2408R5
-    cppreference-description: Ranges iterators as inputs to non-Ranges [[cpp/algorithm|algorithms]]
+    cppreference-description: Ranges iterators as inputs to non-Ranges {{lt|cpp/algorithm}}s
   support:
     clang: null
     gcc:
@@ -1563,6 +1569,8 @@ library:
   rows:
   - value: 202411
     papers: P2897R7
+    cppreference-description: '{{lc|std::aligned_accessor}}: an {{lc|std::mdspan}}
+      accessor expressing pointer over-alignment'
   support:
     clang:
     - since: C++26
@@ -1579,7 +1587,7 @@ library:
     papers: P0401R6
   - value: 202302
     papers: P2652R2 LWG3887
-    cppreference-description: 'Size-feedback in the Allocator interface, e.g.: {{l2tt
+    cppreference-description: 'Size-feedback in the allocator interface, e.g.: {{l2tt
       std|cpp/memory/allocator/allocate_at_least}}, {{l2tt std|cpp/memory/allocator_traits/allocate_at_least}}'
   support:
     clang:
@@ -1597,7 +1605,8 @@ library:
   rows:
   - value: 201411
     papers: N4258
-    cppreference-description: '{{ltt|cpp/memory/allocator_traits|std::allocator_traits::is_always_equal}}'
+    cppreference-description: '{{ltt|cpp/memory/allocator_traits|std::allocator_traits::is_always_equal}},
+      {{tt|noexcept}} cleanups'
   support:
     clang:
     - since: C++17
@@ -1649,7 +1658,7 @@ library:
   - value: 201603
     papers: P0031R0
     cppreference-description: Constexpr for {{lc|std::reverse_iterator}}, {{lc|std::move_iterator}},
-      {{lc|std::array}} and [[cpp/iterator#Range_access|range access]]
+      {{lc|std::array}} and {{lsd|cpp/iterator#Range access}}
   - value: 201803
     papers: P0858R0 LWG3257
   - value: 201806
@@ -1771,8 +1780,7 @@ library:
   rows:
   - value: 201603
     papers: P0152R1
-    cppreference-description: '{{ltt|cpp/atomic/atomic/is_always_lock_free|constexpr
-      atomic<T>::is_always_lock_free}}'
+    cppreference-description: Constexpr {{ltt|cpp/atomic/atomic/is_always_lock_free|std::atomic<T>::is_always_lock_free}}
   support:
     clang:
     - since: C++17
@@ -1788,7 +1796,7 @@ library:
   rows:
   - value: 201907
     papers: P1135R6
-    cppreference-description: atomic lockfree integral types ({{lc|std::atomic_signed_lock_free}},
+    cppreference-description: Atomic lockfree integral types ({{lc|std::atomic_signed_lock_free}},
       {{lc|std::atomic_unsigned_lock_free}})
   support:
     clang:
@@ -1807,8 +1815,8 @@ library:
   rows:
   - value: 202403
     papers: P0493R5
-    cppreference-description: Atomic minimum/maximum ({{ltt|cpp/atomic/atomic/fetch_min|std::atomic::fetch_min}},
-      {{ltt|cpp/atomic/atomic/fetch_max|std::atomic::fetch_max}}, etc)
+    cppreference-description: Atomic minimum/maximum ({{l2tt std|cpp/atomic/atomic/fetch_min}},
+      {{l2tt std|cpp/atomic/atomic/fetch_max}}, etc)
   - value: 202506
     papers: P3008R6
   support:
@@ -1831,9 +1839,10 @@ library:
   rows:
   - value: 201806
     papers: P0019R8
-    cppreference-description: '{{ltt|cpp/atomic/atomic_ref|std::atomic_ref}}'
+    cppreference-description: '{{ltt std|cpp/atomic/atomic_ref}}'
   - value: 202411
     papers: P2835R7
+    cppreference-description: '{{l2tf std|cpp/atomic/atomic_ref/address}}'
   - value: 202603
     papers: P3936R1
   support:
@@ -1906,10 +1915,10 @@ library:
   rows:
   - value: 201907
     papers: P1135R6
-    cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}'
+    cppreference-description: '{{ltt std|cpp/thread/barrier}}'
   - value: 202302
     papers: P2588R3
-    cppreference-description: '{{ltt|cpp/thread/barrier|std::barrier}}''s phase completion
+    cppreference-description: '{{ltt std|cpp/thread/barrier}}''s phase completion
       guarantees'
   support:
     clang:
@@ -1953,7 +1962,7 @@ library:
     papers: P0356R5
   - value: 201907
     papers: P1651R0
-    cppreference-description: '{{ltt|cpp/utility/functional/bind_front|std::bind_front}}'
+    cppreference-description: '{{ltt std|cpp/utility/functional/bind_front}}'
   - value: 202306
     papers: P2714R1
     cppreference-description: Allow passing callable objects as non-type template
@@ -1977,7 +1986,7 @@ library:
   rows:
   - value: 201806
     papers: P0476R2
-    cppreference-description: '{{ltt|cpp/numeric/bit_cast|std::bit_cast}}'
+    cppreference-description: '{{ltt std|cpp/numeric/bit_cast}}'
   support:
     clang:
     - since: C++20
@@ -1994,7 +2003,7 @@ library:
   rows:
   - value: 201907
     papers: P0553R4
-    cppreference-description: '[[cpp/numeric#Bit_manipulation_(since_C++20)|Bit operations]]'
+    cppreference-description: '[[cpp/utility/bit|Bit operations]]'
   support:
     clang:
     - since: C++20
@@ -2039,8 +2048,7 @@ library:
   rows:
   - value: 201902
     papers: P1357R1
-    cppreference-description: '{{ltt|cpp/types/is_bounded_array|std::is_bounded_array}},
-      {{ltt|cpp/types/is_unbounded_array|std::is_unbounded_array}}'
+    cppreference-description: '{{ltt std|cpp/types/is_bounded_array}}, {{ltt std|cpp/types/is_unbounded_array}}'
   support:
     clang:
     - since: C++20
@@ -2056,7 +2064,7 @@ library:
   rows:
   - value: 201603
     papers: P0220R1
-    cppreference-description: '[[cpp/utility/functional#Searchers|Searchers]]'
+    cppreference-description: '{{ls|cpp/utility/functional#Searchers}}'
   support:
     clang:
     - since: C++17
@@ -2072,7 +2080,7 @@ library:
   rows:
   - value: 201603
     papers: P0298R3
-    cppreference-description: '{{ltt|cpp/types/byte|std::byte}}'
+    cppreference-description: '{{ltt std|cpp/types/byte}}'
   support:
     clang:
     - since: C++17
@@ -2089,7 +2097,7 @@ library:
   rows:
   - value: 202110
     papers: P1272R4
-    cppreference-description: '{{ltt|cpp/numeric/byteswap|std::byteswap}}'
+    cppreference-description: '{{ltt std|cpp/numeric/byteswap}}'
   support:
     clang:
     - since: C++23
@@ -2107,7 +2115,7 @@ library:
     papers: P0482R6
   - value: 201907
     papers: P1423R3
-    cppreference-description: Library support for {{ltt|cpp/language/types#char8_t|char8_t}}
+    cppreference-description: Library support for {{lst|cpp/language/types#char8_t}}
   support:
     clang:
     - since: C++20
@@ -2136,8 +2144,8 @@ library:
     papers: P0355R7
   - value: 201907
     papers: P1466R3
-    cppreference-description: '[[cpp/chrono#Calendar|Calendars]] and [[cpp/chrono#Time
-      zone|Time Zones]]'
+    cppreference-description: '{{ls|cpp/chrono#Calendar}}s and {{ls|cpp/chrono#Time
+      zone}}s'
   - value: 202306
     papers: P2592R3
     cppreference-description: '[[cpp/utility/hash|Hashing]] support for {{ltt std|cpp/chrono}}
@@ -2181,7 +2189,7 @@ library:
   header_list: algorithm
   rows:
   - value: 201603
-    papers: P0025R0
+    papers: P0025R1
     cppreference-description: '{{lc|std::clamp}}'
   support:
     clang:
@@ -2291,7 +2299,7 @@ library:
     papers: P0202R3
   - value: 201806
     papers: P0879R0 LWG3256 LWG3792
-    cppreference-description: Constexpr for [[cpp/algorithm|algorithms]]
+    cppreference-description: Constexpr for {{lt|cpp/algorithm|algorithm}}s
   - value: 202306
     papers: P2562R1
     cppreference-description: Constexpr stable sorting
@@ -2314,6 +2322,7 @@ library:
   rows:
   - value: 202411
     papers: P3309R3
+    cppreference-description: Constexpr {{lc|std::atomic}} and {{lc|std::atomic_ref}}
   support:
     clang: null
     gcc: null
@@ -2340,8 +2349,8 @@ library:
   rows:
   - value: 202207
     papers: P2291R3
-    cppreference-description: Add {{tt|constexpr}} modifiers to functions {{lc|std::to_chars}}
-      and {{lc|std::from_chars}} for integral types
+    cppreference-description: Constexpr for {{lc|std::to_chars}} and {{lc|std::from_chars}}
+      for integral types
   support:
     clang:
     - since: C++23
@@ -2390,6 +2399,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::deque}}
   support:
     clang: null
     gcc: null
@@ -2415,8 +2425,11 @@ library:
   rows:
   - value: 202411
     papers: P3068R6
+    cppreference-description: Constexpr for exception types, e.g. {{lc|std::bad_alloc}},
+      {{lc|std::bad_cast}} etc.
   - value: 202502
     papers: P3378R2
+    cppreference-description: Constexpr for more exception types
   support:
     clang: null
     gcc:
@@ -2429,6 +2442,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::flat_map}} and {{lc|std::flat_multimap}}
   support:
     clang:
     - since: C++26
@@ -2442,6 +2456,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::flat_set}} and {{lc|std::flat_multiset}}
   support:
     clang:
     - since: C++26
@@ -2464,6 +2479,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::forward_list}}
   support:
     clang:
     - since: C++26
@@ -2494,8 +2510,8 @@ library:
   rows:
   - value: 202502
     papers: P3074R7
-  - value: 202603
-    papers: P4022R0
+    cppreference-description: Constexpr {{lc|std::inplace_vector}} for non-trivial
+      types
   support:
     clang: null
     gcc: null
@@ -2522,6 +2538,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::list}}
   support:
     clang:
     - since: C++26
@@ -2533,6 +2550,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::map}} and {{lc|std::multimap}}
   support:
     clang: null
     gcc: null
@@ -2570,8 +2588,8 @@ library:
   rows:
   - value: 202406
     papers: P2747R2
-    cppreference-description: '{{c/core|constexpr}} [[cpp/language/new#Placement new|placement]]
-      {{ltt|cpp/memory/new/operator new|new}}'
+    cppreference-description: Constexpr [[cpp/language/new#Placement new|placement
+      {{tt|new}}]]
   support:
     clang:
     - since: C++26
@@ -2604,6 +2622,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::queue}} and {{lc|std::priority_queue}}
   support:
     clang:
     - since: C++26
@@ -2615,6 +2634,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::set}} and {{lc|std::multiset}}
   support:
     clang: null
     gcc: null
@@ -2624,6 +2644,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::stack}}
   support:
     clang: null
     gcc: null
@@ -2633,11 +2654,13 @@ library:
   rows:
   - value: 201611
     papers: P0426R1
+    cppreference-description: More constexpr {{lc|std::char_traits}}
   - value: 201811
     papers: P1032R1
+    cppreference-description: Fully constexpr {{lc|std::char_traits}}
   - value: 201907
     papers: P0980R1
-    cppreference-description: Constexpr for {{lc|std::string}}
+    cppreference-description: Constexpr {{lc|std::string}}
   support:
     clang:
     - since: C++20
@@ -2711,6 +2734,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::unordered_map}} and {{lc|std::unordered_multimap}}
   support:
     clang: null
     gcc: null
@@ -2720,6 +2744,7 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+    cppreference-description: Constexpr {{lc|std::unordered_set}} and {{lc|std::unordered_multiset}}
   support:
     clang: null
     gcc: null
@@ -2762,10 +2787,13 @@ library:
   rows:
   - value: 202403
     papers: P2944R3
-    cppreference-description: Constrained relational operators for {{lc|std::pair}},
-      {{lc|std::tuple}}, {{lc|std::optional}}, and {{lc|std::variant}}
+    cppreference-description: Constrained relational operators for {{ltt|cpp/utility/pair/operator
+      cmp|std::pair}}, {{ltt|cpp/utility/tuple/operator cmp|std::tuple}}, {{ltt|cpp/utility/optional/operator
+      cmp|std::optional}}, and {{ltt|cpp/utility/variant/operator cmp|std::variant}}
   - value: 202411
-    papers: P3379R1
+    papers: P3379R0
+    cppreference-description: Constraining {{lc|std::expected}} [[cpp/utility/expected/operator
+      cmp|equality operators]]
   support:
     clang:
     - since: C++26
@@ -2801,6 +2829,7 @@ library:
   rows:
   - value: 202502
     papers: P2900R14
+    cppreference-description: '{{header|contracts}}: Contracts support'
   support:
     clang: null
     gcc:
@@ -2851,10 +2880,10 @@ library:
   rows:
   - value: 202311
     papers: P2546R5
-    cppreference-description: '[[cpp/utility#Debugging support|Debugging support]]'
+    cppreference-description: '{{header|debugging}}: {{ls|cpp/utility#Debugging support}}'
   - value: 202403
     papers: P2810R4
-    cppreference-description: Replaceable {{ltt|cpp/utility/is_debugger_present|std::is_debugger_present}}
+    cppreference-description: Replaceable {{ltt std|cpp/utility/is_debugger_present}}
   support:
     clang: null
     gcc:
@@ -2886,8 +2915,8 @@ library:
   rows:
   - value: 201806
     papers: P0722R3
-    cppreference-description: '[[cpp/memory/new/operator_delete|Destroying {{tt|operator
-      delete}}]] (library support)'
+    cppreference-description: Destroying {{ltt|cpp/memory/new/operator delete|operator
+      delete}} (library support)
   support:
     clang:
     - since: C++20
@@ -2983,7 +3012,7 @@ library:
   rows:
   - value: 201603
     papers: P0024R2
-    cppreference-description: '[[cpp/algorithm#Execution_policies|Execution policies]]'
+    cppreference-description: '{{ls|cpp/algorithm#Execution policies}}'
   - value: 201902
     papers: P1001R2
     cppreference-description: '{{ltt|cpp/algorithm/execution_policy_tag_t|std::execution::unsequenced_policy}}'
@@ -3043,7 +3072,7 @@ library:
   rows:
   - value: 202207
     papers: P0429R9
-    cppreference-description: '{{ltt|cpp/container/flat_map|std::flat_map}} and {{ltt|cpp/container/flat_multimap|std::flat_multimap}}'
+    cppreference-description: '{{ltt std|cpp/container/flat_map}} and {{ltt std|cpp/container/flat_multimap}}'
   - value: 202511
     papers: P3567R2
   support:
@@ -3061,8 +3090,7 @@ library:
   rows:
   - value: 202207
     papers: P1222R4 LWG3751
-    cppreference-description: '{{ltt|cpp/container/flat_set|std::flat_set}} and {{ltt|cpp/container/flat_multiset|std::flat_multiset}}<!--LWG
-      3751-->'
+    cppreference-description: '{{ltt std|cpp/container/flat_set}} and {{ltt std|cpp/container/flat_multiset}}'
   - value: 202511
     papers: P3567R2
   support:
@@ -3093,7 +3121,7 @@ library:
     cppreference-treats-as-dr-against: C++20
   - value: 202207
     papers: P2419R2 P2508R1
-    cppreference-description: Exposing {{ltt|cpp/utility/format/basic_format_string|std::basic_format_string}};
+    cppreference-description: Exposing {{ltt std|cpp/utility/format/basic_format_string}};
       clarify handling of encodings in localized formatting of chrono types
   - value: 202304
     papers: P2510R3
@@ -3106,10 +3134,11 @@ library:
     cppreference-description: Member {{ltt|cpp/utility/format/basic_format_arg|visit}}
   - value: 202311
     papers: P2918R2
-    cppreference-description: '[[cpp/utility/format/runtime_format|Runtime format
+    cppreference-description: '[[cpp/utility/format/dynamic_format|Runtime format
       strings]]'
   - value: 202603
     papers: P3953R3
+    cppreference-description: 'Renaming {{tt|std::runtime_format}} to {{lc|std::dynamic_format}}'
   support:
     clang:
     - since: C++20
@@ -3188,7 +3217,7 @@ library:
   rows:
   - value: 202207
     papers: P2445R1
-    cppreference-description: '{{ltt|cpp/utility/forward_like|std::forward_like}}'
+    cppreference-description: '{{ltt std|cpp/utility/forward_like}}'
   support:
     clang:
     - since: C++23
@@ -3524,7 +3553,7 @@ library:
   rows:
   - value: 202306
     papers: P0792R14
-    cppreference-description: '{{lc|std::function_ref}}: a type-erased callable reference'
+    cppreference-description: '{{lc|std::function_ref}}: A type-erased callable reference'
   - value: 202511
     papers: P3774R1
   - value: 202603
@@ -3558,7 +3587,7 @@ library:
   rows:
   - value: 202207
     papers: P2502R2
-    cppreference-description: '{{lc|std::generator}}: synchronous coroutine generator
+    cppreference-description: '{{lc|std::generator}}: Synchronous coroutine generator
       for ranges'
   support:
     clang: null
@@ -3778,8 +3807,8 @@ library:
   rows:
   - value: 201703
     papers: P0154R1
-    cppreference-description: '{{ltt|cpp/thread/hardware_destructive_interference_size|constexpr
-      std::hardware_{constructive, destructive}_interference_size}}'
+    cppreference-description: '{{ltt|cpp/thread/hardware_destructive_interference_size|std::hardware_{constructive,
+      destructive}_interference_size}}'
   support:
     clang:
     - since: C++17
@@ -3813,7 +3842,7 @@ library:
   rows:
   - value: 202306
     papers: P2530R3
-    cppreference-description: Hazard pointers
+    cppreference-description: '{{header|hazard_pointer}}: Hazard pointers'
   support:
     clang: null
     gcc: null
@@ -3823,6 +3852,8 @@ library:
   rows:
   - value: 202502
     papers: P0447R28
+    cppreference-description: '{{header|hive}}: a bucket-based container that re-uses
+      memory locations from erased elements'
   support:
     clang: null
     gcc: null
@@ -3848,9 +3879,9 @@ library:
   rows:
   - value: 201505
     papers: N4510
-    cppreference-description: Minimal incomplete type support for [[cpp/container/forward_list#Template
-      parameters|std::forward_list]], [[cpp/container/list#Template parameters|std::list]],
-      and [[cpp/container/vector#Template parameters|std::vector]]
+    cppreference-description: Minimal incomplete type support for {{ltt|cpp/container/forward_list#Template
+      parameters|std::forward_list}}, {{ltt|cpp/container/list#Template parameters|std::list}},
+      and {{ltt|cpp/container/vector#Template parameters|std::vector}}
   support:
     clang:
     - since: C++17
@@ -3864,6 +3895,7 @@ library:
   rows:
   - value: 202502
     papers: P3019R14
+    cppreference-description: '{{lc|std::indirect}}'
   support:
     clang: null
     gcc:
@@ -3885,10 +3917,10 @@ library:
   rows:
   - value: 202406
     papers: P0843R14
-    cppreference-description: '{{lc|std::inplace_vector}}: dynamically-resizable vector
+    cppreference-description: '{{lc|std::inplace_vector}}: Dynamically-resizable vector
       with fixed capacity (inplace storage)'
   - value: 202603
-    papers: P3981R2
+    papers: P3981R2 P4022R0
   support:
     clang: null
     gcc:
@@ -3902,9 +3934,8 @@ library:
     papers: P0556R3
   - value: 202002
     papers: P1956R1
-    cppreference-description: '[[cpp/numeric#Bit_manipulation_(since_C++20)|Integral
-      power-of-2 operations]] ({{lc|std::has_single_bit}}, {{lc|std::bit_ceil}}, {{lc|std::bit_floor}},
-      {{lc|std::bit_width}})'
+    cppreference-description: '[[cpp/utility/bit|Integral power-of-{{math|2}} operations]]
+      ({{lc|std::has_single_bit}}, {{lc|std::bit_ceil}}, {{lc|std::bit_floor}}, {{lc|std::bit_width}})'
   support:
     clang:
     - since: C++20
@@ -3920,8 +3951,7 @@ library:
   rows:
   - value: 202002
     papers: P0586R2
-    cppreference-description: '[[cpp/utility#Integer_comparison_functions|Integer
-      comparison functions]]'
+    cppreference-description: '{{ls|cpp/utility#Integer comparison functions}}'
   support:
     clang:
     - since: C++20
@@ -3975,7 +4005,7 @@ library:
   rows:
   - value: 201902
     papers: P0811R3
-    cppreference-description: '{{ltt|cpp/numeric/lerp|std::lerp}}, {{ltt|cpp/numeric/midpoint|std::midpoint}}'
+    cppreference-description: '{{ltt std|cpp/numeric/lerp}}, {{ltt std|cpp/numeric/midpoint}}'
   support:
     clang:
     - since: C++20
@@ -4039,7 +4069,7 @@ library:
   rows:
   - value: 201703
     papers: LWG2911
-    cppreference-description: '{{ltt|cpp/types/is_aggregate|std::is_aggregate}}'
+    cppreference-description: '{{ltt std|cpp/types/is_aggregate}}'
   support:
     clang:
     - since: C++17
@@ -4056,7 +4086,7 @@ library:
   rows:
   - value: 201811
     papers: P0595R2
-    cppreference-description: '{{ltt|cpp/types/is_constant_evaluated|std::is_constant_evaluated}}'
+    cppreference-description: '{{ltt std|cpp/types/is_constant_evaluated}}'
   support:
     clang:
     - since: C++20
@@ -4123,7 +4153,7 @@ library:
   rows:
   - value: 201907
     papers: P0466R5
-    cppreference-description: '{{ltt|cpp/types/is_layout_compatible|std::is_layout_compatible}}'
+    cppreference-description: '{{ltt std|cpp/types/is_layout_compatible}}'
   support:
     clang: null
     gcc:
@@ -4156,6 +4186,7 @@ library:
   - value: 201309
     papers: LWG2247
     cppreference-description: '{{lc|std::is_null_pointer}}'
+    cppreference-treats-as-dr-against: C++11
   support:
     clang:
     - since: C++14
@@ -4170,8 +4201,8 @@ library:
   rows:
   - value: 201907
     papers: P0466R5
-    cppreference-description: 'Pointer-interconvertibility traits: {{ltt|cpp/types/is_pointer_interconvertible_with_class|std::is_pointer_interconvertible_with_class}},
-      {{ltt|cpp/types/is_pointer_interconvertible_base_of|std::is_pointer_interconvertible_base_of}}'
+    cppreference-description: 'Pointer-interconvertibility traits: {{ltt std|cpp/types/is_pointer_interconvertible_with_class}},
+      {{ltt std|cpp/types/is_pointer_interconvertible_base_of}}'
   support:
     clang: null
     gcc:
@@ -4187,7 +4218,7 @@ library:
   rows:
   - value: 202011
     papers: P1048R1
-    cppreference-description: '{{ltt|cpp/types/is_scoped_enum|std::is_scoped_enum}}'
+    cppreference-description: '{{ltt std|cpp/types/is_scoped_enum}}'
   support:
     clang:
     - since: C++23
@@ -4215,6 +4246,8 @@ library:
   rows:
   - value: 202411
     papers: P2897R7
+    cppreference-description: '{{lc|std::is_sufficiently_aligned}}: checks a pointer’s
+      alignment precondition'
   support:
     clang:
     - since: C++26
@@ -4228,8 +4261,7 @@ library:
   rows:
   - value: 201603
     papers: P0185R1
-    cppreference-description: '[[cpp/types/is_swappable|[{{tt|nothrow}}-]swappable
-      traits]]'
+    cppreference-description: '[[cpp/types/is_swappable|(nothrow-)swappable traits]]'
   support:
     clang:
     - since: C++17
@@ -4245,7 +4277,7 @@ library:
   rows:
   - value: 202406
     papers: P2985R0
-    cppreference-description: '{{lc|std::is_virtual_base_of}}: type trait for detecting
+    cppreference-description: '{{lc|std::is_virtual_base_of}}: Type trait for detecting
       virtual base classes'
   support:
     clang:
@@ -4262,7 +4294,7 @@ library:
   rows:
   - value: 202306
     papers: P2641R4
-    cppreference-description: Checking if a union alternative is active ({{ltt|cpp/types/is_within_lifetime|std::is_within_lifetime}})
+    cppreference-description: Checking if a union alternative is active ({{ltt std|cpp/types/is_within_lifetime}})
   - value: 202603
     papers: P3450R1
   support:
@@ -4298,7 +4330,7 @@ library:
   rows:
   - value: 201907
     papers: P1135R6
-    cppreference-description: '{{ltt|cpp/thread/latch|std::latch}}'
+    cppreference-description: '{{ltt std|cpp/thread/latch}}'
   support:
     clang:
     - since: C++20
@@ -4316,7 +4348,7 @@ library:
   rows:
   - value: 201606
     papers: P0137R1
-    cppreference-description: 'Core Issue 1776: Replacement of class objects containing
+    cppreference-description: '{{cwg|1776}}: Replacement of class objects containing
       reference members ({{lc|std::launder}})'
   support:
     clang:
@@ -4351,9 +4383,8 @@ library:
   rows:
   - value: 201806
     papers: P0646R1
-    cppreference-description: Change the return type of the {{lc|std::list::remove|remove()}},
-      {{lc|std::list::remove_if|remove_if()}} and {{lc|std::list::unique|unique()}}
-      members of {{lc|std::forward_list}} and {{lc|std::list}}
+    cppreference-description: Change the return type of the {{tt|remove()}}, {{tt|remove_if()}}
+      and {{tt|unique()}} of {{lc|std::forward_list}} and {{lc|std::list}}
   support:
     clang:
     - since: C++20
@@ -4385,7 +4416,7 @@ library:
   rows:
   - value: 201606
     papers: P0209R2
-    cppreference-description: '{{lc|std::make_from_tuple()}}'
+    cppreference-description: '{{lc|std::make_from_tuple}}'
   support:
     clang:
     - since: C++17
@@ -4401,7 +4432,7 @@ library:
   rows:
   - value: 201402
     papers: LWG2285
-    cppreference-description: '{{ltt|cpp/iterator/make_reverse_iterator|std::make_reverse_iterator}}'
+    cppreference-description: '{{ltt std|cpp/iterator/make_reverse_iterator}}'
   support:
     clang:
     - since: C++14
@@ -4462,8 +4493,8 @@ library:
   rows:
   - value: 201603
     papers: P0226R1
-    cppreference-description: '[[cpp/numeric/special_functions|Mathematical special
-      functions for C++17]]'
+    cppreference-description: '[[cpp/numeric/special functions|Mathematical special
+      functions]]'
   support:
     clang: null
     gcc:
@@ -4477,7 +4508,7 @@ library:
   rows:
   - value: 202207
     papers: P0009R18 P2599R2 P2604R0 P2613R1
-    cppreference-description: '{{ltt|cpp/container/mdspan|std::mdspan}}'
+    cppreference-description: '{{ltt std|cpp/container/mdspan}}'
   - value: 202406
     papers: P2389R2
     cppreference-description: '{{lc|std::dims}} for {{lc|std::mdspan}}'
@@ -4572,7 +4603,7 @@ library:
   - value: 201606
     papers: P0083R3
     cppreference-description: Splicing maps and sets ({{lc|std::map::extract}}, {{lc|std::map::merge}},
-      {{ltt|cpp/container/map/insert|std::map::insert(node_type)}}, etc)
+      {{ltf|cpp/container/map/insert|args=node_type}}, etc)
   support:
     clang:
     - since: C++17
@@ -4589,7 +4620,7 @@ library:
   rows:
   - value: 201411
     papers: N4280
-    cppreference-description: '{{lc|std::size()}}, {{lc|std::data()}} and {{lc|std::empty()}}'
+    cppreference-description: '{{lc|std::size}}, {{lc|std::data}} and {{lc|std::empty}}'
   support:
     clang:
     - since: C++17
@@ -4604,7 +4635,7 @@ library:
   rows:
   - value: 201603
     papers: P0005R4
-    cppreference-description: '{{lc|std::not_fn()}}'
+    cppreference-description: '{{lc|std::not_fn}}'
   - value: 202306
     papers: P2714R1
     cppreference-description: Allow passing callable objects as non-type template
@@ -4660,12 +4691,11 @@ library:
     cppreference-description: '{{lc|std::optional}}'
   - value: 202106
     papers: P2231R1
-    cppreference-description: Fully {{tt|constexpr}} {{lc|std::optional}}
+    cppreference-description: Fully constexpr {{lc|std::optional}}
     cppreference-treats-as-dr-against: C++20
   - value: 202110
     papers: P0798R8 LWG3621
-    cppreference-description: '[[cpp/utility/optional#Monadic operations|Monadic operations]]
-      in {{lc|std::optional}}'
+    cppreference-description: '{{ls|cpp/utility/optional#Monadic operations}} in {{lc|std::optional}}'
   - value: 202506
     papers: P2988R12
   support:
@@ -4715,7 +4745,7 @@ library:
   header_list: memory
   rows:
   - value: 202106
-    papers: P1132R7
+    papers: P1132R8
     cppreference-description: '{{lc|std::out_ptr}}, {{lc|std::inout_ptr}}'
   - value: 202311
     papers: P2833R2
@@ -4762,7 +4792,7 @@ library:
   rows:
   - value: 202406
     papers: P2075R6
-    cppreference-description: '{{lc|std::philox_engine}}: counter-based random number
+    cppreference-description: '{{lc|std::philox_engine}}: Counter-based random number
       engine'
   support:
     clang: null
@@ -4775,6 +4805,7 @@ library:
   rows:
   - value: 202502
     papers: P3019R14
+    cppreference-description: '{{lc|std::polymorphic}}'
   support:
     clang: null
     gcc:
@@ -4808,9 +4839,11 @@ library:
   - value: 202403
     papers: P3107R5
     cppreference-description: Permit an efficient implementation of {{lc|std::print}}
+    cppreference-treats-as-dr-against: C++23
   - value: 202406
     papers: P3235R3
-    cppreference-description: Printing Blank Lines with {{lc|std::println}}
+    cppreference-description: '{{lc|std::print}} more types faster with less memory'
+    cppreference-treats-as-dr-against: C++23
   support:
     clang:
     - since: C++23
@@ -4852,7 +4885,7 @@ library:
   - value: 202106
     papers: P2325R3
     cppreference-description: Non-[[cpp/concepts/default_initializable|default-initializable]]
-      [[cpp/ranges/view|view]]s
+      {{lt|cpp/ranges/view}}s
     cppreference-treats-as-dr-against: C++20
   - value: 202110
     papers: P2415R2
@@ -4860,7 +4893,7 @@ library:
     cppreference-treats-as-dr-against: C++20
   - value: 202202
     papers: P2387R3
-    cppreference-description: '{{ltt|cpp/ranges/range_adaptor_closure|std::ranges::range_adaptor_closure}}'
+    cppreference-description: '{{l2tt std|cpp/ranges/range_adaptor_closure}}'
   - value: 202207
     papers: P2494R2
     cppreference-description: Relaxing [[cpp/ranges|range adaptors]] to allow for
@@ -4876,6 +4909,7 @@ library:
     papers: P2997R1
     cppreference-description: Removing the common reference requirement from the indirectly
       invocable concepts
+    cppreference-treats-as-dr-against: C++20
   support:
     clang:
     - since: C++20
@@ -4902,7 +4936,7 @@ library:
   rows:
   - value: 202207
     papers: P2278R4
-    cppreference-description: '{{lc|std::const_iterator}}, {{ltt|cpp/ranges/as_const_view|std::ranges::as_const_view}}'
+    cppreference-description: '{{lc|std::const_iterator}}, {{l2tt std|cpp/ranges/as_const_view}}'
   - value: 202311
     papers: P2836R1
     cppreference-description: Making {{lc|std::basic_const_iterator}} follow its underlying
@@ -4920,6 +4954,7 @@ library:
   rows:
   - value: 202502
     papers: P3137R3 P3828R1
+    cppreference-description: '{{l2tt std|cpp/ranges/as_input_view}}'
   support:
     clang: null
     gcc:
@@ -4931,7 +4966,7 @@ library:
   rows:
   - value: 202207
     papers: P2446R2
-    cppreference-description: '{{ltt|cpp/ranges/as_rvalue_view|std::ranges::as_rvalue_view}}'
+    cppreference-description: '{{l2tt std|cpp/ranges/as_rvalue_view}}'
   support:
     clang:
     - since: C++23
@@ -4947,6 +4982,7 @@ library:
   rows:
   - value: 202411
     papers: P3138R5
+    cppreference-description: '{{l2tt std|cpp/ranges/cache_latest_view}}'
   support:
     clang: null
     gcc:
@@ -4958,7 +4994,7 @@ library:
   rows:
   - value: 202207
     papers: P2374R4 P2540R1
-    cppreference-description: '{{ltt|cpp/ranges/cartesian_product_view|std::ranges::cartesian_product_view}}'
+    cppreference-description: '{{l2tt std|cpp/ranges/cartesian_product_view}}'
   support:
     clang: null
     gcc:
@@ -4972,7 +5008,7 @@ library:
   rows:
   - value: 202202
     papers: P2442R1
-    cppreference-description: '{{ltt|cpp/ranges/chunk_view|std::ranges::chunk_view}}'
+    cppreference-description: '{{l2tt std|cpp/ranges/chunk_view}}'
   support:
     clang: null
     gcc:
@@ -4986,7 +5022,7 @@ library:
   rows:
   - value: 202202
     papers: P2443R1
-    cppreference-description: '{{ltt|cpp/ranges/chunk_by_view|std::ranges::chunk_by_view}}'
+    cppreference-description: '{{l2tt std|cpp/ranges/chunk_by_view}}'
   support:
     clang:
     - since: C++23
@@ -5002,7 +5038,7 @@ library:
   rows:
   - value: 202403
     papers: P2542R8
-    cppreference-description: '{{ltt|cpp/ranges/concat_view|std::views::concat}}'
+    cppreference-description: '{{l2tt std|cpp/ranges/concat_view}}'
   support:
     clang: null
     gcc:
@@ -5015,7 +5051,7 @@ library:
   rows:
   - value: 202207
     papers: P2302R4
-    cppreference-description: '{{ltt|cpp/algorithm/ranges/contains|std::ranges::contains}}'
+    cppreference-description: '{{l2tt std|cpp/algorithm/ranges/contains}}'
   support:
     clang:
     - since: C++23
@@ -5058,8 +5094,8 @@ library:
   rows:
   - value: 202207
     papers: P1223R5 LWG3807
-    cppreference-description: '{{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last}},
-      {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if}}, and {{ltf std|cpp/algorithm/ranges/find_last|ranges::find_last_if_not}}'
+    cppreference-description: '{{l2tt std|cpp/algorithm/ranges/find_last}}, {{ltt|cpp/algorithm/ranges/find_last|std::ranges::find_last_if}},
+      and {{ltt|cpp/algorithm/ranges/find_last|std::ranges::find_last_if_not}}'
   support:
     clang:
     - since: C++23
@@ -5090,7 +5126,7 @@ library:
   rows:
   - value: 202403
     papers: P1068R11
-    cppreference-description: Vector API for random number generation ({{ltt|cpp/algorithm/ranges/generate_random|std::ranges::generate_random}})
+    cppreference-description: Vector API for random number generation ({{l2tt std|cpp/algorithm/ranges/generate_random}})
   support:
     clang: null
     gcc: null
@@ -5145,7 +5181,7 @@ library:
   rows:
   - value: 202207
     papers: P2474R2
-    cppreference-description: '{{ltt|cpp/ranges/repeat_view|std::ranges::repeat_view}}'
+    cppreference-description: '{{l2tt std|cpp/ranges/repeat_view}}'
   support:
     clang:
     - since: C++23
@@ -5161,6 +5197,8 @@ library:
   rows:
   - value: 202502
     papers: P2846R6
+    cppreference-description: '{{l2tt std|cpp/ranges/approximately_sized_range}} and
+      {{l2tt std|cpp/ranges/reserve_hint}}'
   support:
     clang: null
     gcc: null
@@ -5200,7 +5238,7 @@ library:
   rows:
   - value: 202207
     papers: P1899R3
-    cppreference-description: '{{ltt|cpp/ranges/stride_view|std::ranges::stride_view}}'
+    cppreference-description: '{{l2tt std|cpp/ranges/stride_view}}'
   support:
     clang:
     - since: C++23
@@ -5263,10 +5301,12 @@ library:
   rows:
   - value: 201606
     papers: P0040R3
-    cppreference-description: '[[cpp/memory#Uninitialized_storage|Extending memory
+    cppreference-description: '[[cpp/memory#Uninitialized storage|Extending memory
       management tools]]'
   - value: 202411
     papers: P3369R0 P3508R0
+    cppreference-description: Constexpr for [[cpp/memory#Uninitialized memory algorithms|specialized
+      memory algorithms]]
   support:
     clang:
     - since: C++17
@@ -5285,7 +5325,7 @@ library:
   rows:
   - value: 202306
     papers: P2545R4
-    cppreference-description: Read-Copy Update (RCU)
+    cppreference-description: '{{header|rcu}}: Read-Copy Update (RCU)'
   support:
     clang: null
     gcc: null
@@ -5312,7 +5352,8 @@ library:
   rows:
   - value: 202403
     papers: P2944R3
-    cppreference-description: Comparisons for {{lc|std::reference_wrapper}}
+    cppreference-description: Comparisons for {{ltt|cpp/utility/functional/reference_wrapper/operator
+      cmp|std::reference_wrapper}}
   support:
     clang:
     - since: C++26
@@ -5340,7 +5381,7 @@ library:
   rows:
   - value: 201711
     papers: P0550R2
-    cppreference-description: '{{ltt|cpp/types/remove_cvref|std::remove_cvref}}'
+    cppreference-description: '{{ltt std|cpp/types/remove_cvref}}'
   support:
     clang:
     - since: C++20
@@ -5422,6 +5463,7 @@ library:
       arithmetic]]'
   - value: 202603
     papers: P4052R0
+    cppreference-description: 'Renaming saturation arithmetic functions'
   support:
     clang:
     - since: C++26
@@ -5435,7 +5477,7 @@ library:
   rows:
   - value: 201703
     papers: P0156R2
-    cppreference-description: '{{ltt|cpp/thread/scoped_lock|std::scoped_lock}}'
+    cppreference-description: '{{ltt std|cpp/thread/scoped_lock}}'
   support:
     clang:
     - since: C++17
@@ -5452,8 +5494,7 @@ library:
   rows:
   - value: 201907
     papers: P1135R6
-    cppreference-description: '[[cpp/thread/counting_semaphore|{{tt|std::counting_semaphore}},
-      {{tt|std::binary_semaphore}}]]'
+    cppreference-description: '{{ltt std|cpp/thread/counting_semaphore}}, {{tt|std::binary_semaphore}}'
   support:
     clang:
     - since: C++20
@@ -5471,7 +5512,7 @@ library:
   rows:
   - value: 202406
     papers: P2300R10
-    cppreference-description: '{{lc|std::execution}}: sender-receiver model of execution
+    cppreference-description: '{{lc|std::execution}}: Sender-receiver model of execution
       control'
   - value: 202506
     papers: P3570R2
@@ -5583,6 +5624,7 @@ library:
   rows:
   - value: 202411
     papers: P1928R15
+    cppreference-description: '{{header|simd}}: [[cpp/numeric/simd|Data-parallel types]]'
   - value: 202502
     papers: P2933R4 P3287R3 P3441R2
   - value: 202506
@@ -5669,7 +5711,7 @@ library:
     papers: P1024R3
   - value: 202002
     papers: P1976R2
-    cppreference-description: '{{ltt|cpp/container/span|std::span}}'
+    cppreference-description: '{{ltt std|cpp/container/span}}'
   - value: 202311
     papers: P2821R5 P2833R2
     cppreference-description: Making parts of {{lc|std::span}} freestanding
@@ -5707,7 +5749,8 @@ library:
   rows:
   - value: 201902
     papers: P1227R2
-    cppreference-description: '{{ltt|cpp/iterator/size|std::ssize}} and unsigned {{ltt|cpp/container/span/size|std::span::size}}'
+    cppreference-description: '{{ltt|cpp/iterator/size|std::ssize}} and unsigned {{l2tt
+      std|cpp/container/span/size}}'
   support:
     clang:
     - since: C++20
@@ -5776,9 +5819,8 @@ library:
   rows:
   - value: 201711
     papers: P0457R2
-    cppreference-description: String prefix and suffix checking ({{lc|std::string_view::starts_with|starts_with()}}
-      and {{lc|std::string_view::ends_with|ends_with()}} for {{lc|std::string}} and
-      {{lc|std::string_view}})
+    cppreference-description: String prefix and suffix checking ({{tt|starts_with()}}
+      and {{tt|ends_with()}} for {{lc|std::string}} and {{lc|std::string_view}})
   support:
     clang:
     - since: C++20
@@ -5809,7 +5851,7 @@ library:
   header_list: stdbit.h
   rows:
   - value: 202603
-    papers: LWG4550
+    papers: P3370R1 LWG4550
   support:
     clang: null
     gcc:
@@ -5820,7 +5862,7 @@ library:
   header_list: stdckdint.h
   rows:
   - value: 202603
-    papers: LWG4550
+    papers: P3370R1 LWG4550
   support:
     clang: null
     gcc:
@@ -5832,8 +5874,8 @@ library:
   rows:
   - value: 202011
     papers: P1679R3
-    cppreference-description: '{{tt|contains}} functions of {{ltt|cpp/string/basic_string/contains|std::basic_string}}
-      and {{ltt|cpp/string/basic_string_view/contains|std::basic_string_view}}'
+    cppreference-description: '{{tt|contains()}} for {{lc|std::basic_string}} and
+      {{lc|std::basic_string_view}}'
   support:
     clang:
     - since: C++23
@@ -5992,8 +6034,8 @@ library:
     papers: P0768R1
   - value: 201907
     papers: P1614R2
-    cppreference-description: '[[cpp/language/operator_comparison#Three-way comparison|Three-way
-      comparison]] (library support); adding three-way comparison to the library'
+    cppreference-description: '{{ls|cpp/language/operator comparison#Three-way comparison}}
+      (library support); adding three-way comparison to the library'
   support:
     clang:
     - since: C++20
@@ -6026,7 +6068,7 @@ library:
   rows:
   - value: 201907
     papers: P0325R4
-    cppreference-description: '{{ltt|cpp/container/array/to_array|std::to_array}}'
+    cppreference-description: '{{ltt std|cpp/container/array/to_array}}'
   support:
     clang:
     - since: C++20
@@ -6043,8 +6085,8 @@ library:
   rows:
   - value: 201611
     papers: P0067R5 P0682R1 LWG3137
-    cppreference-description: Elementary string conversions ({{ltt|cpp/utility/to_chars|std::to_chars}},
-      {{ltt|cpp/utility/from_chars|std::from_chars}})
+    cppreference-description: Elementary string conversions ({{ltt std|cpp/utility/to_chars}},
+      {{ltt std|cpp/utility/from_chars}})
   - value: 202306
     papers: P2497R0
     cppreference-description: Testing for success or failure of {{header|charconv}}
@@ -6080,9 +6122,8 @@ library:
   header_list: utility
   rows:
   - value: 202102
-    papers: P1682R2
-    cppreference-description: '{{ltt|cpp/utility/to_underlying|std::to_underlying}}
-      <!--{{lc|std::to_underlying}}-->'
+    papers: P1682R3
+    cppreference-description: '{{ltt std|cpp/utility/to_underlying}}'
   support:
     clang:
     - since: C++23
@@ -6098,7 +6139,8 @@ library:
   rows:
   - value: 201304
     papers: N3655
-    cppreference-description: Alias templates for TransformationTraits
+    cppreference-description: Alias templates for [[cpp/meta#Type transformations|transformation
+      traits]]
   support:
     clang:
     - since: C++14
@@ -6303,18 +6345,19 @@ library:
   rows:
   - value: 201606
     papers: P0088R3 P0393R3 P0032R3
-    cppreference-description: '{{lc|std::variant}}: a type-safe union for C++17'
+    cppreference-description: '{{lc|std::variant}}: A type-safe union for C++17'
   - value: 202102
     papers: P2162R2
-    cppreference-description: '{{lc|std::visit}} for classes derived from {{lc|std::variant}}'
+    cppreference-description: '{{ltt|cpp/utility/variant/visit2|std::visit}} for classes
+      derived from {{lc|std::variant}}'
     cppreference-treats-as-dr-against: C++17
   - value: 202106
     papers: P2231R1
-    cppreference-description: Fully {{tt|constexpr}} {{lc|std::variant}}
+    cppreference-description: Fully constexpr {{lc|std::variant}}
     cppreference-treats-as-dr-against: C++20
   - value: 202306
     papers: P2637R3
-    cppreference-description: Member {{ltt|cpp/utility/variant/visit2|visit}}
+    cppreference-description: Member {{ltt|cpp/utility/variant/visit}}
   support:
     clang:
     - since: C++17
