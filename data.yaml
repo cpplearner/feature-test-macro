@@ -5114,7 +5114,9 @@ library:
     cppreference-description: '{{tt|std::ranges}} [[cpp/algorithm/ranges#Constrained
       fold operations|fold algorithms]]'
   support:
-    clang: null
+    clang:
+    - since: C++23
+      value: 202207
     gcc:
     - since: C++23
       value: 202207
