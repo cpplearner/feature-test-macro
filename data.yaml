@@ -3909,7 +3909,9 @@ library:
     papers: P3016R6
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202511
     msvc:
     - value: 202511
 - name: __cpp_lib_inplace_vector
@@ -6339,7 +6341,9 @@ library:
     papers: P3016R6
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202511
     msvc:
     - value: 202511
 - name: __cpp_lib_variant
