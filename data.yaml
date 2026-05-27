@@ -1384,7 +1384,9 @@ language:
     cppreference-description: Trivial unions
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
     msvc: null
 - name: __cpp_unicode_characters
   rows:
