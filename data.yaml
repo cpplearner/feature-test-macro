@@ -3083,7 +3083,7 @@ library:
       value: 202511
     gcc:
     - since: C++23
-      value: 202207
+      value: 202511
     msvc:
     - since: C++23
       value: 202511
@@ -3101,7 +3101,7 @@ library:
       value: 202511
     gcc:
     - since: C++23
-      value: 202207
+      value: 202511
     msvc:
     - since: C++23
       value: 202511
