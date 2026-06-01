@@ -5044,7 +5044,9 @@ library:
     papers: P2542R8
     cppreference-description: '{{l2tt std|cpp/ranges/concat_view}}'
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202403
     gcc:
     - since: C++26
       depends: __cpp_pack_indexing
