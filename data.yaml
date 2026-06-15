@@ -2292,7 +2292,7 @@ library:
       value: 202603
     gcc:
     - since: C++26
-      value: 202603
+      value: 202606
     msvc: null
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm utility
