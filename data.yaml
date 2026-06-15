@@ -306,6 +306,10 @@ language:
   - value: 202002
     papers: P0848R3 P2493R0
     cppreference-description: Conditional trivial special member functions
+  - value: 202606
+    papers: P3822R2
+    cppreference-description: Conditional noexcept specifiers in [[cpp/language/requires#Compound
+      requirements|compound requirements]]
   support:
     clang:
     - since: C++20
@@ -344,6 +348,9 @@ language:
     papers: P2564R3
     cppreference-description: Making {{ltt|cpp/language/consteval}} propagate up
     cppreference-treats-as-dr-against: C++20
+  - value: 202606
+    papers: P4101R1
+    cppreference-description: consteval-only values
   support:
     clang:
     - since: C++20
@@ -398,7 +405,8 @@ language:
       type-erasure'
   - value: 202406
     papers: P2747R2
-    cppreference-description: Constexpr placement {{tt|new}}
+    cppreference-description: Constexpr [[cpp/language/new#Placement new|placement
+      new]]
   support:
     clang:
     - since: C++11
@@ -506,6 +514,10 @@ language:
   - value: 202502
     papers: P2900R14
     cppreference-description: '[[cpp/language/contracts|Contracts]]'
+  - value: 202606
+    papers: P3097R3
+    cppreference-description: '[[cpp/language/contracts|Contracts]] for [[cpp/language/virtual|virtual
+      functions]]'
   support:
     clang: null
     gcc:
@@ -609,6 +621,10 @@ language:
     papers: P0329R4
     cppreference-description: '{{ls|cpp/language/aggregate initialization#Designated
       initializer}}s'
+  - value: 202606
+    papers: P2287R6
+    cppreference-description: '[[cpp/language/initialization|Designated initializers]]
+      for base classes'
   support:
     clang:
     - since: C++20
@@ -755,7 +771,7 @@ language:
   rows:
   - value: 202106
     papers: P1938R3
-    cppreference-description: '[[cpp/language/if|{{tt|if consteval}}]]'
+    cppreference-description: '{{ltt|cpp/language/if|if consteval}}'
   support:
     clang:
     - since: C++23
@@ -770,7 +786,7 @@ language:
   rows:
   - value: 201606
     papers: P0292R2
-    cppreference-description: '[[cpp/language/if|{{tt|if constexpr}}]]'
+    cppreference-description: '{{ltt|cpp/language/if|if constexpr}}'
   support:
     clang:
     - since: C++17
@@ -786,6 +802,11 @@ language:
   - value: 201902
     papers: P0912R5 LWG3393
     cppreference-description: '[[cpp/language/coroutines|Coroutines]] (compiler support)'
+  - value: 202606
+    papers: P3950R1
+    cppreference-description: Removing mutual exclusivity for [[cpp/language/coroutines|coroutine
+      promise return functions]]
+    cppreference-treats-as-dr-against: C++20
   support:
     clang:
     - since: C++20
@@ -805,8 +826,8 @@ language:
   rows:
   - value: 201806
     papers: P0722R3
-    cppreference-description: Destroying [[cpp/memory/new/operator delete|{{tt|operator
-      delete}}]] (compiler support)
+    cppreference-description: Destroying {{ltt|cpp/memory/new/operator delete|operator
+      delete}} (compiler support)
   support:
     clang:
     - value: 201806
@@ -991,6 +1012,8 @@ language:
   - value: 202207
     papers: P2071R2
     cppreference-description: Named [[cpp/language/escape|universal character escapes]]
+  - value: 202606
+    papers: P3733R1
   support:
     clang:
     - value: 202207
@@ -1091,6 +1114,9 @@ language:
   - value: 202311
     papers: P2662R3
     cppreference-description: '[[cpp/language/pack indexing|Pack indexing]]'
+  - value: 202606
+    papers: P3670R4
+    cppreference-description: '[[cpp/language/pack_indexing|Pack indexing]] for templates'
   support:
     clang:
     - value: 202311
@@ -1115,6 +1141,9 @@ language:
   - value: 202502
     papers: P1967R14
     cppreference-description: '{{ltt|cpp/preprocessor/embed|#embed}}'
+  - value: 202606
+    papers: P3540R3
+    cppreference-description: '[[cpp/preprocessor/embed|{{tt|#embed}}]] offset parameter'
   support:
     clang: null
     gcc:
@@ -1542,10 +1571,10 @@ library:
   rows:
   - value: 202403
     papers: P2248R8 P3217R0
-    cppreference-description: Enabling [[cpp/language/list initialization|list-initialization]]
-      for {{lt|cpp/algorithm}}s
   - value: 202603
     papers: P3787R2
+    cppreference-description: Enabling [[cpp/language/list initialization|list-initialization]]
+      for {{lt|cpp/algorithm}}s
   support:
     clang: null
     gcc:
@@ -1644,6 +1673,10 @@ library:
     cppreference-description: '{{lc|std::apply}}'
   - value: 202506
     papers: P1317R2
+    cppreference-description: '{{lc|std::apply}} changes: {{lc|std::apply_result}},
+      {{lc|std::is_applicable}} and {{lc|std::is_nothrow_applicable}}'
+  - value: 202603
+    papers: P3795R2 LWG4567
   support:
     clang:
     - since: C++17
@@ -1821,6 +1854,7 @@ library:
       {{l2tt std|cpp/atomic/atomic/fetch_max}}, etc)
   - value: 202506
     papers: P3008R6
+    cppreference-description: Atomic floating-point min/max
   support:
     clang: null
     gcc:
@@ -1832,6 +1866,7 @@ library:
   rows:
   - value: 202506
     papers: P3111R8
+    cppreference-description: Atomic reduction operations
   support:
     clang: null
     gcc: null
@@ -1844,9 +1879,9 @@ library:
     cppreference-description: '{{ltt std|cpp/atomic/atomic_ref}}'
   - value: 202411
     papers: P2835R7
-    cppreference-description: '{{l2tf std|cpp/atomic/atomic_ref/address}}'
   - value: 202603
     papers: P3936R1
+    cppreference-description: '{{l2tf std|cpp/atomic/atomic_ref/address}}'
   support:
     clang:
     - since: C++20
@@ -2006,6 +2041,10 @@ library:
   - value: 201907
     papers: P0553R4
     cppreference-description: '[[cpp/utility/bit|Bit operations]]'
+  - value: 202606
+    papers: P3104R6 P3793R2
+    cppreference-description: '{{header|bit}}: bit permutations, {{lc|std::shl}} and
+      {{lc|std::shr}}'
   support:
     clang:
     - since: C++20
@@ -2286,6 +2325,11 @@ library:
     papers: P2781R9
   - value: 202603
     papers: P3978R3
+    cppreference-description: '{{lc|std::constant_wrapper}}'
+  - value: 202606
+    papers: P4206R0
+    cppreference-description: Reverting string literal support in {{lc|std::constant_wrapper}}
+    cppreference-treats-as-dr-against: C++26
   support:
     clang:
     - since: C++26
@@ -2472,6 +2516,7 @@ library:
   rows:
   - value: 202511
     papers: P3391R2
+    cppreference-description: Constexpr text formatting
   support:
     clang: null
     gcc:
@@ -2571,6 +2616,7 @@ library:
     cppreference-description: Constexpr {{lc|std::unique_ptr}}
   - value: 202506
     papers: P3037R6
+    cppreference-description: Constexpr {{lc|std::shared_ptr}} and friends
   support:
     clang:
     - since: C++20
@@ -2666,6 +2712,8 @@ library:
   - value: 201907
     papers: P0980R1
     cppreference-description: Constexpr {{lc|std::string}}
+  - value: 202511
+    papers: P3391R2 LWG4531
   support:
     clang:
     - since: C++20
@@ -2879,6 +2927,7 @@ library:
   rows:
   - value: 202506
     papers: P3149R11
+    cppreference-description: 'Async scopes: creating scopes for non-sequential concurrency'
   support:
     clang: null
     gcc: null
@@ -2911,6 +2960,8 @@ library:
   rows:
   - value: 202506
     papers: P3491R3
+    cppreference-description: '{{lc|std::define_static_object}}, {{lc|std::define_static_array}},
+      {{lc|std::define_static_string}}'
   support:
     clang: null
     gcc:
@@ -2994,6 +3045,7 @@ library:
     papers: P2927R3 P3748R0
   - value: 202603
     papers: P3981R2
+    cppreference-description: '{{lc|std::exception_ptr_cast()}}'
   support:
     clang: null
     gcc:
@@ -3043,6 +3095,9 @@ library:
   - value: 202211
     papers: P2505R5
     cppreference-description: Monadic functions for {{lc|std::expected}}
+  - value: 202606
+    papers: P3798R1
+    cppreference-description: '{{lc|std::expected::has_error()}}'
   support:
     clang:
     - since: C++23
@@ -3083,6 +3138,8 @@ library:
     cppreference-description: '{{ltt std|cpp/container/flat_map}} and {{ltt std|cpp/container/flat_multimap}}'
   - value: 202511
     papers: P3567R2
+    cppreference-description: '{{ltt std|cpp/container/flat_map}} and {{ltt std|cpp/container/flat_multimap}}
+      fixes'
   support:
     clang:
     - since: C++23
@@ -3101,6 +3158,8 @@ library:
     cppreference-description: '{{ltt std|cpp/container/flat_set}} and {{ltt std|cpp/container/flat_multiset}}'
   - value: 202511
     papers: P3567R2
+    cppreference-description: '{{ltt std|cpp/container/flat_set}} and {{ltt std|cpp/container/flat_multiset}}
+      fixes'
   support:
     clang:
     - since: C++23
@@ -3168,6 +3227,8 @@ library:
     cppreference-description: Formatting of {{lc|std::filesystem::path}}
   - value: 202506
     papers: P2319R5
+    cppreference-description: '{{lc|std::filesystem::path::display_string()}} and
+      {{lc|std::filesystem::path::native_encoded_string()}}'
   support:
     clang: null
     gcc:
@@ -3244,6 +3305,7 @@ library:
     cppreference-description: Freestanding facilities in {{header|algorithm}}
   - value: 202502
     papers: P2976R1
+    cppreference-description: 'Freestanding library: {{header|algorithm}}'
   support:
     clang: null
     gcc:
@@ -3341,6 +3403,7 @@ library:
   rows:
   - value: 202502
     papers: P2976R1
+    cppreference-description: 'Freestanding library: {{header|execution}}'
   support:
     clang: null
     gcc: null
@@ -3413,6 +3476,7 @@ library:
     cppreference-description: Freestanding facilities in {{header|memory}}
   - value: 202502
     papers: P2976R1
+    cppreference-description: 'Freestanding library: {{header|memory}}'
   support:
     clang: null
     gcc: null
@@ -3427,6 +3491,7 @@ library:
       arithmetic)
   - value: 202502
     papers: P2976R1
+    cppreference-description: 'Freestanding library: {{header|numeric}}'
   support:
     clang: null
     gcc: null
@@ -3451,6 +3516,7 @@ library:
     cppreference-description: Making parts of {{lc|std::optional}} freestanding
   - value: 202506
     papers: P2988R12
+    cppreference-description: Freestanding {{lc|std::optional<T&>}}
   support:
     clang: null
     gcc:
@@ -3464,6 +3530,7 @@ library:
   rows:
   - value: 202502
     papers: P2976R1
+    cppreference-description: 'Freestanding library: {{header|random}}'
   support:
     clang: null
     gcc: null
@@ -3892,6 +3959,9 @@ library:
   - value: 202306
     papers: P2530R3
     cppreference-description: '{{header|hazard_pointer}}: Hazard pointers'
+  - value: 202606
+    papers: P3428R4
+    cppreference-description: Hazard pointer batches
   support:
     clang: null
     gcc: null
@@ -3956,6 +4026,9 @@ library:
   rows:
   - value: 202511
     papers: P3016R6
+    cppreference-description: Resolved inconsistencies in {{tt|begin}}/{{tt|end}}
+      for {{lc|std::initializer_list}}
+    cppreference-treats-as-dr-against: C++11
   support:
     clang: null
     gcc:
@@ -3972,6 +4045,8 @@ library:
       with fixed capacity (inplace storage)'
   - value: 202603
     papers: P3981R2 P4022R0
+    cppreference-description: Better return types. Removed {{tt|try_append_range}}
+      member function
   support:
     clang: null
     gcc:
@@ -4022,6 +4097,8 @@ library:
       sequences]]'
   - value: 202511
     papers: P1789R3
+    cppreference-description: Making {{lc|std::integer_sequence}} usable in structured
+      bindings and expansion statements
   support:
     clang:
     - since: C++14
@@ -4285,6 +4362,8 @@ library:
   rows:
   - value: 202603
     papers: P3856R8
+    cppreference-description: '{{lc|std::is_structural}}: type trait for detecting
+      [[cpp/language/template parameters|structural types]]'
   support:
     clang: null
     gcc:
@@ -4348,6 +4427,7 @@ library:
     cppreference-description: Checking if a union alternative is active ({{ltt std|cpp/types/is_within_lifetime}})
   - value: 202603
     papers: P3450R1
+    cppreference-description: Extending {{ltt std|cpp/types/is_within_lifetime}}
   support:
     clang:
     - since: C++26
@@ -4508,6 +4588,16 @@ library:
       value: 201304
     msvc:
     - value: 201304
+- name: __cpp_lib_map_lookup
+  header_list: map unordered_map flat_map
+  rows:
+  - value: 202606
+    papers: P3091R6
+    cppreference-description: Better lookup function for map containers
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_map_try_emplace
   header_list: map
   rows:
@@ -4577,6 +4667,16 @@ library:
     msvc:
     - since: C++23
       value: 202207
+- name: __cpp_lib_mdspan_copy
+  header_list: mdspan
+  rows:
+  - value: 202606
+    papers: P3242R4
+    cppreference-description: '{{lc|std::mdspan}} copy and fill operations'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_memory_resource
   header_list: memory_resource
   rows:
@@ -4725,6 +4825,7 @@ library:
   rows:
   - value: 202506
     papers: P3641R0
+    cppreference-description: Library support for observable checkpoints
   support:
     clang: null
     gcc:
@@ -4749,6 +4850,7 @@ library:
     cppreference-description: '{{ls|cpp/utility/optional#Monadic operations}} in {{lc|std::optional}}'
   - value: 202506
     papers: P2988R12
+    cppreference-description: '{{lc|std::optional<T&>}}'
   support:
     clang:
     - since: C++17
@@ -4821,6 +4923,7 @@ library:
     cppreference-description: '[[cpp/algorithm#Execution policies|Parallel algorithms]]'
   - value: 202506
     papers: P3179R9
+    cppreference-description: Parallel range algorithms
   support:
     clang: null
     gcc:
@@ -4850,6 +4953,16 @@ library:
     gcc:
     - since: C++26
       value: 202406
+    msvc: null
+- name: __cpp_lib_pointer_tag_pair
+  header_list: memory
+  rows:
+  - value: 202606
+    papers: P3125R6
+    cppreference-description: Pointer tagging
+  support:
+    clang: null
+    gcc: null
     msvc: null
 - name: __cpp_lib_polymorphic
   header_list: memory
@@ -5136,6 +5249,8 @@ library:
   rows:
   - value: 202603
     papers: P3725R3
+    cppreference-description: Filter view extensions for safer use
+    cppreference-treats-as-dr-against: C++20
   support:
     clang: null
     gcc:
@@ -5191,6 +5306,7 @@ library:
   rows:
   - value: 202506
     papers: P3060R3
+    cppreference-description: '{{lc|std::views::indices}}'
   support:
     clang:
     - since: C++26
@@ -5424,6 +5540,7 @@ library:
     papers: P2996R13 P3096R12 P3293R3 P3394R4 P3560R2
   - value: 202603
     papers: P3795R2 P4156R0
+    cppreference-description: '{{header|meta}}: Reflection'
   support:
     clang: null
     gcc:
@@ -5452,6 +5569,8 @@ library:
   rows:
   - value: 202603
     papers: P3886R0
+    cppreference-description: Implementation-defined support of replaceable contract-violation
+      handler
   support:
     clang: null
     gcc:
@@ -5571,6 +5690,7 @@ library:
       control'
   - value: 202506
     papers: P3570R2
+    cppreference-description: '{{lc|std::execution}}: More extensions'
   support:
     clang: null
     gcc: null
@@ -5688,6 +5808,17 @@ library:
     papers: P3922R1
   - value: 202603
     papers: P3690R1 P4012R1
+  - value: 202606
+    papers: P3319R6
+  support:
+    clang: null
+    gcc: null
+    msvc: null
+- name: __cpp_lib_simd_bitops
+  header_list: simd
+  rows:
+  - value: 202606
+    papers: P3772R2 P3793R2
   support:
     clang: null
     gcc: null
@@ -5706,6 +5837,7 @@ library:
   rows:
   - value: 202506
     papers: P2664R11
+    cppreference-description: SIMD permutation operations
   support:
     clang: null
     gcc: null
@@ -5850,6 +5982,7 @@ library:
   rows:
   - value: 202603
     papers: P3726R2
+    cppreference-description: '{{lc|std::start_lifetime}}'
   support:
     clang: null
     gcc: null
@@ -5891,7 +6024,8 @@ library:
   rows:
   - value: 202011
     papers: P0943R6
-    cppreference-description: Compatibility header for C atomic operations
+    cppreference-description: Compatibility header {{header|stdatomic.h}} for C atomic
+      operations
   support:
     clang:
     - since: C++23
@@ -5907,6 +6041,8 @@ library:
   rows:
   - value: 202603
     papers: P3370R1 LWG4550
+    cppreference-description: Compatibility header {{header|stdbit.h}} for C bitwise
+      operations
   support:
     clang: null
     gcc:
@@ -5918,6 +6054,8 @@ library:
   rows:
   - value: 202603
     papers: P3370R1 LWG4550
+    cppreference-description: Compatibility header {{header|stdckdint.h}} for C checked
+      integer operations
   support:
     clang: null
     gcc:
@@ -5962,6 +6100,7 @@ library:
   rows:
   - value: 202506
     papers: P3044R2
+    cppreference-description: '{{lc|std::string::subview()}} and {{lc|std::string_view::subview()}}'
   support:
     clang:
     - since: C++26
@@ -6065,6 +6204,7 @@ library:
   rows:
   - value: 202506
     papers: P3552R3
+    cppreference-description: Coroutine task types
   support:
     clang: null
     gcc: null
@@ -6081,6 +6221,16 @@ library:
     - since: C++26
       depends: _GLIBCXX_USE_NL_LANGINFO_L
       value: 202306
+    msvc: null
+- name: __cpp_lib_thread_attributes
+  header_list: thread
+  rows:
+  - value: 202606
+    papers: P2019R9
+    cppreference-description: Thread attributes
+  support:
+    clang: null
+    gcc: null
     msvc: null
 - name: __cpp_lib_three_way_comparison
   header_list: compare
@@ -6146,6 +6296,10 @@ library:
     papers: P2497R0
     cppreference-description: Testing for success or failure of {{header|charconv}}
       functions
+  - value: 202606
+    papers: P3505R4
+    cppreference-description: Fixing the default floating-point representation in
+      {{lc|std::to_chars}}
   support:
     clang: null
     gcc:
@@ -6299,6 +6453,7 @@ library:
   rows:
   - value: 202506
     papers: P2830R10
+    cppreference-description: Standardized constexpr type ordering
   support:
     clang: null
     gcc:
@@ -6390,6 +6545,9 @@ library:
   rows:
   - value: 202511
     papers: P3016R6
+    cppreference-description: Resolving inconsistencies in {{tt|begin}}/{{tt|end}}
+      for {{lc|std::valarray}}
+    cppreference-treats-as-dr-against: C++11
   support:
     clang: null
     gcc:
@@ -6437,6 +6595,16 @@ library:
       value: 202102
     - since: C++20
       value: 202106
+- name: __cpp_lib_view_interface
+  header_list: ranges
+  rows:
+  - value: 202606
+    papers: P3052R2
+    cppreference-description: '{{lc|view_interface::at()}}'
+  support:
+    clang: null
+    gcc: null
+    msvc: null
 - name: __cpp_lib_void_t
   header_list: type_traits
   rows:
