@@ -2602,7 +2602,9 @@ library:
     papers: P3372R3
     cppreference-description: Constexpr {{lc|std::map}} and {{lc|std::multimap}}
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202502
     gcc: null
     msvc: null
 - name: __cpp_lib_constexpr_memory
@@ -5482,6 +5484,8 @@ library:
     clang:
     - since: C++17
       value: 201606
+    - since: C++26
+      value: 202411
     gcc:
     - since: C++17
       value: 201606
