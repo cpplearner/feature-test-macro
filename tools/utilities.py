@@ -7,7 +7,8 @@ standards = [
     ('C++17', 201703),
     ('C++20', 202002),
     ('C++23', 202302),
-    ('C++26', None),
+    ('C++26', 202603),
+    ('C++29', None),
 ]
 
 library_prologue = """\
@@ -16,6 +17,9 @@ library_prologue = """\
 
 def std_options(impl):
     for std, __cplusplus in standards:
+        if std == 'C++29':
+            continue
+
         if impl == 'msvc':
             if std in ['C++98', 'C++11']:
                 continue
