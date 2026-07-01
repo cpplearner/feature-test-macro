@@ -2333,7 +2333,7 @@ library:
   support:
     clang:
     - since: C++26
-      value: 202603
+      value: 202606
     gcc:
     - since: C++26
       value: 202606
@@ -2689,7 +2689,9 @@ library:
     papers: P3372R3
     cppreference-description: Constexpr {{lc|std::set}} and {{lc|std::multiset}}
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202502
     gcc: null
     msvc: null
 - name: __cpp_lib_constexpr_stack
@@ -6220,7 +6222,9 @@ library:
     papers: P1885R12
     cppreference-description: '{{lc|std::text_encoding}}'
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202306
     gcc:
     - since: C++26
       depends: _GLIBCXX_USE_NL_LANGINFO_L
