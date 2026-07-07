@@ -1016,7 +1016,7 @@ language:
     papers: P3733R1
   support:
     clang:
-    - value: 202207
+    - value: 202606
     gcc:
     - since: C++23
       value: 202207
