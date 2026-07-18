@@ -351,6 +351,7 @@ language:
   - value: 202606
     papers: P4101R1
     cppreference-description: consteval-only values
+    cppreference-treats-as-dr-against: C++26
   support:
     clang:
     - since: C++20
@@ -2042,9 +2043,11 @@ library:
     papers: P0553R4
     cppreference-description: '[[cpp/utility/bit|Bit operations]]'
   - value: 202606
-    papers: P3104R6 P3793R2
+    papers: P3793R2
     cppreference-description: '{{header|bit}}: bit permutations, {{lc|std::shl}} and
       {{lc|std::shr}}'
+  - value: 202607
+    papers: P3104R6
   support:
     clang:
     - since: C++20
@@ -4046,7 +4049,7 @@ library:
   - value: 202406
     papers: P0843R14
     cppreference-description: '{{lc|std::inplace_vector}}: Dynamically-resizable vector
-      with fixed capacity (inplace storage)'
+      with fixed capacity'
   - value: 202603
     papers: P3981R2 P4022R0
     cppreference-description: Better return types. Removed {{tt|try_append_range}}
@@ -4431,7 +4434,7 @@ library:
     cppreference-description: Checking if a union alternative is active ({{ltt std|cpp/types/is_within_lifetime}})
   - value: 202603
     papers: P3450R1
-    cppreference-description: Extending {{ltt std|cpp/types/is_within_lifetime}}
+    cppreference-description: Extension of {{ltt std|cpp/types/is_within_lifetime}}
   support:
     clang:
     - since: C++26
@@ -4657,6 +4660,8 @@ library:
   - value: 202406
     papers: P2389R2
     cppreference-description: '{{lc|std::dims}} for {{lc|std::mdspan}}'
+  - value: 202606
+    papers: P3242R4
   support:
     clang:
     - since: C++23
@@ -4941,6 +4946,7 @@ library:
   rows:
   - value: 202506
     papers: P2079R10
+    cppreference-description: Parallel scheduler
   support:
     clang: null
     gcc: null
@@ -5816,6 +5822,7 @@ library:
     papers: P3690R1 P4012R1
   - value: 202606
     papers: P3319R6
+    cppreference-description: '{{lc|std::simd::iota}}'
   support:
     clang: null
     gcc: null
@@ -5824,7 +5831,10 @@ library:
   header_list: simd
   rows:
   - value: 202606
-    papers: P3772R2 P3793R2
+    papers: P3793R2
+    cppreference-description: '{{header|simd}}: bit permutations, {{lc|std::simd::shl}} and {{lc|std::simd::shr}}'
+  - value: 202607
+    papers: P3772R2
   support:
     clang: null
     gcc: null
@@ -5834,6 +5844,7 @@ library:
   rows:
   - value: 202502
     papers: P2663R7
+    cppreference-description: Interleaved {{lc|std::complex}} values support in {{lc|std::simd}}
   support:
     clang: null
     gcc: null
