@@ -50,7 +50,8 @@ attributes:
     papers: P2795R5 CWG3020
   support:
     clang: null
-    gcc: null
+    gcc:
+    - value: 202403
     msvc: null
 - name: likely
   rows:
