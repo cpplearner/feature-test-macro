@@ -1858,7 +1858,9 @@ library:
     papers: P3008R6
     cppreference-description: Atomic floating-point min/max
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202403
     gcc:
     - since: C++26
       value: 202403
@@ -3644,7 +3646,9 @@ library:
   - value: 202604
     papers: P3961R1
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202603
     gcc:
     - since: C++26
       value: 202604
@@ -5885,7 +5889,9 @@ library:
     cppreference-description: Enabling the use of {{lc|std::weak_ptr}} as keys in
       {{lsd|cpp/container#Unordered associative containers}}
   support:
-    clang: null
+    clang:
+    - since: C++26
+      value: 202306
     gcc:
     - since: C++26
       value: 202306
