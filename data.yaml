@@ -5837,7 +5837,8 @@ library:
   rows:
   - value: 202606
     papers: P3793R2
-    cppreference-description: '{{header|simd}}: bit permutations, {{lc|std::simd::shl}} and {{lc|std::simd::shr}}'
+    cppreference-description: '{{header|simd}}: bit permutations, {{lc|std::simd::shl}}
+      and {{lc|std::simd::shr}}'
   - value: 202607
     papers: P3772R2
   support:
