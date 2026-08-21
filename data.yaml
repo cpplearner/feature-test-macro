@@ -2454,7 +2454,9 @@ library:
     cppreference-description: Constexpr {{lc|std::deque}}
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
     msvc: null
 - name: __cpp_lib_constexpr_dynamic_alloc
   header_list: memory
@@ -2686,7 +2688,9 @@ library:
     clang:
     - since: C++26
       value: 202502
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
     msvc: null
 - name: __cpp_lib_constexpr_set
   header_list: set
@@ -2708,7 +2712,9 @@ library:
     cppreference-description: Constexpr {{lc|std::stack}}
   support:
     clang: null
-    gcc: null
+    gcc:
+    - since: C++26
+      value: 202502
     msvc: null
 - name: __cpp_lib_constexpr_string
   header_list: string
@@ -5837,7 +5843,8 @@ library:
   rows:
   - value: 202606
     papers: P3793R2
-    cppreference-description: '{{header|simd}}: bit permutations, {{lc|std::simd::shl}} and {{lc|std::simd::shr}}'
+    cppreference-description: '{{header|simd}}: bit permutations, {{lc|std::simd::shl}}
+      and {{lc|std::simd::shr}}'
   - value: 202607
     papers: P3772R2
   support:
