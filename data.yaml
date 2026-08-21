@@ -4047,7 +4047,9 @@ library:
       for {{lc|std::initializer_list}}
     cppreference-treats-as-dr-against: C++11
   support:
-    clang: null
+    clang:
+    - since: C++14
+      value: 202511
     gcc:
     - since: C++26
       value: 202511
@@ -6581,7 +6583,9 @@ library:
       for {{lc|std::valarray}}
     cppreference-treats-as-dr-against: C++11
   support:
-    clang: null
+    clang:
+    - since: C++14
+      value: 202511
     gcc:
     - since: C++26
       value: 202511
