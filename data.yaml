@@ -230,8 +230,7 @@ language:
       to a prvalue]] ({{c|auto(x)}})'
   support:
     clang:
-    - since: C++23
-      value: 202110
+    - value: 202110
     gcc:
     - since: C++23
       value: 202110
