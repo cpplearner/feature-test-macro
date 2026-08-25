@@ -17,11 +17,8 @@ library_prologue = """\
 
 def std_options(impl):
     for std, __cplusplus in standards:
-        if std == 'C++29':
-            continue
-
         if impl == 'msvc':
-            if std in ['C++98', 'C++11']:
+            if std in ['C++98', 'C++11', 'C++29']:
                 continue
             if std == 'C++26':
                 yield std, '-std:c++latest'
@@ -30,7 +27,10 @@ def std_options(impl):
             else:
                 yield std, f'-std:{std.lower()}'
         else:
-            yield std, f'-std={std.lower()}'
+            if std == 'C++29':
+                yield std, '-std=c++2d'
+            else:
+                yield std, f'-std={std.lower()}'
 
 def get_options(item):
     for opt in item.get('option', '').split():
