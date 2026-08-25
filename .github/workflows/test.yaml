@@ -71,7 +71,7 @@ jobs:
               if: ${{ steps.check_gcc_builddate.outputs.needs_rebuild == 'yes' }}
               run: |
                   LOC="$PWD"
-                  git clone --depth=1 https://gcc.gnu.org/git/gcc.git
+                  git clone --depth=1 git://gcc.gnu.org/git/gcc.git
                   cd gcc
                   ./contrib/download_prerequisites
                   mkdir objdir && cd objdir
