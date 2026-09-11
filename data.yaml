@@ -6497,7 +6497,10 @@ library:
     papers: P2830R10
     cppreference-description: Standardized constexpr type ordering
   support:
-    clang: null
+    clang:
+    - since: C++26
+      depends: __has_builtin(__builtin_type_order)
+      value: 202506
     gcc:
     - since: C++26
       depends: __has_builtin(__builtin_type_order) && __cpp_lib_three_way_comparison
@@ -6646,7 +6649,9 @@ library:
     papers: P3052R2
     cppreference-description: '{{lc|view_interface::at()}}'
   support:
-    clang: null
+    clang:
+    - since: C++29
+      value: 202606
     gcc: null
     msvc: null
 - name: __cpp_lib_void_t
