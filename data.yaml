@@ -1421,7 +1421,7 @@ language:
     clang: null
     gcc:
     - since: C++26
-      value: 202502
+      value: 202603
     msvc: null
 - name: __cpp_unicode_characters
   rows:
