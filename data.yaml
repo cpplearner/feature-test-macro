@@ -16,8 +16,7 @@ attributes:
   - value: 200809
     papers: N2782
   support:
-    clang:
-    - value: 200809
+    clang: null
     gcc: null
     msvc:
     - value: 200809
