@@ -3122,6 +3122,8 @@ library:
     clang:
     - since: C++23
       value: 202211
+    - since: C++29
+      value: 202606
     gcc:
     - since: C++23
       depends: __cpp_concepts >= 202002L
