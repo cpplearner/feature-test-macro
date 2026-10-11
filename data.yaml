@@ -817,9 +817,9 @@ language:
       value: 201902
     gcc:
     - since: C++20
-      value: 201902
+      value: 202606
     - option: -fcoroutines
-      value: 201902
+      value: 202606
     msvc:
     - since: C++20
       disabled-by: /await
