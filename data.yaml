@@ -363,6 +363,8 @@ language:
     msvc:
     - since: C++20
       value: 201811
+    - since: C++23
+      value: 202211
 - name: __cpp_constexpr
   rows:
   - value: 200704
