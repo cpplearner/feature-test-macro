@@ -22,8 +22,6 @@ def std_options(impl):
                 continue
             if std == 'C++26':
                 yield std, '-std:c++latest'
-            elif std == 'C++23':
-                yield std, '-std:c++23preview'
             else:
                 yield std, f'-std:{std.lower()}'
         else:
