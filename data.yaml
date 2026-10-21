@@ -2971,7 +2971,10 @@ library:
     papers: P2810R4
     cppreference-description: Replaceable {{ltt std|cpp/utility/is_debugger_present}}
   support:
-    clang: null
+    clang:
+    - since: C++26
+      depends: _LIBCPP_AVAILABILITY_HAS_DEBUGGING
+      value: 202403
     gcc:
     - since: C++26
       value: 202403
