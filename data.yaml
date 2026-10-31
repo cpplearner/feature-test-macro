@@ -1151,7 +1151,8 @@ language:
     papers: P3540R3
     cppreference-description: '[[cpp/preprocessor/embed|{{tt|#embed}}]] offset parameter'
   support:
-    clang: null
+    clang:
+    - value: 202502
     gcc:
     - since: C++26
       value: 202502
