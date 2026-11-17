@@ -2699,9 +2699,7 @@ library:
     papers: P3372R3
     cppreference-description: Constexpr {{lc|std::queue}} and {{lc|std::priority_queue}}
   support:
-    clang:
-    - since: C++26
-      value: 202502
+    clang: null
     gcc:
     - since: C++26
       value: 202502
