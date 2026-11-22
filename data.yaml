@@ -273,7 +273,7 @@ language:
     cppreference-description: '{{ltt|cpp/keyword/char8_t}}'
   - value: 202207
     papers: P2513R4
-    cppreference-description: '{{tt|char8_t}} compatibility and portability fix (allow
+    cppreference-description: '{{lc|char8_t}} compatibility and portability fix (allow
       [[cpp/language/aggregate initialization#Character arrays|initialization of (unsigned)
       char arrays]] from [[cpp/language/string literal|UTF-8 string literals]])'
     cppreference-treats-as-dr-against: C++20
@@ -611,7 +611,7 @@ language:
   - value: 202403
     papers: P2573R2
     cppreference-description: Deleted [[cpp/language/function|function definitions]]
-      with messages ({{tt|1== delete("should have a reason");}})
+      with messages ({{c|1== delete("should have a reason");}})
   support:
     clang:
     - value: 202403
@@ -675,7 +675,8 @@ language:
   rows:
   - value: 202506
     papers: P1306R5
-    cppreference-description: Expansion statements ({{tt|template for}})
+    cppreference-description: '[[cpp/language/template for|Expansion statements ({{tt|template
+      for}})]]'
   support:
     clang: null
     gcc:
@@ -743,8 +744,8 @@ language:
   rows:
   - value: 201606
     papers: P0135R1
-    cppreference-description: Guaranteed copy elision through simplified [[cpp/language/value
-      category|value categories]]
+    cppreference-description: Guaranteed {{lt|cpp/language/copy elision}} through
+      simplified [[cpp/language/value category|value categories]]
   support:
     clang:
     - since: C++17
@@ -849,7 +850,7 @@ language:
     papers: P2996R13 P3096R12 P3293R3 P3394R4
   - value: 202603
     papers: P3795R2
-    cppreference-description: Reflection
+    cppreference-description: '[[cpp/meta/reflection|Reflection]]'
   support:
     clang: null
     gcc:
@@ -1031,7 +1032,7 @@ language:
   rows:
   - value: 201411
     papers: N4266
-    cppreference-description: Attributes for [[cpp/language/namespace|namespaces]]
+    cppreference-description: '[[cpp/language/attributes|Attributes]] for [[cpp/language/namespace|namespaces]]'
   support:
     clang:
     - since: C++17
@@ -1134,7 +1135,8 @@ language:
   rows:
   - value: 202306
     papers: P2169R4
-    cppreference-description: A nice placeholder with no name
+    cppreference-description: '[[cpp/language/conflicting declarations#Multiple declarations
+      of the same entity|A nice placeholder with no name]]'
   support:
     clang:
     - value: 202306
@@ -1149,7 +1151,8 @@ language:
     cppreference-description: '{{ltt|cpp/preprocessor/embed|#embed}}'
   - value: 202606
     papers: P3540R3
-    cppreference-description: '[[cpp/preprocessor/embed|{{tt|#embed}}]] offset parameter'
+    cppreference-description: '[[cpp/preprocessor/embed|{{tt|#embed}}]] {{ltt|cpp/preprocessor/embed#offset
+      parameter|offset}} parameter'
   support:
     clang:
     - value: 202502
@@ -1170,7 +1173,8 @@ language:
       loop]] with different {{tt|begin}}/{{tt|end}} types'
   - value: 202211
     papers: P2644R1 P2718R0 CWG2659
-    cppreference-description: Lifetime extension in range-based {{tt|for}}
+    cppreference-description: '[[cpp/language/range-for#Temporary range initializer|Lifetime
+      extension in range-based {{tt|for}}]]'
   support:
     clang:
     - since: C++11
@@ -1430,8 +1434,8 @@ language:
   rows:
   - value: 200704
     papers: N2249
-    cppreference-description: '[[cpp/language/types|New character types]] ({{tt|char16_t}}
-      and {{tt|char32_t}})'
+    cppreference-description: '[[cpp/language/types|New character types]] ({{lc|char16_t}}
+      and {{lc|char32_t}})'
   support:
     clang:
     - since: C++11
@@ -2054,10 +2058,10 @@ library:
     cppreference-description: '[[cpp/utility/bit|Bit operations]]'
   - value: 202606
     papers: P3793R2
-    cppreference-description: '{{header|bit}}: bit permutations, {{lc|std::shl}} and
-      {{lc|std::shr}}'
+    cppreference-description: '{{lc|std::shl}} and {{lc|std::shr}}'
   - value: 202607
     papers: P3104R6
+    cppreference-description: '{{header|bit}}: bit permutations'
   support:
     clang:
     - since: C++20
@@ -2954,7 +2958,7 @@ library:
   header_list: execution
   rows:
   - value: 202506
-    papers: P3149R11
+    papers: P3149R11 P3815R1
     cppreference-description: 'Async scopes: creating scopes for non-sequential concurrency'
   support:
     clang: null
@@ -5862,10 +5866,10 @@ library:
   rows:
   - value: 202606
     papers: P3793R2
-    cppreference-description: '{{header|simd}}: bit permutations, {{lc|std::simd::shl}}
-      and {{lc|std::simd::shr}}'
+    cppreference-description: '{{lc|std::simd::shl}} and {{lc|std::simd::shr}}'
   - value: 202607
     papers: P3772R2
+    cppreference-description: '{{header|simd}}: bit permutations'
   support:
     clang: null
     gcc: null
